@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=tein_ti_text_input_title
+Comment=Advanced input settings configuration
+Type=HildonControlPanelPlugin
+Icon=qgn_list_cp_peninput
+Categories=personalisation
+X-control-panel-plugin=libukeyboard-prefs.so

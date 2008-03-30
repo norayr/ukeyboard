@@ -1,11 +1,10 @@
-# package: bulgarian-phonetic
-# title: Bulgarian phonetic keyboard layout
-# desc: Created by Nickola Trupcheff <n.trupcheff@gmail.com>
+# title: Hungarian QWERTZ layout
+# author: Hámorszky Balázs <balihb@freepop.hu>
 
 header {
-name	"Български (phonetic)"
-lang	"bg_BG"
-wc	"bg_BG"
+name	"Magyar (QWERTZ)"
+lang	"hu_HU"
+wc	"hu_HU"
 
 size	0	{ width 35 height 35 textpos 26 left 0 top 0 }
 size	1	{ width 50 height 35 textpos 26 left 0 top 0 }
@@ -20,44 +19,48 @@ lowercase {
 	margin 0 0 0 0
 	default_size 0
 	row {
-	key я alpha size 2
-	key в alpha tele
-	key е alpha hexa
-	key р alpha
-	key т alpha
-	key ъ alpha
-	key у alpha
-	key и alpha
-	key о alpha
-	key п alpha tele
-	key @ special size 1
+	key q alpha
+	key w alpha tele
+	key e alpha hexa
+	key r alpha
+	key t alpha
+	key z alpha
+	key u alpha
+	key i alpha
+	key o alpha
+	key p alpha tele
+	key @ special size 5
+	key : special size 5
+	key ) special size 5
 	}
 	row {
-	key а alpha hexa
-	key с alpha
-	key д alpha hexa
-	key ф alpha hexa
-	key г alpha
-	key х alpha
-	key й alpha
-	key к alpha
-	key л alpha
-	key ш alpha
-	key щ alpha 
-	key ю alpha 
+	key a alpha hexa
+	key s alpha
+	key d alpha hexa
+	key f alpha hexa
+	key g alpha
+	key h alpha
+	key j alpha
+	key k alpha
+	key l alpha
+	key ´ alpha dead
+	key ¨ alpha dead
+	key ˝ alpha dead
 	}
 	row {
-	key з alpha size 2
-	key ь alpha
-	key ц alpha hexa
-	key ж alpha
-	key б alpha hexa
-	key н alpha
-	key м alpha
+	key ´ alpha dead size 5
+	key y alpha
+	key x alpha
+	key c alpha hexa
+	key v alpha
+	key b alpha hexa
+	key n alpha
+	key m alpha
 	key , special tele
 	key . special tele
 	key / special tele
-	key ч alpha tele size 1
+	key ? special tele size 5
+	key ! special size 5
 	}
 }
 lowercase_num {
@@ -88,45 +91,47 @@ uppercase {
 	margin 0 0 0 0
 	default_size 0
 	row {
-	key Я alpha size 2
-	key В alpha tele
-	key Е alpha hexa
-	key Р alpha
-	key Т alpha
-	key Ъ alpha
-	key У alpha
-	key И alpha
-	key О alpha
-	key П alpha tele
-	key ~ special size 5
-	key | special size 5
+	key Q alpha
+	key W alpha tele
+	key E alpha hexa
+	key R alpha
+	key T alpha
+	key Z alpha
+	key U alpha
+	key I alpha
+	key O alpha
+	key P alpha tele
+	key ~ special
+	key | special
 	}
 	row {
-	key А alpha hexa
-	key С alpha
-	key Д alpha hexa
-	key Ф alpha hexa
-	key Г alpha
-	key Х alpha
-	key Й alpha
-	key К alpha
-	key Л alpha
-	key Ш alpha
-	key Щ alpha 
-	key Ю alpha 
+	key A alpha hexa
+	key S alpha
+	key D alpha hexa
+	key F alpha hexa
+	key G alpha
+	key H alpha
+	key J alpha
+	key K alpha
+	key L alpha
+	key ´ alpha dead
+	key ¨ alpha dead
+	key ˝ alpha dead
 	}
 	row {
-	key З alpha size 2
-	key Ь alpha
-	key Ц alpha hexa
-	key Ж alpha
-	key Б alpha hexa
-	key Н alpha
-	key М alpha
-	key ; special
+	key ´ alpha dead size 5
+	key Y alpha
+	key X alpha
+	key C alpha hexa
+	key V alpha
+	key B alpha hexa
+	key N alpha
+	key M alpha
+	key ; special size 5
 	key : special
-	key " special
-	key Ч alpha size 1
+	key " special size 5
+	key ( special
+	key ) special
 	}
 }
 uppercase_num {
@@ -134,7 +139,7 @@ uppercase_num {
 	default_size 0
 	row {
 	key ' special
-	key ? special tele
+	key # special tele
 	key $ special
 	}
 	row {
@@ -143,9 +148,9 @@ uppercase_num {
 	key > special
 	}
 	row {
-	key ! special
-	key ( special tele
-	key ) special tele
+	key & special
+	key { special tele
+	key } special tele
 	}
 	row {
 	key _ special
@@ -161,41 +166,42 @@ lowercase {
 	margin 0 0 0 0
 	default_size 3
 	row {
-	key я alpha
-	key в alpha tele
-	key е alpha hexa
-	key р alpha
-	key т alpha
-	key ъ alpha
-	key у alpha
-	key и alpha
-	key о alpha
-	key п alpha tele
-	key ю alpha
+	key q alpha
+	key w alpha tele
+	key e alpha hexa
+	key r alpha
+	key t alpha
+	key z alpha
+	key u alpha
+	key i alpha
+	key o alpha
+	key p alpha tele
+	key ¨ alpha dead
 	}
 	row {
-	key а alpha hexa
-	key с alpha
-	key д alpha hexa
-	key ф alpha hexa
-	key г alpha
-	key х alpha
-	key й alpha
-	key к alpha
-	key л alpha
-	key ш alpha
-	key щ alpha
+	key a alpha hexa
+	key s alpha
+	key d alpha hexa
+	key f alpha hexa
+	key g alpha
+	key h alpha
+	key j alpha
+	key k alpha
+	key l alpha
+	key ´ alpha dead
+	key ˝ alpha dead
 	}
 	row {
 	white size 4
-	key з alpha
-	key ь alpha
-	key ц alpha hexa
-	key ж alpha
-	key б alpha hexa
-	key н alpha
-	key м alpha
-	slide special size 4 { key ч key . key , key ? key ! key @ key ( key ) }
+	key y alpha
+	key x alpha
+	key c alpha hexa
+	key v alpha
+	key b alpha hexa
+	key n alpha
+	key m alpha
+	slide special { key . key , key ) key ( key @ key < key > }
+	slide special { key ? key ! key : key - key _ key / key ; }
 	}
 }
 uppercase {
@@ -203,41 +209,42 @@ uppercase {
 	margin 0 0 0 0
 	default_size 3
 	row {
-	key Я alpha
-	key В alpha tele
-	key Е alpha hexa
-	key Р alpha
-	key Т alpha
-	key Ъ alpha
-	key У alpha
-	key И alpha
-	key О alpha
-	key П alpha tele
-	key Ю alpha
+	key Q alpha
+	key W alpha tele
+	key E alpha hexa
+	key R alpha
+	key T alpha
+	key Z alpha
+	key U alpha
+	key I alpha
+	key O alpha
+	key P alpha tele
+	key ¨ alpha dead
 	}
 	row {
-	key А alpha hexa
-	key С alpha
-	key Д alpha hexa
-	key Ф alpha hexa
-	key Г alpha
-	key Х alpha
-	key Й alpha
-	key К alpha
-	key Л alpha
-	key Ш alpha 
-	key Щ alpha 
+	key A alpha hexa
+	key S alpha
+	key D alpha hexa
+	key F alpha hexa
+	key G alpha
+	key H alpha
+	key J alpha
+	key K alpha
+	key L alpha
+	key ´ alpha dead
+	key ˝ alpha dead
 	}
 	row {
 	white size 4
-	key З alpha
-	key Ь alpha
-	key Ц alpha hexa
-	key Ж alpha
-	key Б alpha hexa
-	key Н alpha
-	key М alpha
-	slide special size 4 { key Ч key . key , key ? key ! key @ key ( key ) }
+	key Y alpha
+	key X alpha
+	key C alpha hexa
+	key V alpha
+	key B alpha hexa
+	key N alpha
+	key M alpha
+	slide special { key . key , key ) key ( key @ key < key > }
+	slide special { key ? key ! key : key - key _ key / key ; }
 	}
 }
 special {

@@ -1,15 +1,16 @@
-** Keyboard layout compiler for Nokia N800 **
+** Keyboard layout compiler for Nokia N800 and N810 (OS2008) **
 
 Distributed under GPLv2.
-(Except doc/vkb-format-v2, which is placed into public domain; see the file
+(Except doc/vkb-format-v3, which is placed into public domain; see the file
 for more info.)
 
 Based on the following sources:
 - source code of gen_vkb tool for Nokia 770
-- reverse engineering of .vkb data files from Nokia N800
+- reverse engineering of .vkb data files from Nokia N800 and N810
 
 Note that the input format is different than the one used by the gen_vkb
 tool. This tool uses a plain text file which is (contrary to XML) much more
 easier to write when creating the layout by hand.
 
-See doc/howto for instructions how to create a custom keyboard layout.
+See doc/howto for instructions how to create a custom on-screen keyboard layout.
+Look at xkb/ukeyboard if you want to create a custom sliding keyboard layout.

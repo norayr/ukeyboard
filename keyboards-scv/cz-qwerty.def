@@ -1,0 +1,80 @@
+# Czech scv keyboard layout
+# Created by Jiri Benc <jbenc@upir.cz>
+
+header {
+name	""
+lang	"Čeština"
+wc	""
+
+size	0	{ width 102 height 58 textpos 41 left 0 top 0 }
+}
+
+kbd_special {
+special {
+	name ""
+	margin 0 0 0 0
+	default_size 0
+	row {
+	key ^ special
+	key ` special
+	key $ special
+	key • special
+	key ‘ special
+	key [ special
+	key ] special
+	}
+	row {
+	tab
+	key ← special
+	key → special
+	key „ special
+	key “ special
+	key { special
+	key } special
+	}
+}
+lowercase {
+	margin 0 0 0 0
+	default_size 0
+	row {
+	key ß alpha
+	key ° special
+	key ± special
+	key ½ special
+	key ’ special
+	key § special
+	key £ special
+	}
+	row {
+	key ä alpha
+	key ë alpha
+	key ö alpha
+	key ü alpha
+	key ” special
+	key « special
+	key » special
+	}
+}
+uppercase {
+	margin 0 0 0 0
+	default_size 0
+	row {
+	key ß alpha
+	key ` special
+	key ± special
+	key ½ special
+	key ’ special
+	key § special
+	key £ special
+	}
+	row {
+	key Ä alpha
+	key Ë alpha
+	key Ö alpha
+	key Ü alpha
+	key ” special
+	key « special
+	key » special
+	}
+}
+}

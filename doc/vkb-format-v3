@@ -1,12 +1,16 @@
-vkb format for OS 2007
+vkb format for OS2007/OS2008
 
 - released into public domain (Permission is granted, free of charge, to any
   person obtaining a copy of this file, to deal with the file without
   restriction, including without limitation the right to use, copy, modify,
   merge, publish, distribute, sublicense, and/or sell copies of it. The file
   is provided "as is", without warranty of any kind.)
-- this is the second version of the document, revised using the excellent
-  work by Kimmo Jukarainen, http://idoru.metadreams.net/~kimju/src/maemo/decode_vkb/
+- this is the third version of the document
+- changelog:
+  - v1: initial version based on reverse engineering of vkb files
+  - v2: revised using the excellent work by Kimmo Jukarainen,
+    http://idoru.metadreams.net/~kimju/src/maemo/decode_vkb/
+  - v3: added 0x80 key flag
 
 - multibyte fields are little endian
 - everything is utf-8 encoded
@@ -38,6 +42,7 @@ n	types of individual screen modes (1 byte each; types are:
 	(for special kbd, default key sizes are: 23 23 1a 00 00)
 2	absolute offset in the file of the first section
 2	absolute offset in the file of the second section
+	...
 20	zeros
 ...	SECTION
 ...	SECTION
@@ -98,13 +103,13 @@ bytes	description
 
 KEY_NORMAL
 bytes	description
-1	FIELD_KEY_FLAGS
+1 or 2	FIELD_KEY_FLAGS
 1+n	letter
 1	key size
 
 KEY_SLIDING
 bytes	description
-1	FIELD_KEY_FLAGS
+1 or 2	FIELD_KEY_FLAGS
 1	number of keys on the sliding key | 0x80
 1+n	letter
 1+n	letter
@@ -130,3 +135,7 @@ bytes	description
 		4 (0x10)	special
 		5 (0x20)	dead
 		6 (0x40)	whitespace
+		7 (0x80)	next byte is continuation of the flags
+1	present only if the previous field contains 0x80 flag:
+	more key flags (bitfield?)
+	bits:	2 (0x04)	draw tab face over the key

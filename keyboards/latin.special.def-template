@@ -33,7 +33,7 @@ special {
 	key f alpha
 	}
 }
-lowercase {
+special_lowercase {
 	name "test 3"
 	default_size 0
 	row {
@@ -46,7 +46,7 @@ lowercase {
 	key i alpha
 	}
 }
-uppercase {
+special_uppercase {
 	default_size 0
 	row {
 	key G alpha
@@ -58,7 +58,7 @@ uppercase {
 	key I alpha
 	}
 }
-lowercase {
+special_lowercase {
 	name "test 4"
 	default_size 0
 	row {
@@ -71,7 +71,7 @@ lowercase {
 	key l alpha
 	}
 }
-uppercase {
+special_uppercase {
 	default_size 0
 	row {
 	key J alpha

@@ -1,12 +1,10 @@
-# package: czech-qwertz
-# title: Czech QWERTZ keyboard layout
-# desc: Created by Jiri Benc <jbenc@upir.cz>
-# desc: http://www.upir.cz/maemo/keyboards/
+# title: Esperanto layout
+# author: Jiří Benc <jbenc@upir.cz>
 
 header {
-name	"Čeština (qwerty)"
-lang	"cs_CZ"
-wc	"cs_CZ"
+name	"Esperanto"
+lang	"eo_EO"
+wc	"eo_EO"
 
 size	0	{ width 35 height 35 textpos 26 left 0 top 0 }
 size	1	{ width 50 height 35 textpos 26 left 0 top 0 }
@@ -26,7 +24,7 @@ lowercase {
 	key e alpha hexa
 	key r alpha
 	key t alpha
-	key z alpha
+	key y alpha
 	key u alpha
 	key i alpha
 	key o alpha
@@ -43,12 +41,12 @@ lowercase {
 	key j alpha
 	key k alpha
 	key l alpha
-	key ů alpha
-	key ´ alpha dead
-	key ˇ alpha dead
+	key " special
+	key ŭ alpha
+	key ^ alpha dead
 	}
 	row {
-	key y alpha size 2
+	key z alpha size 2
 	key x alpha
 	key c alpha hexa
 	key v alpha
@@ -94,7 +92,7 @@ uppercase {
 	key E alpha hexa
 	key R alpha
 	key T alpha
-	key Z alpha
+	key Y alpha
 	key U alpha
 	key I alpha
 	key O alpha
@@ -112,12 +110,12 @@ uppercase {
 	key J alpha
 	key K alpha
 	key L alpha
-	key Ů alpha
-	key ´ alpha dead
-	key ˇ alpha dead
+	key ' special
+	key Ŭ alpha
+	key ^ alpha dead
 	}
 	row {
-	key Y alpha size 2
+	key Z alpha size 2
 	key X alpha
 	key C alpha hexa
 	key V alpha
@@ -126,7 +124,7 @@ uppercase {
 	key M alpha
 	key ; special
 	key : special
-	key " special
+	key & special
 	key ! special size 1
 	}
 }
@@ -136,15 +134,15 @@ uppercase_num {
 	row {
 	key ' special
 	key # special tele
-	key $ special
+	key % special
 	}
 	row {
-	key % special
+	key $ special
 	key < special
 	key > special
 	}
 	row {
-	key & special
+	key € special
 	key ( special tele
 	key ) special tele
 	}
@@ -167,12 +165,12 @@ lowercase {
 	key e alpha hexa
 	key r alpha
 	key t alpha
-	key z alpha
+	key y alpha
 	key u alpha
 	key i alpha
 	key o alpha
 	key p alpha tele
-	key ů alpha
+	slide special { key : key ; key - key _ key / key < key > }
 	}
 	row {
 	key a alpha hexa
@@ -184,20 +182,19 @@ lowercase {
 	key j alpha
 	key k alpha
 	key l alpha
-	key ´ alpha dead
-	key ˇ alpha dead
+	key ŭ alpha
+	key ^ alpha dead
 	}
 	row {
 	white size 4
-	key y alpha
+	key z alpha
 	key x alpha
 	key c alpha hexa
 	key v alpha
 	key b alpha hexa
 	key n alpha
 	key m alpha
-	slide special { key . key , key ? key ! key @ key ( key ) }
-	slide special { key : key ; key - key _ key / key < key > }
+	slide special { key . key , key ? key ! key @ key ( key ) } size 4
 	}
 }
 uppercase {
@@ -210,12 +207,12 @@ uppercase {
 	key E alpha hexa
 	key R alpha
 	key T alpha
-	key Z alpha
+	key Y alpha
 	key U alpha
 	key I alpha
 	key O alpha
 	key P alpha tele
-	key Ů alpha
+	slide special { key : key ; key - key _ key / key < key > }
 	}
 	row {
 	key A alpha hexa
@@ -227,20 +224,19 @@ uppercase {
 	key J alpha
 	key K alpha
 	key L alpha
-	key ´ alpha dead
-	key ˇ alpha dead
+	key Ŭ alpha
+	key ^ alpha dead
 	}
 	row {
 	white size 4
-	key Y alpha
+	key Z alpha
 	key X alpha
 	key C alpha hexa
 	key V alpha
 	key B alpha hexa
 	key N alpha
 	key M alpha
-	slide special { key . key , key ? key ! key @ key ( key ) }
-	slide special { key : key ; key - key _ key / key < key > }
+	slide special { key . key , key ? key ! key @ key ( key ) } size 4
 	}
 }
 special {

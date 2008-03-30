@@ -1,0 +1,9 @@
+"\
+<span weight=\"bold\" foreground=\"blue\">ukeyboard @@VERSION@@</span>\n\
+<span foreground=\"blue\">http://upir.cz/maemo/keyboards</span>\n\
+Distributed under GPLv2.\n\
+Author: Jiří Benc &lt;jbenc@upir.cz&gt;\n\
+\n\
+<b>Contributors:</b>\n\
+@@CONTRIB@@
+"

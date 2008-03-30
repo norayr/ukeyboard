@@ -35,15 +35,17 @@ char keywords[][32] = {
 	"header", "name", "lang", "wc", "size", "width", "height",
 	"textpos", "left", "top", "kbd_normal", "kbd_thumb", "kbd_special",
 	"lowercase", "lowercase_num", "uppercase", "uppercase_num",
+	"special_lowercase", "special_uppercase",
 	"special", "margin", "default_size", "row", "key", "slide",
-	"white", "alpha", "num", "hexa", "tele", "dead"
+	"white", "tab", "alpha", "num", "hexa", "tele", "dead"
 };
 enum keywords_const {
 	TOK_HEADER, TOK_NAME, TOK_LANG, TOK_WC, TOK_SIZE, TOK_WIDTH, TOK_HEIGHT,
 	TOK_TEXTPOS, TOK_LEFT, TOK_TOP, TOK_KBD_NORMAL, TOK_KBD_THUMB, TOK_KBD_SPECIAL,
 	TOK_LOWERCASE, TOK_LOWERCASE_NUM, TOK_UPPERCASE, TOK_UPPERCASE_NUM,
+	TOK_SPEC_LOWERCASE, TOK_SPEC_UPPERCASE,
 	TOK_SPECIAL, TOK_MARGIN, TOK_DEFAULT_SIZE, TOK_ROW, TOK_KEY, TOK_SLIDE,
-	TOK_WHITE, TOK_ALPHA, TOK_NUM, TOK_HEXA, TOK_TELE, TOK_DEAD
+	TOK_WHITE, TOK_TAB, TOK_ALPHA, TOK_NUM, TOK_HEXA, TOK_TELE, TOK_DEAD
 };
 
 enum tok_type {
@@ -254,6 +256,9 @@ struct key {
 #define KEY_SPECIAL	0x10
 #define KEY_DEAD	0x20
 #define KEY_WHITE	0x40
+#define KEY_EXTEND	0x80
+
+#define KEY_TAB		(0x0400 | KEY_EXTEND)
 
 struct row {
 	int keys_cnt;
@@ -477,6 +482,9 @@ void parse_key(struct parser *parser, struct row *row, int type)
 	} else if (type == TOK_WHITE) {
 		key->u.name = newstrcpy("");
 		key->flags |= KEY_WHITE;
+	} else if (type == TOK_TAB) {
+		key->u.name = newstrcpy("");
+		key->flags |= KEY_TAB;
 	}
 	while (1) {
 		get_tok(parser);
@@ -499,6 +507,7 @@ void parse_key(struct parser *parser, struct row *row, int type)
 			parse_slide(parser, key);
 		else if (is_keyword(parser, TOK_KEY) ||
 			   is_keyword(parser, TOK_WHITE) ||
+			   is_keyword(parser, TOK_TAB) ||
 			   is_keyword(parser, TOK_SLIDE) ||
 			   is_end(parser)) {
 			push_tok(parser);
@@ -530,6 +539,8 @@ void parse_row(struct parser *parser, struct layout *lay)
 			parse_key(parser, row, TOK_KEY);
 		else if (is_keyword(parser, TOK_WHITE))
 			parse_key(parser, row, TOK_WHITE);
+		else if (is_keyword(parser, TOK_TAB))
+			parse_key(parser, row, TOK_TAB);
 		else if (is_keyword(parser, TOK_SLIDE))
 			parse_key(parser, row, TOK_SLIDE);
 		else if (is_end(parser))
@@ -617,10 +628,18 @@ void parse_kbd(struct parser *parser, struct global *glob, int type)
 	while (1) {
 		get_tok(parser);
 		if (is_keyword(parser, TOK_LOWERCASE))
-			parse_layout(parser, kbd, type == KBD_SPECIAL ? LAY_SPECIAL_LOWER : LAY_LOWERCASE);
+			parse_layout(parser, kbd, LAY_LOWERCASE);
 		else if (is_keyword(parser, TOK_UPPERCASE))
-			parse_layout(parser, kbd, type == KBD_SPECIAL ? LAY_SPECIAL_UPPER : LAY_UPPERCASE);
-		else if (is_keyword(parser, TOK_LOWERCASE_NUM)) {
+			parse_layout(parser, kbd, LAY_UPPERCASE);
+		else if (is_keyword(parser, TOK_SPEC_LOWERCASE)) {
+			if (type != KBD_SPECIAL)
+				error(parser, "special_lowercase allowed only in kbd_special section");
+			parse_layout(parser, kbd, LAY_SPECIAL_LOWER);
+		} else if (is_keyword(parser, TOK_SPEC_UPPERCASE)) {
+			if (type != KBD_SPECIAL)
+				error(parser, "special_uppercase allowed only in kbd_special section");
+			parse_layout(parser, kbd, LAY_SPECIAL_UPPER);
+		} else if (is_keyword(parser, TOK_LOWERCASE_NUM)) {
 			if (type != KBD_NORMAL)
 				error(parser, "lowercase_num allowed only in kbd_normal section");
 			parse_layout(parser, kbd, LAY_LOWERCASE_NUM);
@@ -744,7 +763,9 @@ void writer_keys(struct writer *writer, struct key *key, int default_size)
 
 	while (key) {
 		writer_byte(writer, key->slides_cnt ? 1 : 0);
-		writer_byte(writer, key->flags);
+		writer_byte(writer, key->flags & 0xff);
+		if (key->flags & KEY_EXTEND)
+			writer_byte(writer, (key->flags >> 8) & 0xff);
 		if (!key->slides_cnt)
 			writer_string(writer, key->u.name);
 		else {

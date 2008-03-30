@@ -1,10 +1,8 @@
-# package: czech-qwerty
-# title: Czech QWERTY keyboard layout
-# desc: Created by Jiri Benc <jbenc@upir.cz>
-# desc: http://www.upir.cz/maemo/keyboards/
+# title: Czech QWERTZ layout
+# author: Jiří Benc <jbenc@upir.cz>
 
 header {
-name	"Čeština (qwerty)"
+name	"Čeština (QWERTZ)"
 lang	"cs_CZ"
 wc	"cs_CZ"
 
@@ -26,7 +24,7 @@ lowercase {
 	key e alpha hexa
 	key r alpha
 	key t alpha
-	key y alpha
+	key z alpha
 	key u alpha
 	key i alpha
 	key o alpha
@@ -48,7 +46,7 @@ lowercase {
 	key ˇ alpha dead
 	}
 	row {
-	key z alpha size 2
+	key y alpha size 2
 	key x alpha
 	key c alpha hexa
 	key v alpha
@@ -94,7 +92,7 @@ uppercase {
 	key E alpha hexa
 	key R alpha
 	key T alpha
-	key Y alpha
+	key Z alpha
 	key U alpha
 	key I alpha
 	key O alpha
@@ -117,7 +115,7 @@ uppercase {
 	key ˇ alpha dead
 	}
 	row {
-	key Z alpha size 2
+	key Y alpha size 2
 	key X alpha
 	key C alpha hexa
 	key V alpha
@@ -167,7 +165,7 @@ lowercase {
 	key e alpha hexa
 	key r alpha
 	key t alpha
-	key y alpha
+	key z alpha
 	key u alpha
 	key i alpha
 	key o alpha
@@ -189,7 +187,7 @@ lowercase {
 	}
 	row {
 	white size 4
-	key z alpha
+	key y alpha
 	key x alpha
 	key c alpha hexa
 	key v alpha
@@ -210,7 +208,7 @@ uppercase {
 	key E alpha hexa
 	key R alpha
 	key T alpha
-	key Y alpha
+	key Z alpha
 	key U alpha
 	key I alpha
 	key O alpha
@@ -232,7 +230,7 @@ uppercase {
 	}
 	row {
 	white size 4
-	key Z alpha
+	key Y alpha
 	key X alpha
 	key C alpha hexa
 	key V alpha

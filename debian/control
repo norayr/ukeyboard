@@ -1,0 +1,12 @@
+Source: ukeyboard
+Section: user/other
+Priority: optional
+Maintainer: Jiri Benc <jbenc@upir.cz>
+Build-Depends: debhelper (>= 4.0.0)
+Standards-Version: 3.6.1
+
+Package: ukeyboard
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: Additional keyboard layouts
+ Additional keyboard layouts for both on-screen and sliding keyboard.

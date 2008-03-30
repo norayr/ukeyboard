@@ -1,3 +1,21 @@
+ukeyboard (1.0) unstable; urgency=low
+
+  * Added support for OS2008 on-screen keyboards.
+  * Added support for N810 sliding keyboard layouts and small on-screen
+    keyboards (scv).
+  * Added control panel applet that replaces the default one.
+  * Enhanced vkb format documentation.
+  * Added Czech QWERTY and QWERTZ layouts for the sliding keyboard.
+  * OS2007 is no longer supported.
+
+ -- Jiri Benc <jbenc@upir.cz>  Sun, 10 Feb 2008 03:17:35 +0100
+
+ukeyboard (0.3.1) unstable; urgency=low
+
+  * Added Hungarian layout by Hamorszky Balazs.
+
+ -- Jiri Benc <jbenc@upir.cz>  Fri,  4 Jan 2008 21:18:26 +0000
+
 ukeyboard (0.3) unstable; urgency=low
 
   * Renamed to ukeyboard.

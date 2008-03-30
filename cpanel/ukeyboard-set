@@ -1,0 +1,20 @@
+#!/bin/sh
+if [ -z "$1" -o -z "$2" ]; then
+	echo "ukeyboard-set: Missing parameters."
+	exit 1
+fi
+
+dest="/usr/share/keyboards/$2.vkb"
+if [ -f "$dest" ]; then
+	if [ ! -h "$dest" ]; then
+		echo "ukeyboard-set: Destination $dest exists and is not a symlink."
+		exit 2
+	fi
+	rm "$dest"
+	if [ -f "$dest" ]; then
+		echo "ukeyboard-set: Cannot delete current symlink $dest."
+		exit 3
+	fi
+fi
+
+ln -s "../ukeyboard/$1.vkb" "$dest"

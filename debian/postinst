@@ -1,0 +1,12 @@
+#!/bin/sh
+if ! grep -q ukeyboard /usr/share/X11/xkb/rules/base; then
+	sed -i 's/^.*nokiarx44.*$/\0\n  ukeyboard	*			=	nokia_vndr\/ukeyboard(%l)/' /usr/share/X11/xkb/rules/base
+fi
+
+if [ -f /usr/share/applications/hildon-control-panel/cptextinput.desktop ]; then
+	mv -f /usr/share/applications/hildon-control-panel/cptextinput.desktop /usr/share/applications/hildon-control-panel/cptextinput.desktop.removed
+fi
+
+#gtk-update-icon-cache -f /usr/share/icons/hicolor
+update-sudoers
+exit 0

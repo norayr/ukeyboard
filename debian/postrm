@@ -1,0 +1,10 @@
+#!/bin/sh
+sed -ni '/ukeyboard/!p' /usr/share/X11/xkb/rules/base
+
+if [ -f /usr/share/applications/hildon-control-panel/cptextinput.desktop.removed ]; then
+	mv -f /usr/share/applications/hildon-control-panel/cptextinput.desktop.removed /usr/share/applications/hildon-control-panel/cptextinput.desktop
+fi
+
+#gtk-update-icon-cache -f /usr/share/icons/hicolor
+update-sudoers
+exit 0
