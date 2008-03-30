@@ -1,3 +1,11 @@
+ukeyboard (1.3) unstable; urgency=low
+
+  * Added Slovak on-screen and sliding keyboard layouts by Roman Moravcik.
+  * Added Arabic (Lebanon) on-screen layout by Ali Khadra.
+  * Fixed US Dvorak layout.
+
+ -- Jiri Benc <jbenc@upir.cz>  Sun, 16 Mar 2008 23:02:58 +0100
+
 ukeyboard (1.2) unstable; urgency=low
 
   * Added US Dvorak layout by Paul Sweeney.

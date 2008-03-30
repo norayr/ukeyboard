@@ -1,4 +1,12 @@
-layouts = bg-bds.vkb bg-phonetic.vkb cz-qwerty.vkb cz-qwertz.vkb en-dvorak.vkb eo-qwerty.vkb hu-qwertz.vkb
+layouts = \
+	ar-lebanon.vkb \
+	bg-bds.vkb \
+	bg-phonetic.vkb \
+	cz-qwerty.vkb cz-qwertz.vkb \
+	en-dvorak.vkb \
+	eo-qwerty.vkb \
+	hu-qwertz.vkb \
+	sk-qwerty.vkb sk-qwertz.vkb
 
 all: $(layouts)
 

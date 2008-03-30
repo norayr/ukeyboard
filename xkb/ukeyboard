@@ -89,3 +89,45 @@ xkb_symbols "cz-qwertz-us" {
 	key <AD06>	{ [ z,		Z,		6,		6		] };
 	key <AB01>	{ [ y,		Y,		yen,		yen		] };
 };
+
+partial alphanumeric_keys
+xkb_symbols "sk-qwerty" {
+	name[Group1] = "Slovak QWERTY (DE hw)";
+
+	include "nokia_vndr/ukeyboard(base)"
+
+	key <AC01>	{ [ a,		A,		exclam,		exclam		] };
+	key <AC02>	{ [ s,		S,		quotedbl,	quotedbl	] };
+	key <AC03>	{ [ d,		D,		at,		at		] };
+	key <AC04>	{ [ f,		F,		numbersign,	numbersign	] };
+	key <AC05>	{ [ g,		G,		percent,	percent		] };
+	key <AC06>	{ [ h,		H,		backslash,	backslash	] };
+	key <AC07>	{ [ j,		J,		slash,		slash		] };
+	key <AC08>	{ [ k,		K,		parenleft,	parenleft	] };
+	key <AC09>	{ [ l,		L,		parenright,	parenright	] };
+	key <AC11>	{ [ ocircumflex,adiaeresis,	question,	question	] };
+
+	key <AB01>	{ [ z,		Z,		EuroSign,	EuroSign	] };
+	key <AB02>	{ [ x,		X,		asciitilde,	asciitilde	] };
+	key <AB03>	{ [ c,		C,		asterisk,	asterisk	] };
+	key <AB04>	{ [ v,		V,		ampersand,	ampersand	] };
+	key <AB05>	{ [ b,		B,		plus,		plus		] };
+	key <AB06>	{ [ n,		N,		less,		less		] };
+	key <AB07>	{ [ m,		M,		greater,	greater		] };
+	key <AC10>	{ [ dead_acute,	dead_acute,	equal,		equal		] };
+	key <AE11>	{ [ dead_caron,	dead_caron,	apostrophe,	apostrophe	] };
+	key <AE12>	{ [ minus,	underscore,	endash,		endash		] };
+
+	key <AB08>	{ [ comma,	semicolon,	bar,		bar		] };
+	key <AB09>	{ [ period,	colon,		Tab,		Tab		] };
+};
+
+partial alphanumeric_keys
+xkb_symbols "sk-qwertz" {
+	name[Group1] = "Slovak QWERTZ (DE hw)";
+
+	include "nokia_vndr/ukeyboard(sk-qwerty)"
+
+	key <AD06>	{ [ z,		Z,		6,		6		] };
+	key <AB01>	{ [ y,		Y,		EuroSign,	EuroSign	] };
+};
