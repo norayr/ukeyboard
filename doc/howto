@@ -28,29 +28,16 @@ For rules for naming of destination files, see the section 4.1.
 3. Testing the layout
 ---------------------
 
-Copy the compiled .vkb file to the /usr/share/keyboards/ directory on the
-device.
+Make sure ukeyboard package is installed on the device. It does not have to
+include your new layout.
 
-If the file did not exist before (i.e. you added a new language), the new
-layout won't appear in Text input settings in the Control panel. The device
-has to be taught about the new layout first.
+Copy the compiled .vkb file to the /usr/share/ukeyboard/ directory on the
+device. Ukeyboard will pick up the new layout automatically. Just go to
+Text input settings in the Control panel and set your layout in the
+Languages tab.
 
-The easiest way to do that is to reboot the device. During the boot, the
-device scans for available layouts. You can set your layout in the Control
-panel afterwards.
-
-It is possible to do that without a reboot, though. Use gconf-editor and add
-your language code to the /apps/osso/inputmethod/available_languages list.
-Again, set your layout in the Control panel afterwards.
-
-If you are just updating already existing layout, you need to restart the
-input system. The easiest way is a reboot, of course.
-
-To restart the input system without a reboot, run the following commands as
-root on the device:
-	. /etc/osso-af-init/af-defines.sh
-	/etc/osso-af-init/keyboard.sh stop
-	/etc/osso-af-init/keyboard.sh start
+If you update the .vkb file, just go to Text input settings again and
+confirm the dialog without changing anything.
 
 4. Limitation of the maemo keyboard layouts
 -------------------------------------------
@@ -58,35 +45,37 @@ root on the device:
 4.1 Allowed names of .vkb files
 -------------------------------
 
-The name of the compiled (.vkb) file has to match a name defined in the
-"lang" clause in the source (.def) file (see section 6.2).
+The system limits the name of the compiled (.vkb) file in a way that it has
+to match the name defined in the "lang" clause in the source (.def) file
+(see section 6.2). You do not need to worry about that if you put your
+layout into /usr/share/ukeyboard/, ukeyboard will do the necessary magic for
+you. Just be sure the name of the file has the .vkb extension.
 
-Futhermore, this name has to be a name of a recognized locale. The current
-set of recognized locales can be found at:
-http://maemo.org/development/documentation/how-tos/3-x/howto_him_bora.html#language-codes
+4.2 Allowed language codes
+--------------------------
 
-This means you cannot have two layouts for the same language variant
-installed on the device at the same time. It is possible to create two
-layouts and make two .deb packages, which will conflict with each other,
-though (so the user can choose the one s/he wish but not both) - ukeyboard
-has a support for that.
+The name specified in the "lang" clause in the source file cannot be one of
+da_DK, de_DE, el_GR, en_GB, en_US, es_ES, es_MX, fi_FI, fr_CA, fr_FR, it_IT,
+nl_NL, no_NO, pt_BR, pt_PT, ru_RU and sv_SE. This is a limitation of
+ukeyboard and may be relaxed in the future. If you put one of these codes
+into the "lang" clause, ukeyboard will give you a warning.
 
-4.2 Layout name
----------------
-
-Although it is possible to specify a descriptive layout name in the layout,
-it seems to be completely ignored by maemo. Instead, a name corresponding to
-the layout locale is displayed. If there is no support for the given locale
-in the device, just a locale name is displayed.
+In general, the name in the "lang" clause should be a valid language code.
+Ukeyboard permits the country code part to be anything (e.g. you can specify
+en_DV for a Dvorak layout). To be safe, it's better to specify exactly two
+letters in the country code part, though.
 
 5. Different types of keyboards and layouts
 -------------------------------------------
 
-There are two types of .vkb files. The first one is a keyboard corresponding
-to a selected language, the second one is a special keyboard activated by
-pressing the "&!e" button. Although vkb_compiler is able to compile both of
-them, this document covers the first type only. By a "keyboard" or "keyboard
-layout" the first type of the keyboard is meant through the whole document.
+There are three types of .vkb files. The first one is an on-screen keyboard
+corresponding to a selected language, the second one is a special keyboard
+activated by pressing the "&!e" button, the third one is a "scv" keyboard,
+which is displayed by pressing the "Chr" key on the sliding keyboard.
+Although vkb_compiler is able to compile all of them, this document covers
+the first type only. By a "keyboard" or "keyboard layout" the first type of
+the keyboard is meant through the whole document. For a "scv" type, read
+this document and then look at the examples in keyboards-scv/ directory.
 
 Each keyboard file contains two keyboard layouts - one for a normal (stylus)
 and one for a thumb keyboard.
@@ -136,14 +125,14 @@ Inside the header, few global things are defined:
 A descriptive name of the keyboard is defined by:
 	name "descriptive name"
 
-Note that this name seems to be ignored, see section 4.2. In spite of this,
-please specify the name, it helps maintaing the keyboards.
+Ukeyboard uses this name in the list of kayboards in Text input settings
+applet. The OS itself seems to just ignore the name, though.
 
 6.2.2 Language code
 -------------------
 
 The locale name of the keyboard. Must match the .vkb file name (without the
-.vkb extension). See section 4.1 for allowed values of this field.
+.vkb extension). See section 4.2 for allowed values of this field.
 
 Example:
 	lang "en_GB"

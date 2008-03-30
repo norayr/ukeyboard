@@ -7,7 +7,7 @@ xkb_symbols "base" {
 
 partial alphanumeric_keys
 xkb_symbols "cz-qwerty" {
-	name[Group1] = "Czech QWERTY";
+	name[Group1] = "Czech QWERTY (DE hw)";
 
 	include "nokia_vndr/ukeyboard(base)"
 
@@ -15,9 +15,9 @@ xkb_symbols "cz-qwerty" {
 	key <AC02>	{ [ s,		S,		quotedbl,	quotedbl	] };
 	key <AC03>	{ [ d,		D,		at,		at		] };
 	key <AC04>	{ [ f,		F,		numbersign,	numbersign	] };
-	key <AC05>	{ [ g,		G,		percent,	percent    	] };
+	key <AC05>	{ [ g,		G,		percent,	percent		] };
 	key <AC06>	{ [ h,		H,		backslash,	backslash	] };
-	key <AC07>	{ [ j,		J,		slash,		slash	  	] };
+	key <AC07>	{ [ j,		J,		slash,		slash		] };
 	key <AC08>	{ [ k,		K,		parenleft,	parenleft	] };
 	key <AC09>	{ [ l,		L,		parenright,	parenright	] };
 	key <AC11>	{ [ uring,	Uring,		question,	question	] };
@@ -39,10 +39,53 @@ xkb_symbols "cz-qwerty" {
 
 partial alphanumeric_keys
 xkb_symbols "cz-qwertz" {
-	name[Group1] = "Czech QWERTZ";
+	name[Group1] = "Czech QWERTZ (DE hw)";
 
 	include "nokia_vndr/ukeyboard(cz-qwerty)"
 
 	key <AD06>	{ [ z,		Z,		6,		6		] };
 	key <AB01>	{ [ y,		Y,		EuroSign,	EuroSign	] };
+};
+
+// author: Michal Prihoda
+partial alphanumeric_keys
+xkb_symbols "cz-qwerty-us" {
+	name[Group1] = "Czech QWERTY (US hw)";
+
+	include "nokia_vndr/ukeyboard(base)"
+
+	key <AC01>	{ [ a,		A,		exclam,		exclam		] };
+	key <AC02>	{ [ s,		S,		quotedbl,	quotedbl	] };
+	key <AC03>	{ [ d,		D,		at,		at		] };
+	key <AC04>	{ [ f,		F,		numbersign,	numbersign	] };
+	key <AC05>	{ [ g,		G,		backslash,	backslash	] };
+	key <AC06>	{ [ h,		H,		slash,		slash		] };
+	key <AC07>	{ [ j,		J,		parenleft,	parenleft	] };
+	key <AC08>	{ [ k,		K,		parenright,	parenright	] };
+	key <AC09>	{ [ l,		L,		asterisk,	asterisk	] };
+	key <AC11>	{ [ dead_acute,	apostrophe,	question,	question	] };
+
+	key <AB01>	{ [ z,		Z,		yen,		yen		] };
+	key <AB02>	{ [ x,		X,		asciicircum,	asciicircum	] };
+	key <AB03>	{ [ c,		C,		asciitilde,	asciitilde	] };
+	key <AB04>	{ [ v,		V,		percent,	percent		] };
+	key <AB05>	{ [ b,		B,		ampersand,	ampersand	] };
+	key <AB06>	{ [ n,		N,		dollar,		dollar		] };
+	key <AB07>	{ [ m,		M,		EuroSign,	EuroSign	] };
+	key <AC10>	{ [ semicolon,	colon,		sterling,	sterling	] };
+	key <AE11>	{ [ minus,	uring,		underscore,	underscore	] };
+	key <AE12>	{ [ dead_caron,	plus,		equal,		equal		] };
+
+	key <AB08>	{ [ comma,	less,		comma,		less		] };
+	key <AB09>	{ [ period,	greater,	period,		greater		] };
+};
+
+partial alphanumeric_keys
+xkb_symbols "cz-qwertz-us" {
+	name[Group1] = "Czech QWERTZ (US hw)";
+
+	include "nokia_vndr/ukeyboard(cz-qwerty-us)"
+
+	key <AD06>	{ [ z,		Z,		6,		6		] };
+	key <AB01>	{ [ y,		Y,		yen,		yen		] };
 };

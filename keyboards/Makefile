@@ -1,4 +1,4 @@
-layouts = bg-bds.vkb bg-phonetic.vkb cz-qwerty.vkb cz-qwertz.vkb eo-qwerty.vkb hu-qwertz.vkb
+layouts = bg-bds.vkb bg-phonetic.vkb cz-qwerty.vkb cz-qwertz.vkb en-dvorak.vkb eo-qwerty.vkb hu-qwertz.vkb
 
 all: $(layouts)
 

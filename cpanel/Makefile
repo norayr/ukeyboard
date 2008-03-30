@@ -1,25 +1,25 @@
 libukeyboard-prefs.so:	prefs.o hw.o onscreen.o lang.o langset.o about.o
-	gcc -shared -o $@ $+
+	$(CC) -shared -o $@ $+
 
 add_cflags = `pkg-config --cflags gtk+-2.0 hildon-1 gconf-2.0 libosso`
 
 prefs.o:	prefs.c
-	gcc -c -W -Wall `pkg-config --cflags gtk+-2.0 gconf-2.0 hildon-control-panel libosso` -o $@ $<
+	$(CC) -c -W -Wall `pkg-config --cflags gtk+-2.0 gconf-2.0 hildon-control-panel libosso` -o $@ $<
 
 hw.o:	hw.c
-	gcc -c -W -Wall $(add_cflags) -o $@ $<
+	$(CC) -c -W -Wall $(add_cflags) -o $@ $<
 
 onscreen.o:	onscreen.c
-	gcc -c -W -Wall $(add_cflags) -o $@ $<
+	$(CC) -c -W -Wall $(add_cflags) -o $@ $<
 
 lang.o:	lang.c
-	gcc -c -W -Wall $(add_cflags) -o $@ $<
+	$(CC) -c -W -Wall $(add_cflags) -o $@ $<
 
 langset.o:	langset.c
-	gcc -c -W -Wall $(add_cflags) -o $@ $<
+	$(CC) -c -W -Wall $(add_cflags) -o $@ $<
 
 about.o:	about.c about.inc
-	gcc -c -W -Wall $(add_cflags) -o $@ $<
+	$(CC) -c -W -Wall $(add_cflags) -o $@ $<
 
 about.inc:	about.inc.in
 #	for f in ../keyboards/*; do \

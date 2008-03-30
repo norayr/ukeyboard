@@ -1,3 +1,12 @@
+ukeyboard (1.2) unstable; urgency=low
+
+  * Added US Dvorak layout by Paul Sweeney.
+  * Added Czech hw layouts for devices with US keyboard by Michal Prihoda.
+  * Fixed howto to reflect changes made in ukeyboard for OS2008.
+  * Fixed build with OpenEmbedded.
+
+ -- Jiri Benc <jbenc@upir.cz>  Fri, 29 Feb 2008 21:42:36 +0100
+
 ukeyboard (1.1) unstable; urgency=low
 
   * Fixed wrong label ("Launch finger keyboard with select") in the
