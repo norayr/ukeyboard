@@ -1,21 +1,32 @@
 vkb format for OS 2007
 
+- released into public domain (Permission is granted, free of charge, to any
+  person obtaining a copy of this file, to deal with the file without
+  restriction, including without limitation the right to use, copy, modify,
+  merge, publish, distribute, sublicense, and/or sell copies of it. The file
+  is provided "as is", without warranty of any kind.)
+- this is the second version of the document, revised using the excellent
+  work by Kimmo Jukarainen, http://idoru.metadreams.net/~kimju/src/maemo/decode_vkb/
+
 - multibyte fields are little endian
 - everything is utf-8 encoded
 - all numbers in the "description" column are written in hexadecimal
 - some (all?) length fields can be zero
+- strings are denoted as 1+n and are encoded as:
+	bytes	description
+	1	length of the next field, in bytes
+	n	the string (utf-8 encoded)
 
 GLOBAL HEADER
 bytes	description
 1	version (01)
-1	number of sections (02)
-1	length of the next field
-n	descriptive (human-visible) name of the locale
-1	length of the next field
-n	locale name (e.g. en_GB)
-1	length of the next field
-n	locale name of a word completion dictionary
-3	unknown (02 00 01)
+1	number of sections (02 for normal and thumb kbd, 01 for special kbd)
+1+n	descriptive (human-visible) name of the locale
+1+n	locale name (e.g. en_GB)
+1+n	locale name of a word completion dictionary
+1	number of screen modes supported by this keyboard (02)
+n	types of individual screen modes (1 byte each; types are:
+	0 = normal, 1 = thumb, 2 = rotated) (00 01)
 1	number of key sizes (05)
 ...	KEY SIZE
 ...	KEY SIZE
@@ -24,6 +35,7 @@ n	locale name of a word completion dictionary
 	that's: 00 normal key, 01 longer key used on the right side of odd
 	rows, 02 more longer key used on the left side of odd rows, 03 big
 	key used in thumb kbd, 04 double width big key used in thumb kbd)
+	(for special kbd, default key sizes are: 23 23 1a 00 00)
 2	absolute offset in the file of the first section
 2	absolute offset in the file of the second section
 20	zeros
@@ -35,24 +47,34 @@ bytes	description
 1	width of a key (in pixels? rather seems to be percentage or something)
 1	height of a key
 1	offset of a text (from the top of the key to the bottom of the text)
+	- i.e. baseline
 1	left padding (extra value, not included in the width)
 1	top padding (extra value, not included in the height)
 
 SECTION HEADER
 bytes	description
-1	maybe type of the section (00 normal kbd, 04 thumb kbd)
-1	number of layouts (02 for normal kbd, 04 for thumb kbd)
-2	unknown (00 00 for normal kbd, 00 03 for thumb kbd); doesn't seem
-	that changing this field has any effect
+1	type of the section (00 normal kbd, 01 special kbd, 04 thumb kbd;
+	other values: 03 large kbd, 05-07 east language kbds, 08 stroke kbd)
+1	number of layouts (02 for normal kbd, 04 for thumb kbd, 06 for special kbd)
+1	numeric kbd (00); the meaning of this field is unclear
+1	default key size (00 for normal kbd, 03 for thumb kbd, 00 for special kbd)
 ...	LAYOUT
 ...	LAYOUT
 
 LAYOUT HEADER
 bytes	description
-2	layout type (00 01 lowercase, 01 00 uppercase, 02 ff special chars)
-1	length of the next field
-n	name of the layout (used in thumb kbd, should be 3 utf-8 chars)
-1	number of sublayouts (normal kbd has 2 sublayouts, thumb kbd has 1 sublayout)
+1	layout type (00 lowercase, 01 uppercase, 02 neither - i.e. special chars)
+	notes:
+	- in a special kbd, even tabs with letters are of the 02 type
+	- it seems to be hard-coded that the first two layouts in a special
+	  kbd have the shift key disabled
+1	corresponding other case layout number, counted from 0; ff for
+	a single case layout
+1+n	name of the layout (in normal kbd should be empty; in thumb kbd
+	should be 3 utf-8 chars; in special kbd corresponding lower/upper
+	layouts should have the same name)
+1	number of sublayouts (normal kbd has 2 sublayouts, thumb kbd and
+	special kbd have 1 sublayout)
 ...	SUBLAYOUT
 ...	SUBLAYOUT
 
@@ -71,7 +93,35 @@ n	number of keys in individual rows (1 byte for each row)
 
 KEY
 bytes	description
-1	key type (00 normal key, 01 sliding key)
+1	key type (00 normal key, 01 sliding key, 02 modifier key, 04 multiple key)
+...	these fields depend on the key type (KEY_NORMAL, KEY_SLIDING, etc.)
+
+KEY_NORMAL
+bytes	description
+1	FIELD_KEY_FLAGS
+1+n	letter
+1	key size
+
+KEY_SLIDING
+bytes	description
+1	FIELD_KEY_FLAGS
+1	number of keys on the sliding key | 0x80
+1+n	letter
+1+n	letter
+	...
+1	key size
+
+KEY_MODIFIER
+?
+
+KEY_MULTIPLE
+bytes	description
+1	number of keys
+...	KEY
+...	KEY
+
+FIELD_KEY_FLAGS
+bytes	description
 1	key flags (bitfield)
 	bits:	0 (0x01)	alpha
 		1 (0x02)	numeric
@@ -80,16 +130,3 @@ bytes	description
 		4 (0x10)	special
 		5 (0x20)	dead
 		6 (0x40)	whitespace
-...	these fields depend on key type (KEY_NORMAL or KEY_SLIDING)
-1	key size
-
-KEY_NORMAL
-bytes	description
-1	length of the next field
-n	letter
-
-KEY_SLIDING
-bytes	description
-1	number of keys on the sliding key | 0x80
-...	KEY_NORMAL
-...	KEY_NORMAL

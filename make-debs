@@ -1,0 +1,14 @@
+#!/bin/bash
+mkdir -p build
+while read fname name desc; do
+	echo keyboard-$name
+	lang=`grep ^lang "keyboards/$fname" | sed 's/^.*"\(.*\)".*$/\1/'`
+	echo "$lang.vkb:	../keyboards/$fname" > build/Makefile
+	echo "	../vkb_compiler ../keyboards/$fname $lang.vkb" >> build/Makefile
+	rm -rf debian
+	cp -r debian.in debian
+	for f in debian/*; do
+		sed -i -e "s/@@NAME@@/$name/g" -e "s/@@DESC@@/$desc/g" -e "s/@@LANG@@/$lang/g" "$f"
+	done
+	dpkg-buildpackage -rfakeroot
+done < keyboards/keyboards.list

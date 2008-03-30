@@ -1,0 +1,7 @@
+#!/bin/sh
+langs=`gconftool -g /apps/osso/inputmethod/available_languages | sed 's/[][]//g'`
+echo $langs | grep -q @@LANG@@ || gconftool -t list --list-type=string -s /apps/osso/inputmethod/available_languages "[$langs,@@LANG@@]"
+gconftool -t string -s /apps/osso/inputmethod/primary_language @@LANG@@
+/etc/osso-af-init/keyboard.sh stop > /dev/null
+/etc/osso-af-init/keyboard.sh start > /dev/null
+exit 0

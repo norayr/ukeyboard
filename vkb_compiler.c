@@ -33,17 +33,17 @@ struct tokenizer {
 
 char keywords[][32] = {
 	"header", "name", "lang", "wc", "size", "width", "height",
-	"textpos", "left", "top", "kbd_normal", "kbd_thumb", "lowercase",
-	"lowercase_num", "uppercase", "uppercase_num", "special1",
-	"special2", "margin", "default_size", "row", "key", "slide",
-	"white", "alpha", "num", "special", "hexa", "tele", "dead"
+	"textpos", "left", "top", "kbd_normal", "kbd_thumb", "kbd_special",
+	"lowercase", "lowercase_num", "uppercase", "uppercase_num",
+	"special", "margin", "default_size", "row", "key", "slide",
+	"white", "alpha", "num", "hexa", "tele", "dead"
 };
 enum keywords_const {
 	TOK_HEADER, TOK_NAME, TOK_LANG, TOK_WC, TOK_SIZE, TOK_WIDTH, TOK_HEIGHT,
-	TOK_TEXTPOS, TOK_LEFT, TOK_TOP, TOK_KBD_NORMAL, TOK_KBD_THUMB, TOK_LOWERCASE,
-	TOK_LOWERCASE_NUM, TOK_UPPERCASE, TOK_UPPERCASE_NUM, TOK_SPECIAL1,
-	TOK_SPECIAL2, TOK_MARGIN, TOK_DEFAULT_SIZE, TOK_ROW, TOK_KEY, TOK_SLIDE,
-	TOK_WHITE, TOK_ALPHA, TOK_NUM, TOK_SPECIAL, TOK_HEXA, TOK_TELE, TOK_DEAD
+	TOK_TEXTPOS, TOK_LEFT, TOK_TOP, TOK_KBD_NORMAL, TOK_KBD_THUMB, TOK_KBD_SPECIAL,
+	TOK_LOWERCASE, TOK_LOWERCASE_NUM, TOK_UPPERCASE, TOK_UPPERCASE_NUM,
+	TOK_SPECIAL, TOK_MARGIN, TOK_DEFAULT_SIZE, TOK_ROW, TOK_KEY, TOK_SLIDE,
+	TOK_WHITE, TOK_ALPHA, TOK_NUM, TOK_HEXA, TOK_TELE, TOK_DEAD
 };
 
 enum tok_type {
@@ -256,25 +256,33 @@ struct layout {
 	int default_size;
 	int rows_cnt;
 	struct row *rows;
+	struct layout *sublayout;
+	struct layout *next;
 };
+
+#define LAY_LOWERCASE		0
+#define LAY_UPPERCASE		1
+#define LAY_LOWERCASE_NUM	2
+#define LAY_UPPERCASE_NUM	3
+#define LAY_SPECIAL		4
+#define LAY_SPECIAL_LOWER	5
+#define LAY_SPECIAL_UPPER	6
 
 struct kbd {
 	int type;
 	int layouts_cnt;
-	struct layout *(layouts[4]);
+	struct layout *layouts;
+	struct kbd *next;
 };
-
-#define LIDX_LOWERCASE		0
-#define LIDX_UPPERCASE		1
-#define LIDX_LOWERCASE_NUM	2
-#define LIDX_UPPERCASE_NUM	3
-#define LIDX_SPECIAL1		2
-#define LIDX_SPECIAL2		3
 
 struct size {
 	int dim[5];
 	struct size *next;
 };
+
+#define KBD_NORMAL		0
+#define KBD_THUMB		4
+#define KBD_SPECIAL		1
 
 struct global {
 	char *name;
@@ -283,11 +291,8 @@ struct global {
 	int sizes_cnt;
 	struct size *sizes;
 	int kbds_cnt;
-	struct kbd *(kbds[2]);
+	struct kbd *kbds;
 };
-
-#define KIDX_NORMAL		0
-#define KIDX_THUMB		1
 
 /*** parser ***/
 
@@ -522,17 +527,47 @@ void parse_row(struct parser *parser, struct layout *lay)
 	}
 }
 
-void parse_layout(struct parser *parser, struct kbd *kbd, int idx)
+void parse_layout(struct parser *parser, struct kbd *kbd, int type)
 {
 	struct layout *lay = e_malloc(sizeof(struct layout));
 
-	kbd->layouts[idx] = lay;
-	lay->type = idx;
+	if (type == LAY_LOWERCASE_NUM || type == LAY_UPPERCASE_NUM) {
+		/* numeric layout is a sublayout of a normal layout */
+		struct layout *find = kbd->layouts;
+		while (find) {
+			if (find->type == type - 2) {
+				find->sublayout = lay;
+				break;
+			}
+			find = find->next;
+		}
+		if (!find)
+			error(parser, "lowercase_num/uppercase_num has to follow lowercase/uppercase definition");
+	} else {
+		struct layout *last = kbd->layouts;
+
+		if (!last)
+			kbd->layouts = lay;
+		else {
+			while (last->next)
+				last = last->next;
+			last->next = lay;
+		}
+		kbd->layouts_cnt++;
+		if ((type == LAY_UPPERCASE && (!last || last->type != LAY_LOWERCASE)) ||
+		    (type == LAY_SPECIAL_UPPER && (!last || last->type != LAY_SPECIAL_LOWER)))
+			error(parser, "uppercase has to follow lowercase definition");
+		if (type == LAY_SPECIAL_UPPER && last->name)
+			lay->name = newstrcpy(last->name);
+	}
+	lay->type = type;
 	get_tok_begin(parser);
 	while (1) {
 		get_tok(parser);
 		if (is_keyword(parser, TOK_NAME)) {
 			get_tok_string(parser);
+			if (lay->name)
+				error(parser, "name must not be specified for uppercase layout in kbd_special section");
 			lay->name = newstrcpy(parser->tstr);
 		} else if (is_keyword(parser, TOK_MARGIN)) {
 			int i;
@@ -552,32 +587,42 @@ void parse_layout(struct parser *parser, struct kbd *kbd, int idx)
 	}
 }
 
-void parse_kbd(struct parser *parser, struct global *glob, int idx)
+void parse_kbd(struct parser *parser, struct global *glob, int type)
 {
 	struct kbd *kbd = e_malloc(sizeof(struct kbd));
 
-	glob->kbds[idx] = kbd;
-	kbd->type = idx;
+	if (!glob->kbds)
+		glob->kbds = kbd;
+	else {
+		struct kbd *last = glob->kbds;
+		while (last->next)
+			last = last->next;
+		last->next = kbd;
+	}
+	glob->kbds_cnt++;
+	kbd->type = type;
 	get_tok_begin(parser);
 	while (1) {
 		get_tok(parser);
 		if (is_keyword(parser, TOK_LOWERCASE))
-			parse_layout(parser, kbd, LIDX_LOWERCASE);
-		else if (is_keyword(parser, TOK_LOWERCASE_NUM))
-			parse_layout(parser, kbd, LIDX_LOWERCASE_NUM);
+			parse_layout(parser, kbd, type == KBD_SPECIAL ? LAY_SPECIAL_LOWER : LAY_LOWERCASE);
 		else if (is_keyword(parser, TOK_UPPERCASE))
-			parse_layout(parser, kbd, LIDX_UPPERCASE);
-		else if (is_keyword(parser, TOK_UPPERCASE_NUM))
-			parse_layout(parser, kbd, LIDX_UPPERCASE_NUM);
-		else if (is_keyword(parser, TOK_SPECIAL1))
-			parse_layout(parser, kbd, LIDX_SPECIAL1);
-		else if (is_keyword(parser, TOK_SPECIAL2))
-			parse_layout(parser, kbd, LIDX_SPECIAL2);
-		else if (is_end(parser)) {
-			int i;
-			for (i = 0; i < 5; i++)
-				if (kbd->layouts[i])
-					kbd->layouts_cnt++;
+			parse_layout(parser, kbd, type == KBD_SPECIAL ? LAY_SPECIAL_UPPER : LAY_UPPERCASE);
+		else if (is_keyword(parser, TOK_LOWERCASE_NUM)) {
+			if (type != KBD_NORMAL)
+				error(parser, "lowercase_num allowed only in kbd_normal section");
+			parse_layout(parser, kbd, LAY_LOWERCASE_NUM);
+		} else if (is_keyword(parser, TOK_UPPERCASE_NUM)) {
+			if (type != KBD_NORMAL)
+				error(parser, "uppercase_num allowed only in kbd_normal section");
+			parse_layout(parser, kbd, LAY_UPPERCASE_NUM);
+		} else if (is_keyword(parser, TOK_SPECIAL)) {
+			if (type != KBD_THUMB && type != KBD_SPECIAL)
+				error(parser, "special allowed only in kbd_thumb and kbd_special sections");
+			parse_layout(parser, kbd, LAY_SPECIAL);
+		} else if (is_end(parser)) {
+			if (!kbd->layouts_cnt)
+				error(parser, "no keyboard layouts defined");
 			return;
 		} else
 			error_end(parser);
@@ -594,17 +639,17 @@ void parse_global(struct parser *parser)
 		if (is_keyword(parser, TOK_HEADER))
 			parse_header(parser, glob);
 		else if (is_keyword(parser, TOK_KBD_NORMAL))
-			parse_kbd(parser, glob, KIDX_NORMAL);
+			parse_kbd(parser, glob, KBD_NORMAL);
 		else if (is_keyword(parser, TOK_KBD_THUMB))
-			parse_kbd(parser, glob, KIDX_THUMB);
+			parse_kbd(parser, glob, KBD_THUMB);
+		else if (is_keyword(parser, TOK_KBD_SPECIAL))
+			parse_kbd(parser, glob, KBD_SPECIAL);
 		else if (is_eof(parser)) {
-			if (glob->kbds[0])
-				glob->kbds_cnt++;
-			if (glob->kbds[1])
-				glob->kbds_cnt++;
+			if (!glob->kbds_cnt)
+				error(parser, "no keyboards defined");
 			return;
 		} else
-			error(parser, "header, kbd_normal or kbd_thumb expected");
+			error(parser, "header, kbd_normal, kbd_thumb or kbd_special expected");
 	}
 }
 
@@ -658,7 +703,7 @@ void writer_word(struct writer *writer, unsigned int w)
 void writer_string(struct writer *writer, char *s)
 {
 	int len;
-	
+
 	if (!s)
 		len = 0;
 	else
@@ -723,69 +768,68 @@ void writer_sublayout(struct writer *writer, struct layout *lay)
 		writer_keys(writer, tmp->keys, lay->default_size);
 }
 
-void writer_layouts(struct writer *writer, struct layout *lay1, struct layout *lay2)
+void writer_layouts(struct writer *writer, struct layout *lay, int idx)
 {
-	int w;
+	int type, other;
 
-	switch (lay1->type) {
-	case LIDX_LOWERCASE:
-		w = 0x0100;
+	switch (lay->type) {
+	case LAY_LOWERCASE:
+		type = 0;
 		break;
-	case LIDX_UPPERCASE:
-		w = 0x0001;
+	case LAY_UPPERCASE:
+		type = 1;
 		break;
-	case LIDX_SPECIAL1:
-	case LIDX_SPECIAL2:
 	default:
-		w = 0xff02;
+		type = 2;
 		break;
 	}
-	writer_word(writer, w);
-	writer_string(writer, lay1->name);
-	writer_byte(writer, lay2 ? 2 : 1);
-	writer_sublayout(writer, lay1);
-	if (lay2)
-		writer_sublayout(writer, lay2);
+	switch (lay->type) {
+	case LAY_LOWERCASE:
+	case LAY_SPECIAL_LOWER:
+		other = idx + 1;
+		break;
+	case LAY_UPPERCASE:
+	case LAY_SPECIAL_UPPER:
+		other = idx - 1;
+		break;
+	default:
+		other = 0xff;
+		break;
+	}
+	writer_byte(writer, type);
+	writer_byte(writer, other);
+	writer_string(writer, lay->name);
+	writer_byte(writer, lay->sublayout ? 2 : 1);
+	writer_sublayout(writer, lay);
+	if (lay->sublayout)
+		writer_sublayout(writer, lay->sublayout);
 }
 
 void writer_kbd(struct writer *writer, struct kbd *kbd)
 {
+	struct layout *lay;
 	int i;
 
-	writer_byte(writer, kbd->type == KIDX_NORMAL ? 0 : 4);	/* magic */
-	if (kbd->type == KIDX_NORMAL) {
-		i = 0;
-		if (kbd->layouts[LIDX_LOWERCASE])
-			i++;
-		if (kbd->layouts[LIDX_UPPERCASE])
-			i++;
-	} else
-		i = kbd->layouts_cnt;
-	writer_byte(writer, i);
-	writer_byte(writer, 0);					/* magic */
-	writer_byte(writer, kbd->type == KIDX_NORMAL ? 0 : 3);	/* magic */
-	for (i = 0; i < 4; i++) {
-		if (kbd->type == KIDX_NORMAL &&
-		    (i == LIDX_LOWERCASE_NUM || i == LIDX_UPPERCASE_NUM))
-			continue;
-		if (!kbd->layouts[i])
-			continue;
-		writer_layouts(writer, kbd->layouts[i],
-			       (kbd->type == KIDX_NORMAL) ? kbd->layouts[i + 2] : NULL);
-	}
+	writer_byte(writer, kbd->type);
+	writer_byte(writer, kbd->layouts_cnt);
+	writer_byte(writer, 0);
+	writer_byte(writer, kbd->layouts->default_size);	/* use the default size of the first layout */
+	for (lay = kbd->layouts, i = 0; lay; lay = lay->next, i++)
+		writer_layouts(writer, lay, i);
 }
 
 void writer_global(struct writer *writer)
 {
 	struct global *glob = writer->global;
-	int i, j;
+	struct kbd *kbd;
+	int i;
 
 	writer_byte(writer, 1);		/* version */
 	writer_byte(writer, glob->kbds_cnt);
 	writer_string(writer, glob->name);
 	writer_string(writer, glob->lang);
 	writer_string(writer, glob->wc);
-	writer_byte(writer, 2);		/* magic */
+	writer_byte(writer, 2);		/* always use the default screen modes */
 	writer_byte(writer, 0);
 	writer_byte(writer, 1);
 	writer_byte(writer, glob->sizes_cnt);
@@ -795,13 +839,9 @@ void writer_global(struct writer *writer)
 		writer_word(writer, 0);
 	for (i = 0; i < 20; i++)
 		writer_byte(writer, 0);
-	j = 0;
-	for (i = 0; i < 2; i++) {
-		if (!glob->kbds[i])
-			continue;
-		writer->starts[j] = ftell(writer->f);
-		writer_kbd(writer, glob->kbds[i]);
-		j++;
+	for (kbd = glob->kbds, i = 0; kbd; kbd = kbd->next, i++) {
+		writer->starts[i] = ftell(writer->f);
+		writer_kbd(writer, kbd);
 	}
 	fseek(writer->f, writer->start_table, SEEK_SET);
 	for (i = 0; i < glob->kbds_cnt; i++)

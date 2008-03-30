@@ -238,7 +238,7 @@ uppercase {
 	slide special { key : key ; key - key _ key / key < key > }
 	}
 }
-special1 {
+special {
 	name "1!+"
 	margin 0 0 0 0
 	default_size 3
@@ -282,7 +282,7 @@ special1 {
 	key > special
 	}
 }
-special2 {
+special {
 	name "*§¿"
 	margin 0 0 0 0
 	default_size 3

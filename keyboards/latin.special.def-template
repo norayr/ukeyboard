@@ -1,0 +1,86 @@
+header {
+name	""
+lang	"en_GB"
+wc	""
+
+size	0	{ width 35 height 35 textpos 26 left 0 top 0 }
+}
+
+kbd_special {
+special {
+	name "test 1"
+	default_size 0
+	row {
+	key a alpha
+	}
+	row {
+	key b alpha
+	}
+	row {
+	key c alpha
+	}
+}
+special {
+	name "test 2"
+	default_size 0
+	row {
+	key d alpha
+	}
+	row {
+	key e alpha
+	}
+	row {
+	key f alpha
+	}
+}
+lowercase {
+	name "test 3"
+	default_size 0
+	row {
+	key g alpha
+	}
+	row {
+	key h alpha
+	}
+	row {
+	key i alpha
+	}
+}
+uppercase {
+	default_size 0
+	row {
+	key G alpha
+	}
+	row {
+	key H alpha
+	}
+	row {
+	key I alpha
+	}
+}
+lowercase {
+	name "test 4"
+	default_size 0
+	row {
+	key j alpha
+	}
+	row {
+	key k alpha
+	}
+	row {
+	key l alpha
+	}
+}
+uppercase {
+	default_size 0
+	row {
+	key J alpha
+	}
+	row {
+	key K alpha
+	}
+	row {
+	key L alpha
+	}
+}
+}

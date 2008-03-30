@@ -1,0 +1,333 @@
+header {
+name	"Čeština+Esperanto (Dvorak)"
+lang	"eo_EO"
+wc	"cs_CZ"
+
+size	0	{ width 35 height 35 textpos 26 left 0 top 0 }
+size	1	{ width 50 height 35 textpos 26 left 0 top 0 }
+size	2	{ width 55 height 35 textpos 26 left 0 top 0 }
+size	3	{ width 72 height 55 textpos 41 left 0 top 0 }
+size	4	{ width 143 height 55 textpos 41 left 0 top 0 }
+size	5	{ width 28 height 35 textpos 26 left 0 top 0 }
+}
+
+kbd_normal {
+lowercase {
+	margin 0 0 0 0
+	default_size 0
+	row {
+	key p alpha tele size 2
+	key y alpha
+	key f alpha hexa
+	key g alpha
+	key c alpha hexa
+	key r alpha
+	key l alpha
+	key ( special tele
+	key ) special tele
+	key ´ alpha dead size 5
+	key ˇ alpha dead size 5
+	key ^ alpha dead size 5
+	}
+	row {
+	key a alpha hexa
+	key o alpha
+	key e alpha hexa
+	key u alpha
+	key i alpha
+	key d alpha hexa
+	key h alpha
+	key t alpha
+	key n alpha
+	key s alpha
+	key ů alpha
+	key ŭ alpha
+	}
+	row {
+	key q alpha size 2
+	key j alpha
+	key k alpha
+	key x alpha
+	key b alpha hexa
+	key m alpha
+	key w alpha tele
+	key v alpha
+	key z alpha
+	key , special tele size 5
+	key . special tele size 5
+	key ? special tele size 5
+	}
+}
+lowercase_num {
+	margin 0 0 0 9
+	default_size 0
+	row {
+	key 1 num hexa tele
+	key 2 num hexa tele
+	key 3 num hexa tele
+	}
+	row {
+	key 4 num hexa tele
+	key 5 num hexa tele
+	key 6 num hexa tele
+	}
+	row {
+	key 7 num hexa tele
+	key 8 num hexa tele
+	key 9 num hexa tele
+	}
+	row {
+	key @ special
+	key 0 num hexa tele
+	key / special
+	}
+}
+uppercase {
+	margin 0 0 0 0
+	default_size 0
+	row {
+	key P alpha tele size 2
+	key Y alpha
+	key F alpha hexa
+	key G alpha
+	key C alpha hexa
+	key R alpha
+	key L alpha
+	key „ special
+	key “ special
+	key ´ alpha dead size 5
+	key ˇ alpha dead size 5
+	key ^ alpha dead size 5
+	}
+	row {
+	key A alpha hexa
+	key O alpha
+	key E alpha hexa
+	key U alpha
+	key I alpha
+	key D alpha hexa
+	key H alpha
+	key T alpha
+	key N alpha
+	key S alpha
+	key Ů alpha
+	key | special
+	}
+	row {
+	key Q alpha size 2
+	key J alpha
+	key K alpha
+	key X alpha
+	key B alpha hexa
+	key M alpha
+	key W alpha tele
+	key V alpha
+	key Z alpha
+	key : special size 5
+	key _ special size 5
+	key ! special size 5
+	}
+}
+uppercase_num {
+	margin 0 0 0 9
+	default_size 0
+	row {
+	key % special
+	key \ special
+	key # special tele
+	}
+	row {
+	key + special tele
+	key - num special tele
+	key = special
+	}
+	row {
+	key * special tele
+	key ÷ special
+	key & special
+	}
+	row {
+	key ; special
+	key < special
+	key > special
+	}
+}
+}
+
+kbd_thumb {
+lowercase {
+	name "abc"
+	margin 0 0 0 0
+	default_size 3
+	row {
+	key p alpha tele
+	key y alpha
+	key f alpha hexa
+	key g alpha
+	key c alpha hexa
+	key r alpha
+	key l alpha
+	key ´ alpha dead
+	key ˇ alpha dead
+	key ^ alpha dead
+	slide special { key : key - key ! key ; key _ key / key ~ key ≈ }
+	}
+	row {
+	key a alpha hexa
+	key o alpha
+	key e alpha hexa
+	key u alpha
+	key i alpha
+	key d alpha hexa
+	key h alpha
+	key t alpha
+	key n alpha
+	key s alpha
+	key ů alpha
+	}
+	row {
+	white
+	key q alpha
+	key j alpha
+	key k alpha
+	key x alpha
+	key b alpha hexa
+	key m alpha
+	key w alpha tele
+	key v alpha
+	key z alpha
+	slide special { key . key , key ? key @ key & key ( key ) }
+	}
+}
+uppercase {
+	name "ABC"
+	margin 0 0 0 0
+	default_size 3
+	row {
+	key P alpha tele
+	key Y alpha
+	key F alpha hexa
+	key G alpha
+	key C alpha hexa
+	key R alpha
+	key L alpha
+	key ´ alpha dead
+	key ˇ alpha dead
+	key ^ alpha dead
+	slide special { key : key - key ! key ; key _ key / key ~ key ≈ }
+	}
+	row {
+	key A alpha hexa
+	key O alpha
+	key E alpha hexa
+	key U alpha
+	key I alpha
+	key D alpha hexa
+	key H alpha
+	key T alpha
+	key N alpha
+	key S alpha
+	key Ů alpha
+	}
+	row {
+	white
+	key Q alpha
+	key J alpha
+	key K alpha
+	key X alpha
+	key B alpha hexa
+	key M alpha
+	key W alpha tele
+	key V alpha
+	key Z alpha
+	slide special { key . key , key ? key @ key & key ( key ) }
+	}
+}
+special {
+	name "1!+"
+	margin 0 0 0 0
+	default_size 3
+	row {
+	key 1 num hexa tele
+	key 2 num hexa tele
+	key 3 num hexa tele
+	key + special tele
+	key - num special tele
+	key * special tele
+	key ÷ special
+	key = special
+	key % special
+	key | special
+	key # special
+	}
+	row {
+	key 4 num hexa tele
+	key 5 num hexa tele
+	key 6 num hexa tele
+	key „ special
+	key “ special
+	key / special
+	key \ special
+	key ( special
+	key ) special
+	key [ special
+	key ] special
+	}
+	row {
+	key 7 num hexa tele
+	key 8 num hexa tele
+	key 9 num hexa tele
+	key 0 num hexa tele
+	key _ special
+	key @ special
+	key « special
+	key » special
+	key ŭ alpha
+	key < special
+	key > special
+	}
+}
+special {
+	name "Xeelee™"
+	margin 0 0 0 0
+	default_size 3
+	row {
+	key $ special
+	key ^ special
+	key € special
+	key ‘ special
+	key ’ special
+	key ± special
+	key ≠ special
+	key × special
+	key ≤ special
+	key ≥ special
+	key ∞ special
+	}
+	row {
+	key · special
+	key • special
+	key … special
+	key ‰ special
+	key № special
+	key ¶ special
+	key © special
+	key ® special
+	key ™ special
+	key √ special
+	}
+	row {
+	key α special
+	key β special
+	key Γ special
+	key γ special
+	key Δ special
+	key δ special
+	key ε special
+	key ∑ special
+	key µ special
+	key π special
+	key Ω special
+	}
+}
+}

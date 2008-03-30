@@ -23,6 +23,7 @@ build-stamp: configure-stamp
 	dh_testdir
 
 	$(MAKE)
+	$(MAKE) -C build
 
 	touch build-stamp
 
@@ -32,7 +33,7 @@ clean:
 	rm -f build-stamp configure-stamp
 
 	# Add here commands to clean up after the build process.
-	-rm -f cs_CZ.vkb vkb_compiler
+	-rm -f build/*.vkb vkb_compiler
 
 	dh_clean 
 
@@ -42,8 +43,8 @@ install: build
 	dh_clean -k 
 	dh_installdirs
 
-	# Add here commands to install the package into debian/czkeyboard.
-	install -m 644 cs_CZ.vkb $(CURDIR)/debian/czkeyboard/usr/share/keyboards/
+	# Add here commands to install the package into debian/tmp
+	install -m 644 build/@@LANG@@.vkb $(CURDIR)/debian/tmp/usr/share/keyboards/
 
 
 # Build architecture-independent files here.

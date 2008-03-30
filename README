@@ -1,6 +1,8 @@
 ** Keyboard layout compiler for Nokia N800 **
 
 Distributed under GPLv2.
+(Except doc/vkb-format-v2, which is placed into public domain; see the file
+for more info.)
 
 Based on the following sources:
 - source code of gen_vkb tool for Nokia 770

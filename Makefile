@@ -1,9 +1,15 @@
-cs_CZ.vkb:	cs_CZ.def vkb_compiler
-	./vkb_compiler cs_CZ.def cs_CZ.vkb
 vkb_compiler:	vkb_compiler.c
 	gcc -W -Wall -o vkb_compiler vkb_compiler.c
 
+deb:
+	./make-debs
 
-install-kbd:
-	install -m 755 -d /usr/share/keyboards/
-	install -m 644 cs_CZ.vkb /usr/share/keyboards/
+clean:
+	rm -f vkb_compiler
+	rm -rf build
+
+distclean:
+	rm -f vkb_compiler
+	rm -rf build
+	rm -rf debian
+	rm -f *-stamp
