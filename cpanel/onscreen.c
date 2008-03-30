@@ -64,7 +64,7 @@ static GtkWidget *start(GConfClient *client, GtkWidget *win, void **data)
 	struct data *d;
 	GtkBox *vbox;
 	GtkSizeGroup *group;
-	GtkWidget *align;
+	GtkWidget *align, *caption;
 
 	(void)win;
 	d = g_new0(struct data, 1);
@@ -87,8 +87,10 @@ static GtkWidget *start(GConfClient *client, GtkWidget *win, void **data)
 	if (!internal_kbd) {
 		d->use_finger_sel = GTK_TOGGLE_BUTTON(gtk_check_button_new());
 		gtk_toggle_button_set_active(d->use_finger_sel, get_bool(client, "launch_finger_kb_on_select"));
-		gtk_box_pack_start_defaults(vbox, hildon_caption_new(group, "Launch finger keyboard with " HWK_BUTTON_SELECT,
-			GTK_WIDGET(d->use_finger_sel), NULL, HILDON_CAPTION_MANDATORY));
+		caption = hildon_caption_new(group, NULL,
+			GTK_WIDGET(d->use_finger_sel), NULL, HILDON_CAPTION_MANDATORY);
+		hildon_caption_set_label_markup(HILDON_CAPTION(caption), "Launch finger keyboard with " HWK_BUTTON_SELECT);
+		gtk_box_pack_start_defaults(vbox, caption);
 	}
 
 	d->hand_speed = HILDON_CONTROLBAR(hildon_controlbar_new());

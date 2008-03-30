@@ -1,3 +1,10 @@
+ukeyboard (1.1) unstable; urgency=low
+
+  * Fixed wrong label ("Launch finger keyboard with select") in the
+    control panel applet on N800.
+
+ -- Jiri Benc <jbenc@upir.cz>  Tue, 12 Feb 2008 21:48:56 +0100
+
 ukeyboard (1.0) unstable; urgency=low
 
   * Added support for OS2008 on-screen keyboards.
