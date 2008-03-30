@@ -1,0 +1,6 @@
+#!/bin/sh
+echo 'Czech keyboard installed.' > /tmp/_czkeyboard_message
+echo 'To activate it, switch the device off and on again.' >> /tmp/_czkeyboard_message
+maemo-confirm-text 'Installation complete' /tmp/_czkeyboard_message
+rm -f /tmp/_czkeyboard_message
+exit 0

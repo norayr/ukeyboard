@@ -1,0 +1,95 @@
+vkb format for OS 2007
+
+- multibyte fields are little endian
+- everything is utf-8 encoded
+- all numbers in the "description" column are written in hexadecimal
+- some (all?) length fields can be zero
+
+GLOBAL HEADER
+bytes	description
+1	version (01)
+1	number of sections (02)
+1	length of the next field
+n	descriptive (human-visible) name of the locale
+1	length of the next field
+n	locale name (e.g. en_GB)
+1	length of the next field
+n	locale name of a word completion dictionary
+3	unknown (02 00 01)
+1	number of key sizes (05)
+...	KEY SIZE
+...	KEY SIZE
+	(default key sizes are:
+	23 23 1a 00 00  32 23 1a 00 00  37 23 1a 00 00  48 37 29 00 00  8f 37 29 00 00
+	that's: 00 normal key, 01 longer key used on the right side of odd
+	rows, 02 more longer key used on the left side of odd rows, 03 big
+	key used in thumb kbd, 04 double width big key used in thumb kbd)
+2	absolute offset in the file of the first section
+2	absolute offset in the file of the second section
+20	zeros
+...	SECTION
+...	SECTION
+
+KEY SIZE
+bytes	description
+1	width of a key (in pixels? rather seems to be percentage or something)
+1	height of a key
+1	offset of a text (from the top of the key to the bottom of the text)
+1	left padding (extra value, not included in the width)
+1	top padding (extra value, not included in the height)
+
+SECTION HEADER
+bytes	description
+1	maybe type of the section (00 normal kbd, 04 thumb kbd)
+1	number of layouts (02 for normal kbd, 04 for thumb kbd)
+2	unknown (00 00 for normal kbd, 00 03 for thumb kbd); doesn't seem
+	that changing this field has any effect
+...	LAYOUT
+...	LAYOUT
+
+LAYOUT HEADER
+bytes	description
+2	layout type (00 01 lowercase, 01 00 uppercase, 02 ff special chars)
+1	length of the next field
+n	name of the layout (used in thumb kbd, should be 3 utf-8 chars)
+1	number of sublayouts (normal kbd has 2 sublayouts, thumb kbd has 1 sublayout)
+...	SUBLAYOUT
+...	SUBLAYOUT
+
+SUBLAYOUT HEADER
+bytes	description
+1	number of keys in the sublayout
+1	number of rows of the sublayout
+1	left margin (in pixels?) (9 for numeric kbd)
+1	top margin
+1	bottom margin
+1	right margin (seems that setting of margins affects also other
+	sublayout margins in some strange way)
+n	number of keys in individual rows (1 byte for each row)
+...	KEY
+...	KEY
+
+KEY
+bytes	description
+1	key type (00 normal key, 01 sliding key)
+1	key flags (bitfield)
+	bits:	0 (0x01)	alpha
+		1 (0x02)	numeric
+		2 (0x04)	hexa
+		3 (0x08)	telephone
+		4 (0x10)	special
+		5 (0x20)	dead
+		6 (0x40)	whitespace
+...	these fields depend on key type (KEY_NORMAL or KEY_SLIDING)
+1	key size
+
+KEY_NORMAL
+bytes	description
+1	length of the next field
+n	letter
+
+KEY_SLIDING
+bytes	description
+1	number of keys on the sliding key | 0x80
+...	KEY_NORMAL
+...	KEY_NORMAL
