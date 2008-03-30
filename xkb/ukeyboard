@@ -131,3 +131,32 @@ xkb_symbols "sk-qwertz" {
 	key <AD06>	{ [ z,		Z,		6,		6		] };
 	key <AB01>	{ [ y,		Y,		EuroSign,	EuroSign	] };
 };
+
+
+// author: Marcin Juszkiewicz
+xkb_symbols "pl" {
+	name[Group1] = "Polska";
+
+	include "nokia_vndr/ukeyboard(base)"
+
+	key <COMP>	{ [ ISO_Level5_Shift,	ISO_Level5_Shift,	ISO_Level5_Shift,	ISO_Level5_Shift	] };
+	modifier_map Mod3 { ISO_Level5_Shift };
+
+//						normal	Shift	Fn		Fn+Shift	Chr		S+Chr		Fn+Chr		Fn+Shift+Chr
+	key <SPCE>	{ type="EIGHT_LEVEL", [ space,	space,	bar,		bar,		Tab,		Tab,		bar,		bar		] };
+                                                                                        
+	key <AC07>	{ type="EIGHT_LEVEL", [ j,	J,	parenleft,	parenleft,	bracketleft,	bracketleft,	parenleft,	parenleft	] };
+	key <AC08>	{ type="EIGHT_LEVEL", [ k,	K,	parenright,	parenright,	bracketright,	bracketright,	parenright,	parenright	] };
+                                                                                    
+	key <AD03>	{ type="EIGHT_LEVEL", [ e,	E,	3,		3,		eogonek,	Eogonek,	3,		3		] };
+	key <AD09>	{ type="EIGHT_LEVEL", [ o,	O,	9,		9,		oacute,		Oacute,		9,		9		] };
+                                                                                    
+	key <AC01>	{ type="EIGHT_LEVEL", [ a,	A,	exclam,		exclam,		aogonek,	Aogonek,	exclam,		exclam		] };
+	key <AC02>	{ type="EIGHT_LEVEL", [ s,	S,	quotedbl,	quotedbl,	sacute,		Sacute,		quotedbl,	quotedbl	] };
+	key <AC09>	{ type="EIGHT_LEVEL", [ l,	L,	asterisk,	asterisk,	lstroke,	Lstroke,	asterisk,	asterisk	] };
+
+	key <AB01>	{ type="EIGHT_LEVEL", [ z,	Z,	yen,		yen,		zabovedot,	Zabovedot,	yen,		yen		] };
+	key <AB02>	{ type="EIGHT_LEVEL", [ x,	X,	asciicircum,	asciicircum,	zacute,		Zacute,		asciicircum,	asciicircum	] };
+	key <AB03>	{ type="EIGHT_LEVEL", [ c,	C,	asciitilde,	asciitilde,	cacute,		Cacute,		asciitilde,	asciitilde	] };
+	key <AB06>	{ type="EIGHT_LEVEL", [ n,	N,	dollar,		dollar,		nacute,		Nacute,		dollar,		dollar		] };
+};
