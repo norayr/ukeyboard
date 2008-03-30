@@ -1,3 +1,8 @@
+# package: esperanto
+# title: Esperanto keyboard layout
+# desc: Created by Jiri Benc <jbenc@upir.cz>
+# desc: http://www.upir.cz/maemo/keyboards/
+
 header {
 name	"Esperanto"
 lang	"eo_EO"

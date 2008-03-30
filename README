@@ -12,12 +12,4 @@ Note that the input format is different than the one used by the gen_vkb
 tool. This tool uses a plain text file which is (contrary to XML) much more
 easier to write when creating the layout by hand.
 
-The format is not documented but should be quite straightforward; see
-the attached Czech keyboard definition for an example.
-
-For a description what those various key types mean, see
-http://maemo.org/development/documentation/how-tos/3-x/howto_him_bora.html#vkb
-
-Note that kind of keys other than "Normal" and "Sliding" are not supported.
-Also, the "Whitespace" attribute is treated in the input file like a kind of
-key, not like an attribute.
+See doc/howto for instructions how to create a custom keyboard layout.

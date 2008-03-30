@@ -1,3 +1,8 @@
+# package: xeelee
+# title: Xeelee's Czech+Esperanto Dvorak keyboard layout
+# desc: Created by Xeelee and Jiri Benc
+# desc: http://www.upir.cz/maemo/keyboards/
+
 header {
 name	"Čeština+Esperanto (Dvorak)"
 lang	"eo_EO"

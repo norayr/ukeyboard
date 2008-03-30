@@ -1,0 +1,371 @@
+How to create a custom keyboard layout for Nokia internet tablets
+=================================================================
+
+1. Making a layout compiler
+---------------------------
+
+First, you need to compile a compiler. You don't need the scratchbox (an
+environment used for Maemo development) to do that - any Linux distribution
+would do. For creating a .deb package the scratchbox is needed, though.
+
+Simply unpack the maemokeyboard package and run "make" in the maemokeyboard
+directory:
+	tar -xjf ukeyboard-VERSION.tar.bz2
+	cd ukeyboard-VERSION
+	make
+(replace VERSION by the version you've downloaded)
+
+2. Using the layout compiler
+----------------------------
+
+Run vkb_compiler created in the previous step. As parameters, supply
+a layout source file and name of the destination file. The name of the
+destination file must have a .vkb extension.
+	./vkb_compiler my_layout.def xx_XX.vkb
+
+For rules for naming of destination files, see the section 4.1.
+
+3. Testing the layout
+---------------------
+
+Copy the compiled .vkb file to the /usr/share/keyboards/ directory on the
+device.
+
+If the file did not exist before (i.e. you added a new language), the new
+layout won't appear in Text input settings in the Control panel. The device
+has to be taught about the new layout first.
+
+The easiest way to do that is to reboot the device. During the boot, the
+device scans for available layouts. You can set your layout in the Control
+panel afterwards.
+
+It is possible to do that without a reboot, though. Use gconf-editor and add
+your language code to the /apps/osso/inputmethod/available_languages list.
+Again, set your layout in the Control panel afterwards.
+
+If you are just updating already existing layout, you need to restart the
+input system. The easiest way is a reboot, of course.
+
+To restart the input system without a reboot, run the following commands as
+root on the device:
+	. /etc/osso-af-init/af-defines.sh
+	/etc/osso-af-init/keyboard.sh stop
+	/etc/osso-af-init/keyboard.sh start
+
+4. Limitation of the maemo keyboard layouts
+-------------------------------------------
+
+4.1 Allowed names of .vkb files
+-------------------------------
+
+The name of the compiled (.vkb) file has to match a name defined in the
+"lang" clause in the source (.def) file (see section 6.2).
+
+Futhermore, this name has to be a name of a recognized locale. The current
+set of recognized locales can be found at:
+http://maemo.org/development/documentation/how-tos/3-x/howto_him_bora.html#language-codes
+
+This means you cannot have two layouts for the same language variant
+installed on the device at the same time. It is possible to create two
+layouts and make two .deb packages, which will conflict with each other,
+though (so the user can choose the one s/he wish but not both) - ukeyboard
+has a support for that.
+
+4.2 Layout name
+---------------
+
+Although it is possible to specify a descriptive layout name in the layout,
+it seems to be completely ignored by maemo. Instead, a name corresponding to
+the layout locale is displayed. If there is no support for the given locale
+in the device, just a locale name is displayed.
+
+5. Different types of keyboards and layouts
+-------------------------------------------
+
+There are two types of .vkb files. The first one is a keyboard corresponding
+to a selected language, the second one is a special keyboard activated by
+pressing the "&!e" button. Although vkb_compiler is able to compile both of
+them, this document covers the first type only. By a "keyboard" or "keyboard
+layout" the first type of the keyboard is meant through the whole document.
+
+Each keyboard file contains two keyboard layouts - one for a normal (stylus)
+and one for a thumb keyboard.
+
+A normal layout has two parts, alpha and numeric keyboard, in two variants,
+lowercase and uppercase. This gives four "sublayouts" for a normal layout.
+
+A thumb layout has two mandatory "sublayouts", lowercase and uppercase alpha
+keyboard, and an arbitrary number of "special" sublayouts. They are
+presented as tabs.
+
+Remember, both layouts (normal+thumb) have to be defined.
+
+6. Description of the .def file format
+--------------------------------------
+
+6.1 Basics
+----------
+
+Every keyword, symbol, etc. has to be separated by a whitespace (a space,
+a tab or a newline). Especially, be aware that a whitespace is required
+before and after { and }.
+
+A # character starts a comment; everything following the # character is
+ignored until the end of line. This has one exception, though. If
+a character in a key definition is expected, # is considered a valid
+character and doesn't have a special meaning.
+
+
+6.2 The header
+--------------
+
+A .def file has to start with a header section:
+	header {
+		...header definition...
+	}
+
+Inside the header, few global things are defined:
+- a descriptive name of the keyboard
+- a language code
+- default word completion dictionary
+- dimensions of keys
+
+6.2.1 Descriptive name of the keyboard
+--------------------------------------
+
+A descriptive name of the keyboard is defined by:
+	name "descriptive name"
+
+Note that this name seems to be ignored, see section 4.2. In spite of this,
+please specify the name, it helps maintaing the keyboards.
+
+6.2.2 Language code
+-------------------
+
+The locale name of the keyboard. Must match the .vkb file name (without the
+.vkb extension). See section 4.1 for allowed values of this field.
+
+Example:
+	lang "en_GB"
+
+6.2.3 Word completion dictionary
+--------------------------------
+
+When selecting the keyboard layout in the Control panel, a corresponding
+word completion dictionary is preselected. This is specified by this clause.
+
+Example:
+	wc "en_GB"
+
+6.2.4 Key dimensions
+--------------------
+
+Each key in the keyboard has its dimensions. These dimensions are not
+specified in the key definition, though. Instead, each key has a single
+"size number" assigned. The actual dimensions for the "size number" are
+specified in the header.
+
+The header can contain an arbitrary number of key sizes. The key size
+definition looks like this:
+	size 0 { width 35 height 35 textpos 26 left 0 top 0 }
+
+The number after the "size" keyword (0 in the example) specifies the size
+number. You'll use this number in key definitions to specify the size of the
+particular key.
+
+"width" and "height" specify the dimensions of the key in pixels. (Note that
+if the sum of widths of keys in a row is more or less than the expected
+width, it is proportionally enlarged/shrinked. The same applies to heights.)
+
+"texpos" denotes vertical position of the text on the key (the baseline).
+
+"left" and "top" specify left and top padding of the key (i.e. the empty
+space between the previous and this key).
+
+6.3 Layouts and sublayouts
+--------------------------
+
+After the header, layout sections are present. They are defined as:
+	kbd_normal {
+		...normal keyboard layout definition...
+	}
+
+	kbd_thumb {
+		...thumb keyboard layout definition...
+	}
+
+Inside kbd_normal, the following sections are defined:
+	kbd_normal {
+		lowercase {
+			...alpha lowercase keyboard...
+		}
+		lowercase_num {
+			...numeric lowercase keyboard...
+		}
+		uppercase {
+			...alpha uppercase keyboard...
+		}
+		uppercase_num {
+			...numeric uppercase keyboard...
+		}
+	}
+
+Inside kbd_thumb section, the following sections are defined:
+	kbd_thumb {
+		lowercase {
+			...alpha lowercase keyboard...
+		}
+		uppercase {
+			...alpha uppercase keyboard...
+		}
+		special {
+			...keyboard on the second tab...
+		}
+		special {
+			...keyboard on the third tab...
+		}
+		...
+	}
+
+Definitions in the sublayout sections are the same for normal and thumb
+keyboard, except the "name" clause, which can be present only in the thumb
+keyboard sublayouts.
+
+6.4 Sublayout definition
+------------------------
+
+A sublayout definition contains the following clauses (the numbers and
+values are just examples):
+	name "abc"
+	margin 0 0 0 0
+	default_size 3
+	row {
+		...
+	}
+	row {
+		...
+	}
+	...
+
+6.4.1 Name of the sublayout
+---------------------------
+
+The "name" clause can (and must) be present in thumb keyboard sublayouts
+only. It specifies the name displayed on the corresponding tab.
+
+6.4.2 Margins
+-------------
+
+Folowing the "margin" clause, four numbers are specified. They denotes
+margins of the keyboard starting from top and going clock-wise (i.e. top,
+right, bottom, left).
+
+The margins are used for separating of the numerical from alpha keyboard.
+
+6.4.3 Default size
+------------------
+
+The "default_size" clause specifies the default size number for keys in this
+sublayout. By specifying this, you don't need to add the "size" attribute to
+each of the keys.
+
+Remember, the value refers to the dimensions specified in the header.
+
+6.4.4 Row definitions
+---------------------
+
+An arbitrary number of rows of keys can be present in each sublayout. See
+the section 6.5.
+
+6.5 Key rows
+------------
+
+Each key row consists of several keys. The number of keys can be different
+for different rows.
+
+The row definition looks like this:
+	row {
+		...key 1...
+		...key 2...
+		...
+		...key n...
+	}
+
+There are several ways to define a key, depending on a type of the key:
+	key X
+	white
+	slide { key X key X key X }
+
+Independently on the type, each key can have attributes. The attributes are
+given after the key definition, e.g.:
+	key c alpha hexa
+
+The order of the attributes is not important. The recognized attributes are:
+	alpha
+	num
+	hexa
+	tele
+	special
+	dead
+	size N
+
+6.5.1 Key types
+---------------
+
+There are three key types:
+1. regular keys
+2. a space key
+3. slide keys (repeated pressing of the slide key cycles through a set of
+   characters)
+
+6.5.2 Key definition
+--------------------
+
+After the "key" keyword, the whitespace is required, followed by a single,
+UTF-8 encoded, character (*). This character will be displayed on the key
+and printed when the key is pressed by user.
+
+After the "slide" keyword, a new section ({...}) has to be started,
+containing a "key" keyword followed by a character, followed by a "key"
+keyword, etc. A slide key can contain an arbitrary number of keys.
+
+After the "white" keyword, there is (of course) no character specified.
+
+(*) That's not exactly true. You can specify a bunch of characters, as long
+    as they don't contain a whitespace. It should work as expected, i.e.
+    outputting all the characters when the key is pressed. The author hasn't
+    tested it, though.
+
+6.5.3 Key attributes
+--------------------
+
+The "alpha" attribute denotes an alpha key (i.e. letters A to Z plus
+equivalents in other languages, including characters with a diacritic).
+
+The "num" attribute denotes a numeric key (i.e. 0 to 9 and the minus sign).
+
+The "hexa" attribute denotes a key that can be used in a hexadecimal input
+(i.e. 0 to 9 and A to Z).
+
+The "tele" attribute denotes a key present on a telephone keypad (i.e.
+0 to 9, *, #, and few other keys).
+
+The "special" attribute denotes a non-alphanumeric key (i.e. key that is
+neither a letter nor a number).
+
+The "dead" attribute denotes the key is a combining diacritical mark
+(a so-called "dead key").
+
+The "size" attribute is used when the size of the key should be different
+than the default size for this sublayout. Again, remember that the value
+refers to the dimensions specified in the header.
+
+7 Contact, legal stuff
+----------------------
+
+The document is (c) Jiri Benc, <jbenc@upir.cz>. It is licensed under the
+GPLv2.
+
+If you find an error in this document, please contact the author.
+
+maemo is an unregistered trademark of Nokia Corporation.

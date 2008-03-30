@@ -1,3 +1,14 @@
+ukeyboard (0.3) unstable; urgency=low
+
+  * Renamed to ukeyboard.
+  * Added Bulgarin phonetic and BDS layouts by Nickola Trupcheff.
+  * Fixed Esperanto layout (swapped by mistake with Xeelee's layout).
+  * Added support for comments in the compiler.
+  * Reworked creating of .deb packages (all info is in .def files now).
+  * Added instructions how to create a custom keyboard layout.
+
+ -- Jiri Benc <jbenc@upir.cz>  Tue, 13 Nov 2007 20:23:57 +0000
+
 czkeyboard (0.2-1) unstable; urgency=low
 
   * Fixed and enhanced the file format documentation.

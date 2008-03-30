@@ -151,6 +151,12 @@ void finish_read_string(struct tokenizer *tokenizer, char *dest, size_t size)
 	}
 }
 
+void skip_comment(struct tokenizer *tokenizer)
+{
+	while (*tokenizer->pos)
+		tokenizer->pos++;
+}
+
 int find_keyword(char *s)
 {
 	int i;
@@ -173,14 +179,20 @@ enum tok_type read_tok(struct tokenizer *tokenizer, char *dest, size_t size, int
 {
 	int res;
 
-	if (*tokenizer->pushed) {
-		strncpy(dest, tokenizer->pushed, size - 1);
-		dest[size - 1] = '\0';
-		*tokenizer->pushed = '\0';
-	} else {
-		res = read_raw(tokenizer, dest, size, 0);
-		if (res < 0)
-			return TT_EOF;
+	while (1) {
+		if (*tokenizer->pushed) {
+			strncpy(dest, tokenizer->pushed, size - 1);
+			dest[size - 1] = '\0';
+			*tokenizer->pushed = '\0';
+		} else {
+			res = read_raw(tokenizer, dest, size, 0);
+			if (res < 0)
+				return TT_EOF;
+		}
+		if (dest[0] == '#')
+			skip_comment(tokenizer);
+		else
+			break;
 	}
 	if ((dest[0] >= '0' && dest[0] <= '9') || dest[0] == '-') {
 		*parsed_int = atoi(dest);

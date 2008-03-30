@@ -1,3 +1,8 @@
+# package: czech-qwerty
+# title: Czech QWERTY keyboard layout
+# desc: Created by Jiri Benc <jbenc@upir.cz>
+# desc: http://www.upir.cz/maemo/keyboards/
+
 header {
 name	"Čeština (qwerty)"
 lang	"cs_CZ"
