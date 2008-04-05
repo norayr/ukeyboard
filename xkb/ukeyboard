@@ -135,8 +135,9 @@ xkb_symbols "sk-qwertz" {
 
 // author: Marcin Juszkiewicz
 xkb_symbols "pl" {
-	name[Group1] = "Polska";
+	name[Group1] = "Polish (US hw)";
 
+	include "nokia_vndr/rx-44(us)"
 	include "nokia_vndr/ukeyboard(base)"
 
 	key <COMP>	{ [ ISO_Level5_Shift,	ISO_Level5_Shift,	ISO_Level5_Shift,	ISO_Level5_Shift	] };
@@ -144,15 +145,14 @@ xkb_symbols "pl" {
 
 //						normal	Shift	Fn		Fn+Shift	Chr		S+Chr		Fn+Chr		Fn+Shift+Chr
 	key <SPCE>	{ type="EIGHT_LEVEL", [ space,	space,	bar,		bar,		Tab,		Tab,		bar,		bar		] };
-                                                                                        
-	key <AC07>	{ type="EIGHT_LEVEL", [ j,	J,	parenleft,	parenleft,	bracketleft,	bracketleft,	parenleft,	parenleft	] };
-	key <AC08>	{ type="EIGHT_LEVEL", [ k,	K,	parenright,	parenright,	bracketright,	bracketright,	parenright,	parenright	] };
-                                                                                    
+
 	key <AD03>	{ type="EIGHT_LEVEL", [ e,	E,	3,		3,		eogonek,	Eogonek,	3,		3		] };
 	key <AD09>	{ type="EIGHT_LEVEL", [ o,	O,	9,		9,		oacute,		Oacute,		9,		9		] };
-                                                                                    
+
 	key <AC01>	{ type="EIGHT_LEVEL", [ a,	A,	exclam,		exclam,		aogonek,	Aogonek,	exclam,		exclam		] };
 	key <AC02>	{ type="EIGHT_LEVEL", [ s,	S,	quotedbl,	quotedbl,	sacute,		Sacute,		quotedbl,	quotedbl	] };
+	key <AC07>	{ type="EIGHT_LEVEL", [ j,	J,	parenleft,	parenleft,	bracketleft,	bracketleft,	parenleft,	parenleft	] };
+	key <AC08>	{ type="EIGHT_LEVEL", [ k,	K,	parenright,	parenright,	bracketright,	bracketright,	parenright,	parenright	] };
 	key <AC09>	{ type="EIGHT_LEVEL", [ l,	L,	asterisk,	asterisk,	lstroke,	Lstroke,	asterisk,	asterisk	] };
 
 	key <AB01>	{ type="EIGHT_LEVEL", [ z,	Z,	yen,		yen,		zabovedot,	Zabovedot,	yen,		yen		] };
