@@ -1,3 +1,9 @@
+ukeyboard (1.4) unstable; urgency=low
+
+  * Added Polish sliding keyboard layout by Marcin Juszkiewicz.
+
+ -- Jiri Benc <jbenc@upir.cz>  Sat, 05 Apr 2008 13:23:50 +0200
+
 ukeyboard (1.3) unstable; urgency=low
 
   * Added Slovak on-screen and sliding keyboard layouts by Roman Moravcik.
