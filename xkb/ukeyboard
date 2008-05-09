@@ -160,3 +160,46 @@ xkb_symbols "pl" {
 	key <AB03>	{ type="EIGHT_LEVEL", [ c,	C,	asciitilde,	asciitilde,	cacute,		Cacute,		asciitilde,	asciitilde	] };
 	key <AB06>	{ type="EIGHT_LEVEL", [ n,	N,	dollar,		dollar,		nacute,		Nacute,		dollar,		dollar		] };
 };
+
+// author: Ognian Samokovliyski
+partial alphanumeric_keys
+xkb_symbols "bg-phonetic" {
+	name[Group1] = "Bulgarian Phonetic";
+
+	include "nokia_vndr/ukeyboard(base)"
+
+	key <AD01>	{ type="EIGHT_LEVEL", [ q,		Q,		1,		1,		Cyrillic_ya,		Cyrillic_YA,		1,		1		] };
+	key <AD02>	{ type="EIGHT_LEVEL", [ w,		W,		2,		2,		Cyrillic_ve,		Cyrillic_VE,		2,		2		] };
+	key <AD03>	{ type="EIGHT_LEVEL", [ e,		E,		3,		3,		Cyrillic_ie,		Cyrillic_IE,		3,		3		] };
+	key <AD04>	{ type="EIGHT_LEVEL", [ r,		R,		4,		4,		Cyrillic_er,		Cyrillic_ER,		4,		4		] };
+	key <AD05>	{ type="EIGHT_LEVEL", [ t,		T,		5,		5,		Cyrillic_te,		Cyrillic_TE,		5,		5		] };
+	key <AD06>	{ type="EIGHT_LEVEL", [ y,		Y,		6,		6,		Cyrillic_hardsign,	Cyrillic_HARDSIGN,	6,		6		] };
+	key <AD07>	{ type="EIGHT_LEVEL", [ u,		U,		7,		7,		Cyrillic_u,		Cyrillic_U,		7,		7		] };
+	key <AD08>	{ type="EIGHT_LEVEL", [ i,		I,		8,		8,		Cyrillic_i,		Cyrillic_I,		8,		8		] };
+	key <AD09>	{ type="EIGHT_LEVEL", [ o,		O,		9,		9,		Cyrillic_o,		Cyrillic_O,		9,		9		] };
+	key <AD10>	{ type="EIGHT_LEVEL", [ p,		P,		0,		0,		Cyrillic_pe,		Cyrillic_PE,		0,		0		] };
+
+	key <AC01>	{ type="EIGHT_LEVEL", [ a,		A,		exclam,		exclam,		Cyrillic_a,		Cyrillic_A,		exclam,		exclam		] };
+	key <AC02>	{ type="EIGHT_LEVEL", [ s,		S,		quotedbl,	quotedbl,	Cyrillic_es,		Cyrillic_ES,		quotedbl,	quotedbl	] };
+	key <AC03>	{ type="EIGHT_LEVEL", [ d,		D,		at,		at,		Cyrillic_de,		Cyrillic_DE,		at,		at		] };
+	key <AC04>	{ type="EIGHT_LEVEL", [ f,		F,		numbersign,	numbersign,	Cyrillic_ef,		Cyrillic_EF,		numbersign,	numbersign	] };
+	key <AC05>	{ type="EIGHT_LEVEL", [ g,		G,		backslash,	backslash,	Cyrillic_ghe,		Cyrillic_GHE,		backslash,	backslash	] };
+	key <AC06>	{ type="EIGHT_LEVEL", [ h,		H,		slash,		slash,		Cyrillic_ha,		Cyrillic_HA,		slash,		slash		] };
+	key <AC07>	{ type="EIGHT_LEVEL", [ j,		J,		parenleft,	parenleft,	Cyrillic_shorti,	Cyrillic_SHORTI,	parenleft,	parenleft	] };
+	key <AC08>	{ type="EIGHT_LEVEL", [ k,		K,		parenright,	parenright,	Cyrillic_ka,		Cyrillic_KA,		parenright,	parenright	] };
+	key <AC09>	{ type="EIGHT_LEVEL", [ l,		L,		asterisk,	asterisk,	Cyrillic_el,		Cyrillic_EL,		asterisk,	asterisk	] };
+	key <AC11>	{ type="EIGHT_LEVEL", [ apostrophe,	question,	question,	question,	Cyrillic_che,		Cyrillic_CHE,		apostrophe,	question	] };
+
+	key <AB01>	{ type="EIGHT_LEVEL", [ z,		Z,		yen,		yen,		Cyrillic_ze,		Cyrillic_ZE,		yen,		yen		] };
+	key <AB02>	{ type="EIGHT_LEVEL", [ x,		X,		asciicircum,	asciicircum,	Cyrillic_softsign,	Cyrillic_SOFTSIGN,	asciicircum,	asciicircum	] };
+	key <AB03>	{ type="EIGHT_LEVEL", [ c,		C,		asciitilde,	asciitilde,	Cyrillic_tse,		Cyrillic_TSE,		asciitilde,	asciitilde	] };
+	key <AB04>	{ type="EIGHT_LEVEL", [ v,		V,		percent,	percent,	Cyrillic_zhe,		Cyrillic_ZHE,		percent,	percent		] };
+	key <AB05>	{ type="EIGHT_LEVEL", [ b,		B,		ampersand,	ampersand,	Cyrillic_be,		Cyrillic_BE,		ampersand,	ampersand	] };
+	key <AB06>	{ type="EIGHT_LEVEL", [ n,		N,		dollar,		dollar,		Cyrillic_en,		Cyrillic_EN,		dollar,		dollar		] };
+	key <AB07>	{ type="EIGHT_LEVEL", [ m,		M,		EuroSign,	EuroSign,	Cyrillic_em,		Cyrillic_EM,		EuroSign,	EuroSign	] };
+	key <AC10>	{ type="EIGHT_LEVEL", [ semicolon,	colon,		colon,		colon,		Cyrillic_yu,		Cyrillic_YU,		minus,		minus		] };
+	key <AE11>	{ type="EIGHT_LEVEL", [ minus,		underscore,	minus,		underscore,	Cyrillic_sha,		Cyrillic_SHA,		minus,		underscore	] };
+	key <AE12>	{ type="EIGHT_LEVEL", [ plus,		equal,		equal,		equal,		Cyrillic_shcha,		Cyrillic_SHCHA,		plus,		equal		] };
+	key <AB08>	{ type="EIGHT_LEVEL", [ comma,		less,		comma,		less,		comma,			less,			comma,		less		] };
+	key <AB09>	{ type="EIGHT_LEVEL", [ period,		greater,	period,		greater,	period,			greater,		period,		greater		] };
+};
