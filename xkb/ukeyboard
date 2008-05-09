@@ -90,6 +90,7 @@ xkb_symbols "cz-qwertz-us" {
 	key <AB01>	{ [ y,		Y,		yen,		yen		] };
 };
 
+// author: Roman Moravcik
 partial alphanumeric_keys
 xkb_symbols "sk-qwerty" {
 	name[Group1] = "Slovak QWERTY (DE hw)";
@@ -134,6 +135,7 @@ xkb_symbols "sk-qwertz" {
 
 
 // author: Marcin Juszkiewicz
+partial alphanumeric_keys
 xkb_symbols "pl" {
 	name[Group1] = "Polish (US hw)";
 
