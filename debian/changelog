@@ -1,3 +1,11 @@
+ukeyboard (1.5) unstable; urgency=low
+
+  * Added Bulgarian phonetic sliding keyboard layout by Ognian
+    Samokovliyski.
+  * Added Thai Kedmanee on-screen layout by Panu Tangchalermkul.
+
+ -- Jiri Benc <jbenc@upir.cz>  Sun, 25 May 2008 14:46:59 +0200
+
 ukeyboard (1.4) unstable; urgency=low
 
   * Added Polish sliding keyboard layout by Marcin Juszkiewicz.
