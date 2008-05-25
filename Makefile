@@ -31,3 +31,4 @@ clean:
 distclean:
 	$(MAKE) clean
 	rm -f *-stamp
+	rm -rf debian/ukeyboard debian/files
