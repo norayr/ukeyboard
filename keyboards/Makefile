@@ -6,7 +6,8 @@ layouts = \
 	en-dvorak.vkb \
 	eo-qwerty.vkb \
 	hu-qwertz.vkb \
-	sk-qwerty.vkb sk-qwertz.vkb
+	sk-qwerty.vkb sk-qwertz.vkb \
+	th-kedmanee.vkb
 
 all: $(layouts)
 
