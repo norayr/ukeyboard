@@ -170,6 +170,9 @@ xkb_symbols "bg-phonetic" {
 
 	include "nokia_vndr/ukeyboard(base)"
 
+	key <COMP>	{ [ ISO_Level5_Lock,	ISO_Level5_Lock,	ISO_Level5_Lock,	ISO_Level5_Lock		] };
+	modifier_map Mod3 { ISO_Level5_Lock };
+
 	key <AD01>	{ type="EIGHT_LEVEL", [ q,		Q,		1,		1,		Cyrillic_ya,		Cyrillic_YA,		1,		1		] };
 	key <AD02>	{ type="EIGHT_LEVEL", [ w,		W,		2,		2,		Cyrillic_ve,		Cyrillic_VE,		2,		2		] };
 	key <AD03>	{ type="EIGHT_LEVEL", [ e,		E,		3,		3,		Cyrillic_ie,		Cyrillic_IE,		3,		3		] };
