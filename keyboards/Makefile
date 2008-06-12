@@ -5,6 +5,7 @@ layouts = \
 	cz-qwerty.vkb cz-qwertz.vkb \
 	en-dvorak.vkb \
 	eo-qwerty.vkb \
+	hr-qwerty.vkb hr-qwertz.vkb \
 	hu-qwertz.vkb \
 	sk-qwerty.vkb sk-qwertz.vkb \
 	th-kedmanee.vkb
