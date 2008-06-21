@@ -8,7 +8,7 @@ First, you need to compile a compiler. You don't need the scratchbox (an
 environment used for Maemo development) to do that - any Linux distribution
 would do. For creating a .deb package the scratchbox is needed, though.
 
-Simply unpack the maemokeyboard package and run "make" in the maemokeyboard
+Simply unpack the ukeyboard package and run "make" in the ukeyboard
 directory:
 	tar -xjf ukeyboard-VERSION.tar.bz2
 	cd ukeyboard-VERSION
@@ -131,8 +131,8 @@ applet. The OS itself seems to just ignore the name, though.
 6.2.2 Language code
 -------------------
 
-The locale name of the keyboard. Must match the .vkb file name (without the
-.vkb extension). See section 4.2 for allowed values of this field.
+The locale name of the keyboard. See section 4.2 for allowed values of this
+field and section 4.1 for a discussion about allowed .vkb file names.
 
 Example:
 	lang "en_GB"
