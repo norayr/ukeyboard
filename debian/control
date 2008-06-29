@@ -10,3 +10,9 @@ Architecture: any
 Depends: ${shlibs:Depends}
 Description: Additional keyboard layouts
  Additional keyboard layouts for both on-screen and sliding keyboard.
+
+Package: ukbdcreator
+Architecture: any
+Depends: ${shlibs:Depends}, ukeyboard (>= 1.6)
+Description: Ukeyboard Creator
+ Simple IDE for creating and testing on-screen keyboard layouts.

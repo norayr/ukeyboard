@@ -5,6 +5,6 @@ if [ -f /usr/share/applications/hildon-control-panel/cptextinput.desktop.removed
 	mv -f /usr/share/applications/hildon-control-panel/cptextinput.desktop.removed /usr/share/applications/hildon-control-panel/cptextinput.desktop
 fi
 
-#gtk-update-icon-cache -f /usr/share/icons/hicolor
+gtk-update-icon-cache -f /usr/share/icons/hicolor
 update-sudoers
 exit 0

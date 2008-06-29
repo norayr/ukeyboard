@@ -10,6 +10,7 @@
 #export DH_VERBOSE=1
 
 DESTDIR=$(CURDIR)/debian/ukeyboard
+DESTDIR_CREATOR=$(CURDIR)/debian/ukbdcreator
 
 configure: configure-stamp
 configure-stamp:
@@ -45,6 +46,7 @@ install: build
 
 	# Add here commands to install the package into $(DESTDIR)
 	$(MAKE) DESTDIR=$(DESTDIR) install
+	$(MAKE) -C ukbdcreator DESTDIR=$(DESTDIR_CREATOR)/usr install
 
 
 # Build architecture-independent files here.
