@@ -1,3 +1,10 @@
+ukeyboard (1.6) unstable; urgency=low
+
+  * Added Croatian on-screen keyboard layout by Lovro Oreskovic.
+  * Introduced Ukeyboard Creator (ukbdcreator).
+
+ -- Jiri Benc <jbenc@upir.cz>  Sun, 29 Jun 2008 22:05:19 +0200
+
 ukeyboard (1.5) unstable; urgency=low
 
   * Added Bulgarian phonetic sliding keyboard layout by Ognian
