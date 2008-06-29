@@ -139,13 +139,13 @@ gboolean compile_layout(gchar *buf, gchar **fname, gchar **lang)
 static gchar *get_lang(GConfClient *conf)
 {
 	return gconf_client_get_string(conf,
-		"/apps/osso/inputmethod/hildon-im-languages/language-1", NULL);
+		"/apps/osso/inputmethod/hildon-im-languages/language-0", NULL);
 }
 
 static void set_lang(GConfClient *conf, gchar *val)
 {
 	gconf_client_set_string(conf,
-		"/apps/osso/inputmethod/hildon-im-languages/language-1", val, NULL);
+		"/apps/osso/inputmethod/hildon-im-languages/language-0", val, NULL);
 }
 
 void test_layout(GConfClient *conf, gchar *fname, gchar *lang)
@@ -200,7 +200,8 @@ void restore_layout(GConfClient *conf, gboolean warn)
 		disp_error("Cannot execute helper script");
 		return;
 	}
-	if (WEXITSTATUS(res)) {
+	res = WEXITSTATUS(res);
+	if (res && res != 4) {
 		disp_error("Restoring of original layout failed");
 		return;
 	}
@@ -214,5 +215,7 @@ void restore_layout(GConfClient *conf, gboolean warn)
 		g_free(act_layout);
 		act_layout = NULL;
 	}
+	if (warn)
+		disp_info("Layout restored");
 }
 

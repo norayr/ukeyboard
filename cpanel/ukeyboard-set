@@ -1,17 +1,17 @@
 #!/bin/sh
 store=
-if [ "$1" = "-s" ]; then
+if [ "x$1" = "x-s" ]; then
 	store=1
 	shift
 fi
 
-if [ -z "$1" -o -z "$2" ]; then
+if [ "x$1" = x -o "x$2" = x ]; then
 	echo "ukeyboard-set: Missing parameters."
 	exit 1
 fi
 dest="/usr/share/keyboards/$2.vkb"
 
-if [ "$1" = "-r" -a ! -f "$dest-saved" ]; then
+if [ "x$1" = "x-r" -a ! -f "$dest-saved" ]; then
 	echo "ukeyboard-set: No previous file stored."
 	exit 4
 fi
@@ -32,7 +32,7 @@ if [ -f "$dest" ]; then
 	fi
 fi
 
-if [ "$1" = "-r" ]; then
+if [ "x$1" = "x-r" ]; then
 	mv "$dest-saved" "$dest"
 elif [ "$store" = 1 ]; then
 	ln -s "$1" "$dest"
