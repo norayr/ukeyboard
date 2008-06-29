@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=Ukeyboard Creator
+Exec=/usr/bin/ukbdcreator
+X-Osso-Service=cz.upir.ukbdcreator
+Icon=ukeyboard
+StartupWMClass=ukbdcreator

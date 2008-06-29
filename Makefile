@@ -1,4 +1,4 @@
-all:	vkb_compiler ukeyboard-prefs keyboards keyboards-scv
+all:	vkb_compiler ukeyboard-prefs keyboards keyboards-scv ukbdcreator
 
 ukeyboard-prefs:
 	$(MAKE) -C cpanel
@@ -17,6 +17,9 @@ keyboards:	vkb_compiler
 
 keyboards-scv:	vkb_compiler
 	$(MAKE) -C keyboards-scv
+
+ukbdcreator:	vkb_compiler_lib.o
+	$(MAKE) -C ukbdcreator
 
 install:	ukeyboard-prefs keyboards-scv
 	$(MAKE) -C cpanel DESTDIR=$(DESTDIR) install
