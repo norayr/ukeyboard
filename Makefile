@@ -3,8 +3,14 @@ all:	vkb_compiler ukeyboard-prefs keyboards keyboards-scv
 ukeyboard-prefs:
 	$(MAKE) -C cpanel
 
-vkb_compiler:	vkb_compiler.c
-	gcc -W -Wall -o vkb_compiler vkb_compiler.c
+vkb_compiler:	vkb_compiler.o vkb_compiler_lib.o
+	$(CC) -o $@ $+
+
+vkb_compiler.o:	vkb_compiler.c vkb_compiler.h
+	$(CC) -W -Wall -c -o $@ $<
+
+vkb_compiler_lib.o:	vkb_compiler_lib.c vkb_compiler.h
+	$(CC) -W -Wall -c -o $@ $<
 
 keyboards:	vkb_compiler
 	$(MAKE) -C keyboards
@@ -25,7 +31,7 @@ clean:
 	$(MAKE) -C cpanel clean
 	$(MAKE) -C keyboards clean
 	$(MAKE) -C keyboards-scv clean
-	rm -f vkb_compiler
+	rm -f vkb_compiler *.o core
 	rm -rf build
 
 distclean:
