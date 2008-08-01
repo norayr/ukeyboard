@@ -34,7 +34,7 @@ xkb_symbols "cz-qwerty" {
 	key <AE12>	{ [ minus,	underscore,	endash,		endash		] };
 
 	key <AB08>	{ [ comma,	semicolon,	bar,		bar		] };
-	key <AB09>	{ [ period,	colon,		period,		collon		] };
+	key <AB09>	{ [ period,	colon,		period,		colon		] };
 };
 
 partial alphanumeric_keys
