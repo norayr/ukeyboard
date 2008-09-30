@@ -1,0 +1,332 @@
+# title: Hebrew layout
+# author: Matan Ziv-Av <matan@svgalib.org>
+
+header {
+name	"Hebrew"
+lang	"he_IL"
+wc	"he_IL"
+
+size	0	{ width 35 height 35 textpos 26 left 0 top 0 }
+size	1	{ width 50 height 35 textpos 26 left 0 top 0 }
+size	2	{ width 55 height 35 textpos 26 left 0 top 0 }
+size	3	{ width 72 height 55 textpos 41 left 0 top 0 }
+size	4	{ width 143 height 55 textpos 41 left 0 top 0 }
+size	5	{ width 24 height 35 textpos 26 left 0 top 0 }
+}
+
+kbd_normal {
+lowercase {
+	margin 0 0 0 0
+	default_size 0
+	row {
+	key / special size 2
+	key ' special 
+	key ק alpha 
+	key ר alpha
+	key א alpha
+	key ט alpha
+	key ו alpha
+	key ן alpha
+	key ם alpha
+	key פ alpha
+	key = special size 1
+	}
+	row {
+	key ! special
+	key ש alpha
+	key ד alpha
+	key ג alpha
+	key כ alpha
+	key ע alpha
+	key י alpha
+	key ח alpha
+	key ל alpha
+	key ך alpha
+	key ף special
+	key [ special
+	key ^ special
+	}
+	row {
+	key ? special size 2
+	key ז alpha
+	key ס alpha
+	key ב alpha hexa
+	key ה alpha
+	key נ alpha hexa
+	key מ alpha
+	key צ alpha
+	key ת alpha
+	key ץ alpha
+	key . special
+	key , special size 1
+	}
+}
+lowercase_num {
+	margin 0 0 0 9
+	default_size 0
+	row {
+	key 1 num hexa tele
+	key 2 num hexa tele
+	key 3 num hexa tele
+	}
+	row {
+	key 4 num hexa tele
+	key 5 num hexa tele
+	key 6 num hexa tele
+	}
+	row {
+	key 7 num hexa tele
+	key 8 num hexa tele
+	key 9 num hexa tele
+	}
+	row {
+	key - num special tele
+	key 0 num hexa tele
+	key + special
+	}
+}
+uppercase {
+	margin 0 0 0 0
+	default_size 0
+	row {
+	key q alpha size 2
+	key w alpha tele
+	key e alpha hexa
+	key r alpha
+	key t alpha
+	key y alpha
+	key u alpha
+	key i alpha
+	key o alpha
+	key p alpha tele
+	key @ special size 1
+	}
+	row {
+	key ~ special
+	key a alpha hexa
+	key s alpha
+	key d alpha hexa
+	key f alpha hexa
+	key g alpha
+	key h alpha
+	key j alpha
+	key k alpha
+	key l alpha
+	key " special
+	key | special
+	key ] alpha dead
+	}
+	row {
+	key ^ special size 2
+	key z alpha
+	key x alpha hexa
+	key c alpha
+	key v alpha hexa
+	key b alpha
+	key n alpha
+	key m special
+	key < special
+	key > special
+	key : special size 1
+	}
+}
+uppercase_num {
+	margin 0 0 0 9
+	default_size 0
+	row {
+	key ` special
+	key # special tele
+	key % special
+	}
+	row {
+	key $ special
+	key { special
+	key } special
+	}
+	row {
+	key \ special
+	key ( special tele
+	key ) special tele
+	}
+	row {
+	key _ special
+	key * special tele
+	key + special tele
+	}
+}
+}
+
+kbd_thumb {
+lowercase {
+	name "abc"
+	margin 0 0 0 0
+	default_size 3
+	row {
+	key ת alpha
+	key ץ alpha
+	key ק alpha
+	key ר alpha
+	key א alpha
+	key ט alpha
+	key ו alpha
+	key ן alpha
+	key ם alpha
+	key פ alpha
+	slide special { key : key ; key - key _ key / key < key > }
+	}
+	row {
+	key ש alpha
+	key ד alpha
+	key ג alpha
+	key כ alpha
+	key ע alpha
+	key י alpha
+	key ח alpha
+	key ל alpha
+	key ך alpha
+	key ף­ alpha
+	key ^ alpha
+	}
+	row {
+	white size 4
+	key ז alpha
+	key ס alpha
+	key ב alpha
+	key ה alpha
+	key נ alpha
+	key מ alpha
+	key צ alpha
+	slide special { key . key , key ? key ! key @ key ( key ) } size 4
+	}
+}
+uppercase {
+	name "ABC"
+	margin 0 0 0 0
+	default_size 3
+	row {
+	key q alpha
+	key w alpha tele
+	key e alpha hexa
+	key r alpha
+	key t alpha
+	key y alpha
+	key u alpha
+	key i alpha
+	key o alpha
+	key p alpha tele
+	slide special { key : key ; key - key _ key / key < key > }
+	}
+	row {
+	key a alpha hexa
+	key s alpha
+	key d alpha hexa
+	key f alpha hexa
+	key g alpha
+	key h alpha
+	key j alpha
+	key k alpha
+	key l alpha
+	key " alpha
+	key ^ alpha dead
+	}
+	row {
+	white size 4
+	key z alpha
+	key x alpha
+	key c alpha hexa
+	key v alpha
+	key b alpha hexa
+	key n alpha
+	key m alpha
+	slide special { key . key , key ? key ! key @ key ( key ) } size 4
+	}
+}
+special {
+	name "1!+"
+	margin 0 0 0 0
+	default_size 3
+	row {
+	key 1 num hexa tele
+	key 2 num hexa tele
+	key 3 num hexa tele
+	key " special
+	key + special
+	key - special
+	key = special
+	key _ special
+	key & special
+	key @ special
+	key ~ special
+	}
+	row {
+	key 4 num hexa tele
+	key 5 num hexa tele
+	key 6 num hexa tele
+	key ' special
+	key : special
+	key ; special
+	key ! special
+	key ( special
+	key ) special
+	key / special
+	key \ special
+	}
+	row {
+	key 7 num hexa tele
+	key 8 num hexa tele
+	key 9 num hexa tele
+	key 0 num hexa tele
+	key . special
+	key , special
+	key ? special
+	key ג special
+	key ג special
+	key < special
+	key > special
+	}
+}
+special {
+	name "*�§��"
+	margin 0 0 0 0
+	default_size 3
+	row {
+	key # special
+	key % special
+	key ג¬ special
+	key �£ special
+	key $ special
+	key ^ special
+	key | special
+	key [ special
+	key ] special
+	key { special
+	key } special
+	}
+	row {
+	key �� special
+	key �� special
+	key �§ special
+	key * special
+	key �· special
+	key ג¢ special
+	key �° special
+	key �± special
+	key �½ special
+	key �« special
+	key �» special
+	}
+	row {
+	key �¤ alpha
+	key �« alpha
+	key �¶ alpha
+	key �¼ alpha
+	key � alpha
+	key � alpha
+	key � alpha
+	key � alpha
+	key � alpha
+	key ג¢ special
+	key �© special
+	}
+}
+}
