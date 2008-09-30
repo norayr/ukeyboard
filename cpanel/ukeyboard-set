@@ -11,7 +11,7 @@ if [ "x$1" = x -o "x$2" = x ]; then
 fi
 dest="/usr/share/keyboards/$2.vkb"
 
-if [ "x$1" = "x-r" -a ! -f "$dest-saved" ]; then
+if [ "x$1" = "x-r" -a ! -f "$dest-saved" -a ! -f "$dest-empty" ]; then
 	echo "ukeyboard-set: No previous file stored."
 	exit 4
 fi
@@ -30,10 +30,16 @@ if [ -f "$dest" ]; then
 	else
 		mv "$dest" "$dest-saved"
 	fi
+elif [ "$store" = 1 ]; then
+	touch "$dest-empty"
 fi
 
 if [ "x$1" = "x-r" ]; then
-	mv "$dest-saved" "$dest"
+	if [ -f "$dest-saved" ]; then
+		mv "$dest-saved" "$dest"
+	else
+		rm "$dest" "$dest-empty"
+	fi
 elif [ "$store" = 1 ]; then
 	ln -s "$1" "$dest"
 else

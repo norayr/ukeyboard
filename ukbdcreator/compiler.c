@@ -153,6 +153,8 @@ void test_layout(GConfClient *conf, gchar *fname, gchar *lang)
 	gchar *cmd;
 	int res;
 
+	if (saved_lang)
+		restore_layout(conf, FALSE);
 	cmd = g_strdup_printf("sudo /usr/libexec/ukeyboard-set -s %s %s", fname, lang);
 	res = system(cmd);
 	g_free(cmd);
@@ -169,10 +171,8 @@ void test_layout(GConfClient *conf, gchar *fname, gchar *lang)
 		disp_error("Activating of the layout failed");
 		return;
 	}
-	if (!saved_lang) {
-		saved_lang = g_strdup(lang);
-		saved_layout = get_lang(conf);
-	}
+	saved_lang = g_strdup(lang);
+	saved_layout = get_lang(conf);
 	set_lang(conf, "en_GB");
 	set_lang(conf, lang);
 	if (act_layout) {
@@ -201,7 +201,7 @@ void restore_layout(GConfClient *conf, gboolean warn)
 		return;
 	}
 	res = WEXITSTATUS(res);
-	if (res && res != 4) {
+	if (res) {
 		disp_error("Restoring of original layout failed");
 		return;
 	}
