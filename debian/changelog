@@ -1,3 +1,13 @@
+ukeyboard (1.7) unstable; urgency=low
+
+  * Fixed Czech hw keyboard, added more characters (typed by
+    Fn+Shift). Thanks to Jan "Yenya" Kasprzak.
+  * Added Hebrew on-screen keyboard layout by Matan Ziv-Av.
+  * Added Polish QWERTZ and QWERTY sliding keyboard layouts
+    for DE hardware by Pawel Dys.
+
+ -- Jiri Benc <jbenc@upir.cz>  Wed, 01 Oct 2008 00:35:26 +0200
+
 ukeyboard (1.6) unstable; urgency=low
 
   * Added Croatian on-screen keyboard layout by Lovro Oreskovic.
