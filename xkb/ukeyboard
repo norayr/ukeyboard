@@ -163,6 +163,52 @@ xkb_symbols "pl" {
 	key <AB06>	{ type="EIGHT_LEVEL", [ n,	N,	dollar,		dollar,		nacute,		Nacute,		dollar,		dollar		] };
 };
 
+// author: Pawel Dys
+partial alphanumeric_keys
+xkb_symbols "pl-qwertz-de" {
+	name[Group1] = "Polish QWERTZ (DE hw)";
+
+	include "nokia_vndr/rx-44(de)"
+	include "nokia_vndr/ukeyboard(base)"
+
+	key <COMP>	{ [ ISO_Level5_Shift,	ISO_Level5_Shift,	ISO_Level5_Shift,	ISO_Level5_Shift	] };
+	modifier_map Mod3 { ISO_Level5_Shift };
+
+//						normal	Shift		Fn		Fn+Shift	Chr		S+Chr		Fn+Chr		Fn+Shift+Chr
+	key <SPCE>	{ type="EIGHT_LEVEL", [ space,	space,		Tab,		Tab,		bar,		bar,		space,		space		] };
+
+	key <AD03>	{ type="EIGHT_LEVEL", [ e,	E,		3,		3,		eogonek,	Eogonek,	3,		3		] };
+	key <AD06>	{ type="EIGHT_LEVEL", [ z,	Z,		6,		6,		zabovedot,	Zabovedot,	6,		6		] };
+	key <AD09>	{ type="EIGHT_LEVEL", [ o,	O,		9,		9,		oacute,		Oacute,		9,		9		] };
+
+	key <AC01>	{ type="EIGHT_LEVEL", [ a,	A,		exclam,		exclam,		aogonek,	Aogonek,	exclam,		exclam		] };	
+	key <AC02>	{ type="EIGHT_LEVEL", [ s,	S,		quotedbl,	quotedbl,	sacute,		Sacute,		quotedbl,	quotedbl	] };
+	key <AC05>	{ type="EIGHT_LEVEL", [ g,	G,		percent,	percent,	dollar,		dollar,		percent,	percent		] };	
+	key <AC06>	{ type="EIGHT_LEVEL", [ h,	H,		backslash,	backslash,	bracketleft,	bracketleft,	backslash,	backslash	] };
+	key <AC07>	{ type="EIGHT_LEVEL", [ j,	J,		slash,		slash,		bracketright,	bracketright,	bracketright,	bracketright	] };
+	key <AC09>	{ type="EIGHT_LEVEL", [ l,	L,		parenright,	parenright,	lstroke,	Lstroke,	parenright,	parenright	] };
+
+	key <AB01>	{ type="EIGHT_LEVEL", [ y,	Y,		EuroSign,	EuroSign,	zabovedot,	Zabovedot,	EuroSign,	EuroSign	] };	
+	key <AB02>	{ type="EIGHT_LEVEL", [ x,	X,		asciitilde,	asciitilde,	zacute,		Zacute,		asciitilde,	asciitilde	] };
+	key <AB03>	{ type="EIGHT_LEVEL", [ c,	C,		asterisk,	asterisk,	cacute,		Cacute,		asterisk,	asterisk	] };
+	key <AB06>	{ type="EIGHT_LEVEL", [ n,	N,		less,		less,		nacute,		Nacute,		less,		less		] };
+	key <AB07>	{ type="EIGHT_LEVEL", [ m,	M,		greater,	greater,	dead_circumflex, dead_circumflex, greater,	greater		] };
+	key <AB08>	{ type="EIGHT_LEVEL", [ comma,	semicolon,	comma,		semicolon,	braceleft,	braceleft,	comma,		semicolon	] };
+	key <AB09>	{ type="EIGHT_LEVEL", [ period,	colon,		period,		colon,		braceright,	braceright,	period,		colon		] };
+
+	key <AE11>	{ type="EIGHT_LEVEL", [ adiaeresis, Adiaeresis,	apostrophe,	apostrophe,	quoteleft,	quoteleft,	adiaeresis,	Adiaeresis	] };
+};
+
+partial alphanumeric_keys
+xkb_symbols "pl-qwerty-de" {
+	name[Group1] = "Polish QWERTY (DE hw)";
+
+	include "nokia_vndr/ukeyboard(pl-qwertz-de)"
+
+	key <AD06>	{ type="EIGHT_LEVEL", [ y,	Y,		6,		6,		zabovedot,	Zabovedot,	6,		6		] };
+	key <AB01>	{ type="EIGHT_LEVEL", [ z,	Z,		EuroSign,	EuroSign,	zabovedot,	Zabovedot,	EuroSign,	EuroSign	] };	
+};
+
 // author: Ognian Samokovliyski
 partial alphanumeric_keys
 xkb_symbols "bg-phonetic" {
