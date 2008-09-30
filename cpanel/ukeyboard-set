@@ -45,3 +45,4 @@ elif [ "$store" = 1 ]; then
 else
 	ln -s "../ukeyboard/$1.vkb" "$dest"
 fi
+exit 0
