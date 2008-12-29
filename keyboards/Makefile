@@ -1,5 +1,6 @@
 layouts = \
 	ar-lebanon.vkb \
+	be-by.vkb \
 	bg-bds.vkb \
 	bg-phonetic.vkb \
 	cz-qwerty.vkb cz-qwertz.vkb \
