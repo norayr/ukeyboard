@@ -1,5 +1,6 @@
 # title: US Dvorak layout
 # author: Paul Sweeney <paul@8-bitdesign.com>
+# modified by: Ethan S. <dragon788@gmail.com>
 # license: GPLv2
 
 header {
@@ -20,7 +21,7 @@ lowercase {
 	margin 0 0 0 0
 	default_size 0
 	row {
-	key " special size 2
+	key ' special size 2
 	key , special
 	key . special
 	key p alpha
@@ -81,7 +82,7 @@ lowercase_num {
 	row {
 	key ? num special tele
 	key 0 num hexa tele
-	key ´ alpha dead
+	key . special tele
 	}
 }
 uppercase {
@@ -133,7 +134,7 @@ uppercase_num {
 	default_size 0
 	row {
 	key ! special
-	key " special
+	key ` special
 	key # special tele
 	}
 	row {
@@ -149,7 +150,7 @@ uppercase_num {
 	row {
 	key + special
 	key = special
-	key ´ alpha dead
+	key ´ alpha
 	}
 }
 }
@@ -255,8 +256,8 @@ special {
 	key = special
 	key ! special
 	key & special
-	key ` alpha dead
-	key ´ alpha dead
+	key ` alpha
+	key ´ alpha
 	}
 	row {
 	key 4 num hexa tele
