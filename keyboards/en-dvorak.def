@@ -134,7 +134,7 @@ uppercase_num {
 	default_size 0
 	row {
 	key ! special
-	key ` special
+	key ` alpha dead
 	key # special tele
 	}
 	row {
@@ -150,7 +150,7 @@ uppercase_num {
 	row {
 	key + special
 	key = special
-	key ´ alpha
+	key ´ alpha dead
 	}
 }
 }
@@ -256,8 +256,8 @@ special {
 	key = special
 	key ! special
 	key & special
-	key ` alpha
-	key ´ alpha
+	key ` alpha dead
+	key ´ alpha dead
 	}
 	row {
 	key 4 num hexa tele
