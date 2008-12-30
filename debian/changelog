@@ -1,3 +1,10 @@
+ukeyboard (1.8) unstable; urgency=low
+
+  * Added Belarusian on-screen layout by Darafei Praliaskouski.
+  * Modified US Dvorak layout.
+
+ -- Jiri Benc <jbenc@upir.cz>  Tue, 30 Dec 2008 12:31:10 +0100
+
 ukeyboard (1.7) unstable; urgency=low
 
   * Fixed Czech hw keyboard, added more characters (typed by
