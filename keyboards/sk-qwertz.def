@@ -170,7 +170,7 @@ lowercase {
 	key i alpha
 	key o alpha
 	key p alpha tele
-	key ú alpha
+	key ä alpha
 	}
 	row {
 	key a alpha hexa
@@ -182,11 +182,10 @@ lowercase {
 	key j alpha
 	key k alpha
 	key l alpha
+	key ô alpha
 	key ´ alpha dead
-	key ˇ alpha dead
 	}
 	row {
-	white size 4
 	key y alpha
 	key x alpha
 	key c alpha hexa
@@ -194,8 +193,9 @@ lowercase {
 	key b alpha hexa
 	key n alpha
 	key m alpha
-	slide special { key . key , key ? key ! key @ key ( key ) }
-	slide special { key : key ; key - key _ key / key < key > }
+	white size 4
+	key ˇ alpha dead
+	slide special { key . key , key ? key ! key - key _ key & key | key \ key / key < key > }
 	}
 }
 uppercase {
@@ -213,7 +213,7 @@ uppercase {
 	key I alpha
 	key O alpha
 	key P alpha tele
-	key Ú alpha
+	key Ä alpha
 	}
 	row {
 	key A alpha hexa
@@ -225,11 +225,10 @@ uppercase {
 	key J alpha
 	key K alpha
 	key L alpha
+	key Ô alpha
 	key ´ alpha dead
-	key ˇ alpha dead
 	}
 	row {
-	white size 4
 	key Y alpha
 	key X alpha
 	key C alpha hexa
@@ -237,8 +236,9 @@ uppercase {
 	key B alpha hexa
 	key N alpha
 	key M alpha
-	slide special { key . key , key ? key ! key @ key ( key ) }
-	slide special { key : key ; key - key _ key / key < key > }
+	white size 4
+	key ˇ alpha dead
+	slide special { key . key , key ? key ! key - key _ key & key | key \ key / key < key > }
 	}
 }
 special {
@@ -279,8 +279,8 @@ special {
 	key . special
 	key , special
 	key ? special
-	key „ special
-	key “ special
+	key £ special
+	key € special
 	key < special
 	key > special
 	}
@@ -292,9 +292,9 @@ special {
 	row {
 	key # special
 	key % special
-	key € special
-	key £ special
+	key ¤ special
 	key $ special
+	key ¥ special
 	key ^ special
 	key | special
 	key [ special
@@ -307,24 +307,24 @@ special {
 	key ¿ special
 	key § special
 	key * special
-	key · special
-	key • special
+	key ¨ special
 	key ° special
+	key · special
 	key ± special
 	key ½ special
 	key « special
 	key » special
 	}
 	row {
-	key ú alpha
-	key ä alpha
-	key ô alpha
-	key ň alpha
-	key Ú alpha
-	key Ä alpha
-	key Ô alpha
-	key Ň alpha
+	key ¢ alpha
 	key ß alpha
+	key ç alpha
+	key ´ alpha
+	key ` alpha
+	key “ alpha
+	key ” alpha
+	key ‘ alpha
+	key ’ alpha
 	key ™ special
 	key © special
 	}
