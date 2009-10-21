@@ -1,3 +1,11 @@
+ukeyboard (1.9) unstable; urgency=low
+
+  * Added Greek hw layouts for devices with US keyboard by Porfyras.
+  * Added Turkish on-screen keyboard layout by Burak Ilgicioglu.
+  * Minor fixes in Slovak on-screen keyboard layouts.
+
+ -- Roman Moravcik <roman.moravcik@gmail.com>  Wed, 21 Oct 2009 10:24:37 +0200
+
 ukeyboard (1.8) unstable; urgency=low
 
   * Added Belarusian on-screen layout by Darafei Praliaskouski.
