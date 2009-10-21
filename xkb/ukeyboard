@@ -254,3 +254,51 @@ xkb_symbols "bg-phonetic" {
 	key <AB08>	{ type="EIGHT_LEVEL", [ comma,		less,		comma,		less,		comma,			less,			comma,		less		] };
 	key <AB09>	{ type="EIGHT_LEVEL", [ period,		greater,	period,		greater,	period,			greater,		period,		greater		] };
 };
+
+
+// author: Porfyras <porfyras@gmail.com>
+partial alphanumeric_keys
+xkb_symbols "gr" {
+	name[Group1] = "Greek (US hw)";
+
+	include "nokia_vndr/ukeyboard(base)"
+
+	key <COMP>	{ [ ISO_Level5_Lock,	ISO_Level5_Lock,	ISO_Level5_Lock,	ISO_Level5_Lock		] };
+	modifier_map Mod3 { ISO_Level5_Lock };
+
+	key <SPCE>	{ type="EIGHT_LEVEL", [ space,		space,		Tab,		Tab,		space,			space,			Tab,		Tab		] };
+	key <AD01>	{ type="EIGHT_LEVEL", [ q,		Q,		1,		1,		bar,			bar,			1,		1		] };
+	key <AD02>	{ type="EIGHT_LEVEL", [ w,		W,		2,		2,		Greek_finalsmallsigma,	Greek_SIGMA,		2,		2		] };
+	key <AD03>	{ type="EIGHT_LEVEL", [ e,		E,		3,		3,		Greek_epsilon,		Greek_EPSILON,		3,		3		] };
+	key <AD04>	{ type="EIGHT_LEVEL", [ r,		R,		4,		4,		Greek_rho,		Greek_RHO,		4,		4		] };
+	key <AD05>	{ type="EIGHT_LEVEL", [ t,		T,		5,		5,		Greek_tau,		Greek_TAU,		5,		5		] };
+	key <AD06>	{ type="EIGHT_LEVEL", [ y,		Y,		6,		6,		Greek_upsilon,		Greek_UPSILON,		6,		6		] };
+	key <AD07>	{ type="EIGHT_LEVEL", [ u,		U,		7,		7,		Greek_theta,		Greek_THETA,		7,		7		] };
+	key <AD08>	{ type="EIGHT_LEVEL", [ i,		I,		8,		8,		Greek_iota,		Greek_IOTA,		8,		8		] };
+	key <AD09>	{ type="EIGHT_LEVEL", [ o,		O,		9,		9,		Greek_omicron,		Greek_OMICRON,		9,		9		] };
+	key <AD10>	{ type="EIGHT_LEVEL", [ p,		P,		0,		0,		Greek_pi,		Greek_PI,		0,		0		] };
+
+	key <AC01>	{ type="EIGHT_LEVEL", [ a,		A,		exclam,		exclam,		Greek_alpha,		Greek_ALPHA,		exclam,		exclam		] };
+	key <AC02>	{ type="EIGHT_LEVEL", [ s,		S,		quotedbl,	quotedbl,	Greek_sigma,		Greek_SIGMA,		quotedbl,	quotedbl	] };
+	key <AC03>	{ type="EIGHT_LEVEL", [ d,		D,		at,		at,		Greek_delta,		Greek_DELTA,		at,		at		] };
+	key <AC04>	{ type="EIGHT_LEVEL", [ f,		F,		numbersign,	numbersign,	Greek_phi,		Greek_PHI,		numbersign,	numbersign	] };
+	key <AC05>	{ type="EIGHT_LEVEL", [ g,		G,		backslash,	backslash,	Greek_gamma,		Greek_GAMMA,		backslash,	backslash	] };
+	key <AC06>	{ type="EIGHT_LEVEL", [ h,		H,		slash,		slash,		Greek_eta,		Greek_ETA,		slash,		slash		] };
+	key <AC07>	{ type="EIGHT_LEVEL", [ j,		J,		parenleft,	parenleft,	Greek_xi,		Greek_XI,		parenleft,	parenleft	] };
+	key <AC08>	{ type="EIGHT_LEVEL", [ k,		K,		parenright,	parenright,	Greek_kappa,		Greek_KAPPA,		parenright,	parenright	] };
+	key <AC09>	{ type="EIGHT_LEVEL", [ l,		L,		asterisk,	asterisk,	Greek_lamda,		Greek_LAMDA,		asterisk,	asterisk	] };
+	key <AC10>	{ type="EIGHT_LEVEL", [ semicolon,	colon,		sterling,	sterling,	semicolon,		colon,			sterling,	sterling	] };
+	key <AC11>	{ type="EIGHT_LEVEL", [ dead_acute,	dead_acute,	question,	question,	dead_acute,		dead_diaeresis,		question,	question	] };
+
+	key <AB01>	{ type="EIGHT_LEVEL", [ z,		Z,		yen,		yen,		Greek_zeta,		Greek_ZETA,		yen,		yen		] };
+	key <AB02>	{ type="EIGHT_LEVEL", [ x,		X,		asciicircum,	asciicircum,	Greek_chi,		Greek_CHI,		asciicircum,	asciicircum	] };
+	key <AB03>	{ type="EIGHT_LEVEL", [ c,		C,		asciitilde,	asciitilde,	Greek_psi,		Greek_PSI,		asciitilde,	asciitilde	] };
+	key <AB04>	{ type="EIGHT_LEVEL", [ v,		V,		percent,	percent,	Greek_omega,		Greek_OMEGA,		percent,	percent		] };
+	key <AB05>	{ type="EIGHT_LEVEL", [ b,		B,		ampersand,	ampersand,	Greek_beta,		Greek_BETA,		ampersand,	ampersand	] };
+	key <AB06>	{ type="EIGHT_LEVEL", [ n,		N,		dollar,		dollar,		Greek_nu,		Greek_NU,		dollar,		dollar		] };
+	key <AB07>	{ type="EIGHT_LEVEL", [ m,		M,		EuroSign,	EuroSign,	Greek_mu,		Greek_MU,		EuroSign,	EuroSign	] };
+	key <AB08>	{ type="EIGHT_LEVEL", [ comma,		less,		bracketleft,	bracketleft,	comma,			less,			bracketleft,	bracketleft	] };
+	key <AB09>	{ type="EIGHT_LEVEL", [ period,		greater,	bracketright,	bracketright,	period,			greater,		bracketright,	bracketright	] };
+	key <AE11>	{ type="EIGHT_LEVEL", [ minus,		braceleft,	underscore,	underscore,	minus,			braceleft,		underscore,	underscore	] };
+	key <AE12>	{ type="EIGHT_LEVEL", [ plus,		braceright,	equal,		equal,		plus,			braceright,		equal,		equal		] };
+};
