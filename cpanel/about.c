@@ -1,5 +1,6 @@
 /*
  *  Copyright (c) 2008 Jiri Benc <jbenc@upir.cz>
+ *  Copyright (c) 2009 Roman Moravcik <roman.moravcik@gmail.com>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License version 2 as
@@ -19,37 +20,27 @@
 #include <string.h>
 #include <glib.h>
 #include <gtk/gtk.h>
+#include <hildon/hildon.h>
 #include <libosso.h>
 #include <gconf/gconf.h>
 #include <gconf/gconf-client.h>
 #include "prefs.h"
 #include "hw.h"
 
-static gboolean label_focus(GtkWidget *widget, GtkDirectionType arg, gpointer data)
-{
-	(void)arg; (void)data;
-	gtk_label_select_region(GTK_LABEL(widget), 0, 0);
-	return TRUE;
-}
-
 static GtkWidget *start(GConfClient *client, GtkWidget *win, void **data)
 {
-	GtkScrolledWindow *scroll;
+	GtkWidget *scroll;
 	GtkWidget *label;
 
 	(void)client; (void)win;
 
-	scroll = GTK_SCROLLED_WINDOW(gtk_scrolled_window_new(NULL, NULL));
-	gtk_scrolled_window_set_policy(scroll, GTK_POLICY_NEVER, GTK_POLICY_AUTOMATIC);
+	scroll = hildon_pannable_area_new();
 
 	label = gtk_label_new(NULL);
 	gtk_label_set_markup(GTK_LABEL(label),
 #include "about.inc"
 	);
-	gtk_label_set_selectable(GTK_LABEL(label), TRUE);
-	g_signal_connect(G_OBJECT(label), "focus", G_CALLBACK(label_focus), NULL);
-	gtk_scrolled_window_add_with_viewport(scroll, label);
-
+	hildon_pannable_area_add_with_viewport (HILDON_PANNABLE_AREA(scroll), label);
 	*data = NULL;
 	return GTK_WIDGET(scroll);
 }

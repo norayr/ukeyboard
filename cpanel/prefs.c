@@ -1,5 +1,6 @@
 /*
  *  Copyright (c) 2008 Jiri Benc <jbenc@upir.cz>
+ *  Copyright (c) 2009 Roman Moravcik <roman.moravcik@gmail.com>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License version 2 as
@@ -21,6 +22,7 @@
 #include <gtk/gtk.h>
 #include <libosso.h>
 #include <hildon-cp-plugin/hildon-cp-plugin-interface.h>
+#include <hildon/hildon.h>
 #include <gconf/gconf.h>
 #include <gconf/gconf-client.h>
 #include "prefs.h"
@@ -28,6 +30,9 @@
 #include "onscreen.h"
 #include "lang.h"
 #include "about.h"
+
+#define GETTEXT_PACKAGE "osso-applet-textinput"
+#include <glib/gi18n-lib.h>
 
 static init_func inits[] = { prefs_hw_init, prefs_onscreen_init, prefs_lang_init, prefs_about_init };
 #define PLUGINS		(sizeof(inits) / sizeof(init_func))
@@ -111,8 +116,9 @@ static void deinit_conf(GConfClient *client)
 osso_return_t execute(osso_context_t *osso, gpointer data, gboolean user_activated)
 {
 	GConfClient *conf;
-	GtkDialog *dialog;
-	GtkWidget *widget, *notebook;
+	GtkDialog *dialog, *about;
+	GtkWidget *scroll, *widget, *vbox;
+	gchar *title;
 	void *plugin_data[PLUGINS];
 	unsigned i;
 	int res;
@@ -133,23 +139,43 @@ osso_return_t execute(osso_context_t *osso, gpointer data, gboolean user_activat
 		return OSSO_ERROR;
 	}
 	gtk_window_set_transient_for(GTK_WINDOW(dialog), GTK_WINDOW(data));
-	gtk_window_set_title(GTK_WINDOW(dialog), "Text input (ukeyboard)");
-	gtk_dialog_set_has_separator(dialog, FALSE);
-	gtk_window_set_modal(GTK_WINDOW(dialog), TRUE);
 
-	gtk_dialog_add_action_widget(dialog, gtk_button_new_with_label("OK"), GTK_RESPONSE_ACCEPT);
-	gtk_dialog_add_action_widget(dialog, gtk_button_new_with_label("Cancel"), GTK_RESPONSE_REJECT);
+	title = g_strdup_printf("%s (ukeyboard)", _("tein_ti_text_input_title"));
+	gtk_window_set_title(GTK_WINDOW(dialog), title);
+	g_free(title);
 
-	notebook = gtk_notebook_new();
-	for (i = 0; i < PLUGINS; i++) {
+
+	gtk_dialog_add_button(GTK_DIALOG(dialog), _HL("ecdg_ti_aboutdialog_title"), GTK_RESPONSE_HELP);
+	gtk_dialog_add_button(GTK_DIALOG(dialog), _HL("wdgt_bd_save"), GTK_RESPONSE_ACCEPT);
+
+	scroll = hildon_pannable_area_new();
+	gtk_widget_set_size_request(GTK_WIDGET (scroll), -1, 345);
+	gtk_container_add(GTK_CONTAINER(GTK_DIALOG(dialog)->vbox), scroll);
+
+	vbox = gtk_vbox_new(FALSE, 0);
+	hildon_pannable_area_add_with_viewport (HILDON_PANNABLE_AREA(scroll), vbox);
+
+	gtk_widget_show_all(GTK_WIDGET(dialog));
+
+	for (i = 0; i < PLUGINS - 1; i++) {
 		widget = prefs[i].start(conf, GTK_WIDGET(dialog), &plugin_data[i]);
 		if (widget)
-			gtk_notebook_append_page(GTK_NOTEBOOK(notebook), widget, gtk_label_new(prefs[i].name));
+			gtk_box_pack_start(GTK_BOX(vbox), widget, FALSE, TRUE, 0);
 	}
 
-	gtk_container_add(GTK_CONTAINER(dialog->vbox), notebook);
-	gtk_widget_show_all(GTK_WIDGET(dialog));
-	res = gtk_dialog_run(dialog);
+	while ((res = gtk_dialog_run(GTK_DIALOG(dialog))) == GTK_RESPONSE_HELP) {
+		about = GTK_DIALOG(gtk_dialog_new());
+		gtk_window_set_title(GTK_WINDOW(about), _HL("ecdg_ti_aboutdialog_title"));
+		gtk_widget_set_size_request (GTK_WIDGET (about), -1, 300);
+
+		widget = prefs[3].start(conf, GTK_WIDGET(about), &plugin_data[3]);
+		gtk_container_add(GTK_CONTAINER(GTK_DIALOG(about)->vbox), widget);
+
+		gtk_widget_show_all(GTK_WIDGET(about));
+		gtk_dialog_run(GTK_DIALOG(about));
+		gtk_widget_destroy(GTK_WIDGET(about));
+
+	}
 	if (res == GTK_RESPONSE_ACCEPT) {
 		for (i = 0; i < PLUGINS; i++)
 			if (prefs[i].action)

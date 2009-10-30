@@ -1,5 +1,6 @@
 /*
  *  Copyright (c) 2008 Jiri Benc <jbenc@upir.cz>
+ *  Copyright (c) 2009 Roman Moravcik <roman.moravcik@gmail.com>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License version 2 as
@@ -20,11 +21,15 @@
 #include <glib.h>
 #include <gtk/gtk.h>
 #include <hildon/hildon-caption.h>
+#include <hildon/hildon.h>
 #include <libosso.h>
 #include <gconf/gconf.h>
 #include <gconf/gconf-client.h>
 #include "prefs.h"
 #include "hw.h"
+
+#define GETTEXT_PACKAGE "osso-applet-textinput"
+#include <glib/gi18n-lib.h>
 
 struct layout {
 	gchar *model;
@@ -34,7 +39,7 @@ struct layout {
 
 struct data {
 	GList *layouts;
-	GtkComboBox *combo;
+	HildonTouchSelector *combo;
 };
 
 static char *strip(char *s)
@@ -128,9 +133,7 @@ static GtkWidget *start(GConfClient *client, GtkWidget *win, void **data)
 	struct layout *lay;
 	unsigned i;
 
-	GtkBox *vbox;
-	GtkSizeGroup *group;
-	GtkWidget *align;
+	GtkWidget *button;
 
 	(void)win;
 
@@ -143,31 +146,33 @@ static GtkWidget *start(GConfClient *client, GtkWidget *win, void **data)
 
 	omodel = get_str(client, "int_kb_model");
 	olayout = get_str(client, "int_kb_layout");
-	d->layouts = get_layouts("/usr/share/X11/xkb/symbols/nokia_vndr/rx-44", "nokiarx44", NULL);
+	d->layouts = get_layouts("/usr/share/X11/xkb/symbols/nokia_vndr/rx-51", "nokiarx51", NULL);
 	d->layouts = get_layouts("/usr/share/X11/xkb/symbols/nokia_vndr/ukeyboard", "ukeyboard", d->layouts);
 
-	vbox = GTK_BOX(gtk_vbox_new(FALSE, 0));
-	group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
+	d->combo = HILDON_TOUCH_SELECTOR(hildon_touch_selector_new_text());
 
-	d->combo = GTK_COMBO_BOX(gtk_combo_box_new_text());
+	button = hildon_picker_button_new(HILDON_SIZE_FINGER_HEIGHT, HILDON_BUTTON_ARRANGEMENT_VERTICAL);
+	hildon_button_set_title(HILDON_BUTTON(button), _("tein_fi_keyboard_layout"));
+	hildon_picker_button_set_selector(HILDON_PICKER_BUTTON (button), d->combo);
+	hildon_button_set_alignment (HILDON_BUTTON (button), 0.0, 0.5, 1.0, 0.0);
+	hildon_button_set_title_alignment(HILDON_BUTTON(button), 0.0, 0.5);
+	hildon_button_set_value_alignment (HILDON_BUTTON (button), 0.0, 0.5);
+
 	for (item = d->layouts, i = 0; item; item = g_list_next(item), i++) {
 		lay = item->data;
-		gtk_combo_box_append_text(d->combo, lay->name);
+		hildon_touch_selector_append_text(d->combo, lay->name);
 		if (omodel && olayout && !strcmp(lay->model, omodel) && !strcmp(lay->layout, olayout))
-			gtk_combo_box_set_active(d->combo, i);
+			hildon_touch_selector_set_active(d->combo, 0, i);
 	}
-	gtk_box_pack_start_defaults(vbox, hildon_caption_new(group, "Keyboard layout",
-		GTK_WIDGET(d->combo), NULL, HILDON_CAPTION_MANDATORY));
 
 	g_free(olayout);
 	g_free(omodel);
-	g_object_unref(G_OBJECT(group));
 
 	*data = d;
 
-	align = gtk_alignment_new(0, 0, 1, 0);
-	gtk_container_add(GTK_CONTAINER(align), GTK_WIDGET(vbox));
-	return align;
+	gtk_widget_show(button);
+
+	return button;
 }
 
 static void action(GConfClient *client, void *data)
@@ -178,7 +183,7 @@ static void action(GConfClient *client, void *data)
 
 	if (!d)
 		return;
-	res = gtk_combo_box_get_active(d->combo);
+	res = hildon_touch_selector_get_active(d->combo, 0);
 	if (res >= 0) {
 		lay = g_list_nth_data(d->layouts, res);
 		if (lay) {

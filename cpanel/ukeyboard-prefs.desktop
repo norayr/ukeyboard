@@ -2,6 +2,7 @@
 Name=tein_ti_text_input_title
 Comment=Advanced input settings configuration
 Type=HildonControlPanelPlugin
-Icon=qgn_list_cp_peninput
+Icon=control_pen_input
 Categories=personalisation
 X-control-panel-plugin=libukeyboard-prefs.so
+X-Text-Domain=osso-applet-textinput

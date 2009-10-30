@@ -1,5 +1,6 @@
 /*
  *  Copyright (c) 2008 Jiri Benc <jbenc@upir.cz>
+ *  Copyright (c) 2009 Roman Moravcik <roman.moravcik@gmail.com>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License version 2 as
@@ -17,6 +18,8 @@
 
 #ifndef _PREFS_H
 #define _PREFS_H
+
+#define _HL(str) dgettext("hildon-libs",str)
 
 struct prefs {
 	GtkWidget *(*start)(GConfClient *, GtkWidget *, void **);

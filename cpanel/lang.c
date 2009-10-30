@@ -1,5 +1,6 @@
 /*
  *  Copyright (c) 2008 Jiri Benc <jbenc@upir.cz>
+ *  Copyright (c) 2009 Roman Moravcik <roman.moravcik@gmail.com>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License version 2 as
@@ -23,12 +24,16 @@
 #include <gtk/gtk.h>
 #include <hildon/hildon-caption.h>
 #include <hildon/hildon-banner.h>
+#include <hildon/hildon.h>
 #include <libosso.h>
 #include <gconf/gconf.h>
 #include <gconf/gconf-client.h>
 #include "prefs.h"
 #include "lang.h"
 #include "langset.h"
+
+#define GETTEXT_PACKAGE "osso-applet-textinput"
+#include <glib/gi18n-lib.h>
 
 struct langlink {
 	gchar *src;
@@ -40,9 +45,13 @@ struct data {
 	GtkWidget *win;
 	GList *langs;
 	GList *langlinks;
-	GtkComboBox *langsel[2];
-	GtkButton *settings[2];
-	GtkToggleButton *dual;
+	HildonCheckButton *word_compl;
+	HildonCheckButton *auto_cap;
+	HildonCheckButton *sp_after;
+	HildonPickerButton *sec_dictsel;
+	HildonTouchSelector *langsel[2];
+	HildonTouchSelector *dictsel[2];
+	HildonCheckButton *dual;
 	int num_langs;
 };
 
@@ -224,7 +233,7 @@ static void free_langlinks(GList *list)
 	g_list_free(list);
 }
 
-static void fill_langsel(GtkComboBox *combo, GList *langs, struct lang *deflang, gboolean empty)
+static void fill_langsel(HildonTouchSelector *combo, GList *langs, struct lang *deflang, gboolean empty)
 {
 	GList *item;
 	struct lang *lang;
@@ -232,14 +241,14 @@ static void fill_langsel(GtkComboBox *combo, GList *langs, struct lang *deflang,
 
 	for (item = langs, i = 0; item; item = g_list_next(item), i++) {
 		lang = item->data;
-		gtk_combo_box_append_text(combo, lang->desc);
+		hildon_touch_selector_append_text(combo, lang->desc);
 		if (lang == deflang)
-			gtk_combo_box_set_active(combo, i);
+			hildon_touch_selector_set_active(combo, 0, i);
 	}
 	if (empty) {
-		gtk_combo_box_append_text(combo, "");
+		hildon_touch_selector_append_text(combo, _("tein_fi_not_in_use"));
 		if (!deflang)
-			gtk_combo_box_set_active(combo, i);
+			hildon_touch_selector_set_active(combo, 0, i);
 	}
 }
 
@@ -247,12 +256,16 @@ static void sensitivity_langsel(struct data *d)
 {
 	gboolean sens;
 
-	sens = (gtk_combo_box_get_active(d->langsel[1]) < d->num_langs);
-	gtk_widget_set_sensitive(GTK_WIDGET(d->settings[1]), sens);
+	sens = (hildon_touch_selector_get_active(d->langsel[1], 0) < d->num_langs);
 	gtk_widget_set_sensitive(GTK_WIDGET(d->dual), sens);
+
+	if (sens)
+		gtk_widget_show(GTK_WIDGET(d->sec_dictsel));
+	else
+		gtk_widget_hide(GTK_WIDGET(d->sec_dictsel));
 }
 
-static void verify_langsel(GtkComboBox *combo, struct data *d)
+static void verify_langsel(HildonTouchSelector *combo, gint column, struct data *d)
 {
 	struct lang *lang[2];
 	int res;
@@ -260,32 +273,23 @@ static void verify_langsel(GtkComboBox *combo, struct data *d)
 
 	(void)combo;
 	for (i = 0; i < 2; i++) {
-		res = gtk_combo_box_get_active(d->langsel[i]);
+		res = hildon_touch_selector_get_active(d->langsel[i], column);
 		lang[i] = (res >= 0) ? g_list_nth_data(d->langs, res) : NULL;
 	}
 	if (lang[0] && lang[1] && !strcmp(lang[0]->code, lang[1]->code)) {
 		hildon_banner_show_information(d->win, "gtk-dialog-error",
 			"Impossible combination of languages");
-		gtk_combo_box_set_active(d->langsel[1], d->num_langs);
+		hildon_touch_selector_set_active(d->langsel[1], column, d->num_langs);
 	}
 	sensitivity_langsel(d);
-}
-
-static void do_settings(GtkButton *button, struct data *d)
-{
-	int which;
-
-	which = (button == d->settings[0]) ? 0 : 1;
-	lang_settings(d->client, d->win, d->langs, gtk_combo_box_get_active(d->langsel[which]));
 }
 
 static GtkWidget *start(GConfClient *client, GtkWidget *win, void **data)
 {
 	struct data *d;
 	gchar *tmp;
-	GtkBox *vbox;
-	GtkSizeGroup *group;
-	GtkWidget *align;
+	GtkWidget *vbox, *table;
+	struct lang *lang;
 	unsigned i;
 
 	d = g_new0(struct data, 1);
@@ -296,41 +300,83 @@ static GtkWidget *start(GConfClient *client, GtkWidget *win, void **data)
 	d->langs = get_langs("/usr/share/ukeyboard", NULL, d->langs);
 	d->num_langs = g_list_length(d->langs);
 
-	vbox = GTK_BOX(gtk_vbox_new(FALSE, 0));
-	gtk_box_set_spacing(vbox, 5);
-	group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
+	vbox = gtk_vbox_new(FALSE, 0);
+
+	d->word_compl = HILDON_CHECK_BUTTON(hildon_check_button_new(HILDON_SIZE_FINGER_HEIGHT));
+	gtk_button_set_label (GTK_BUTTON (d->word_compl), _("tein_fi_settings_word_completion"));
+	gtk_box_pack_start(GTK_BOX(vbox), GTK_WIDGET(d->word_compl), TRUE, TRUE, 0);
+
+	d->auto_cap = HILDON_CHECK_BUTTON(hildon_check_button_new(HILDON_SIZE_FINGER_HEIGHT));
+	gtk_button_set_label (GTK_BUTTON (d->auto_cap), _("tein_fi_settings_auto_capitalization"));
+	gtk_box_pack_start(GTK_BOX(vbox), GTK_WIDGET(d->auto_cap), TRUE, TRUE, 0);
+
+	d->sp_after = HILDON_CHECK_BUTTON(hildon_check_button_new(HILDON_SIZE_FINGER_HEIGHT));
+	gtk_button_set_label (GTK_BUTTON (d->sp_after), _("tein_fi_settings_space_after_word"));
+	gtk_box_pack_start(GTK_BOX(vbox), GTK_WIDGET(d->sp_after), TRUE, TRUE, 0);
+
+	table = gtk_table_new(2, 2, TRUE);
+	gtk_box_pack_start(GTK_BOX(vbox), table, TRUE, TRUE, 0);
 
 	for (i = 0; i < 2; i++) {
-		d->langsel[i] = GTK_COMBO_BOX(gtk_combo_box_new_text());
+		GtkWidget *button;
+		gchar *code;
 
-		tmp = get_lang(client, i);
-		fill_langsel(d->langsel[i], d->langs, get_def_lang(tmp, d->langs, d->langlinks), i == 1);
+		d->langsel[i] = HILDON_TOUCH_SELECTOR(hildon_touch_selector_new_text());
+		code = get_lang(client, i);
+		fill_langsel(d->langsel[i], d->langs, get_def_lang(code, d->langs, d->langlinks), i == 1);
+		g_signal_connect(G_OBJECT(d->langsel[i]), "changed", G_CALLBACK(verify_langsel), d);
+
+		button = hildon_picker_button_new(HILDON_SIZE_FINGER_HEIGHT, HILDON_BUTTON_ARRANGEMENT_VERTICAL);
+		hildon_button_set_title(HILDON_BUTTON(button), i == 0 ? _("tein_fi_primary_language") : _("tein_fi_secondary_language"));
+		hildon_picker_button_set_selector(HILDON_PICKER_BUTTON (button), d->langsel[i]);
+		hildon_button_set_alignment (HILDON_BUTTON (button), 0.0, 0.5, 1.0, 0.0);
+		hildon_button_set_title_alignment(HILDON_BUTTON(button), 0.0, 0.5);
+		hildon_button_set_value_alignment (HILDON_BUTTON (button), 0.0, 0.5);
+		gtk_table_attach_defaults(GTK_TABLE(table), button, 0, 1, i, i + 1);
+
+		d->dictsel[i] = HILDON_TOUCH_SELECTOR(hildon_touch_selector_new_text());
+		tmp = get_l_str(client, code, "dictionary");
+		lang = get_def_lang(code, d->langs, d->langlinks);
+
+		/* If tmp is NULL (i.e. the gconf key is unset), try to use the same 
+		 * dictionary as the keyboard. But don't do this if the keyboard is 
+		 * from our package. */
+		fill_dict(d->dictsel[i], d->langs, (tmp || (lang && lang->ext)) ? tmp : code);
 		if (tmp)
 			g_free(tmp);
 
-		g_signal_connect(G_OBJECT(d->langsel[i]), "changed", G_CALLBACK(verify_langsel), d);
-		gtk_box_pack_start_defaults(vbox, hildon_caption_new(group, i == 0 ? "1st language" : "2nd language",
-			GTK_WIDGET(d->langsel[i]), NULL, HILDON_CAPTION_MANDATORY));
+		button = hildon_picker_button_new(HILDON_SIZE_FINGER_HEIGHT, HILDON_BUTTON_ARRANGEMENT_VERTICAL);
+		hildon_button_set_title(HILDON_BUTTON(button), _("tein_fi_settings_dictionary"));
+		hildon_picker_button_set_selector(HILDON_PICKER_BUTTON (button), d->dictsel[i]);
+		hildon_button_set_alignment (HILDON_BUTTON (button), 0.0, 0.5, 1.0, 0.0);
+		hildon_button_set_title_alignment(HILDON_BUTTON(button), 0.0, 0.5);
+		hildon_button_set_value_alignment (HILDON_BUTTON (button), 0.0, 0.5);
+		gtk_table_attach_defaults(GTK_TABLE(table), button, 1, 2, i, i + 1);
 
-		d->settings[i] = GTK_BUTTON(gtk_button_new_with_label("Settings"));
-		g_signal_connect(G_OBJECT(d->settings[i]), "clicked", G_CALLBACK(do_settings), d);
-		gtk_box_pack_start_defaults(vbox, hildon_caption_new(group, NULL,
-			GTK_WIDGET(d->settings[i]), NULL, HILDON_CAPTION_OPTIONAL));
+		if (i == 1)
+			d->sec_dictsel = HILDON_PICKER_BUTTON(button);
+		else {
+			hildon_check_button_set_active(d->word_compl, get_l_bool(client, code, "word-completion"));
+			hildon_check_button_set_active(d->auto_cap, get_l_bool(client, code, "auto-capitalisation"));
+			hildon_check_button_set_active(d->sp_after, get_l_bool(client, code, "insert-space-after-word"));
+		}
+
+		if (code)
+			g_free(code);
 	}
 
-	d->dual = GTK_TOGGLE_BUTTON(gtk_check_button_new());
-	gtk_toggle_button_set_active(d->dual, get_bool(client, "dual-dictionary"));
-	gtk_box_pack_start_defaults(vbox, hildon_caption_new(group, "Use dual dictionaries",
-		GTK_WIDGET(d->dual), NULL, HILDON_CAPTION_MANDATORY));
+	d->dual = HILDON_CHECK_BUTTON(hildon_check_button_new(HILDON_SIZE_FINGER_HEIGHT));
+	hildon_check_button_set_active(d->dual, get_bool(client, "dual-dictionary"));
+	gtk_button_set_label (GTK_BUTTON (d->dual), _("tein_fi_dual_dictionary_use"));
+	gtk_box_pack_start(GTK_BOX(vbox), GTK_WIDGET(d->dual), TRUE, TRUE, 0);
+
+	gtk_widget_show_all(vbox);
 
 	sensitivity_langsel(d);
 
-	g_object_unref(G_OBJECT(group));
 	*data = d;
 
-	align = gtk_alignment_new(0, 0, 1, 0);
-	gtk_container_add(GTK_CONTAINER(align), GTK_WIDGET(vbox));
-	return align;
+	return vbox;
 }
 
 static void action(GConfClient *client, void *data)
@@ -342,7 +388,9 @@ static void action(GConfClient *client, void *data)
 	unsigned i;
 
 	for (i = 0; i < 2; i++) {
-		res = gtk_combo_box_get_active(d->langsel[i]);
+		struct lang *dict;
+
+		res = hildon_touch_selector_get_active(d->langsel[i], 0);
 		if (res < 0)
 			continue;
 		lang = g_list_nth_data(d->langs, res);
@@ -360,10 +408,23 @@ static void action(GConfClient *client, void *data)
 			 * that by setting "en_GB" lang code first. */
 			set_lang(client, i, "en_GB");
 			set_lang(client, i, lang->code);
+
+			set_l_bool(client, lang->code, "auto-capitalisation", hildon_check_button_get_active(d->auto_cap));
+			set_l_bool(client, lang->code, "word-completion", hildon_check_button_get_active(d->word_compl));
+			set_l_bool(client, lang->code, "insert-space-after-word", hildon_check_button_get_active(d->sp_after));
+
+			res = hildon_touch_selector_get_active(d->dictsel[i], 0);
+			if (res >= 0)
+				dict = g_list_nth_data(d->langs, res);
+
+			if (dict && !dict->ext)
+				set_l_str(client, lang->code, "dictionary", dict->code);
+			else
+				set_l_str(client, lang->code, "dictionary", "");
 		} else
 			set_lang(client, i, "");
 	}
-	set_bool(client, "dual-dictionary", gtk_toggle_button_get_active(d->dual));
+	set_bool(client, "dual-dictionary", hildon_check_button_get_active(d->dual));
 }
 
 static void stop(GConfClient *client, void *data)

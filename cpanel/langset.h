@@ -1,5 +1,6 @@
 /*
  *  Copyright (c) 2008 Jiri Benc <jbenc@upir.cz>
+ *  Copyright (c) 2009 Roman Moravcik <roman.moravcik@gmail.com>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License version 2 as
@@ -18,6 +19,10 @@
 #ifndef _LANGSET_H
 #define _LANGSET_H
 
-void lang_settings(GConfClient *client, GtkWidget *win, GList *langs, int n);
+gboolean get_l_bool(GConfClient *client, char *lang, char *key);
+void set_l_bool(GConfClient *client, char *lang, char *key, gboolean val);
+gchar *get_l_str(GConfClient *client, char *lang, char *key);
+void set_l_str(GConfClient *client, char *lang, char *key, gchar *val);
+void fill_dict(HildonTouchSelector *combo, GList *langs, gchar *deflang);
 
 #endif
