@@ -145,7 +145,7 @@ osso_return_t execute(osso_context_t *osso, gpointer data, gboolean user_activat
 	g_free(title);
 
 
-	gtk_dialog_add_button(GTK_DIALOG(dialog), _HL("ecdg_ti_aboutdialog_title"), GTK_RESPONSE_HELP);
+	gtk_dialog_add_button(GTK_DIALOG(dialog), "About", GTK_RESPONSE_HELP);
 	gtk_dialog_add_button(GTK_DIALOG(dialog), _HL("wdgt_bd_save"), GTK_RESPONSE_ACCEPT);
 
 	scroll = hildon_pannable_area_new();
