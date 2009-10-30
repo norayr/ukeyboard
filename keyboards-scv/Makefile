@@ -1,5 +1,4 @@
 layouts = \
-	  cz-qwerty.vkb cz-qwertz.vkb \
 	  sk-qwerty.vkb sk-qwertz.vkb
 
 all: $(layouts)
