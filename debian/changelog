@@ -1,3 +1,12 @@
+ukeyboard (2.0) unstable; urgency=low
+
+  * Added support for Maemo5 (Fremantle).
+  * Dropped Czech and Polish keyboard support, because they are officially
+    supported now.
+  * OS2008 (Diablo/Chinook) is no longer supported.
+
+ -- Roman Moravcik <roman.moravcik@gmail.com>  Wed, 29 Oct 2009 22:08:12 +0100
+
 ukeyboard (1.9) unstable; urgency=low
 
   * Added Greek hw layouts for devices with US keyboard by Porfyras.
