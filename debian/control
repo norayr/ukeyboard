@@ -10,6 +10,13 @@ Architecture: any
 Depends: ${shlibs:Depends}
 Description: Additional keyboard layouts
  Additional keyboard layouts for both on-screen and sliding keyboard.
+XB-Maemo-Icon-26:
+ iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAABmJLR0QA/wD/
+ AP+gvaeTAAAAsElEQVRIx+2W0QnDMBBDn0vmyEzOBMpo2cCZxEN4ketPE1ri
+ 0GActx8W3If0Izid4JyZ0QIPGqEbFWMAmOf51otYlsU5STZN0y6GEKjNARxg
+ KSUAYox476nFNy2E0C4jANtGktXkmybJDhndldNHRnfk1DyjAWAcx12QxLtW
+ yg9Gkg77XNe1mHvvs2a9R3V7dNaHq7jUo7M+XcXPe8TrOcnuNqd/m1xuZobr
+ X9DfGz0B8vhEeEEXu0oAAAAASUVORK5CYII=
 
 Package: ukbdcreator
 Architecture: any

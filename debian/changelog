@@ -1,3 +1,9 @@
+ukeyboard (2.0-1) unstable; urgency=low
+
+  * Added package icon.
+
+ -- Roman Moravcik <roman.moravcik@gmail.com>  Wed, 30 Oct 2009 14:43:45 +0100
+
 ukeyboard (2.0) unstable; urgency=low
 
   * Added support for Maemo5 (Fremantle).
