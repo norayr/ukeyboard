@@ -17,7 +17,7 @@ version.h:	../VERSION
 	echo '#define UKBD_VERSION	"'`cat ../VERSION`'"' > version.h
 
 clean:
-	rm -f ukbdcreator *.o core
+	rm -f ukbdcreator *.o core version.h
 
 DESTDIR ?= /usr/local
 install:
