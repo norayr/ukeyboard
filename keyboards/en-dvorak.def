@@ -4,7 +4,7 @@
 # license: GPLv2
 
 header {
-name	"US Dvorak"
+name	"English (USA) - Dvorak"
 lang	"en_DV"
 wc	"en_GB"
 

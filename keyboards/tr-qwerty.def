@@ -2,7 +2,7 @@
 # author: Burak Ilgicioglu <ilgicioglu@gmail.com>
 
 header {
-name	"Türkçe (QWERTY)"
+name	"Türkçe (Türkiye)"
 lang	"tr_TR"
 wc	"tr_TR"
 

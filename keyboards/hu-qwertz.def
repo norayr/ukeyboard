@@ -2,7 +2,7 @@
 # author: Hámorszky Balázs <balihb@freepop.hu>
 
 header {
-name	"Magyar (QWERTZ)"
+name	"Magyar (Magyarország)"
 lang	"hu_HU"
 wc	"hu_HU"
 

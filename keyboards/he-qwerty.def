@@ -2,7 +2,7 @@
 # author: Matan Ziv-Av <matan@svgalib.org>
 
 header {
-name	"Hebrew"
+name	"עברית (ישראל)"
 lang	"he_IL"
 wc	"he_IL"
 
