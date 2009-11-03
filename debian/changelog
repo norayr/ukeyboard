@@ -1,3 +1,11 @@
+ukeyboard (2.0-3) unstable; urgency=low
+
+  * Control panel applet is now displaying keyboard lists sorted.
+  * Added better package description.
+  * Fixed names of layouts.
+
+ -- Roman Moravcik <roman.moravcik@gmail.com>  Tue,  3 Nov 2009 14:03:47 +0100
+
 ukeyboard (2.0-2) unstable; urgency=low
 
   * Fixed ukeyboard and ukbdcreator package categories.
