@@ -9,8 +9,8 @@ layouts = \
 	hr-qwerty.vkb hr-qwertz.vkb \
 	hu-qwertz.vkb \
 	sk-qwerty.vkb sk-qwertz.vkb \
-	th-kedmanee.vkb \
 	tr-qwerty.vkb
+#	th-kedmanee.vkb \
 
 all: $(layouts)
 
