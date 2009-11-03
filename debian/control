@@ -8,8 +8,13 @@ Standards-Version: 3.6.1
 Package: ukeyboard
 Architecture: any
 Depends: ${shlibs:Depends}
-Description: Additional keyboard layouts
- Additional keyboard layouts for both on-screen and sliding keyboard.
+Description: Additional on-screen keyboard layouts
+ This package provides additional Arabic, Belorussian, Bulgarian
+ (BDS & Phonetic), Croatian (QWERTY & QWERTZ), English (Dvorak),
+ Esperanto (QWERTY), Hungarian (QWERTZ), Slovak (QWERTY & QWERTZ),
+ Thai (Kedmanee) and Turkish on-screen keyboard layouts and
+ Czech (QWERTY) and Slovak (QWERTY & QWERTZ) hardware keyboard
+ layouts.
 XB-Maemo-Icon-26:
  iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAABmJLR0QA/wD/
  AP+gvaeTAAAAsElEQVRIx+2W0QnDMBBDn0vmyEzOBMpo2cCZxEN4ketPE1ri
