@@ -44,6 +44,7 @@ struct data {
 	GConfClient *client;
 	GtkWidget *win;
 	GList *langs;
+	GList *dicts;
 	GList *langlinks;
 	HildonCheckButton *word_compl;
 	HildonCheckButton *auto_cap;
@@ -284,6 +285,14 @@ static void verify_langsel(HildonTouchSelector *combo, gint column, struct data 
 	sensitivity_langsel(d);
 }
 
+static gint langs_compare_func(gconstpointer a, gconstpointer b)
+{
+	struct lang *lang_a = (struct lang *) a;
+	struct lang *lang_b = (struct lang *) b;
+
+	return g_utf8_collate (lang_a->desc, lang_b->desc);
+}
+
 static GtkWidget *start(GConfClient *client, GtkWidget *win, void **data)
 {
 	struct data *d;
@@ -298,7 +307,10 @@ static GtkWidget *start(GConfClient *client, GtkWidget *win, void **data)
 
 	d->langs = get_langs("/usr/share/keyboards", &d->langlinks, NULL);
 	d->langs = get_langs("/usr/share/ukeyboard", NULL, d->langs);
+	d->langs = g_list_sort(d->langs, langs_compare_func);
 	d->num_langs = g_list_length(d->langs);
+
+	d->dicts = get_dicts(d->langs);
 
 	vbox = gtk_vbox_new(FALSE, 0);
 
@@ -341,7 +353,7 @@ static GtkWidget *start(GConfClient *client, GtkWidget *win, void **data)
 		/* If tmp is NULL (i.e. the gconf key is unset), try to use the same 
 		 * dictionary as the keyboard. But don't do this if the keyboard is 
 		 * from our package. */
-		fill_dict(d->dictsel[i], d->langs, (tmp || (lang && lang->ext)) ? tmp : code);
+		fill_dict(d->dictsel[i], d->dicts, (tmp || (lang && lang->ext)) ? tmp : code);
 		if (tmp)
 			g_free(tmp);
 
@@ -415,9 +427,9 @@ static void action(GConfClient *client, void *data)
 
 			res = hildon_touch_selector_get_active(d->dictsel[i], 0);
 			if (res >= 0)
-				dict = g_list_nth_data(d->langs, res);
+				dict = g_list_nth_data(d->dicts, res);
 
-			if (dict && !dict->ext)
+			if (dict)
 				set_l_str(client, lang->code, "dictionary", dict->code);
 			else
 				set_l_str(client, lang->code, "dictionary", "");
@@ -434,6 +446,7 @@ static void stop(GConfClient *client, void *data)
 	(void)client;
 
 	free_langs(d->langs);
+	free_langs(d->dicts);
 	free_langlinks(d->langlinks);
 	g_free(d);
 }

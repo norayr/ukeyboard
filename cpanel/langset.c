@@ -81,6 +81,27 @@ void set_l_str(GConfClient *client, char *lang, char *key, gchar *val)
 	g_free(tmp);
 }
 
+GList *get_dicts(GList *langs)
+{
+	GList *item, *dicts = NULL;
+	struct lang *lang, *dict;
+	unsigned i;
+
+	for (item = langs, i = 0; item; item = g_list_next(item)) {
+		lang = item->data;
+
+		if (lang->ext)
+			continue;
+			
+		dict = g_malloc(sizeof(struct lang));
+		dict->fname = g_strdup(lang->fname);
+		dict->desc = g_strdup(lang->desc);
+		dict->code = g_strdup(lang->code);
+		dicts = g_list_append(dicts, dict);
+	}
+	return dicts;
+}
+
 void fill_dict(HildonTouchSelector *combo, GList *langs, gchar *deflang)
 {
 	GList *item;
@@ -89,14 +110,16 @@ void fill_dict(HildonTouchSelector *combo, GList *langs, gchar *deflang)
 
 	for (item = langs, i = 0; item; item = g_list_next(item)) {
 		lang = item->data;
-		if (lang->ext)
-			continue;
+
 		hildon_touch_selector_append_text(combo, lang->desc);
+
 		if (deflang && !strcmp(lang->code, deflang))
 			hildon_touch_selector_set_active(combo, 0, i);
 		i++;
 	}
+
 	hildon_touch_selector_append_text(combo, _("tein_fi_word_completion_language_empty"));
+
 	if (!deflang || !*deflang)
 		hildon_touch_selector_set_active(combo, 0, i);
 }

@@ -23,6 +23,7 @@ gboolean get_l_bool(GConfClient *client, char *lang, char *key);
 void set_l_bool(GConfClient *client, char *lang, char *key, gboolean val);
 gchar *get_l_str(GConfClient *client, char *lang, char *key);
 void set_l_str(GConfClient *client, char *lang, char *key, gchar *val);
+GList *get_dicts(GList *langs);
 void fill_dict(HildonTouchSelector *combo, GList *langs, gchar *deflang);
 
 #endif

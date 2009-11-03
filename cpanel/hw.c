@@ -42,6 +42,41 @@ struct data {
 	HildonTouchSelector *combo;
 };
 
+typedef struct {
+	gchar *layout;
+	gchar *name;
+} layouts;
+
+static layouts layout_names[] = {
+    {"cz",		"Čeština"},
+    {"cz_qwerty",	"Čeština - QWERTY"},
+    {"dano",		"Dansk, Norsk"},
+    {"de",		"Deutsch"},
+    {"us",		"English, Nederlands"},
+    {"ptes",		"Español, Français (Canada), Português"},
+    {"fr",		"Français (France)"},
+    {"it",		"Italiano"},
+    {"pl",		"Polski"},
+    {"fise",		"Suomi, Svenska"},
+    {"ru",		"Русский"},
+    {"sk",		"Slovenčina"},
+    {"sk_qwerty",	"Slovenčina - QWERTY"},
+    {NULL,		NULL}
+};
+
+static gchar *resolve_layout_name(const gchar *layout)
+{
+    unsigned char i = 0;
+
+    while (layout_names[i].layout != NULL)
+    {
+	    if (!strcmp(layout_names[i].layout, layout))
+		    return layout_names[i].name;
+	    i++;
+    }
+    return NULL;
+}
+
 static char *strip(char *s)
 {
 	while (*s == ' ' || *s == '\t' || *s == '\n' || *s == '\r')
@@ -54,6 +89,7 @@ static GList *get_layouts(gchar *path, gchar *model, GList *list)
 	FILE *f;
 	char *buf, *s, *s2;
 	gchar *layout = NULL;
+	gchar *name = NULL;
 	struct layout *lay;
 
 	f = fopen(path, "r");
@@ -80,30 +116,17 @@ static GList *get_layouts(gchar *path, gchar *model, GList *list)
 				continue;
 			*s2 = '\0';
 			layout = g_strdup(s);
-		} else if (!strncmp(s, "name", 4) && layout) {
-			s = strip(s + 4);
-			if (*s != '[')
-				continue;
-			s2 = strchr(s, ']');
-			if (!s2)
-				continue;
-			s = strip(s2 + 1);
-			if (*s != '=')
-				continue;
-			s = strip(s + 1);
-			if (*s != '"')
-				continue;
-			s++;
-			s2 = strchr(s, '"');
-			if (!s2)
-				continue;
-			*s2 = '\0';
-			lay = g_malloc(sizeof(struct layout));
-			lay->model = g_strdup(model);
-			lay->layout = layout;
-			lay->name = g_strdup(s);
-			layout = NULL;
-			list = g_list_append(list, lay);
+
+			name = resolve_layout_name(layout);
+			if (name)
+			{
+				lay = g_malloc(sizeof(struct layout));
+	    			lay->model = g_strdup(model);
+				lay->layout = layout;
+				lay->name = g_strdup(name);
+				layout = NULL;
+				list = g_list_append(list, lay);
+			}
 		}
 	}
 	fclose(f);
@@ -123,6 +146,14 @@ static void free_layouts(GList *list)
 		g_free(lay);
 	}
 	g_list_free(list);
+}
+
+static gint layouts_compare_func(gconstpointer a, gconstpointer b)
+{
+	struct layout *layout_a = (struct layout *) a;
+	struct layout *layout_b = (struct layout *) b;
+
+	return g_utf8_collate (layout_a->name, layout_b->name);
 }
 
 static GtkWidget *start(GConfClient *client, GtkWidget *win, void **data)
@@ -148,6 +179,7 @@ static GtkWidget *start(GConfClient *client, GtkWidget *win, void **data)
 	olayout = get_str(client, "int_kb_layout");
 	d->layouts = get_layouts("/usr/share/X11/xkb/symbols/nokia_vndr/rx-51", "nokiarx51", NULL);
 	d->layouts = get_layouts("/usr/share/X11/xkb/symbols/nokia_vndr/ukeyboard", "ukeyboard", d->layouts);
+	d->layouts = g_list_sort(d->layouts, layouts_compare_func);
 
 	d->combo = HILDON_TOUCH_SELECTOR(hildon_touch_selector_new_text());
 
