@@ -4,6 +4,7 @@ Priority: optional
 Maintainer: Roman Moravcik <roman.moravcik@gmail.com>
 Build-Depends: debhelper (>= 4.0.0), libosso-dev, libosso-gnomevfs2-dev, libhildonfm2-dev, hildon-control-panel-dev
 Standards-Version: 3.6.1
+Homepage: http://www.upir.cz/maemo/keyboards/
 
 Package: ukeyboard
 Architecture: any
