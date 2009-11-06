@@ -5,6 +5,8 @@ Maintainer: Roman Moravcik <roman.moravcik@gmail.com>
 Build-Depends: debhelper (>= 4.0.0), libosso-dev, libosso-gnomevfs2-dev, libhildonfm2-dev, hildon-control-panel-dev
 Standards-Version: 3.6.1
 Homepage: http://www.upir.cz/maemo/keyboards/
+Vcs-Browser: http://repo.or.cz/w/ukeyboard.git
+Vcs-Git: git://repo.or.cz/ukeyboard.git
 
 Package: ukeyboard
 Architecture: any
