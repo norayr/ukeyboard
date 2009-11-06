@@ -162,8 +162,8 @@ lowercase {
 	margin 0 0 0 0
 	default_size 3
 	row {
-	key ת alpha
-	key ץ alpha
+	key / alpha
+	key ' alpha
 	key ק alpha
 	key ר alpha
 	key א alpha
@@ -172,7 +172,7 @@ lowercase {
 	key ן alpha
 	key ם alpha
 	key פ alpha
-	slide special { key : key ; key - key _ key / key < key > }
+	slide special { key . key , key - key ! key ? key & key ; key : key _ key @ }
 	}
 	row {
 	key ש alpha
@@ -185,10 +185,9 @@ lowercase {
 	key ל alpha
 	key ך alpha
 	key ף­ alpha
-	key ^ alpha
+	key " alpha
 	}
 	row {
-	white size 4
 	key ז alpha
 	key ס alpha
 	key ב alpha
@@ -196,7 +195,9 @@ lowercase {
 	key נ alpha
 	key מ alpha
 	key צ alpha
-	slide special { key . key , key ? key ! key @ key ( key ) } size 4
+	key ץ alpha
+	key ת alpha
+	white size 4
 	}
 }
 uppercase {
@@ -214,7 +215,7 @@ uppercase {
 	key i alpha
 	key o alpha
 	key p alpha tele
-	slide special { key : key ; key - key _ key / key < key > }
+	slide special { key . key , key - key ! key ? key & key ; key : key _ key @ }
 	}
 	row {
 	key a alpha hexa
@@ -226,11 +227,10 @@ uppercase {
 	key j alpha
 	key k alpha
 	key l alpha
-	key " alpha
-	key ^ alpha dead
+	key ) alpha
+	key ( alpha
 	}
 	row {
-	white size 4
 	key z alpha
 	key x alpha
 	key c alpha hexa
@@ -238,7 +238,9 @@ uppercase {
 	key b alpha hexa
 	key n alpha
 	key m alpha
-	slide special { key . key , key ? key ! key @ key ( key ) } size 4
+	key > alpha
+	key < alpha
+	white size 4
 	}
 }
 special {
@@ -279,22 +281,22 @@ special {
 	key . special
 	key , special
 	key ? special
-	key ג special
-	key ג special
+	key £ special
+	key € special
 	key < special
 	key > special
 	}
 }
 special {
-	name "*�§��"
+	name "*§¿"
 	margin 0 0 0 0
 	default_size 3
 	row {
 	key # special
 	key % special
-	key ג¬ special
-	key �£ special
-	key $ special
+	key ¤ special
+	key < special
+	key > special
 	key ^ special
 	key | special
 	key [ special
@@ -303,30 +305,30 @@ special {
 	key } special
 	}
 	row {
-	key �� special
-	key �� special
-	key �§ special
+	key ¡ special
+	key ¿ special
+	key § special
 	key * special
-	key �· special
-	key ג¢ special
-	key �° special
-	key �± special
-	key �½ special
-	key �« special
-	key �» special
+	key ¨ special
+	key ° special
+	key · special
+	key ± special
+	key ½ special
+	key « special
+	key » special
 	}
 	row {
-	key �¤ alpha
-	key �« alpha
-	key �¶ alpha
-	key �¼ alpha
-	key � alpha
-	key � alpha
-	key � alpha
-	key � alpha
-	key � alpha
-	key ג¢ special
-	key �© special
+	key ¢ alpha
+	key ß alpha
+	key ç alpha
+	key ´ alpha
+	key ` alpha
+	key “ alpha
+	key ” alpha
+	key ‘ alpha
+	key ’ alpha
+	key ™ special
+	key © special
 	}
 }
 }
