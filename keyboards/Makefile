@@ -1,5 +1,5 @@
 layouts = \
-	ar-lebanon.vkb \
+	ar-ibmpc.vkb \
 	be-by.vkb \
 	bg-bds.vkb \
 	bg-phonetic.vkb \

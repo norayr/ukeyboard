@@ -3,9 +3,9 @@
 # url: http://tyros.leb.net/nokia
  
 header {
-name	"Arabic (Lebanon)"
-lang	"ar_LB"
-wc	"ar_LB"
+name	"Arabic"
+lang	"ar_AR"
+wc	"ar_AR"
 
 size	0	{ width 35 height 35 textpos 26 left 0 top 0 }
 size	1	{ width 35 height 35 textpos 26 left 0 top 0 }

@@ -316,15 +316,15 @@ special {
 	key » special
 	}
 	row {
-	key ¢ alpha
+	key ¢ special
 	key ß alpha
-	key ç alpha
-	key ´ alpha
-	key ` alpha
-	key “ alpha
-	key ” alpha
-	key ‘ alpha
-	key ’ alpha
+	key ç special
+	key ´ special
+	key ` special
+	key “ special
+	key ” special
+	key ‘ special
+	key ’ special
 	key ™ special
 	key © special
 	}
