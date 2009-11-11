@@ -161,7 +161,7 @@ lowercase {
 	default_size 3
 	row {
 	key q alpha
-	key w alpha tele
+	key w alpha
 	key e alpha hexa
 	key r alpha
 	key t alpha
@@ -183,7 +183,7 @@ lowercase {
 	key k alpha
 	key l alpha
 	key ô alpha
-	key ´ alpha dead
+	key ´ alpha special dead
 	}
 	row {
 	key z alpha
@@ -194,7 +194,7 @@ lowercase {
 	key n alpha
 	key m alpha
 	white size 4
-	key ˇ alpha dead
+	key ˇ alpha special dead
 	slide special { key . key , key ? key ! key - key _ key & key | key \ key / key < key > }
 	}
 }
@@ -204,7 +204,7 @@ uppercase {
 	default_size 3
 	row {
 	key Q alpha
-	key W alpha tele
+	key W alpha
 	key E alpha hexa
 	key R alpha
 	key T alpha
@@ -226,7 +226,7 @@ uppercase {
 	key K alpha
 	key L alpha
 	key Ô alpha
-	key ´ alpha dead
+	key ´ alpha special dead
 	}
 	row {
 	key Z alpha
@@ -237,7 +237,7 @@ uppercase {
 	key N alpha
 	key M alpha
 	white size 4
-	key ˇ alpha dead
+	key ˇ alpha special dead
 	slide special { key . key , key ? key ! key - key _ key & key | key \ key / key < key > }
 	}
 }
@@ -250,7 +250,7 @@ special {
 	key 2 num hexa tele
 	key 3 num hexa tele
 	key " special
-	key + special
+	key + tele special
 	key - special
 	key = special
 	key _ special
@@ -290,7 +290,7 @@ special {
 	margin 0 0 0 0
 	default_size 3
 	row {
-	key # special
+	key # tele special
 	key % special
 	key ¤ special
 	key $ special
@@ -306,7 +306,7 @@ special {
 	key ¡ special
 	key ¿ special
 	key § special
-	key * special
+	key * tele special
 	key ¨ special
 	key ° special
 	key · special
