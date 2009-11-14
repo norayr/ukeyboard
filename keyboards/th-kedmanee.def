@@ -160,43 +160,41 @@ lowercase {
 	margin 0 0 0 0
 	default_size 3
 	row {
+	key ๆ alpha
+	key ไ alpha
 	key พ alpha
+	key ะ alpha
 	key ร alpha
 	key น alpha
 	key ย alpha
 	key บ alpha
 	key ล alpha
-	key ภ alpha
-	key ถ alpha
-	key ค alpha
-	slide special { key ิ key ี key ึ key ื }
-	slide special { key ่ key ้ key ๊ key ๋ }
+	key ฃ alpha
+	key ช alpha
 	}
 	row {
 	key ฟ alpha
 	key ห alpha
 	key ก alpha
 	key ด alpha
+	key เ alpha
+	key า alpha
 	key ส alpha
 	key ว alpha
 	key ง alpha
-	key ต alpha
-	key จ alpha
-	slide special { key เ key แ key โ key ไ key ใ }
-	slide special { key ะ key า key ำ }
+	slide alpha { key ุ key ู key ึ  key ำ key ั key ํ key ี key ๊ key ้ key ็ key ่ key ๋ key ิ key ฺ key ื key ฺ } size 4
 	}
 	row {
-	white size 3
 	key ผ alpha
 	key ป alpha
+	key แ alpha
 	key อ alpha
 	key ท alpha
 	key ม alpha
+	key ใ alpha
 	key ฝ alpha
-	key ข alpha
-	key ช alpha
-	slide special { key ุ key ู }
-	slide special { key ั key ็ key ์ }
+	white size 4
+	slide special { key . key , key ? key ! key - key _ key & key | key \ key / key < key > }
 	}
 }
 uppercase {
@@ -208,39 +206,37 @@ uppercase {
 	key ฑ alpha
 	key ธ alpha
 	key ณ alpha
-	key ฯ special
+	key ฯ alpha
 	key ญ alpha
 	key ฐ alpha
-	key , special
-	key ฿ special
-	slide special { key ิ key ี key ึ key ื }
-	slide special { key ่ key ้ key ๊ key ๋ }
+	key ฅ alpha
+	key ๅ alpha
+	key ภ alpha
+	key ถ alpha
 	}
 	row {
 	key ฤ alpha
 	key ฆ alpha
 	key ฏ alpha
+	key โ alpha
 	key ฌ alpha
-	key ็ special
 	key ษ alpha
 	key ศ alpha
 	key ซ alpha
-	key . special
-	slide special { key เ key แ key โ key ไ key ใ }
-	slide special { key ะ key า key ำ }
+	key ค alpha
+	slide alpha { key ุ key ู key ึ  key ำ key ั key ํ key ี key ๊ key ้ key ็ key ่ key ๋ key ิ key ฺ key ื key ฺ } size 4
 	}
 	row {
-	white size 3
-	key ( special
-	key ) special
 	key ฉ alpha
 	key ฮ alpha
-	key ์ special
 	key ฒ alpha
 	key ฬ alpha
 	key ฦ alpha
-	slide special { key ุ key ู }
-	slide special { key ั key ็ key ์ }
+	key ต alpha
+	key จ alpha
+	key ข alpha
+	white size 4
+	slide special { key . key , key ? key ! key - key _ key & key | key \ key / key < key > }
 	}
 }
 special {
@@ -248,9 +244,9 @@ special {
 	margin 0 0 0 0
 	default_size 3
 	row {
-	key ๑ num  tele
-	key ๒ num  tele
-	key ๓ num  tele
+	key ๑ num tele
+	key ๒ num tele
+	key ๓ num tele
 	key " special
 	key + special
 	key - special
@@ -261,9 +257,9 @@ special {
 	key ´ alpha dead
 	}
 	row {
-	key ๔ num  tele
-	key ๕ num  tele
-	key ๖ num  tele
+	key ๔ num tele
+	key ๕ num tele
+	key ๖ num tele
 	key ' special
 	key : special
 	key ; special
@@ -280,8 +276,8 @@ special {
 	key ๐ num  tele
 	key . special
 	key , special
+	key ฿ special
 	key € special
-	key £ special
 	key $ special
 	key ~ special
 	key @ special
@@ -320,7 +316,7 @@ special {
 	}
 	row {
 	key ¢ special
-	key ß alpha
+	key £ special
 	key ç alpha
 	key ¥ special
 	key _ special
