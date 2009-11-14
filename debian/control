@@ -10,13 +10,14 @@ Vcs-Git: git://repo.or.cz/ukeyboard.git
 
 Package: ukeyboard
 Architecture: any
-Depends: ${shlibs:Depends}
+Depends: ${shlibs:Depends}, thai-ttf
 Description: Additional on-screen keyboard layouts
  This package provides additional Arabic, Belorussian, Bulgarian
- (BDS & Phonetic), Croatian (QWERTY & QWERTZ), English (Dvorak),
- Esperanto (QWERTY), Hebrew, Hungarian (QWERTZ), Slovak (QWERTY
- & QWERTZ) and Turkish on-screen keyboard layouts and Czech
- (QWERTY) and Slovak (QWERTY & QWERTZ) hardware keyboard layouts.
+ (BDS & Phonetic), Croatian (QWERTY & QWERTZ), Czech (QWERTY), 
+ English (Dvorak), Esperanto (QWERTY), Hebrew, Hungarian (QWERTZ),
+ Slovak (QWERTY & QWERTZ), Thaiand Turkish on-screen keyboard
+ layouts and Czech (QWERTY) and Slovak (QWERTY & QWERTZ) hardware
+ keyboard layouts.
 XB-Maemo-Icon-26:
  iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAABmJLR0QA/wD/
  AP+gvaeTAAAAsElEQVRIx+2W0QnDMBBDn0vmyEzOBMpo2cCZxEN4ketPE1ri
