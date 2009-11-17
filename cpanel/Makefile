@@ -1,3 +1,5 @@
+all: libukeyboard-prefs.so ukeyboard-postinst.launch
+
 libukeyboard-prefs.so:	prefs.o hw.o onscreen.o lang.o langset.o about.o
 	$(CC) -shared -o $@ $+
 
@@ -32,6 +34,10 @@ about.inc:	about.inc.in
 cppluginlibdir = $(DESTDIR)`pkg-config hildon-control-panel --variable=pluginlibdir`
 cpplugindeskdir = $(DESTDIR)`pkg-config hildon-control-panel --variable=plugindesktopentrydir`
 
+ukeyboard-postinst.launch:
+	$(CC) -W -Wall -shared -rdynamic `pkg-config --cflags --libs gtk+-2.0 hildon-1` ukeyboard-postinst.c -o $@
+	strip ukeyboard-postinst.launch
+
 install:	libukeyboard-prefs.so
 	install -d $(cppluginlibdir) $(cpplugindeskdir)
 	install libukeyboard-prefs.so $(cppluginlibdir)
@@ -39,6 +45,9 @@ install:	libukeyboard-prefs.so
 	install -d $(DESTDIR)/usr/libexec $(DESTDIR)/etc/sudoers.d
 	install ukeyboard-set $(DESTDIR)/usr/libexec
 	install -m 644 ukeyboard.sudoers $(DESTDIR)/etc/sudoers.d
+	install -d $(DESTDIR)/usr/bin
+	install ukeyboard-postinst.launch $(DESTDIR)/usr/bin
+	ln -s maemo-invoker $(DESTDIR)/usr/bin/ukeyboard-postinst
 
 clean:
-	 rm -f *.o libukeyboard-prefs.so about.inc about.data core
+	 rm -f *.o libukeyboard-prefs.so about.inc about.data core ukeyboard-postinst.launch
