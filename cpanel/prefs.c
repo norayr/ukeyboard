@@ -149,6 +149,7 @@ osso_return_t execute(osso_context_t *osso, gpointer data, gboolean user_activat
 	gtk_dialog_add_button(GTK_DIALOG(dialog), _HL("wdgt_bd_save"), GTK_RESPONSE_ACCEPT);
 
 	scroll = hildon_pannable_area_new();
+	g_object_set (G_OBJECT (scroll), "hscrollbar-policy", GTK_POLICY_NEVER, NULL);
 	gtk_widget_set_size_request(GTK_WIDGET (scroll), -1, 345);
 	gtk_container_add(GTK_CONTAINER(GTK_DIALOG(dialog)->vbox), scroll);
 
