@@ -208,10 +208,10 @@ uppercase {
 	margin 0 0 0 0
 	default_size 2
 	row {
-	key  َ special dead
-	key  ً special dead
-	key  ُ special dead
-	key  ٌ special dead
+	key  َ alpha
+	key  ً alpha
+	key  ُ alpha
+	key  ٌ alpha
 	key ﻹ alpha
 	key إ alpha
 	key ‘ special
@@ -233,13 +233,13 @@ uppercase {
 	key / special
 	key : special
 	key " special
-	key  ّ special dead
+	key  ّ alpha
 	}
 	row {
 	key ~ special
-	key  ْ special dead
-	key  ِ special dead
-	key  ٍ special dead
+	key  ْ alpha
+	key  ِ alpha
+	key  ٍ alpha
 	key ﻵ alpha
 	key آ alpha
 	key , special
