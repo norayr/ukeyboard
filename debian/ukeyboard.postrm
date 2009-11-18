@@ -1,10 +1,16 @@
 #!/bin/sh
+
 sed -ni '/ukeyboard/!p' /usr/share/X11/xkb/rules/base
 
 if [ -f /usr/share/applications/hildon-control-panel/cptextinput.desktop.removed ]; then
 	mv -f /usr/share/applications/hildon-control-panel/cptextinput.desktop.removed /usr/share/applications/hildon-control-panel/cptextinput.desktop
 fi
 
-gtk-update-icon-cache -f /usr/share/icons/hicolor
+# remove all symbolic links from /usr/share/keyboards/
+find /usr/share/keyboards/ -type l -exec rm {} \;
+
+# rename back all *.vkb.backup files to *.vkb
+rename ".vkb.backup" ".vkb" /usr/share/keyboards/*.vkb
+
 update-sudoers
 exit 0

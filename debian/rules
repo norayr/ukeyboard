@@ -9,8 +9,7 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
-DESTDIR=$(CURDIR)/debian/ukeyboard
-DESTDIR_CREATOR=$(CURDIR)/debian/ukbdcreator
+DESTDIR=$(CURDIR)/debian/tmp
 
 configure: configure-stamp
 configure-stamp:
@@ -46,7 +45,6 @@ install: build
 
 	# Add here commands to install the package into $(DESTDIR)
 	$(MAKE) DESTDIR=$(DESTDIR) install
-	$(MAKE) -C ukbdcreator DESTDIR=$(DESTDIR_CREATOR)/usr install
 
 
 # Build architecture-independent files here.
@@ -58,6 +56,7 @@ binary-arch: build install
 	dh_testdir
 	dh_testroot
 #	dh_installchangelogs 
+	dh_install --sourcedir=debian/tmp
 	dh_fixperms
 	dh_installdeb
 	dh_gencontrol

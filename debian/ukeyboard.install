@@ -1,0 +1,9 @@
+etc/sudoers.d/ukeyboard.sudoers
+usr/bin/ukeyboard-postinst
+usr/bin/ukeyboard-postinst.launch
+usr/lib/hildon-control-panel/libukeyboard-prefs.so
+usr/libexec/ukeyboard-set
+usr/share/X11/xkb/symbols/nokia_vndr/ukeyboard
+usr/share/applications/hildon-control-panel/ukeyboard-prefs.desktop
+usr/share/scv_layouts/*.vkb
+usr/share/ukeyboard/*.vkb

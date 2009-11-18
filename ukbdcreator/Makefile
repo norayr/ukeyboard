@@ -21,7 +21,7 @@ clean:
 
 DESTDIR ?= /usr/local
 install:
-	install -d $(DESTDIR)/bin $(DESTDIR)/share/applications/hildon $(DESTDIR)/share/dbus-1/services
-	install ukbdcreator $(DESTDIR)/bin
-	install -m 0644 ukbdcreator.desktop $(DESTDIR)/share/applications/hildon
-	install -m 0644 cz.upir.ukbdcreator.service $(DESTDIR)/share/dbus-1/services
+	install -d $(DESTDIR)/usr/bin $(DESTDIR)/usr/share/applications/hildon $(DESTDIR)/usr/share/dbus-1/services
+	install ukbdcreator $(DESTDIR)/usr/bin
+	install -m 0644 ukbdcreator.desktop $(DESTDIR)/usr/share/applications/hildon
+	install -m 0644 cz.upir.ukbdcreator.service $(DESTDIR)/usr/share/dbus-1/services

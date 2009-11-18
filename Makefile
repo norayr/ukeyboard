@@ -25,10 +25,11 @@ install:	ukeyboard-prefs keyboards-scv
 	$(MAKE) -C cpanel DESTDIR=$(DESTDIR) install
 	$(MAKE) -C keyboards DESTDIR=$(DESTDIR) install
 	$(MAKE) -C keyboards-scv DESTDIR=$(DESTDIR) install
-	install -d $(DESTDIR)/usr/share/icons/hicolor/26x26/apps
-	install -m 0644 ukeyboard.png $(DESTDIR)/usr/share/icons/hicolor/26x26/apps/
+	install -d $(DESTDIR)/usr/share/icons/hicolor/48x48/apps
+	install -m 0644 ukeyboard.png $(DESTDIR)/usr/share/icons/hicolor/48x48/apps/
 	install -d $(DESTDIR)/usr/share/X11/xkb/symbols/nokia_vndr
 	install -m 0644 xkb/ukeyboard $(DESTDIR)/usr/share/X11/xkb/symbols/nokia_vndr/
+	$(MAKE) -C ukbdcreator DESTDIR=$(DESTDIR) install
 
 clean:
 	$(MAKE) -C cpanel clean
