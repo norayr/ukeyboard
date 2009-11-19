@@ -1,3 +1,16 @@
+ukeyboard (2.0-5) unstable; urgency=low
+
+  * Arabic (Lebanon) on-screen keyboard layout renamed to Arabic.
+  * Tweaks of Arabic, Hebrew and Thai on-screen keyboard layouts.
+  * Added Czech QWERTY on-screen keyboard layout.
+  * Added Arabic hardware keyboard layout.
+  * Added Arabic and Czech SCV layouts.
+  * Minor tweaks of Slovak SCV layouts.
+  * Added post installation user notification dialog.
+  * Added bigger package icon (48x48).
+
+ -- Roman Moravcik <roman.moravcik@gmail.com>  Thu, 19 Nov 2009 13:02:27 +0100
+
 ukeyboard (2.0-4) unstable; urgency=low
 
   * Temporary disabled Thai on-screen keyboard layout due to the missing
