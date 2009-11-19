@@ -50,39 +50,36 @@ xkb_symbols "aren" {
     key.type[Group1] = "EIGHT_LEVEL_SEMIALPHABETIC";
 
     // 1. row
-    key <AD01>	{ [	Arabic_dad,		Arabic_fatha,		1,			1,			q,		Q,		1,			1			] };
-    key <AD02>	{ [	Arabic_sad,		Arabic_fathatan,	2,			2,			w,		W,		2,			2			] };
-    key <AD03>	{ [	Arabic_theh,		Arabic_damma,		3,			3,			e,		E,		3,			3			] };
-    key <AD04>	{ [	Arabic_qaf,		Arabic_dammatan,	4,			4,			r,		R,		4,			4			] };
-    key <AD05>	{ [	Arabic_feh,		0x100fef9,		5,			5,			t,		T,		5,			5			] };
-    key <AD06>	{ [	Arabic_ghain,		Arabic_hamzaunderalef,	6,			6,			y,		Y,		6,			6			] };
-    key <AD07>	{ [	Arabic_ain,		grave,			7,			7,			u,		U,		7,			7			] };
-    key <AD08>	{ [	Arabic_ha,		division,		8,			8,			i,		I,		8,			8			] };
-    key <AD09>	{ [	Arabic_khah,		multiply,		9,			9,			o,		O,		9,			9			] };
-    key <AD10>	{ [	Arabic_hah,		Arabic_semicolon,	0,			0,			p,		P,		0,			0			] };
-    key <AB08>	{ [	comma,			semicolon,		comma,			semicolon,		comma,		semicolon,	equal,			equal			] };
-    // Arabic_thal, Arabic_shadda, Arabic_jeem, Arabic_dal
+    key <AD01>	{ [	Arabic_dad,		Arabic_fatha,		0x1000661,		0x1000661,		q,		Q,		1,			1			] };
+    key <AD02>	{ [	Arabic_sad,		Arabic_fathatan,	0x1000662,		0x1000662,		w,		W,		2,			2			] };
+    key <AD03>	{ [	Arabic_theh,		Arabic_damma,		0x1000663,		0x1000663,		e,		E,		3,			3			] };
+    key <AD04>	{ [	Arabic_qaf,		Arabic_dammatan,	0x1000664,		0x1000664,		r,		R,		4,			4			] };
+    key <AD05>	{ [	Arabic_feh,		0x100fef9,		0x1000665,		0x1000665,		t,		T,		5,			5			] };
+    key <AD06>	{ [	Arabic_ghain,		Arabic_hamzaunderalef,	0x1000666,		0x1000666,		y,		Y,		6,			6			] };
+    key <AD07>	{ [	Arabic_ain,		Arabic_jeem,		0x1000667,		0x1000667,		u,		U,		7,			7			] };
+    key <AD08>	{ [	Arabic_ha,		Arabic_dal,		0x1000668,		0x1000668,		i,		I,		8,			8			] };
+    key <AD09>	{ [	Arabic_khah,		Arabic_khah,		0x1000669,		0x1000669,		o,		O,		9,			9			] };
+    key <AD10>	{ [	Arabic_hah,		Arabic_hah,		0x1000660,		0x1000660,		p,		P,		0,			0			] };
+    key <AB08>	{ [	Arabic_thal,		Arabic_shadda,		comma,			Arabic_semicolon,	comma,		semicolon,	equal,			equal			] };
 
     // 2. row
     key <AC01>	{ [	Arabic_sheen,		Arabic_kasra,		asterisk,		asterisk,		a,		A,		asterisk,		asterisk		] };
     key <AC02>	{ [	Arabic_seen,		Arabic_kasratan,	plus,			plus,			s,		S,		plus,			plus			] };
-    key <AC03>	{ [	Arabic_yeh,		bracketright,		numbersign,		numbersign,		d,		D,		numbersign,		numbersign		] };
-    key <AC04>	{ [	Arabic_beh,		bracketleft,		minus,			minus,			f,		F,		minus,			minus			] };
+    key <AC03>	{ [	Arabic_yeh,		Arabic_yeh,		numbersign,		numbersign,		d,		D,		numbersign,		numbersign		] };
+    key <AC04>	{ [	Arabic_beh,		Arabic_beh,		minus,			minus,			f,		F,		minus,			minus			] };
     key <AC05>	{ [	Arabic_lam,		0x100fef7,		underscore,		underscore,		g,		G,		underscore,		underscore		] };
     key <AC06>	{ [	Arabic_alef,		Arabic_hamzaonalef,	parenleft,		parenleft,		h,		H,		parenleft,		parenleft		] };
     key <AC07>	{ [	Arabic_teh,		Arabic_tatweel,		parenright,		parenright,		j,		J,		parenright,		parenright		] };
     key <AC08>	{ [	Arabic_noon,		Arabic_comma,		ampersand,		ampersand,		k,		K,		ampersand,		ampersand		] };
-    key <AC09>	{ [	Arabic_meem,		exclam,			exclam,			exclam,			l,		L,		exclam,			exclam			] };
-    key <AB09>	{ [	period,			colon,			question,		question,		period,		colon,		question,		question		] };
-    // Arabic_kaf, Arabic_tah
+    key <AC09>	{ [	Arabic_meem,		Arabic_meem,		exclam,			exclam,			l,		L,		exclam,			exclam			] };
+    key <AB09>	{ [	Arabic_kaf,		Arabic_tah,		Arabic_question_mark,	Arabic_question_mark,	period,		colon,		question,		question		] };
 
     // 3. row
-    key <AB01>	{ [	Arabic_hamzaonyeh,	asciitilde,		sterling,		sterling,		z,		Z,		sterling,		sterling		] };
+    key <AB01>	{ [	Arabic_hamzaonyeh,	Arabic_hamzaonyeh,	sterling,		sterling,		z,		Z,		sterling,		sterling		] };
     key <AB02>	{ [	Arabic_hamza,		Arabic_sukun,		dollar,			dollar,			x,		X,		dollar,			dollar			] };
-    key <AB03>	{ [	Arabic_hamzaonwaw,	braceright,		EuroSign,		EuroSign,		c,		C,		EuroSign,		EuroSign		] };
-    key <AB04>	{ [	Arabic_ra,		braceleft,		slash,			slash,			v,		V,		slash,			slash			] };
+    key <AB03>	{ [	Arabic_hamzaonwaw,	Arabic_waw,		EuroSign,		EuroSign,		c,		C,		EuroSign,		EuroSign		] };
+    key <AB04>	{ [	Arabic_ra,		Arabic_zain,		slash,			slash,			v,		V,		slash,			slash			] };
     key <AB05>	{ [	0x100fefb,		0x100fef5,		backslash,		backslash,		b,		B,		backslash,		backslash		] };
     key <AB06>	{ [	Arabic_alefmaksura,	Arabic_maddaonalef,	quotedbl,		quotedbl,		n,		N,		quotedbl,		quotedbl		] };
-    key <AB07>	{ [	Arabic_tehmarbuta,	apostrophe,		apostrophe,		apostrophe,		m,		M,		apostrophe,		apostrophe		] };
-    // Arabic_waw, Arabic_Arabic_zain, Arabic_zah, Arabic_question_mark
+    key <AB07>	{ [	Arabic_tehmarbuta,	Arabic_zah,		apostrophe,		apostrophe,		m,		M,		apostrophe,		apostrophe		] };
 };
