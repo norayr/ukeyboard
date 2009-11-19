@@ -9,8 +9,9 @@ fi
 # remove all symbolic links from /usr/share/keyboards/
 find /usr/share/keyboards/ -type l -exec rm {} \;
 
-# rename back all *.vkb.backup files to *.vkb
-rename ".vkb.backup" ".vkb" /usr/share/keyboards/*.vkb
+# rename back all *.vkb.removed files to *.vkb
+rename ".vkb.removed" ".vkb" /usr/share/keyboards/*.vkb.removed
 
 update-sudoers
+
 exit 0

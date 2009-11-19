@@ -13,9 +13,12 @@ fi
 update-sudoers
 
 # temporary disable keyboard layouts that are provided also with ukeyboard
-if [ -f /usr/share/keyboards/cs_CZ.vkb ]; then
-	rename ".vkb" ".vkb.backup" /usr/share/keyboards/cs_CZ.vkb
-fi
+layouts="cs_CZ"
+for i in $layouts; do
+	if [ -f /usr/share/keyboards/$i.vkb ]; then
+		rename ".vkb" ".vkb.removed" /usr/share/keyboards/$i.vkb
+	fi
+done
 
 case "$1" in
 	configure)
