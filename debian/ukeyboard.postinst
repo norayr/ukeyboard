@@ -16,7 +16,9 @@ update-sudoers
 layouts="cs_CZ"
 for i in $layouts; do
 	if [ -f /usr/share/keyboards/$i.vkb ]; then
-		rename ".vkb" ".vkb.removed" /usr/share/keyboards/$i.vkb
+		if [ ! -h /usr/share/keyboards/$i.vkb ]; then
+			mv /usr/share/keyboards/$i.vkb /usr/share/keyboards/$i.vkb.removed
+		fi
 	fi
 done
 
