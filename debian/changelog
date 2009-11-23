@@ -1,3 +1,10 @@
+ukeyboard (2.0-7) unstable; urgency=low
+
+  * postinst/postrm scripts were not working properly on real device.
+    Problems reported by Marius Gedminas and Timeless.
+
+ -- Roman Moravcik <roman.moravcik@gmail.com>  Mon, 23 Nov 2009 10:36:01 +0100
+
 ukeyboard (2.0-6) unstable; urgency=low
 
   * Fixed ukeyboard postinst/postrm scripts.
