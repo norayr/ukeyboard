@@ -90,7 +90,9 @@ GList *get_dicts(GList *langs)
 	for (item = langs, i = 0; item; item = g_list_next(item)) {
 		lang = item->data;
 
-		if (lang->ext)
+		/* WORKAROUND: czech dictionary for cz-qwertz on-screen layout
+		   must be listed, because it's officially supported */
+		if ((strcmp(lang->fname, "cz-qwertz")) && (lang->ext))
 			continue;
 			
 		dict = g_malloc(sizeof(struct lang));
