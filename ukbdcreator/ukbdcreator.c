@@ -1,5 +1,6 @@
 /*
  *  Copyright (c) 2008 Jiri Benc <jbenc@upir.cz>
+ *  Copyright (c) 2009 Roman Moravcik <roman.moravcik@gmail.com>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License version 2 as
@@ -284,8 +285,9 @@ static void run_about(void)
 	gtk_show_about_dialog(GTK_WINDOW(window_main),
 		"version", UKBD_VERSION,
 		"comments", "Licensed under GPLv2. Please send bug reports and feature requests to jbenc@upir.cz.",
-		"copyright", "(c) 2008 Jiri Benc",
-		"website", "http://upir.cz/maemo/keyboards/");
+		"copyright", "(c) 2008 Jiri Benc\n(c) 2009 Roman Moravcik",
+		"website", "http://upir.cz/maemo/keyboards/",
+		NULL);
 }
 
 static void compile_and_test(void)
@@ -339,69 +341,74 @@ static GtkWidget *main_layout(void)
 	return scroll;
 }
 
-static GtkMenu *main_menu(void)
+static GtkWidget *main_menu(void)
 {
-	GtkMenuShell *menu, *submenu;
-	GtkWidget *item;
+	GtkWidget *menu, *item;
 
-	menu = GTK_MENU_SHELL(gtk_menu_new());
+	menu = hildon_app_menu_new();
 
-	submenu = GTK_MENU_SHELL(gtk_menu_new());
-	item = gtk_menu_item_new_with_label("File");
-	gtk_menu_item_set_submenu(GTK_MENU_ITEM(item), GTK_WIDGET(submenu));
-	gtk_menu_shell_append(menu, item);
+	item = hildon_button_new_with_text (HILDON_SIZE_AUTO,
+					    HILDON_BUTTON_ARRANGEMENT_VERTICAL, "New", NULL);
+	g_signal_connect(G_OBJECT(item), "clicked", G_CALLBACK(file_new), NULL);
+	hildon_app_menu_append(HILDON_APP_MENU (menu), GTK_BUTTON(item));
 
-	item = gtk_menu_item_new_with_label("New");
-	g_signal_connect(G_OBJECT(item), "activate", G_CALLBACK(file_new), NULL);
-	gtk_menu_shell_append(submenu, item);
-	item = gtk_menu_item_new_with_label("Open...");
-	g_signal_connect(G_OBJECT(item), "activate", G_CALLBACK(file_open), NULL);
-	gtk_menu_shell_append(submenu, item);
-	item = gtk_menu_item_new_with_label("Save");
-	g_signal_connect(G_OBJECT(item), "activate", G_CALLBACK(file_save), NULL);
-	gtk_menu_shell_append(submenu, item);
-	item = gtk_menu_item_new_with_label("Save as...");
-	g_signal_connect(G_OBJECT(item), "activate", G_CALLBACK(file_save_as), NULL);
-	gtk_menu_shell_append(submenu, item);
+	item = hildon_button_new_with_text (HILDON_SIZE_AUTO,
+					    HILDON_BUTTON_ARRANGEMENT_VERTICAL, "Open", NULL);
+	g_signal_connect(G_OBJECT(item), "clicked", G_CALLBACK(file_open), NULL);
+	hildon_app_menu_append(HILDON_APP_MENU (menu), GTK_BUTTON(item));
 
-	submenu = GTK_MENU_SHELL(gtk_menu_new());
-	item = gtk_menu_item_new_with_label("Edit");
-	gtk_menu_item_set_submenu(GTK_MENU_ITEM(item), GTK_WIDGET(submenu));
-	gtk_menu_shell_append(menu, item);
+	item = hildon_button_new_with_text (HILDON_SIZE_AUTO,
+					    HILDON_BUTTON_ARRANGEMENT_VERTICAL, "Save", NULL);
+	g_signal_connect(G_OBJECT(item), "clicked", G_CALLBACK(file_save), NULL);
+	hildon_app_menu_append(HILDON_APP_MENU (menu), GTK_BUTTON(item));
 
-	item = gtk_menu_item_new_with_label("Cut");
-	g_signal_connect(G_OBJECT(item), "activate", G_CALLBACK(edit_cut), NULL);
-	gtk_menu_shell_append(submenu, item);
-	item = gtk_menu_item_new_with_label("Copy");
-	g_signal_connect(G_OBJECT(item), "activate", G_CALLBACK(edit_copy), NULL);
-	gtk_menu_shell_append(submenu, item);
-	item = gtk_menu_item_new_with_label("Paste");
-	g_signal_connect(G_OBJECT(item), "activate", G_CALLBACK(edit_paste), NULL);
-	gtk_menu_shell_append(submenu, item);
+	item = hildon_button_new_with_text (HILDON_SIZE_AUTO,
+					    HILDON_BUTTON_ARRANGEMENT_VERTICAL, "Save as...", NULL);
+	g_signal_connect(G_OBJECT(item), "clicked", G_CALLBACK(file_save_as), NULL);
+	hildon_app_menu_append(HILDON_APP_MENU (menu), GTK_BUTTON(item));
 
-	gtk_menu_shell_append(menu, gtk_separator_menu_item_new());
-	item = gtk_menu_item_new_with_label("Test layout");
-	g_signal_connect(G_OBJECT(item), "activate", G_CALLBACK(compile_and_test), NULL);
-	gtk_menu_shell_append(menu, item);
-	item = gtk_menu_item_new_with_label("Restore original layout");
-	g_signal_connect(G_OBJECT(item), "activate", G_CALLBACK(untest), NULL);
-	gtk_menu_shell_append(menu, item);
-	item = gtk_menu_item_new_with_label("Show last error");
-	g_signal_connect(G_OBJECT(item), "activate", G_CALLBACK(__disp_compile_error), NULL);
-	gtk_menu_shell_append(menu, item);
+	item = hildon_button_new_with_text (HILDON_SIZE_AUTO,
+					    HILDON_BUTTON_ARRANGEMENT_VERTICAL, "Cut", NULL);
+	g_signal_connect(G_OBJECT(item), "clicked", G_CALLBACK(edit_cut), NULL);
+	hildon_app_menu_append(HILDON_APP_MENU (menu), GTK_BUTTON(item));
 
-	gtk_menu_shell_append(menu, gtk_separator_menu_item_new());
-	item = gtk_menu_item_new_with_label("Fullscreen");
-	g_signal_connect(G_OBJECT(item), "activate", G_CALLBACK(toggle_fullscreen), NULL);
-	gtk_menu_shell_append(menu, item);
-	item = gtk_menu_item_new_with_label("About");
-	g_signal_connect(G_OBJECT(item), "activate", G_CALLBACK(run_about), NULL);
-	gtk_menu_shell_append(menu, item);
-	item = gtk_menu_item_new_with_label("Exit");
-	g_signal_connect(G_OBJECT(item), "activate", G_CALLBACK(file_quit), NULL);
-	gtk_menu_shell_append(menu, item);
+	item = hildon_button_new_with_text (HILDON_SIZE_AUTO,
+					    HILDON_BUTTON_ARRANGEMENT_VERTICAL, "Copy", NULL);
+	g_signal_connect(G_OBJECT(item), "clicked", G_CALLBACK(edit_copy), NULL);
+	hildon_app_menu_append(HILDON_APP_MENU (menu), GTK_BUTTON(item));
 
-	return GTK_MENU(menu);
+	item = hildon_button_new_with_text (HILDON_SIZE_AUTO,
+					    HILDON_BUTTON_ARRANGEMENT_VERTICAL, "Paste", NULL);
+	g_signal_connect(G_OBJECT(item), "clicked", G_CALLBACK(edit_paste), NULL);
+	hildon_app_menu_append(HILDON_APP_MENU (menu), GTK_BUTTON(item));
+
+	item = hildon_button_new_with_text (HILDON_SIZE_AUTO,
+					    HILDON_BUTTON_ARRANGEMENT_VERTICAL, "Test layout", NULL);
+	g_signal_connect(G_OBJECT(item), "clicked", G_CALLBACK(compile_and_test), NULL);
+	hildon_app_menu_append(HILDON_APP_MENU (menu), GTK_BUTTON(item));
+
+	item = hildon_button_new_with_text (HILDON_SIZE_AUTO,
+					    HILDON_BUTTON_ARRANGEMENT_VERTICAL, "Restore original layout", NULL);
+	g_signal_connect(G_OBJECT(item), "clicked", G_CALLBACK(untest), NULL);
+	hildon_app_menu_append(HILDON_APP_MENU (menu), GTK_BUTTON(item));
+
+	item = hildon_button_new_with_text (HILDON_SIZE_AUTO,
+					    HILDON_BUTTON_ARRANGEMENT_VERTICAL, "Show last error", NULL);
+	g_signal_connect(G_OBJECT(item), "clicked", G_CALLBACK(__disp_compile_error), NULL);
+	hildon_app_menu_append(HILDON_APP_MENU (menu), GTK_BUTTON(item));
+
+	item = hildon_button_new_with_text (HILDON_SIZE_AUTO,
+					    HILDON_BUTTON_ARRANGEMENT_VERTICAL, "Fullscreen", NULL);
+	g_signal_connect(G_OBJECT(item), "clicked", G_CALLBACK(toggle_fullscreen), NULL);
+	hildon_app_menu_append(HILDON_APP_MENU (menu), GTK_BUTTON(item));
+
+	item = hildon_button_new_with_text (HILDON_SIZE_AUTO,
+					    HILDON_BUTTON_ARRANGEMENT_VERTICAL, "About", NULL);
+	g_signal_connect(G_OBJECT(item), "clicked", G_CALLBACK(run_about), NULL);
+	hildon_app_menu_append(HILDON_APP_MENU (menu), GTK_BUTTON(item));
+
+	gtk_widget_show_all(menu);
+	return menu;
 }
 
 static GtkToolbar *main_toolbar(void)
@@ -444,7 +451,7 @@ int main(int argc, char **argv)
 {
 	HildonProgram *program;
 
-	gtk_init(&argc, &argv);
+	hildon_gtk_init(&argc, &argv);
 	program = hildon_program_get_instance();
 	g_set_prgname("ukbdcreator");
 	g_set_application_name("Ukeyboard Creator");
@@ -460,7 +467,7 @@ int main(int argc, char **argv)
 	gtk_clipboard_set_can_store(clipboard, NULL, 0);
 
 	gtk_container_add(GTK_CONTAINER(window_main), main_layout());
-	hildon_window_set_menu(window_main, main_menu());
+	hildon_window_set_app_menu(window_main, HILDON_APP_MENU (main_menu()));
 	hildon_window_add_toolbar(window_main, main_toolbar());
 
 	g_signal_connect(G_OBJECT(window_main), "key_press_event", G_CALLBACK(key_pressed), NULL);
