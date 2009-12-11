@@ -118,6 +118,12 @@ static GList *get_layouts(gchar *path, gchar *model, GList *list)
 			*s2 = '\0';
 			layout = g_strdup(s);
 
+			/* ignore nordic layout */
+			if (!strcmp(layout, "nordic")) {
+				layout = NULL;
+				continue;
+			}
+
 			name = resolve_layout_name(layout);
 			if (name)
 			{
@@ -127,7 +133,33 @@ static GList *get_layouts(gchar *path, gchar *model, GList *list)
 				lay->name = g_strdup(name);
 				layout = NULL;
 				list = g_list_append(list, lay);
+				continue;
 			}
+		} else if (!strncmp(s, "name", 4) && layout) {
+			s = strip(s + 4);
+			if (*s != '[')
+				continue;
+			s2 = strchr(s, ']');
+			if (!s2)
+				continue;
+			s = strip(s2 + 1);
+			if (*s != '=')
+				continue;
+			s = strip(s + 1);
+			if (*s != '"')
+				continue;
+			s++;
+			s2 = strchr(s, '"');
+			if (!s2)
+				continue;
+			*s2 = '\0';
+
+			lay = g_malloc(sizeof(struct layout));
+			lay->model = g_strdup(model);
+			lay->layout = layout;
+			lay->name = g_strdup(s);
+			layout = NULL;
+			list = g_list_append(list, lay);
 		}
 	}
 	fclose(f);
