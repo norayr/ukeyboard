@@ -30,7 +30,7 @@
 
 static HildonWindow *window_main;
 static GtkClipboard *clipboard;
-static GtkTextView *view;
+static HildonTextView *view;
 static GtkTextBuffer *buffer;
 static gchar *filename = NULL;
 static gboolean is_fullscreen = FALSE;
@@ -82,7 +82,7 @@ static void __disp_compile_error(void)
 	if (last_error_line > 0) {
 		gtk_text_buffer_get_iter_at_line(buffer, &iter, last_error_line - 1);
 		gtk_text_buffer_place_cursor(buffer, &iter);
-		gtk_text_view_scroll_mark_onscreen(view, gtk_text_buffer_get_mark(buffer, "insert"));
+		gtk_text_view_scroll_mark_onscreen(GTK_TEXT_VIEW(view), gtk_text_buffer_get_mark(buffer, "insert"));
 	}
 	hildon_banner_show_information(GTK_WIDGET(window_main), GTK_STOCK_DIALOG_ERROR, last_error_msg);
 }
@@ -323,22 +323,18 @@ static gboolean key_pressed(GtkWidget *widget, GdkEventKey *event)
 
 static GtkWidget *main_layout(void)
 {
-	GtkWidget *scroll;
+	GtkWidget *pannable;
 
-	view = GTK_TEXT_VIEW(gtk_text_view_new());
-	gtk_text_view_set_editable(view, TRUE);
-	gtk_text_view_set_left_margin(view, 10);
-	gtk_text_view_set_right_margin(view, 10);
+	view = HILDON_TEXT_VIEW(hildon_text_view_new());
 
-	scroll = gtk_scrolled_window_new(NULL, NULL);
-	gtk_scrolled_window_set_policy(GTK_SCROLLED_WINDOW(scroll), GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
-	gtk_container_add(GTK_CONTAINER(scroll), GTK_WIDGET(view));
+	pannable = hildon_pannable_area_new();
+	gtk_container_add(GTK_CONTAINER(pannable), GTK_WIDGET(view));
 
-	buffer = gtk_text_view_get_buffer(view);
+	buffer = hildon_text_view_get_buffer(view);
 	g_signal_connect(G_OBJECT(buffer), "changed", G_CALLBACK(set_modified), NULL);
 	g_signal_connect(G_OBJECT(buffer), "modified-changed", G_CALLBACK(set_modified), NULL);
 
-	return scroll;
+	return pannable;
 }
 
 static GtkWidget *main_menu(void)
