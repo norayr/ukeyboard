@@ -90,3 +90,47 @@ xkb_symbols "aren" {
     key <AB06>	{ [	Arabic_alefmaksura,	Arabic_maddaonalef,	quotedbl,		quotedbl,		n,		N,		quotedbl,		quotedbl		] };
     key <AB07>	{ [	Arabic_tehmarbuta,	Arabic_zah,		apostrophe,		apostrophe,		m,		M,		apostrophe,		apostrophe		] };
 };
+
+// author: Jaroslav Poriz
+xkb_symbols "dv" {
+    include "nokia_vndr/rx-51(english_base)"
+    include "nokia_vndr/rx-51(arrows_4btns)"
+
+    name[Group1] = "Dvorak";
+
+    // 1. row
+    key <AD01>	{ [	colon,		semicolon,	1,		1		] };
+    key <AD02>	{ [	w,		W,		2,		2		] };
+    key <AD03>	{ [	v,		V,		3,		3		] };
+    key <AD04>	{ [	p,		P,		4,		4		] };
+    key <AD05>	{ [	y,		Y,		5,		5		] };
+    key <AD06>	{ [	f,		F,		6,		6		] };
+    key <AD07>	{ [	g,		G,		7,		7		] };
+    key <AD08>	{ [	c,		C,		8,		8		] };
+    key <AD09>	{ [	r,		R,		9,		9		] };
+    key <AD10>	{ [	l,		L,		0,		0		] };
+    key <AB08>	{ [	period,		comma,		equal,		equal		] };
+
+    // 2. row
+    key <AC01>	{ [	a,		A,		asterisk,	asterisk	] };
+    key <AC02>	{ [	o,		O,		plus,		plus		] };
+    key <AC03>	{ [	e,		E,		numbersign,	numbersign	] };
+    key <AC04>	{ [	u,		U,		minus,		minus		] };
+    key <AC05>	{ [	i,		I,		underscore,	underscore	] };
+    key <AC06>	{ [	d,		D,		exclam,		parenleft	] };
+    key <AC07>	{ [	h,		H,		question,	parenright	] };
+    key <AC08>	{ [	t,		T,		ampersand,	ampersand	] };
+    key <AC09>	{ [	n,		N,		less,		exclam		] };
+    key <AB09>	{ [	s,		S,		greater,	question	] };
+
+    // 3. row
+    key <AB01>	{ [	z,		Z,		asciitilde,	asciitilde	] };
+    key <AB02>	{ [	q,		Q,		dollar,		dollar		] };
+    key <AB03>	{ [	j,		J,		backslash,	bar		] };
+    key <AB04>	{ [	k,		K,		grave,		slash		] };
+    key <AB05>	{ [	x,		X,		parenleft,	backslash	] };
+    key <AB06>	{ [	b,		B,		parenright,	quotedbl	] };
+    key <AB07>	{ [	m,		M,		apostrophe,	apostrophe	] };
+    key <SPCE>	{ [	space,		slash,		at,		at		] };
+};
+

@@ -16,8 +16,8 @@ Description: Additional on-screen keyboard layouts
  (BDS & Phonetic), Croatian (QWERTY & QWERTZ), Czech (QWERTY),
  English (Dvorak), Esperanto (QWERTY), Hebrew, Hungarian (QWERTZ),
  Slovak (QWERTY & QWERTZ), Thai and Turkish on-screen keyboard
- layouts and Arabic, Czech (QWERTY) and Slovak (QWERTY & QWERTZ)
- hardware keyboard layouts.
+ layouts and Arabic, Czech (QWERTY), Dvorak and Slovak (QWERTY
+  & QWERTZ) hardware keyboard layouts.
 XSBC-Bugtracker: https://bugs.maemo.org/enter_bug.cgi?product=Ukeyboard
 XB-Maemo-Icon-26:
  iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c

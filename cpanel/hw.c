@@ -62,6 +62,7 @@ static layouts layout_names[] = {
     {"sk",		"Slovenčina"},
     {"sk_qwerty",	"Slovenčina - QWERTY"},
     {"aren",		"Arabic, English"},
+    {"dv",		"Dvorak"},
     {NULL,		NULL}
 };
 
