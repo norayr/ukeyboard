@@ -3,7 +3,10 @@
 set -e
 
 if ! grep -q ukeyboard /usr/share/X11/xkb/rules/base; then
-	sed -i 's/^.*nokiarx44.*$/\0\n  ukeyboard	*			=	nokia_vndr\/ukeyboard(%l)/' /usr/share/X11/xkb/rules/base
+	# add ukeyboard symbols
+	sed -i 's/nokia_vndr\/su-8w(%l)/\0\n  ukeyboard	*		=	nokia_vndr\/ukeyboard(common)+nokia_vndr\/ukeyboard(%l%_v)/' /usr/share/X11/xkb/rules/base
+	# add types for ukeyboard
+	sed -i 's/$nokiamodels	=	complete+nokia/\0\n  ukeyboard	=	complete+nokia/' /usr/share/X11/xkb/rules/base
 fi
 
 if [ -f /usr/share/applications/hildon-control-panel/cptextinput.desktop ]; then
