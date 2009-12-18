@@ -1,6 +1,8 @@
 layouts = \
 	  aren.vkb \
 	  cz_qwerty.vkb \
+	  dv.vkb \
+	  gr.vkb \
 	  sk.vkb sk_qwerty.vkb
 
 all: $(layouts)
