@@ -1,7 +1,7 @@
 layouts = \
 	  aren.vkb \
-	  cz-qwerty.vkb \
-	  sk.vkb sk-qwerty.vkb
+	  cz_qwerty.vkb \
+	  sk.vkb sk_qwerty.vkb
 
 all: $(layouts)
 
