@@ -144,6 +144,9 @@ xkb_symbols "gr" {
 
     name[Group1] = "Greek (US HW)";
 
+    key <SPCE>	{ type[Group1] = "PC_FN_LEVEL2_BREAK", [ space, at, ISO_Level5_Lock, at ] };
+    modifier_map Mod3 { ISO_Level5_Lock };
+
     key.type[Group1] = "EIGHT_LEVEL_SEMIALPHABETIC";
 
     // 1. row
