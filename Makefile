@@ -28,7 +28,9 @@ install:	ukeyboard-prefs keyboards-scv
 	install -d $(DESTDIR)/usr/share/icons/hicolor/48x48/apps
 	install -m 0644 ukeyboard.png $(DESTDIR)/usr/share/icons/hicolor/48x48/apps/
 	install -d $(DESTDIR)/usr/share/X11/xkb/symbols/nokia_vndr
-	install -m 0644 xkb/ukeyboard $(DESTDIR)/usr/share/X11/xkb/symbols/nokia_vndr/
+	install -m 0644 xkb/symbols/ukeyboard $(DESTDIR)/usr/share/X11/xkb/symbols/nokia_vndr/
+	install -d $(DESTDIR)/usr/share/X11/xkb/types
+	install -m 0644 xkb/types/ukeyboard $(DESTDIR)/usr/share/X11/xkb/types/
 	$(MAKE) -C ukbdcreator DESTDIR=$(DESTDIR) install
 
 clean:
