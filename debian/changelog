@@ -1,3 +1,20 @@
+ukeyboard (2.1-0) unstable; urgency=low
+
+  * Added XSBC-Bugtracker field to debian/control.
+  * Updated xkb includes in ukeyboard hardware keyboard layouts to use
+    data from xkb-data package insted from obsolete xkbdata package
+    (due to these old includes, modifier keys were not working on real device).
+  * ukeyobard creator UI ported to Maemo5 (Fremantle).
+  * Czech dictionary was not visible in Control pannel applet.
+  * Fixed switching between Arabic and English layouts (Bug 6980,
+    Bugs In The Arabic Hardware Keyboard).
+  * Czech and Slovak scv QWERTY keyboard layouts were not working due to the
+    inconsistency between layout names.
+  * Added Bulgarian (ported from ukeyboard v1.9), Dvorak (by Jaroslav Poriz)
+    and Greek (ported from ukeyboard v1.9) hardware keyboard layouts.
+
+ -- Roman Moravcik <roman.moravcik@gmail.com>  Wed, 24 Dec 2009 16:30:12 +0100
+
 ukeyboard (2.0-7) unstable; urgency=low
 
   * postinst/postrm scripts were not working properly on real device.
