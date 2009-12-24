@@ -1,5 +1,6 @@
 layouts = \
 	  aren.vkb \
+	  bg_phonetic.vkb \
 	  cz_qwerty.vkb \
 	  dv.vkb \
 	  gr.vkb \
