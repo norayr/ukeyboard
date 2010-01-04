@@ -7,17 +7,6 @@ Standards-Version: 3.6.1
 Homepage: http://www.upir.cz/maemo/keyboards/
 Vcs-Browser: http://repo.or.cz/w/ukeyboard.git
 Vcs-Git: git://repo.or.cz/ukeyboard.git
-
-Package: ukeyboard
-Architecture: any
-Depends: ${shlibs:Depends}, thai-ttf
-Description: Additional on-screen keyboard layouts
- This package provides additional Arabic, Belorussian, Bulgarian
- (BDS & Phonetic), Croatian (QWERTY & QWERTZ), Czech (QWERTY),
- English (Dvorak), Esperanto (QWERTY), Hebrew, Hungarian (QWERTZ),
- Slovak (QWERTY & QWERTZ), Thai and Turkish on-screen keyboard
- layouts and Arabic, Bulgarian (Phonetic), Czech (QWERTY), Dvorak,
- Greek and Slovak (QWERTY & QWERTZ) hardware keyboard layouts.
 XSBC-Bugtracker: https://bugs.maemo.org/enter_bug.cgi?product=Ukeyboard
 XB-Maemo-Icon-26:
  iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c
@@ -31,9 +20,20 @@ XB-Maemo-Icon-26:
  aqVGsyxbVZeJ7/uz6qqqevqA9nSqnuchjmMIIR7uV1sH51wxxtSe2p8cjDF1
  s+JqZstPaIIgCILY5As+VklhB2vSewAAAABJRU5ErkJggg==
 
+Package: ukeyboard
+Architecture: any
+Depends: ${shlibs:Depends}, thai-ttf
+Description: Additional on-screen keyboard layouts
+ This package provides additional Arabic, Belorussian, Bulgarian
+ (BDS & Phonetic), Croatian (QWERTY & QWERTZ), Czech (QWERTY),
+ English (Dvorak), Esperanto (QWERTY), Hebrew, Hungarian (QWERTZ),
+ Slovak (QWERTY & QWERTZ), Thai and Turkish on-screen keyboard
+ layouts and Arabic, Bulgarian (Phonetic), Czech (QWERTY), Dvorak,
+ Greek and Slovak (QWERTY & QWERTZ) hardware keyboard layouts.
+
 Package: ukbdcreator
 Architecture: any
 Section: user/utilities
-Depends: ${shlibs:Depends}, ukeyboard (>= 1.7)
+Depends: ${shlibs:Depends}, ukeyboard (>= 2.0)
 Description: Ukeyboard Creator
  Simple IDE for creating and testing on-screen keyboard layouts.
