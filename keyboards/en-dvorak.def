@@ -187,7 +187,6 @@ lowercase {
 	key - special
 	}
 	row {
-	white size 4
 	key q alpha
 	key j alpha
 	key k alpha
@@ -197,6 +196,7 @@ lowercase {
 	key w alpha
 	key v alpha
 	key z alpha
+	white size 4
 	}
 }
 uppercase {
@@ -230,7 +230,6 @@ uppercase {
 	key _ special
 	}
 	row {
-	white size 4
 	key Q alpha
 	key J alpha
 	key K alpha
@@ -240,6 +239,7 @@ uppercase {
 	key W alpha
 	key V alpha
 	key Z alpha
+	white size 4
 	}
 }
 special {

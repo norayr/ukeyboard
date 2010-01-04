@@ -186,7 +186,6 @@ lowercase {
 	key ^ alpha dead
 	}
 	row {
-	white size 4
 	key z alpha
 	key x alpha
 	key c alpha hexa
@@ -194,6 +193,7 @@ lowercase {
 	key b alpha hexa
 	key n alpha
 	key m alpha
+	white size 4
 	slide special { key . key , key ? key ! key @ key ( key ) } size 4
 	}
 }
@@ -228,7 +228,6 @@ uppercase {
 	key ^ alpha dead
 	}
 	row {
-	white size 4
 	key Z alpha
 	key X alpha
 	key C alpha hexa
@@ -236,6 +235,7 @@ uppercase {
 	key B alpha hexa
 	key N alpha
 	key M alpha
+	white size 4
 	slide special { key . key , key ? key ! key @ key ( key ) } size 4
 	}
 }

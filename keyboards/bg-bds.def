@@ -186,7 +186,6 @@ lowercase {
 	key б alpha
 	}
 	row {
-	white size 4
 	key ю alpha
 	key й alpha
 	key ъ alpha 
@@ -194,6 +193,7 @@ lowercase {
 	key х alpha 
 	key п alpha
 	key р alpha
+	white size 4
 	slide special size 4 { key л key . key , key ? key ! key @ key ( key ) }
 	}
 }
@@ -228,7 +228,6 @@ uppercase {
 	key Б alpha 
 	}
 	row {
-	white size 4
 	key Ю alpha
 	key Й alpha
 	key Ъ alpha 
@@ -236,6 +235,7 @@ uppercase {
 	key Х alpha 
 	key П alpha
 	key Р alpha
+	white size 4
 	slide special size 4 { key Л key . key , key ? key ! key @ key ( key ) }
 	}
 }
