@@ -3,6 +3,7 @@ layouts = \
 	  bg_phonetic.vkb \
 	  cz_qwerty.vkb \
 	  dv.vkb \
+	  faen.vkb \
 	  gr.vkb \
 	  sk.vkb sk_qwerty.vkb
 

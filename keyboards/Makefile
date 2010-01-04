@@ -6,6 +6,7 @@ layouts = \
 	cz-qwerty.vkb cz-qwertz.vkb\
 	en-dvorak.vkb \
 	eo-qwerty.vkb \
+	fa-isiri9147.vkb \
 	he-qwerty.vkb \
 	hr-qwerty.vkb hr-qwertz.vkb \
 	hu-qwertz.vkb \

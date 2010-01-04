@@ -1,0 +1,352 @@
+## title: Persian (Iranian) keyboard layout
+## author: Hessam Farhang <icehess@gmail.com>
+##
+#########################################
+## Persian layout,
+## based on
+## Information Technology – Layout of Persian Letters and Symbols on Computer Keyboards
+## ISIRI 9147 – 1st Edition
+## Institute of Standards and Industrial Research of Iran
+## http://www.isiri.org/UserStd/DownloadStd.aspx?id=9147
+## http://behnam.esfahbod.info/standards/isiri-keyboard-9147.pdf
+##
+
+header {
+name	"Persian"
+lang	"fa_IR"
+wc	"fa_IR"
+
+size	0	{ width 35 height 35 textpos 26 left 0 top 0 }
+size	1	{ width 35 height 35 textpos 26 left 0 top 0 }
+size	2	{ width 66 height 55 textpos 41 left 0 top 0 }
+size	3	{ width 131 height 55 textpos 41 left 0 top 0 }
+}
+
+kbd_normal {
+lowercase {
+	margin 0 0 0 0
+	default_size 1
+	row {
+	key ض alpha
+	key ص alpha
+	key ث alpha
+	key ق alpha
+	key ف alpha
+	key غ alpha
+	key ع alpha
+	key ه alpha
+	key خ alpha
+	key ح alpha
+	key ج alpha
+	key چ alpha
+	}
+	row {
+	key ش alpha
+	key س alpha
+	key ی alpha
+	key ب alpha
+	key ل alpha
+	key ا alpha
+	key ت alpha
+	key ن alpha
+	key م alpha
+	key ك alpha
+	key گ alpha
+	key \ special
+	}
+	row {
+	key ظ alpha
+	key ط alpha
+	key ز alpha
+	key ر alpha
+	key ذ alpha
+	key د alpha
+	key پ alpha
+	key و alpha
+	key . alpha
+	key / special
+	key ، special
+	}
+}
+lowercase_num {
+	margin 0 0 0 9
+	default_size 0
+	row {
+	key ۱ num hexa tele
+	key ۲ num hexa tele
+	key ۳ num hexa tele
+	}
+	row {
+	key ۴ num hexa tele
+	key ۵ num hexa tele
+	key ۶ num hexa tele
+	}
+	row {
+	key ۷ num hexa tele
+	key ۸ num hexa tele
+	key ۹ num hexa tele
+	}
+	row {
+	key + special
+	key 0 num hexa tele
+	key = special
+	}
+}
+uppercase {
+	margin 0 0 0 0
+	default_size 1
+	row {
+	key ْ special dead
+	key ٌ special dead
+	key ٍ special dead
+	key ً special dead
+	key ُ special dead
+	key ِ special dead
+	key َ special dead
+	key ّ special dead
+	key ] special
+	key [ special
+	key } special
+	key { special
+	}
+	row {
+	key ؤ alpha
+	key ئ alpha
+	key ي alpha
+	key إ alpha
+	key أ alpha
+	key آ alpha
+	key ة alpha
+	key » special
+	key « special
+	key : special
+	key ؛ special
+	key | special
+	}
+	row {
+	key ك alpha
+	key ٓ special dead
+	key ژ alpha
+	key ٰ special dead
+	key ‌ذ alpha
+	key ٔ special dead
+	key ء special dead
+	key > special
+	key < special
+	key ؟ special
+	key ! special
+	}
+}
+uppercase_num {
+	margin 0 0 0 9
+	default_size 0
+	row {
+	key ! special
+	key ٬ special dead
+	key ٫ special dead
+	}
+	row {
+	key ﷼ special dead
+	key ٪ special
+	key × special
+	}
+	row {
+	key ، special dead
+	key * special
+	key ) special
+	}
+	row {
+	key ( special
+	key - special
+	key ـ special
+	}
+}
+}
+
+kbd_thumb {
+lowercase {
+	name "ا ب"
+	margin 0 0 0 0
+	default_size 2
+	row {
+	key ض alpha
+	key ص alpha
+	key ث alpha
+	key ق alpha
+	key ف alpha
+	key غ alpha
+	key ع alpha
+	key ه alpha
+	key خ alpha
+	key ح alpha
+	key ج alpha
+	key چ alpha
+	}
+	row {
+	key ش alpha
+	key س alpha
+	key ی alpha
+	key ب alpha
+	key ل alpha
+	key ا alpha
+	key ت alpha
+	key ن alpha
+	key م alpha
+	key ك alpha
+	key گ alpha
+	key \ special
+	}
+	row {
+	key ظ alpha
+	key ط alpha
+	key ز alpha
+	key ر alpha
+	key ذ alpha
+	key د alpha
+	key پ alpha
+	key و alpha
+	key . alpha
+	key / special
+	white size 3
+	}
+}
+uppercase {
+	name "ي ژ آ"
+	margin 0 0 0 0
+	default_size 2
+	row {
+	key ْ special dead
+	key ٌ special dead
+	key ٍ special dead
+	key ً special dead
+	key ُ special dead
+	key ِ special dead
+	key َ special dead
+	key ّ special dead
+	key ] special
+	key [ special
+	key } special
+	key { special
+	}
+	row {
+	key ؤ alpha
+	key ئ alpha
+	key ي alpha
+	key إ alpha
+	key أ alpha
+	key آ alpha
+	key ة alpha
+	key » special
+	key « special
+	key : special
+	key ؛ special
+	key | special
+	}
+	row {
+	key ك alpha
+	key ٓ special dead
+	key ژ alpha
+	key ٰ special dead
+	key ‌ذ alpha
+	key ٔ special dead
+	key ء special dead
+	key " special
+	slide special { key ؟ key ! key ) key ( key > key < } size 3
+	white size 3
+	}
+}
+special {
+	name "؛؟١"
+	margin 0 0 0 0
+	default_size 2
+	row {
+	key ١ num tele
+	key ٢ num tele
+	key ٣ num tele
+	key ؛ special
+	key ، special
+	key , special
+	key | special
+	key # special
+	key % special
+	key € special
+	key ¥ special
+	key ^ special
+	}
+	row {
+	key ٤ num tele
+	key ٥ num tele
+	key ٦ num tele
+	key § special
+	key * special
+	key ½ special
+	key « special
+	key » special
+	key [ special
+	key ] special
+	key { special
+	key } special
+	}
+	row {
+	key ٧ num tele
+	key ٨ num tele
+	key ٩ num tele
+	key ٠ num tele
+	key ‘ special
+	key ’ special
+	key ؟ special
+	key „ special
+	key “ special
+	key ± special
+	key ™ special
+	key © special
+	}
+}
+special {
+	name "1!+"
+	margin 0 0 0 0
+	default_size 2
+	row {
+	key 1 num hexa tele
+	key 2 num hexa tele
+	key 3 num hexa tele
+	key " special
+	key + special
+	key - special
+	key = special
+	key _ special
+	key & special
+	key @ special
+	key ~ special
+	key ° special
+	}
+	row {
+	key 4 num hexa tele
+	key 5 num hexa tele
+	key 6 num hexa tele
+	key ' special
+	key : special
+	key ; special
+	key ! special
+	key ¡ special
+	key ( special
+	key ) special
+	key / special
+	key \ special
+	}
+	row {
+	key 7 num hexa tele
+	key 8 num hexa tele
+	key 9 num hexa tele
+	key 0 num hexa tele
+	key . special
+	key , special
+	key ? special
+	key ¿ special
+	key $ special
+	key £ special
+	key < special
+	key > special
+	}
+}
+}

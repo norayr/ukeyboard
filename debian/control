@@ -27,9 +27,10 @@ Description: Additional on-screen keyboard layouts
  This package provides additional Arabic, Belorussian, Bulgarian
  (BDS & Phonetic), Croatian (QWERTY & QWERTZ), Czech (QWERTY),
  English (Dvorak), Esperanto (QWERTY), Hebrew, Hungarian (QWERTZ),
- Slovak (QWERTY & QWERTZ), Thai and Turkish on-screen keyboard
- layouts and Arabic, Bulgarian (Phonetic), Czech (QWERTY), Dvorak,
- Greek and Slovak (QWERTY & QWERTZ) hardware keyboard layouts.
+ Persian, Slovak (QWERTY & QWERTZ), Thai and Turkish on-screen
+ keyboard layouts and Arabic, Bulgarian (Phonetic), Czech (QWERTY),
+ Dvorak, Greek, Persian anand Slovak (QWERTY & QWERTZ) hardware
+ keyboard layouts.
 
 Package: ukbdcreator
 Architecture: any
