@@ -136,7 +136,9 @@ xkb_symbols "dv" {
     key <SPCE>	{ [	space,		slash,		at,		at		] };
 };
 
-// author: Porfyras <porfyras@gmail.com>, Roman Moravcik
+// author: Porfyras <porfyras@gmail.com>
+// author: Roman Moravcik
+// author: Faidon Liambotis
 partial alphanumeric_keys
 xkb_symbols "gr" {
     include "nokia_vndr/rx-51(english_base)"
@@ -150,38 +152,38 @@ xkb_symbols "gr" {
     key.type[Group2] = "FOUR_LEVEL_SEMIALPHABETIC";
 
     // 1. row
-    key <AD01>	{ symbols[Group2] = [	bar,			bar,			1,		1		] };
-    key <AD02>	{ symbols[Group2] = [	Greek_finalsmallsigma,	Greek_SIGMA,		2,		2		] };
-    key <AD03>	{ symbols[Group2] = [	Greek_epsilon,		Greek_EPSILON,		3,		3		] };
-    key <AD04>	{ symbols[Group2] = [	Greek_rho,		Greek_RHO,		4,		4		] };
-    key <AD05>	{ symbols[Group2] = [	Greek_tau,		Greek_TAU,		5,		5		] };
-    key <AD06>	{ symbols[Group2] = [	Greek_upsilon,		Greek_UPSILON,		6,		6		] };
-    key <AD07>	{ symbols[Group2] = [	Greek_theta,		Greek_THETA,		7,		7		] };
-    key <AD08>	{ symbols[Group2] = [	Greek_iota,		Greek_IOTA,		8,		8		] };
-    key <AD09>	{ symbols[Group2] = [	Greek_omicron,		Greek_OMICRON,		9,		9		] };
-    key <AD10>	{ symbols[Group2] = [	Greek_pi,		Greek_PI,		0,		0		] };
-    key <AB08>	{ symbols[Group2] = [	comma,			semicolon,		equal,		equal		] };
+    key <AD01>	{ symbols[Group2] = [	period,			colon,			1,			1		] };
+    key <AD02>	{ symbols[Group2] = [	Greek_finalsmallsigma,	Greek_SIGMA,		2,			2		] };
+    key <AD03>	{ symbols[Group2] = [	Greek_epsilon,		Greek_EPSILON,		3,			3		] };
+    key <AD04>	{ symbols[Group2] = [	Greek_rho,		Greek_RHO,		4,			4		] };
+    key <AD05>	{ symbols[Group2] = [	Greek_tau,		Greek_TAU,		5,			5		] };
+    key <AD06>	{ symbols[Group2] = [	Greek_upsilon,		Greek_UPSILON,		6,			6		] };
+    key <AD07>	{ symbols[Group2] = [	Greek_theta,		Greek_THETA,		7,			7		] };
+    key <AD08>	{ symbols[Group2] = [	Greek_iota,		Greek_IOTA,		8,			8		] };
+    key <AD09>	{ symbols[Group2] = [	Greek_omicron,		Greek_OMICRON,		9,			9		] };
+    key <AD10>	{ symbols[Group2] = [	Greek_pi,		Greek_PI,		0,			0		] };
+    key <AB08>	{ symbols[Group2] = [	comma,			semicolon,		equal,			equal		] };
 
     // 2. row
-    key <AC01>	{ symbols[Group2] = [	Greek_alpha,		Greek_ALPHA,		asterisk,	asterisk	] };
-    key <AC02>	{ symbols[Group2] = [	Greek_sigma,		Greek_SIGMA,		plus,		plus		] };
-    key <AC03>	{ symbols[Group2] = [	Greek_delta,		Greek_DELTA,		numbersign,	numbersign	] };
-    key <AC04>	{ symbols[Group2] = [	Greek_phi,		Greek_PHI,		minus,		minus		] };
-    key <AC05>	{ symbols[Group2] = [	Greek_gamma,		Greek_GAMMA,		underscore,	underscore	] };
-    key <AC06>	{ symbols[Group2] = [	Greek_eta,		Greek_ETA,		parenleft,	parenleft	] };
-    key <AC07>	{ symbols[Group2] = [	Greek_xi,		Greek_XI,		parenright,	parenright	] };
-    key <AC08>	{ symbols[Group2] = [	Greek_kappa,		Greek_KAPPA,		ampersand,	ampersand	] };
-    key <AC09>	{ symbols[Group2] = [	Greek_lamda,		Greek_LAMDA,		exclam,		exclam		] };
-    key <AB09>	{ symbols[Group2] = [	period,			colon,			question,	question	] };
+    key <AC01>	{ symbols[Group2] = [	Greek_alpha,		Greek_ALPHA,		asterisk,		asterisk	] };
+    key <AC02>	{ symbols[Group2] = [	Greek_sigma,		Greek_SIGMA,		plus,			plus		] };
+    key <AC03>	{ symbols[Group2] = [	Greek_delta,		Greek_DELTA,		numbersign,		numbersign	] };
+    key <AC04>	{ symbols[Group2] = [	Greek_phi,		Greek_PHI,		minus,			minus		] };
+    key <AC05>	{ symbols[Group2] = [	Greek_gamma,		Greek_GAMMA,		underscore,		underscore	] };
+    key <AC06>	{ symbols[Group2] = [	Greek_eta,		Greek_ETA,		parenleft,		parenleft	] };
+    key <AC07>	{ symbols[Group2] = [	Greek_xi,		Greek_XI,		parenright,		parenright	] };
+    key <AC08>	{ symbols[Group2] = [	Greek_kappa,		Greek_KAPPA,		ampersand,		ampersand	] };
+    key <AC09>	{ symbols[Group2] = [	Greek_lamda,		Greek_LAMDA,		exclam,			exclam		] };
+    key <AB09>	{ symbols[Group2] = [	dead_acute,		dead_diaeresis,		question,		question	] };
 
     // 3. row
-    key <AB01>	{ symbols[Group2] = [	Greek_zeta,		Greek_ZETA,		sterling,	sterling	] };
-    key <AB02>	{ symbols[Group2] = [	Greek_chi,		Greek_CHI,		dollar,		dollar		] };
-    key <AB03>	{ symbols[Group2] = [	Greek_psi,		Greek_PSI,		EuroSign,	EuroSign	] };
-    key <AB04>	{ symbols[Group2] = [	Greek_omega,		Greek_OMEGA,		slash,		slash		] };
-    key <AB05>	{ symbols[Group2] = [	Greek_beta,		Greek_BETA,		backslash,	backslash	] };
-    key <AB06>	{ symbols[Group2] = [	Greek_nu,		Greek_NU,		quotedbl,	quotedbl	] };
-    key <AB07>	{ symbols[Group2] = [	Greek_mu,		Greek_MU,		apostrophe,	apostrophe	] };
+    key <AB01>	{ symbols[Group2] = [	Greek_zeta,		Greek_ZETA,		sterling,		sterling	] };
+    key <AB02>	{ symbols[Group2] = [	Greek_chi,		Greek_CHI,		dollar,			dollar		] };
+    key <AB03>	{ symbols[Group2] = [	Greek_psi,		Greek_PSI,		EuroSign,		EuroSign	] };
+    key <AB04>	{ symbols[Group2] = [	Greek_omega,		Greek_OMEGA,		slash,			slash		] };
+    key <AB05>	{ symbols[Group2] = [	Greek_beta,		Greek_BETA,		backslash,		backslash	] };
+    key <AB06>	{ symbols[Group2] = [	Greek_nu,		Greek_NU,		quotedbl,		quotedbl	] };
+    key <AB07>	{ symbols[Group2] = [	Greek_mu,		Greek_MU,		apostrophe,		apostrophe	] };
 };
 
 // author: Ognian Samokovliyski
