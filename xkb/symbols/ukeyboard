@@ -58,8 +58,6 @@ xkb_symbols "aren" {
 
     key.type[Group2] = "FOUR_LEVEL_SEMIALPHABETIC";
 
-   // Arabic_shadda
-
     // 1. row
     key <AD01>	{ symbols[Group2] = [	Arabic_dad,		Arabic_fatha,		0x1000661,		0x1000661		] };
     key <AD02>	{ symbols[Group2] = [	Arabic_sad,		Arabic_fathatan,	0x1000662,		0x1000662		] };
@@ -70,8 +68,8 @@ xkb_symbols "aren" {
     key <AD07>	{ symbols[Group2] = [	Arabic_ain,		Arabic_jeem,		0x1000667,		0x1000667		] };
     key <AD08>	{ symbols[Group2] = [	Arabic_ha,		Arabic_dal,		0x1000668,		0x1000668		] };
     key <AD09>	{ symbols[Group2] = [	Arabic_khah,		Arabic_khah,		0x1000669,		0x1000669		] };
-    key <AD10>	{ symbols[Group2] = [	Arabic_hah,		Arabic_khah,		0x1000660,		0x1000660		] };
-    key <AB08>	{ symbols[Group2] = [	Arabic_thal,		Arabic_waw,		comma,			Arabic_semicolon	] };
+    key <AD10>	{ symbols[Group2] = [	Arabic_hah,		Arabic_hah,		0x1000660,		0x1000660		] };
+    key <AB08>	{ symbols[Group2] = [	Arabic_thal,		Arabic_shadda,		comma,			Arabic_semicolon	] };
 
     // 2. row
     key <AC01>	{ symbols[Group2] = [	Arabic_sheen,		Arabic_kasra,		asterisk,		asterisk		] };
@@ -88,7 +86,7 @@ xkb_symbols "aren" {
     // 3. row
     key <AB01>	{ symbols[Group2] = [	Arabic_hamzaonyeh,	Arabic_hamzaonyeh,	sterling,		sterling		] };
     key <AB02>	{ symbols[Group2] = [	Arabic_hamza,		Arabic_sukun,		dollar,			dollar			] };
-    key <AB03>	{ symbols[Group2] = [	Arabic_waw,		Arabic_hamzaonwaw,	EuroSign,		EuroSign		] };
+    key <AB03>	{ symbols[Group2] = [	Arabic_hamzaonwaw,	Arabic_waw,		EuroSign,		EuroSign		] };
     key <AB04>	{ symbols[Group2] = [	Arabic_ra,		Arabic_zain,		slash,			slash			] };
     key <AB05>	{ symbols[Group2] = [	0x100fefb,		0x100fef5,		backslash,		backslash		] };
     key <AB06>	{ symbols[Group2] = [	Arabic_alefmaksura,	Arabic_maddaonalef,	quotedbl,		quotedbl		] };
