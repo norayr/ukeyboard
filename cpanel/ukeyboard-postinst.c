@@ -26,7 +26,7 @@ int main(int argc, char **argv) {
 
     hildon_gtk_init (&argc, &argv);
 
-    dialog = gtk_dialog_new_with_buttons ("Ukeyboard",
+    dialog = gtk_dialog_new_with_buttons ("Installation of Ukeyboard finished",
                                            NULL,
                                            GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
                                            GTK_STOCK_OK,
@@ -35,7 +35,13 @@ int main(int argc, char **argv) {
                                            GTK_RESPONSE_REJECT,
                                            NULL);
 
-    label = gtk_label_new ("Instalation of Additional on-screen and hardware\nkeyboard layouts finished.\nYou can change your keyboard layout settings\nvia 'Settings: Text Input'.");
+    label = gtk_label_new ( 
+"Now you can change your keyboard layout settings\n"
+"via 'Settings: Text Input'.\n"
+"\n"
+"Note:\n"
+"To switch input language of some hardware keyboard\n"
+"layouts press Ctrl and Space keys simultaneously.");
 
     gtk_container_add (GTK_CONTAINER (GTK_DIALOG(dialog)->vbox), label);
     gtk_widget_show_all (GTK_WIDGET (dialog));
