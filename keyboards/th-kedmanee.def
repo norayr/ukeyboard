@@ -1,5 +1,6 @@
 # title: TH Kedmanee layout
 # author: Panu Tangchalermkul <panuta@gmail.com>
+# author: Witoo Harianto <witooh@gmail.com>
 # license: GPLv2
 
 header {
@@ -13,6 +14,7 @@ size	2	{ width 55 height 35 textpos 26 left 0 top 0 }
 size	3	{ width 72 height 55 textpos 41 left 0 top 0 }
 size	4	{ width 143 height 55 textpos 41 left 0 top 0 }
 size	5	{ width 24 height 35 textpos 26 left 0 top 0 }
+size	6	{ width 55 height 35 textpos 26 left 18 top 0 }
 }
 
 kbd_normal {
@@ -161,16 +163,29 @@ lowercase {
 	default_size 3
 	row {
 	key ๆ alpha
+	key ๅ alpha
+	key ภ alpha
+	key ถ alpha
+	key ุ special
+	key ึ special
+	key ค alpha
+	key ต alpha
+	key จ alpha
+	key ข alpha
+	key ช alpha
+	}
+	row {
 	key ไ alpha
+	key ำ special
 	key พ alpha
 	key ะ alpha
+	key ั special
+	key ี special
 	key ร alpha
 	key น alpha
 	key ย alpha
 	key บ alpha
 	key ล alpha
-	key ฃ alpha
-	key ช alpha
 	}
 	row {
 	key ฟ alpha
@@ -178,23 +193,25 @@ lowercase {
 	key ก alpha
 	key ด alpha
 	key เ alpha
+	key ้ special
+	key ่ special
 	key า alpha
 	key ส alpha
 	key ว alpha
 	key ง alpha
-	slide alpha { key ุ key ู key ึ  key ำ key ั key ํ key ี key ๊ key ้ key ็ key ่ key ๋ key ิ key ฺ key ื key ฺ } size 4
 	}
 	row {
 	key ผ alpha
 	key ป alpha
 	key แ alpha
 	key อ alpha
+	key ิ special
+	key ื special
 	key ท alpha
 	key ม alpha
 	key ใ alpha
 	key ฝ alpha
-	white size 4
-	slide special { key . key , key ? key ! key - key _ key & key | key \ key / key < key > }
+	white
 	}
 }
 uppercase {
@@ -202,17 +219,30 @@ uppercase {
 	margin 0 0 0 0
 	default_size 3
 	row {
+	key ๑ num tele
+	key ๒ num tele
+	key ๓ num tele
+	key ๔ num tele
+	key ู special
+	key ๕ num
+	key ๖ num
+	key ๗ num
+	key ๘ num
+	key ๙ num
+        key ๐ num
+	}
+	row {
+	key " special
 	key ฎ alpha
 	key ฑ alpha
 	key ธ alpha
+	key ํ special
+	key ๊ special
 	key ณ alpha
 	key ฯ alpha
 	key ญ alpha
 	key ฐ alpha
-	key ฅ alpha
-	key ๅ alpha
-	key ภ alpha
-	key ถ alpha
+	key , special
 	}
 	row {
 	key ฤ alpha
@@ -220,33 +250,35 @@ uppercase {
 	key ฏ alpha
 	key โ alpha
 	key ฌ alpha
+	key ็ special
+	key ๋ special
 	key ษ alpha
 	key ศ alpha
 	key ซ alpha
-	key ค alpha
-	slide alpha { key ุ key ู key ึ  key ำ key ั key ํ key ี key ๊ key ้ key ็ key ่ key ๋ key ิ key ฺ key ื key ฺ } size 4
+	key . special
 	}
 	row {
+	key ( special
+	key ) special
 	key ฉ alpha
 	key ฮ alpha
+	key ฺ special
+	key ์ special
+	key ? special
 	key ฒ alpha
 	key ฬ alpha
 	key ฦ alpha
-	key ต alpha
-	key จ alpha
-	key ข alpha
-	white size 4
-	slide special { key . key , key ? key ! key - key _ key & key | key \ key / key < key > }
+	white
 	}
 }
 special {
-	name "๑!+"
+	name "1!+"
 	margin 0 0 0 0
 	default_size 3
 	row {
-	key ๑ num tele
-	key ๒ num tele
-	key ๓ num tele
+	key 1 num tele
+	key 2 num tele
+	key 3 num tele
 	key " special
 	key + special
 	key - special
@@ -257,9 +289,9 @@ special {
 	key ´ alpha dead
 	}
 	row {
-	key ๔ num tele
-	key ๕ num tele
-	key ๖ num tele
+	key 4 num tele
+	key 5 num tele
+	key 6 num tele
 	key ' special
 	key : special
 	key ; special
@@ -270,10 +302,10 @@ special {
 	key \ special
 	}
 	row {
-	key ๗ num  tele
-	key ๘ num  tele
-	key ๙ num  tele
-	key ๐ num  tele
+	key 7 num  tele
+	key 8 num  tele
+	key 9 num  tele
+	key 0 num  tele
 	key . special
 	key , special
 	key ฿ special
@@ -302,8 +334,8 @@ special {
 	key } special
 	}
 	row {
-	key ¡ special
-	key ¿ special
+	key ฃ alpha
+	key ฅ alpha
 	key § special
 	key * special tele
 	key · special
