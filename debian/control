@@ -38,3 +38,7 @@ Section: user/utilities
 Depends: ${shlibs:Depends}, ukeyboard (>= 2.0)
 Description: Ukeyboard Creator
  Simple IDE for creating and testing on-screen keyboard layouts.
+ .
+ On-screen keyboard layout template, documentation and description
+ of on-screen keyboard layout definition file are installed under
+ /usr/share/doc/ukeyboard/.
