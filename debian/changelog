@@ -1,3 +1,19 @@
+ukeyboard (2.1-1) unstable; urgency=low
+
+  * Documents describing format of VKB definition files and VKB template added
+    to ukbdcreator package.
+  * Added missing XSBC-Bugtracer and package icon to ukbdcreator package.
+  * Updated ukbdcreator package description.
+  * Added notes to ukeyboard post-installation dialog.
+  * Tweaks of Bulgarian hardware keyboard layout suggested by Kostadin Bashev.
+  * Tweaks of Arabic hardware keyboard layout suggested by Ahmed Alhamazani
+    (Bug 7348: Arabic Characters Suggestion).
+  * Tweaks of Greek hardware keyboard layout by Faidon Liambotis.
+  * Added Persian on-screen, scv and hardware keyboard layouts by Hessam Farhang
+    (Bug 7607: Persian Keyboard layout support).
+
+ -- Roman Moravcik <roman.moravcik@gmail.com>  Tue, 12 Jan 2010 10:54:31 +0100
+
 ukeyboard (2.1-0) unstable; urgency=low
 
   * Added XSBC-Bugtracker field to debian/control.
