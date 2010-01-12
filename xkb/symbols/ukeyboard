@@ -65,32 +65,32 @@ xkb_symbols "aren" {
     key <AD04>	{ symbols[Group2] = [	Arabic_qaf,		Arabic_dammatan,	0x1000664,		0x1000664		] };
     key <AD05>	{ symbols[Group2] = [	Arabic_feh,		0x100fef9,		0x1000665,		0x1000665		] };
     key <AD06>	{ symbols[Group2] = [	Arabic_ghain,		Arabic_hamzaunderalef,	0x1000666,		0x1000666		] };
-    key <AD07>	{ symbols[Group2] = [	Arabic_ain,		Arabic_jeem,		0x1000667,		0x1000667		] };
-    key <AD08>	{ symbols[Group2] = [	Arabic_ha,		Arabic_shadda,		0x1000668,		0x1000668		] };
-    key <AD09>	{ symbols[Group2] = [	Arabic_khah,		Arabic_khah,		0x1000669,		0x1000669		] };
-    key <AD10>	{ symbols[Group2] = [	Arabic_hah,		Arabic_jeem,		0x1000660,		0x1000660		] };
-    key <AB08>	{ symbols[Group2] = [	Arabic_dal,		Arabic_thal,		comma,			Arabic_semicolon	] };
+    key <AD07>	{ symbols[Group2] = [	Arabic_ain,		rightsinglequotemark,	0x1000667,		0x1000667		] };
+    key <AD08>	{ symbols[Group2] = [	Arabic_ha,		Arabic_tehmarbuta,	0x1000668,		0x1000668		] };
+    key <AD09>	{ symbols[Group2] = [	Arabic_khah,		division,		0x1000669,		0x1000669		] };
+    key <AD10>	{ symbols[Group2] = [	Arabic_hah,		multiply,		0x1000660,		0x1000660		] };
+    key <AB08>	{ symbols[Group2] = [	Arabic_jeem,		period,			equal,			equal			] };
 
     // 2. row
     key <AC01>	{ symbols[Group2] = [	Arabic_sheen,		Arabic_kasra,		asterisk,		asterisk		] };
     key <AC02>	{ symbols[Group2] = [	Arabic_seen,		Arabic_kasratan,	plus,			plus			] };
-    key <AC03>	{ symbols[Group2] = [	Arabic_yeh,		Arabic_yeh,		numbersign,		numbersign		] };
-    key <AC04>	{ symbols[Group2] = [	Arabic_beh,		Arabic_beh,		minus,			minus			] };
+    key <AC03>	{ symbols[Group2] = [	Arabic_yeh,		Arabic_alefmaksura,	numbersign,		numbersign		] };
+    key <AC04>	{ symbols[Group2] = [	Arabic_beh,		Arabic_hamzaonyeh,	minus,			minus			] };
     key <AC05>	{ symbols[Group2] = [	Arabic_lam,		0x100fef7,		underscore,		underscore		] };
-    key <AC06>	{ symbols[Group2] = [	Arabic_alef,		Arabic_hamzaonalef,	parenleft,		parenleft		] };
-    key <AC07>	{ symbols[Group2] = [	Arabic_teh,		Arabic_tatweel,		parenright,		parenright		] };
+    key <AC06>	{ symbols[Group2] = [	Arabic_alef,		Arabic_hamzaonalef,	parenright,		parenright		] };
+    key <AC07>	{ symbols[Group2] = [	Arabic_teh,		Arabic_tatweel,		parenleft,		parenleft		] };
     key <AC08>	{ symbols[Group2] = [	Arabic_noon,		Arabic_comma,		ampersand,		ampersand		] };
-    key <AC09>	{ symbols[Group2] = [	Arabic_meem,		Arabic_meem,		exclam,			exclam			] };
-    key <AB09>	{ symbols[Group2] = [	Arabic_kaf,		Arabic_tah,		Arabic_question_mark,	Arabic_question_mark	] };
+    key <AC09>	{ symbols[Group2] = [	Arabic_meem,		Arabic_semicolon,	exclam,			exclam			] };
+    key <AB09>	{ symbols[Group2] = [	Arabic_kaf,		colon,			Arabic_question_mark,	Arabic_question_mark	] };
 
     // 3. row
-    key <AB01>	{ symbols[Group2] = [	Arabic_hamzaonyeh,	Arabic_hamzaonyeh,	sterling,		sterling		] };
-    key <AB02>	{ symbols[Group2] = [	Arabic_hamza,		Arabic_sukun,		dollar,			dollar			] };
+    key <AB01>	{ symbols[Group2] = [	Arabic_thal,		Arabic_shadda,		sterling,		sterling		] };
+    key <AB02>	{ symbols[Group2] = [	Arabic_dal,		Arabic_sukun,		dollar,			dollar			] };
     key <AB03>	{ symbols[Group2] = [	Arabic_waw,		Arabic_hamzaonwaw,	EuroSign,		EuroSign		] };
-    key <AB04>	{ symbols[Group2] = [	Arabic_ra,		Arabic_zain,		slash,			slash			] };
-    key <AB05>	{ symbols[Group2] = [	0x100fefb,		0x100fef5,		backslash,		backslash		] };
-    key <AB06>	{ symbols[Group2] = [	Arabic_alefmaksura,	Arabic_maddaonalef,	quotedbl,		quotedbl		] };
-    key <AB07>	{ symbols[Group2] = [	Arabic_tehmarbuta,	Arabic_zah,		apostrophe,		apostrophe		] };
+    key <AB04>	{ symbols[Group2] = [	Arabic_ra,		0x100fef5,		slash,			slash			] };
+    key <AB05>	{ symbols[Group2] = [	Arabic_zain,		0x100fefb,		backslash,		backslash		] };
+    key <AB06>	{ symbols[Group2] = [	Arabic_tah,		Arabic_maddaonalef,	quotedbl,		quotedbl		] };
+    key <AB07>	{ symbols[Group2] = [	Arabic_zah,		Arabic_hamza,		apostrophe,		apostrophe		] };
 };
 
 // author: Hessam Farhang
