@@ -58,6 +58,7 @@ static layouts layout_names[] = {
     {"it",		"Italiano"},
     {"pl",		"Polski"},
     {"fise",		"Suomi, Svenska"},
+    {"ch",		"Suisse, Schweiz"},
     {"ru",		"Русский"},
     {"sk",		"Slovenčina"},
     {"sk_qwerty",	"Slovenčina - QWERTY"},
