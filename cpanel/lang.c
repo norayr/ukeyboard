@@ -35,6 +35,8 @@
 #define GETTEXT_PACKAGE "osso-applet-textinput"
 #include <glib/gi18n-lib.h>
 
+char *ignore_autocapitalisation[] = {"ar_AR", "fa_IR", "he_IL", "th_TH", NULL };
+
 struct langlink {
 	gchar *src;
 	gchar *dest;
@@ -365,9 +367,17 @@ static GtkWidget *start(GConfClient *client, GtkWidget *win, void **data)
 		hildon_button_set_value_alignment (HILDON_BUTTON (button), 0.0, 0.5);
 		gtk_table_attach_defaults(GTK_TABLE(table), button, 1, 2, i, i + 1);
 
-		if (i == 1)
+		if (i == 1) {
+			/* secondary language */
 			d->sec_dictsel = HILDON_PICKER_BUTTON(button);
-		else {
+
+			/* check if auto-capitalization for the second language isn't enabled */
+			if (get_l_bool(client, code, "auto-capitalisation")) {
+				if (!hildon_check_button_get_active(d->auto_cap))
+					hildon_check_button_set_active(d->auto_cap, TRUE);
+			}
+		} else {
+			/* primary language */
 			hildon_check_button_set_active(d->word_compl, get_l_bool(client, code, "word-completion"));
 			hildon_check_button_set_active(d->auto_cap, get_l_bool(client, code, "auto-capitalisation"));
 			hildon_check_button_set_active(d->sp_after, get_l_bool(client, code, "insert-space-after-word"));
@@ -397,7 +407,7 @@ static void action(GConfClient *client, void *data)
 	struct lang *lang;
 	gchar *tmp;
 	int res;
-	unsigned i;
+	unsigned i, j;
 
 	for (i = 0; i < 2; i++) {
 		struct lang *dict;
@@ -424,6 +434,14 @@ static void action(GConfClient *client, void *data)
 			set_l_bool(client, lang->code, "auto-capitalisation", hildon_check_button_get_active(d->auto_cap));
 			set_l_bool(client, lang->code, "word-completion", hildon_check_button_get_active(d->word_compl));
 			set_l_bool(client, lang->code, "insert-space-after-word", hildon_check_button_get_active(d->sp_after));
+
+			/* forced disabling of autocapitalization for selected language codes,
+			   that doesn't support autocapitalization */
+			for (j = 0; ignore_autocapitalisation[j] != NULL; j++) {
+				if (!strcmp(lang->code, ignore_autocapitalisation[j])) {
+					set_l_bool(client, lang->code, "auto-capitalisation", FALSE);
+				}
+			}
 
 			res = hildon_touch_selector_get_active(d->dictsel[i], 0);
 			if (res >= 0)
