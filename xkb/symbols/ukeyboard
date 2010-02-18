@@ -5,6 +5,18 @@ xkb_symbols "common" {
     key <BKSP>	{ [	BackSpace,	BackSpace,	Delete,		Delete		] };
 };
 
+xkb_symbols "cz_qwerty" {
+    include "nokia_vndr/rx-51(cz)"
+
+    name[Group1] = "Czech - qwerty";
+
+    // 1. row
+    key <AD06>	{ [	y,		Y,		6,		6		] };
+
+    // 3. row
+    key <AB01>	{ [	z,		Z,		equal,		equal		] };
+};
+
 // author: Roman Moravcik
 xkb_symbols "sk" {
     include "nokia_vndr/rx-51(english_base)"

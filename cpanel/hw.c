@@ -129,6 +129,15 @@ static GList *get_layouts(gchar *path, gchar *model, GList *list)
 				continue;
 			}
 
+			/* WORKAROUND: ignore cz_qwerty nokiarx51 layout,
+			   because it's broken in PR1.1 and PR1.1.1 */
+			if (!strcmp(model, "nokiarx51")) {
+				if (!strcmp(layout, "cz_qwerty")) {
+					layout = NULL;
+					continue;
+				}
+			}
+
 			name = resolve_layout_name(layout);
 			if (name)
 			{
