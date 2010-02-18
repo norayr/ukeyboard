@@ -1,3 +1,16 @@
+ukeyboard (2.2-0) unstable; urgency=low
+
+  * Automatically disable Auto-capitalisation option for Arabic, Hebrew, Persian
+    and Thai on-screen keyboard layouts (Bug 7746: input method types a different
+    letter from the one I clicked on the first time I use it, Bug 8095: Problem
+    with Hebrew language).
+  * Added WORKAROUND for Czech QWERTY HW layout broken in 2.2009.51-1 and 3.2010.02-8.
+  * Added Macedonian on-screen, scv and hardware keyboard layouts by Nikola Kovachevski.
+  * Enabled Swiss HW keyboard layout (added in 2.2009.51-1 FW).
+  * Fixed typo in package description
+
+ -- Roman Moravcik <roman.moravcik@gmail.com>  Thu, 18 Feb 2010 18:46:47 +0100
+
 ukeyboard (2.1-1) unstable; urgency=low
 
   * Documents describing format of VKB definition files and VKB template added
