@@ -10,6 +10,7 @@ layouts = \
 	he-qwerty.vkb \
 	hr-qwerty.vkb hr-qwertz.vkb \
 	hu-qwertz.vkb \
+	mk.vkb \
 	sk-qwerty.vkb sk-qwertz.vkb \
 	th-kedmanee.vkb \
 	tr-qwerty.vkb
