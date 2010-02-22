@@ -1,0 +1,95 @@
+# Russian scv keyboard layout
+# Created by Roman Moravčík <roman.moravcik@gmail.com>
+
+header {
+name	"Русский"
+lang	"Русский"
+wc	""
+
+size	0	{ width 110 height 72 textpos 41 left 0 top 0 }
+}
+
+kbd_special {
+lowercase {
+	name ""
+	margin 0 0 0 0
+	default_size 0
+	row {
+	key < special
+	key > special
+	key [ special
+	key ] special
+	key { special
+	key } special
+	key | special
+	}
+	row {
+	tab
+	key £ special
+	key ¥ special
+	key § special
+	key % special
+	key ‰ special
+	key & special
+	}
+	row {
+	key = special
+	key ~ special
+	key \ special
+	key ½ special
+	key ² special
+	key ³ special
+	key Nº special
+	}
+	row {
+	key ë alpha special
+	key є alpha special
+	key ѓ alpha special
+	key і alpha special
+	key ї alpha special
+	key © special
+	key ® special
+	}
+}
+uppercase {
+	name ""
+	margin 0 0 0 0
+	default_size 0
+	row {
+	key < special
+	key > special
+	key [ special
+	key ] special
+	key { special
+	key } special
+	key | special
+	}
+	row {
+	tab
+	key £ special
+	key ¥ special
+	key § special
+	key % special
+	key ‰ special
+	key & special
+	}
+	row {
+	key = special
+	key ~ special
+	key \ special
+	key ½ special
+	key ² special
+	key ³ special
+	key Nº special
+	}
+	row {
+	key Ë alpha special
+	key Є alpha special
+	key Ѓ alpha special
+	key І alpha special
+	key Ї alpha special
+	key © special
+	key ® special
+	}
+}
+}

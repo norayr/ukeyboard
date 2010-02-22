@@ -90,11 +90,14 @@ GList *get_dicts(GList *langs)
 	for (item = langs, i = 0; item; item = g_list_next(item)) {
 		lang = item->data;
 
-		/* WORKAROUND: czech dictionary for cz-qwertz on-screen layout
-		   must be listed, because it's officially supported */
-		if ((strcmp(lang->fname, "cz-qwertz")) && (lang->ext))
-			continue;
-			
+		/* WORKAROUND: czech and russian dictionary must be listed,
+		   because they are officially supported */
+		if (lang->ext) {
+			if ((strcmp(lang->fname, "cz-qwertz")) &&
+			    (strcmp(lang->fname, "ru-windows")))
+				continue;
+		}
+
 		dict = g_malloc(sizeof(struct lang));
 		dict->fname = g_strdup(lang->fname);
 		dict->desc = g_strdup(lang->desc);

@@ -11,6 +11,7 @@ layouts = \
 	hr-qwerty.vkb hr-qwertz.vkb \
 	hu-qwertz.vkb \
 	mk.vkb \
+	ru-phonetic.vkb ru-windows.vkb \
 	sk-qwerty.vkb sk-qwertz.vkb \
 	th-kedmanee.vkb \
 	tr-qwerty.vkb

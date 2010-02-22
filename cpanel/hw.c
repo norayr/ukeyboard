@@ -68,6 +68,7 @@ static layouts layout_names[] = {
     {"bg_phonetic",	"Български - Phonetic"},
     {"faen",		"Persian, English"},
     {"mk",		"Македонски"},
+    {"ru_phonetic",	"Русский - Phonetic"},
     {NULL,		NULL}
 };
 

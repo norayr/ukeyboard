@@ -1,0 +1,328 @@
+# title: Russian phonetic layout
+# author: Roman Moravcik <roman.moravcik@gmail.com>
+
+header {
+name	"Русский (Россия) - Phonetic"
+lang	"ru_RU"
+wc	"ru_RU"
+
+size	0	{ width 35 height 35 textpos 26 left 0 top 0 }
+size	1	{ width 50 height 35 textpos 26 left 0 top 0 }
+size	2	{ width 55 height 35 textpos 26 left 0 top 0 }
+size	3	{ width 72 height 55 textpos 41 left 0 top 0 }
+size	4	{ width 143 height 55 textpos 41 left 0 top 0 }
+}
+
+kbd_normal {
+lowercase {
+	margin 0 0 0 0
+	default_size 0
+	row {
+	key я alpha size 2
+	key в alpha
+	key е alpha
+	key р alpha
+	key т alpha
+	key ы alpha
+	key у alpha
+	key и alpha
+	key о alpha
+	key п alpha
+	key ш alpha size 1
+	}
+	row {
+	key а alpha
+	key с alpha
+	key д alpha
+	key ф alpha
+	key г alpha
+	key х alpha
+	key й alpha
+	key к alpha
+	key л alpha
+	key щ alpha
+	key ю alpha
+	key ч alpha
+	}
+	row {
+	key з alpha size 2
+	key ь alpha
+	key ц alpha
+	key ж alpha
+	key б alpha
+	key н alpha
+	key м alpha
+	key < alpha
+	key > alpha
+	key , special
+	key . special size 1
+	}
+}
+lowercase_num {
+	margin 0 0 0 9
+	default_size 0
+	row {
+	key 1 num hexa tele
+	key 2 num hexa tele
+	key 3 num hexa tele
+	}
+	row {
+	key 4 num hexa tele
+	key 5 num hexa tele
+	key 6 num hexa tele
+	}
+	row {
+	key 7 num hexa tele
+	key 8 num hexa tele
+	key 9 num hexa tele
+	}
+	row {
+	key ё alpha
+	key 0 num hexa tele
+	key - num special
+	}
+}
+uppercase {
+	margin 0 0 0 0
+	default_size 0
+	row {
+	key Я alpha size 2
+	key В alpha
+	key Е alpha
+	key Р alpha
+	key Т alpha
+	key Ы alpha
+	key У alpha
+	key И alpha
+	key О alpha
+	key П alpha
+	key Ш alpha size 1
+	}
+	row {
+	key А alpha
+	key С alpha
+	key Д alpha
+	key Ф alpha
+	key Г alpha
+	key Х alpha
+	key Й alpha
+	key К alpha
+	key Л alpha
+	key Щ alpha
+	key Ю alpha
+	key Ч alpha
+	}
+	row {
+	key З alpha size 2
+	key Ь alpha
+	key Ц alpha
+	key Ж alpha
+	key Б alpha
+	key Н alpha
+	key М alpha
+	key , alpha
+	key . alpha
+	key ; special
+	key : special size 1
+	}
+}
+uppercase_num {
+	margin 0 0 0 9
+	default_size 0
+	row {
+	key ! special
+	key " special
+	key ? special
+	}
+	row {
+	key * special tele
+	key % special
+	key & special
+	}
+	row {
+	key \ special
+	key ( special
+	key ) special
+	}
+	row {
+	key Ё alpha
+	key = special
+	key + special tele
+	}
+}
+}
+
+kbd_thumb {
+lowercase {
+	name "абв"
+	margin 0 0 0 0
+	default_size 3
+	row {
+	key я alpha
+	key в alpha
+	key е alpha
+	key р alpha
+	key т alpha
+	key ы alpha
+	key у alpha
+	key и alpha
+	key о alpha
+	key п alpha
+	key ш alpha
+	}
+	row {
+	key а alpha
+	key с alpha
+	key д alpha
+	key ф alpha
+	key г alpha
+	key х alpha
+	key й alpha
+	key к alpha
+	key л alpha
+	key щ alpha
+	key ю alpha
+	}
+	row {
+	key з alpha
+	key ь alpha
+	key ц alpha
+	key ж alpha
+	key б alpha
+	key н alpha
+	key м alpha
+	white size 4
+	slide special size 3 { key . key , key - key ! key ? key & key ; key : key _ key @ }
+	}
+}
+uppercase {
+	name "АБВ"
+	margin 0 0 0 0
+	default_size 3
+	row {
+	key Я alpha
+	key В alpha
+	key Е alpha
+	key Р alpha
+	key Т alpha
+	key Ы alpha
+	key У alpha
+	key И alpha
+	key О alpha
+	key П alpha
+	key Ш alpha
+	}
+	row {
+	key А alpha
+	key С alpha
+	key Д alpha
+	key Ф alpha
+	key Г alpha
+	key Х alpha
+	key Й alpha
+	key К alpha
+	key Л alpha
+	key Щ alpha
+	key Ю alpha
+	}
+	row {
+	key З alpha
+	key Ь alpha
+	key Ц alpha
+	key Ж alpha
+	key Б alpha
+	key Н alpha
+	key М alpha
+	white size 4
+	slide special size 3 { key . key , key - key ! key ? key & key ; key : key _ key @ }
+	}
+}
+special {
+	name "1+ё"
+	margin 0 0 0 0
+	default_size 3
+	row {
+	key 1 num hexa tele
+	key 2 num hexa tele
+	key 3 num hexa tele
+	key ? special
+	key Ф alpha
+	key ф alpha
+	key Ґ alpha
+	key ґ alpha
+	key І alpha
+	key і alpha
+	key € special
+	}
+	row {
+	key 4 num hexa tele
+	key 5 num hexa tele
+	key 6 num hexa tele
+	key + special tele
+	key Э alpha
+	key э alpha
+	key Є alpha
+	key є alpha
+	key Ї alpha
+	key ї alpha
+	key £ special
+	}
+	row {
+	key 7 num hexa tele
+	key 8 num hexa tele
+	key 9 num hexa tele
+	key 0 num hexa tele
+	key Ё alpha
+	key ё alpha
+	key Ъ alpha
+	key ъ alpha
+	key ў alpha
+	key $ special
+	key ¥ special
+	}
+}
+special {
+	name "*!@"
+	margin 0 0 0 0
+	default_size 3
+	row {
+	key # special tele
+	key % special
+	key Nº special
+	key < special
+	key > special
+	key ^ special
+	key | special
+	key [ special
+	key ] special
+	key { special
+	key } special
+	}
+	row {
+	key = special
+	key ! special
+	key & special
+	key @ special
+	key ~ special
+	key * special tele
+	key ± special
+	key ( special
+	key ) special
+	key / special
+	key \ special
+	}
+	row {
+	key _ special
+	key ´ special
+	key ` special
+	key “ special
+	key ” special
+	key ‘ special
+	key ’ special
+	key « special
+	key » special
+	key ™ special
+	key © special
+	}
+}
+}
