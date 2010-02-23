@@ -1,3 +1,13 @@
+ukeyboard (2.2-1) unstable; urgency=low
+
+  * Documents describing format of VKB definition files and VKB template moved
+    to MyDocs/ukbdcreator directory.
+  * Added Vietnamese on-screen keyboard layout.
+  * Added Hebrew Phonetic scv and hardware keyboard layouts.
+  * Added Russian Phonetic on-screen, scv and hardware keyboard layouts.
+
+ -- Roman Moravcik <roman.moravcik@gmail.com>  Tue, 23 Feb 2010 23:58:45 +0100
+
 ukeyboard (2.2-0) unstable; urgency=low
 
   * Automatically disable Auto-capitalisation option for Arabic, Hebrew, Persian
