@@ -14,7 +14,8 @@ layouts = \
 	ru-phonetic.vkb ru-windows.vkb \
 	sk-qwerty.vkb sk-qwertz.vkb \
 	th-kedmanee.vkb \
-	tr-qwerty.vkb
+	tr-qwerty.vkb \
+	vi-qwerty.vkb
 
 all: $(layouts)
 
