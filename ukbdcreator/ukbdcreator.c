@@ -167,7 +167,7 @@ static gchar *file_chooser(gboolean open)
 
 	chooser = hildon_file_chooser_dialog_new(GTK_WINDOW(window_main),
 		open ? GTK_FILE_CHOOSER_ACTION_OPEN : GTK_FILE_CHOOSER_ACTION_SAVE);
-	gtk_file_chooser_set_current_folder(chooser, "/home/user/MyDocs/ukbdcreator");
+	gtk_file_chooser_set_current_folder(GTK_FILE_CHOOSER(chooser), "/home/user/MyDocs/ukbdcreator");
 	filter = gtk_file_filter_new();
 	gtk_file_filter_add_pattern(filter, "*.def");
 	gtk_file_chooser_set_filter(GTK_FILE_CHOOSER(chooser), filter);
