@@ -205,7 +205,7 @@ lowercase {
 	key n alpha
 	key m alpha
 	white size 4
-	slide special size 3 { key . key , key - key ! key ? key @ key & key : key ; key / key < key > }
+	slide special size 3 { key . key , key - key ? key ! key @ key & key : key ; key / key < key > }
 	}
 }
 uppercase {
@@ -249,7 +249,7 @@ uppercase {
 	key K alpha
 	key L alpha
 	key Ơ alpha
-	key \ alpha
+	key \ special
 	}
 	row {
 	key Z alpha
@@ -260,7 +260,7 @@ uppercase {
 	key N alpha
 	key M alpha
 	white size 4
-	slide special size 3 { key . key , key - key ! key ? key @ key & key : key ; key / key < key > }
+	slide special size 3 { key . key , key - key ? key ! key @ key & key : key ; key / key < key > }
 	}
 }
 special {
