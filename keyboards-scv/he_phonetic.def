@@ -1,9 +1,9 @@
-# Arabic, English scv keyboard layout
+# Hebrew scv keyboard layout
 # Created by Roman Moravčík <roman.moravcik@gmail.com>
 
 header {
-name	"Arabic, English"
-lang	"Arabic, English"
+name	"עברית"
+lang	"עברית"
 wc	""
 
 size	0	{ width 110 height 72 textpos 41 left 0 top 0 }
