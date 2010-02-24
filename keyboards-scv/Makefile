@@ -4,6 +4,7 @@ layouts = \
 	  cz_qwerty.vkb \
 	  dv.vkb \
 	  faen.vkb \
+	  ge.vkb \
 	  gr.vkb \
 	  he_phonetic.vkb \
 	  mk.vkb \

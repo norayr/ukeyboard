@@ -70,6 +70,7 @@ static layouts layout_names[] = {
     {"mk",		"Македонски"},
     {"ru_phonetic",	"Русский - Phonetic"},
     {"he_phonetic",	"עברית - Phonetic"},
+    {"ge",		"Georgian - Latin"},
     {NULL,		NULL}
 };
 
