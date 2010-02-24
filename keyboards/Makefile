@@ -7,7 +7,7 @@ layouts = \
 	en-dvorak.vkb \
 	eo-qwerty.vkb \
 	fa-isiri9147.vkb \
-	he-qwerty.vkb \
+	he-phonetic.vkb he-qwerty.vkb \
 	hr-qwerty.vkb hr-qwertz.vkb \
 	hu-qwertz.vkb \
 	ka-qwerty.vkb \
