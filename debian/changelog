@@ -1,3 +1,17 @@
+ukeyboard (2.2-2) unstable; urgency=low
+
+  * Added Khmer on-screen keyboard layout by Sopheak Hean.
+  * Added dependency to ttf-khmeros package needed by Khmer keyboard layout.
+  * Added Hebrew Phonetic on-screen keyboard layout.
+  * Added dependency to ttf-bpg-georgian-fonts package needed by Georgian keyboard
+    layout.
+  * Added Georgian on-screen, scv and hardware keyboard layouts by David Gegechkori.
+  * Minor tweaks of Vietnamese on-screen keyboard layout.
+  * Minor fixes of layout description, name and lang of Hebrew phonetic scv layout.
+  * Updated on-screen keyboard layout template.
+
+ -- Roman Moravcik <roman.moravcik@gmail.com>  Fri, 26 Feb 2010 11:25:26 +0100
+
 ukeyboard (2.2-1) unstable; urgency=low
 
   * Documents describing format of VKB definition files and VKB template moved
