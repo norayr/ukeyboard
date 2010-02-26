@@ -169,7 +169,6 @@ lowercase {
 	key ោ alpha
 	key ផ alpha
 	key ើ alpha
-#	key ឪ alpha
 	}
 	row {
 	key ា alpha
@@ -193,7 +192,7 @@ lowercase {
 	key ន alpha
 	key ម alpha
 	key អ alpha
-	key ៕ alpha
+	key ។ alpha
 	key ឮ alpha
 	key ្ alpha
 	}
@@ -226,16 +225,16 @@ uppercase {
 	key ី alpha
 	key ៅ alpha
 	key ភ alpha
-	key - alpha
+	key ោះ alpha
 	}
 	row {
 	key ៃ alpha
-	key - alpha
+	key ាំ alpha
 	key ឌ alpha
 	key ធ alpha
-	key - alpha
+	key ុះ alpha
 	key ះ alpha
-	key - alpha
+	key ុំ alpha
 	key គ alpha
 	key ឡ alpha
 	key ឯ alpha
@@ -245,12 +244,12 @@ uppercase {
 	key ឍ alpha
 	key ឃ alpha
 	key ជ alpha
-	key - alpha
+	key េះ alpha
 	key ព alpha
 	key ណ alpha
 	key ំ alpha
 	key អ alpha
-	key ។ alpha
+	key ៕ alpha
 	key ឧ alpha
 	key ្ alpha
 	}
