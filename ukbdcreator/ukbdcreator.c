@@ -279,7 +279,7 @@ static void run_about(void)
 		NULL);
 }
 
-static void run_documentation(void)
+static void run_help(void)
 {
 	osso_rpc_run(osso_context,
 		     "com.nokia.osso_browser",
@@ -382,8 +382,8 @@ static GtkWidget *main_menu(void)
 	hildon_app_menu_append(HILDON_APP_MENU (menu), GTK_BUTTON(item));
 
 	item = hildon_button_new_with_text (HILDON_SIZE_AUTO,
-					    HILDON_BUTTON_ARRANGEMENT_VERTICAL, "Documentation", NULL);
-	g_signal_connect(G_OBJECT(item), "clicked", G_CALLBACK(run_documentation), NULL);
+					    HILDON_BUTTON_ARRANGEMENT_VERTICAL, "Help", NULL);
+	g_signal_connect(G_OBJECT(item), "clicked", G_CALLBACK(run_help), NULL);
 	hildon_app_menu_append(HILDON_APP_MENU (menu), GTK_BUTTON(item));
 
 	item = hildon_button_new_with_text (HILDON_SIZE_AUTO,
