@@ -28,6 +28,7 @@
 
 static gchar *saved_layout = NULL;
 static gchar *saved_lang = NULL;
+static gint saved_current = -1;
 static gchar *act_layout = NULL;
 
 struct priv {
@@ -148,6 +149,18 @@ static void set_lang(GConfClient *conf, gchar *val)
 		"/apps/osso/inputmethod/hildon-im-languages/language-0", val, NULL);
 }
 
+static gint get_current(GConfClient *conf)
+{
+	return gconf_client_get_int(conf,
+		"/apps/osso/inputmethod/hildon-im-languages/current", NULL);
+}
+
+static void set_current(GConfClient *conf, gint val)
+{
+	gconf_client_set_int(conf,
+		"/apps/osso/inputmethod/hildon-im-languages/current", val, NULL);
+}
+
 void test_layout(GConfClient *conf, gchar *fname, gchar *lang)
 {
 	gchar *cmd;
@@ -164,7 +177,7 @@ void test_layout(GConfClient *conf, gchar *fname, gchar *lang)
 	}
 	res = WEXITSTATUS(res);
 	if (res == 2) {
-		disp_error("Redefining a system language is not possible");
+		disp_error("Redefining a system language is not possible.\nPlease use diffent language code.");
 		return;
 	}
 	if (res) {
@@ -173,8 +186,10 @@ void test_layout(GConfClient *conf, gchar *fname, gchar *lang)
 	}
 	saved_lang = g_strdup(lang);
 	saved_layout = get_lang(conf);
+	saved_current = get_current(conf);
 	set_lang(conf, "en_GB");
 	set_lang(conf, lang);
+	set_current(conf, 0);
 	if (act_layout) {
 		g_unlink(act_layout);
 		g_free(act_layout);
@@ -207,9 +222,11 @@ void restore_layout(GConfClient *conf, gboolean warn)
 	}
 	set_lang(conf, "en_GB");
 	set_lang(conf, saved_layout);
+	set_current(conf, saved_current);
 	g_free(saved_lang);
 	g_free(saved_layout);
 	saved_lang = saved_layout = NULL;
+	saved_current = -1;
 	if (act_layout) {
 		g_unlink(act_layout);
 		g_free(act_layout);
