@@ -1,3 +1,17 @@
+ukeyboard (2.2-3) unstable; urgency=low
+
+  * Automatically select first/restore keyboard layout after activation/deactivation
+    of keyboard layout from ukbdcreator.
+  * Changed language code of template keyboard layout from en_US to en_XX
+    to not conflict with present "English (USA)" layout.
+  * Added "Help" menu item to ukbdcreator to display howto.txt.
+  * "New" menu item will automatically load template layout.
+  * Cleanup of ukbdcreator main menu and toolbar.
+  * Fixed broken installation of ukbdcreator. Documentation and template moved
+    to /usr/share/ukbdcreator directory (Bug 9323: ukbdcreator 2.2-2 fails to install).
+
+ -- Roman Moravcik <roman.moravcik@gmail.com>  Mon,  1 Mar 2010 12:51:43 +0100
+
 ukeyboard (2.2-2) unstable; urgency=low
 
   * Added Khmer on-screen keyboard layout by Sopheak Hean.
