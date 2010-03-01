@@ -28,10 +28,11 @@ Description: Additional on-screen keyboard layouts
  (BDS & Phonetic), Croatian (QWERTY & QWERTZ), Czech (QWERTY),
  English (Dvorak), Esperanto (QWERTY), Georgian, Hebrew (Basic & Phonetic),
  Hungarian (QWERTZ), Khmer, Macedonian, Persian, Russian (Phonetic),
- Slovak (QWERTY & QWERTZ), Thai, Turkish and Vietnamese on-screen keyboard
- layouts and Arabic, Bulgarian (Phonetic), Czech (QWERTY), Dvorak, Greek,
- Georgian, Hebrew (Phonetic), Macedonian, Persian, Russian (Phonetic) and
- Slovak (QWERTY & QWERTZ) hardware keyboard layouts.
+ Slovak (QWERTY & QWERTZ), Slovenian (QWERTY & QWERTZ), Thai, Turkish
+ and Vietnamese on-screen keyboard layouts and Arabic, Bulgarian (Phonetic),
+ Czech (QWERTY), Dvorak, Greek, Georgian, Hebrew (Phonetic), Macedonian,
+ Persian, Russian (Phonetic) and Slovak (QWERTY & QWERTZ) hardware keyboard
+ layouts.
 
 Package: ukbdcreator
 Architecture: any
