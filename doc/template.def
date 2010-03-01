@@ -2,9 +2,9 @@
 # author: Foo Boo <foo@boo.org>
 
 header {
-name	"English (USA)"
-lang	"en_US"
-wc	"en_US"
+name	"English (Template)"
+lang	"en_XX"
+wc	"en_XX"
 
 size	0	{ width 35 height 35 textpos 26 left 0 top 0 }
 size	1	{ width 50 height 35 textpos 26 left 0 top 0 }
