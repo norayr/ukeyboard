@@ -365,11 +365,6 @@ static GtkWidget *main_menu(void)
 	hildon_app_menu_append(HILDON_APP_MENU (menu), GTK_BUTTON(item));
 
 	item = hildon_button_new_with_text (HILDON_SIZE_AUTO,
-					    HILDON_BUTTON_ARRANGEMENT_VERTICAL, "Fullscreen", NULL);
-	g_signal_connect(G_OBJECT(item), "clicked", G_CALLBACK(toggle_fullscreen), NULL);
-	hildon_app_menu_append(HILDON_APP_MENU (menu), GTK_BUTTON(item));
-
-	item = hildon_button_new_with_text (HILDON_SIZE_AUTO,
 					    HILDON_BUTTON_ARRANGEMENT_VERTICAL, "About", NULL);
 	g_signal_connect(G_OBJECT(item), "clicked", G_CALLBACK(run_about), NULL);
 	hildon_app_menu_append(HILDON_APP_MENU (menu), GTK_BUTTON(item));
@@ -399,6 +394,11 @@ static GtkToolbar *main_toolbar(void)
 	item = gtk_tool_button_new_from_stock(GTK_STOCK_MEDIA_STOP);
 	g_signal_connect(G_OBJECT(item), "clicked", G_CALLBACK(untest), NULL);
 	gtk_toolbar_insert(bar, item, -1);
+	item = gtk_toggle_tool_button_new();
+	gtk_tool_button_set_icon_name(GTK_TOOL_BUTTON(item), "general_fullsize");
+	g_signal_connect(G_OBJECT(item), "clicked", G_CALLBACK(toggle_fullscreen), NULL);
+	gtk_toolbar_insert(bar, item, -1);
+	gtk_toggle_tool_button_set_active(GTK_TOGGLE_TOOL_BUTTON(item), FALSE);
 
 	return bar;
 }
