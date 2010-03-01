@@ -25,8 +25,8 @@ install:	ukeyboard-prefs keyboards-scv
 	$(MAKE) -C cpanel DESTDIR=$(DESTDIR) install
 	$(MAKE) -C keyboards DESTDIR=$(DESTDIR) install
 	$(MAKE) -C keyboards-scv DESTDIR=$(DESTDIR) install
-	install -d $(DESTDIR)/home/user/MyDocs/ukbdcreator
-	install -m 0644 doc/howto doc/vkb-format-v3 doc/template.def $(DESTDIR)/home/user/MyDocs/ukbdcreator/
+	install -d $(DESTDIR)/usr/share/ukbdcreator
+	install -m 0644 doc/howto.txt doc/vkb-format-v3 doc/template.def $(DESTDIR)/usr/share/ukbdcreator/
 	install -d $(DESTDIR)/usr/share/icons/hicolor/48x48/apps
 	install -m 0644 ukeyboard.png $(DESTDIR)/usr/share/icons/hicolor/48x48/apps/
 	install -d $(DESTDIR)/usr/share/X11/xkb/symbols/nokia_vndr

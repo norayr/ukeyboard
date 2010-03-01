@@ -42,4 +42,4 @@ Description: Ukeyboard Creator
  .
  On-screen keyboard layout template, documentation and description
  of on-screen keyboard layout definition file are installed under
- MyDocs/ukbdcreator/ directory.
+ /usr/share/ukbdcreator/ directory.
