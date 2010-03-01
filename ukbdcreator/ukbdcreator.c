@@ -285,7 +285,7 @@ static void run_about(void)
 {
 	gtk_show_about_dialog(GTK_WINDOW(window_main),
 		"version", UKBD_VERSION,
-		"comments", "Licensed under GPLv2. Please send bug reports and feature requests to jbenc@upir.cz.",
+		"comments", "Licensed under GPLv2. Please send bug reports and feature requests to roman.moravcik@gmail.com.",
 		"copyright", "(c) 2008 Jiri Benc\n(c) 2009 Roman Moravcik",
 		"website", "http://upir.cz/maemo/keyboards/",
 		NULL);
