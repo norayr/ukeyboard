@@ -266,21 +266,6 @@ static gboolean file_quit(void)
 	return FALSE;
 }
 
-static void edit_cut(void)
-{
-	gtk_text_buffer_cut_clipboard(buffer, clipboard, TRUE);
-}
-
-static void edit_copy(void)
-{
-	gtk_text_buffer_copy_clipboard(buffer, clipboard);
-}
-
-static void edit_paste(void)
-{
-	gtk_text_buffer_paste_clipboard(buffer, clipboard, NULL, TRUE);
-}
-
 static void run_about(void)
 {
 	gtk_show_about_dialog(GTK_WINDOW(window_main),
@@ -365,21 +350,6 @@ static GtkWidget *main_menu(void)
 	hildon_app_menu_append(HILDON_APP_MENU (menu), GTK_BUTTON(item));
 
 	item = hildon_button_new_with_text (HILDON_SIZE_AUTO,
-					    HILDON_BUTTON_ARRANGEMENT_VERTICAL, "Cut", NULL);
-	g_signal_connect(G_OBJECT(item), "clicked", G_CALLBACK(edit_cut), NULL);
-	hildon_app_menu_append(HILDON_APP_MENU (menu), GTK_BUTTON(item));
-
-	item = hildon_button_new_with_text (HILDON_SIZE_AUTO,
-					    HILDON_BUTTON_ARRANGEMENT_VERTICAL, "Copy", NULL);
-	g_signal_connect(G_OBJECT(item), "clicked", G_CALLBACK(edit_copy), NULL);
-	hildon_app_menu_append(HILDON_APP_MENU (menu), GTK_BUTTON(item));
-
-	item = hildon_button_new_with_text (HILDON_SIZE_AUTO,
-					    HILDON_BUTTON_ARRANGEMENT_VERTICAL, "Paste", NULL);
-	g_signal_connect(G_OBJECT(item), "clicked", G_CALLBACK(edit_paste), NULL);
-	hildon_app_menu_append(HILDON_APP_MENU (menu), GTK_BUTTON(item));
-
-	item = hildon_button_new_with_text (HILDON_SIZE_AUTO,
 					    HILDON_BUTTON_ARRANGEMENT_VERTICAL, "Test layout", NULL);
 	g_signal_connect(G_OBJECT(item), "clicked", G_CALLBACK(compile_and_test), NULL);
 	hildon_app_menu_append(HILDON_APP_MENU (menu), GTK_BUTTON(item));
@@ -423,17 +393,6 @@ static GtkToolbar *main_toolbar(void)
 	item = gtk_tool_button_new_from_stock(GTK_STOCK_SAVE);
 	g_signal_connect(G_OBJECT(item), "clicked", G_CALLBACK(file_save), NULL);
 	gtk_toolbar_insert(bar, item, -1);
-	gtk_toolbar_insert(bar, gtk_separator_tool_item_new(), -1);
-	item = gtk_tool_button_new_from_stock(GTK_STOCK_CUT);
-	g_signal_connect(G_OBJECT(item), "clicked", G_CALLBACK(edit_cut), NULL);
-	gtk_toolbar_insert(bar, item, -1);
-	item = gtk_tool_button_new_from_stock(GTK_STOCK_COPY);
-	g_signal_connect(G_OBJECT(item), "clicked", G_CALLBACK(edit_copy), NULL);
-	gtk_toolbar_insert(bar, item, -1);
-	item = gtk_tool_button_new_from_stock(GTK_STOCK_PASTE);
-	g_signal_connect(G_OBJECT(item), "clicked", G_CALLBACK(edit_paste), NULL);
-	gtk_toolbar_insert(bar, item, -1);
-	gtk_toolbar_insert(bar, gtk_separator_tool_item_new(), -1);
 	item = gtk_tool_button_new_from_stock(GTK_STOCK_MEDIA_PLAY);
 	g_signal_connect(G_OBJECT(item), "clicked", G_CALLBACK(compile_and_test), NULL);
 	gtk_toolbar_insert(bar, item, -1);
