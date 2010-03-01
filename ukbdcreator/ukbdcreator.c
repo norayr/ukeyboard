@@ -167,7 +167,6 @@ static gchar *file_chooser(gboolean open)
 
 	chooser = hildon_file_chooser_dialog_new(GTK_WINDOW(window_main),
 		open ? GTK_FILE_CHOOSER_ACTION_OPEN : GTK_FILE_CHOOSER_ACTION_SAVE);
-	gtk_file_chooser_set_current_folder(GTK_FILE_CHOOSER(chooser), "/home/user/MyDocs/ukbdcreator");
 	filter = gtk_file_filter_new();
 	gtk_file_filter_add_pattern(filter, "*.def");
 	gtk_file_chooser_set_filter(GTK_FILE_CHOOSER(chooser), filter);
@@ -250,7 +249,10 @@ static void file_new(void)
 {
 	if (!file_ask_save())
 		return;
-	gtk_text_buffer_set_text(buffer, "", -1);
+
+	if (!read_file("/usr/share/ukbdcreator/template.def"))
+		gtk_text_buffer_set_text(buffer, "", -1);
+
 	set_filename(NULL);
 	is_modified = FALSE;
 	g_free(last_error_msg);
@@ -320,6 +322,8 @@ static GtkWidget *main_layout(void)
 	g_signal_connect(G_OBJECT(buffer), "changed", G_CALLBACK(set_modified), NULL);
 	g_signal_connect(G_OBJECT(buffer), "modified-changed", G_CALLBACK(set_modified), NULL);
 
+	file_new();
+
 	return pannable;
 }
 
@@ -382,18 +386,26 @@ static GtkToolbar *main_toolbar(void)
 	gtk_toolbar_set_orientation(bar, GTK_ORIENTATION_HORIZONTAL);
 	gtk_toolbar_set_style(bar, GTK_TOOLBAR_BOTH_HORIZ);
 
-	item = gtk_tool_button_new_from_stock(GTK_STOCK_OPEN);
+	item = gtk_tool_button_new(NULL, NULL);
+	gtk_tool_button_set_icon_name(GTK_TOOL_BUTTON(item), "general_toolbar_folder");
 	g_signal_connect(G_OBJECT(item), "clicked", G_CALLBACK(file_open), NULL);
 	gtk_toolbar_insert(bar, item, -1);
-	item = gtk_tool_button_new_from_stock(GTK_STOCK_SAVE);
+
+	item = gtk_tool_button_new(NULL, NULL);
+	gtk_tool_button_set_icon_name(GTK_TOOL_BUTTON(item), "notes_save");
 	g_signal_connect(G_OBJECT(item), "clicked", G_CALLBACK(file_save), NULL);
 	gtk_toolbar_insert(bar, item, -1);
-	item = gtk_tool_button_new_from_stock(GTK_STOCK_MEDIA_PLAY);
+
+	item = gtk_tool_button_new(NULL, NULL);
+	gtk_tool_button_set_icon_name(GTK_TOOL_BUTTON(item), "camera_playback");
 	g_signal_connect(G_OBJECT(item), "clicked", G_CALLBACK(compile_and_test), NULL);
 	gtk_toolbar_insert(bar, item, -1);
-	item = gtk_tool_button_new_from_stock(GTK_STOCK_MEDIA_STOP);
+
+	item = gtk_tool_button_new(NULL, NULL);
+	gtk_tool_button_set_icon_name(GTK_TOOL_BUTTON(item), "camera_video_stop");
 	g_signal_connect(G_OBJECT(item), "clicked", G_CALLBACK(untest), NULL);
 	gtk_toolbar_insert(bar, item, -1);
+
 	item = gtk_toggle_tool_button_new();
 	gtk_tool_button_set_icon_name(GTK_TOOL_BUTTON(item), "general_fullsize");
 	g_signal_connect(G_OBJECT(item), "clicked", G_CALLBACK(toggle_fullscreen), NULL);
