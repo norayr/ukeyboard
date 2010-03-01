@@ -28,6 +28,7 @@
 #include "version.h"
 #include "ukbdcreator.h"
 
+static osso_context_t *osso_context;
 static HildonWindow *window_main;
 static GtkClipboard *clipboard;
 static HildonTextView *view;
@@ -278,6 +279,18 @@ static void run_about(void)
 		NULL);
 }
 
+static void run_documentation(void)
+{
+	osso_rpc_run(osso_context,
+		     "com.nokia.osso_browser",
+		     "/com/nokia/osso_browser",
+		     "com.nokia.osso_browser",
+		     "open_new_window",
+		     NULL,
+		     DBUS_TYPE_STRING, "/usr/share/ukbdcreator/howto.txt",
+		     DBUS_TYPE_INVALID);
+}
+
 static void compile_and_test(void)
 {
 	gchar *buf, *fname, *lang;
@@ -369,6 +382,11 @@ static GtkWidget *main_menu(void)
 	hildon_app_menu_append(HILDON_APP_MENU (menu), GTK_BUTTON(item));
 
 	item = hildon_button_new_with_text (HILDON_SIZE_AUTO,
+					    HILDON_BUTTON_ARRANGEMENT_VERTICAL, "Documentation", NULL);
+	g_signal_connect(G_OBJECT(item), "clicked", G_CALLBACK(run_documentation), NULL);
+	hildon_app_menu_append(HILDON_APP_MENU (menu), GTK_BUTTON(item));
+
+	item = hildon_button_new_with_text (HILDON_SIZE_AUTO,
 					    HILDON_BUTTON_ARRANGEMENT_VERTICAL, "About", NULL);
 	g_signal_connect(G_OBJECT(item), "clicked", G_CALLBACK(run_about), NULL);
 	hildon_app_menu_append(HILDON_APP_MENU (menu), GTK_BUTTON(item));
@@ -423,7 +441,7 @@ int main(int argc, char **argv)
 	program = hildon_program_get_instance();
 	g_set_prgname("ukbdcreator");
 	g_set_application_name("Ukeyboard Creator");
-	osso_initialize("cz.upir.ukbdcreator", UKBD_VERSION, TRUE, NULL);
+	osso_context = osso_initialize("cz.upir.ukbdcreator", UKBD_VERSION, TRUE, NULL);
 	gnome_vfs_init();
 	conf = gconf_client_get_default();
 	gconf_client_add_dir(conf, "/apps/osso/inputmethod/hildon-im-languages",
