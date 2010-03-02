@@ -42,6 +42,28 @@ static gchar *last_error_msg = NULL;
 
 static GConfClient *conf;
 
+static void update_app_title(void)
+{
+	gchar *title = NULL;
+	gchar *basename = NULL;
+
+	if (filename)
+		basename = g_filename_display_basename(filename);
+
+	if (is_modified) {
+		title = g_strdup_printf("*%s", basename ? basename : "Ukeyboard Creator");
+	} else {
+		title = g_strdup_printf("%s", basename ? basename : "Ukeyboard Creator");
+	}
+
+	if (title) {
+		gtk_window_set_title(GTK_WINDOW(window_main), title);
+		g_free(title);
+	}
+
+	if (basename)
+		g_free(basename);
+}
 
 static void toggle_fullscreen(void)
 {
@@ -55,6 +77,7 @@ static void toggle_fullscreen(void)
 static void set_modified(void)
 {
 	is_modified = TRUE;
+	update_app_title();
 }
 
 static void set_filename(gchar *fname)
@@ -193,6 +216,7 @@ static void file_save_as(void)
 		if (write_file(fname)) {
 			set_filename(fname);
 			is_modified = FALSE;
+			update_app_title();
 		} else
 			g_free(fname);
 	}
@@ -239,6 +263,7 @@ static void file_open(void)
 		if (read_file(fname)) {
 			set_filename(fname);
 			is_modified = FALSE;
+			update_app_title();
 			g_free(last_error_msg);
 			last_error_msg = NULL;
 		} else
@@ -256,6 +281,7 @@ static void file_new(void)
 
 	set_filename(NULL);
 	is_modified = FALSE;
+	update_app_title();
 	g_free(last_error_msg);
 	last_error_msg = NULL;
 }
@@ -291,7 +317,7 @@ static void run_help(void)
 		     DBUS_TYPE_INVALID);
 }
 
-static void compile_and_test(void)
+static gboolean compile_and_test(void)
 {
 	gchar *buf, *fname, *lang;
 	gboolean res;
@@ -300,15 +326,32 @@ static void compile_and_test(void)
 	res = compile_layout(buf, &fname, &lang);
 	g_free(buf);
 	if (res) {
-		test_layout(conf, fname, lang);
+		res = test_layout(conf, fname, lang);
 		g_free(fname);
 		g_free(lang);
+		if (res)
+			return TRUE;
+		else
+			return FALSE;
+	} else {
+	    return FALSE;
 	}
 }
 
-static void untest(void)
+static gboolean untest(void)
 {
-	restore_layout(conf, TRUE);
+	return restore_layout(conf, TRUE);
+}
+
+static void toggle_activate(GtkToggleToolButton *toggle_tool_button, gpointer data)
+{
+	(void)data;
+
+	if (!gtk_toggle_tool_button_get_active(toggle_tool_button)) {
+		untest();
+	} else {
+		compile_and_test();
+	}
 }
 
 static gboolean key_pressed(GtkWidget *widget, GdkEventKey *event)
@@ -367,7 +410,7 @@ static GtkWidget *main_menu(void)
 	hildon_app_menu_append(HILDON_APP_MENU (menu), GTK_BUTTON(item));
 
 	item = hildon_button_new_with_text (HILDON_SIZE_AUTO,
-					    HILDON_BUTTON_ARRANGEMENT_VERTICAL, "Test layout", NULL);
+					    HILDON_BUTTON_ARRANGEMENT_VERTICAL, "Activate layout", NULL);
 	g_signal_connect(G_OBJECT(item), "clicked", G_CALLBACK(compile_and_test), NULL);
 	hildon_app_menu_append(HILDON_APP_MENU (menu), GTK_BUTTON(item));
 
@@ -377,7 +420,7 @@ static GtkWidget *main_menu(void)
 	hildon_app_menu_append(HILDON_APP_MENU (menu), GTK_BUTTON(item));
 
 	item = hildon_button_new_with_text (HILDON_SIZE_AUTO,
-					    HILDON_BUTTON_ARRANGEMENT_VERTICAL, "Show last error", NULL);
+					    HILDON_BUTTON_ARRANGEMENT_VERTICAL, "Show error", NULL);
 	g_signal_connect(G_OBJECT(item), "clicked", G_CALLBACK(__disp_compile_error), NULL);
 	hildon_app_menu_append(HILDON_APP_MENU (menu), GTK_BUTTON(item));
 
@@ -414,21 +457,17 @@ static GtkToolbar *main_toolbar(void)
 	g_signal_connect(G_OBJECT(item), "clicked", G_CALLBACK(file_save), NULL);
 	gtk_toolbar_insert(bar, item, -1);
 
-	item = gtk_tool_button_new(NULL, NULL);
-	gtk_tool_button_set_icon_name(GTK_TOOL_BUTTON(item), "camera_playback");
-	g_signal_connect(G_OBJECT(item), "clicked", G_CALLBACK(compile_and_test), NULL);
-	gtk_toolbar_insert(bar, item, -1);
-
-	item = gtk_tool_button_new(NULL, NULL);
-	gtk_tool_button_set_icon_name(GTK_TOOL_BUTTON(item), "camera_video_stop");
-	g_signal_connect(G_OBJECT(item), "clicked", G_CALLBACK(untest), NULL);
+	item = gtk_toggle_tool_button_new();
+	gtk_tool_button_set_icon_name(GTK_TOOL_BUTTON(item), "location_applet_on");
+	gtk_toggle_tool_button_set_active(GTK_TOGGLE_TOOL_BUTTON(item), FALSE);
+	g_signal_connect(G_OBJECT(item), "clicked", G_CALLBACK(toggle_activate), NULL);
 	gtk_toolbar_insert(bar, item, -1);
 
 	item = gtk_toggle_tool_button_new();
 	gtk_tool_button_set_icon_name(GTK_TOOL_BUTTON(item), "general_fullsize");
+	gtk_toggle_tool_button_set_active(GTK_TOGGLE_TOOL_BUTTON(item), FALSE);
 	g_signal_connect(G_OBJECT(item), "clicked", G_CALLBACK(toggle_fullscreen), NULL);
 	gtk_toolbar_insert(bar, item, -1);
-	gtk_toggle_tool_button_set_active(GTK_TOGGLE_TOOL_BUTTON(item), FALSE);
 
 	return bar;
 }
@@ -455,6 +494,7 @@ int main(int argc, char **argv)
 	gtk_container_add(GTK_CONTAINER(window_main), main_layout());
 	hildon_window_set_app_menu(window_main, HILDON_APP_MENU (main_menu()));
 	hildon_window_add_toolbar(window_main, main_toolbar());
+	update_app_title();
 
 	g_signal_connect(G_OBJECT(window_main), "key_press_event", G_CALLBACK(key_pressed), NULL);
 	g_signal_connect(G_OBJECT(window_main), "delete_event", G_CALLBACK(file_quit), NULL);
