@@ -207,6 +207,25 @@ static struct lang *get_def_lang(gchar *code, GList *langs, GList *langlinks)
 	return NULL;
 }
 
+static gboolean check_ukbd_layout(gchar *code, GList *langlinks)
+{
+	GList *item;
+	struct langlink *langlink;
+
+	if (!code || !*code)
+		return FALSE;
+	if (langlinks)
+		for (item = langlinks; item; item = g_list_next(item)) {
+			langlink = item->data;
+			if (!strcmp(langlink->dest, code)) {
+				if (!strncmp(langlink->src, "ukbd", 4)) {
+					return TRUE;
+				}
+			}
+		}
+	return FALSE;
+}
+
 static void free_langs(GList *list)
 {
 	GList *item;
@@ -341,8 +360,17 @@ static GtkWidget *start(GConfClient *client, GtkWidget *win, void **data)
 		g_signal_connect(G_OBJECT(d->langsel[i]), "changed", G_CALLBACK(verify_langsel), d);
 
 		button = hildon_picker_button_new(HILDON_SIZE_FINGER_HEIGHT, HILDON_BUTTON_ARRANGEMENT_VERTICAL);
-		hildon_button_set_title(HILDON_BUTTON(button), i == 0 ? _("tein_fi_primary_language") : _("tein_fi_secondary_language"));
 		hildon_picker_button_set_selector(HILDON_PICKER_BUTTON (button), d->langsel[i]);
+		hildon_button_set_title(HILDON_BUTTON(button), i == 0 ? _("tein_fi_primary_language") : _("tein_fi_secondary_language"));
+
+		/* if nothing was selected, try set selector button value text */
+		if (hildon_touch_selector_get_active(d->langsel[i], 0) < 0) {
+			if (check_ukbd_layout(code, d->langlinks))
+				hildon_button_set_value(HILDON_BUTTON(button), "UKeyboard Creator Layout");
+			else
+				hildon_button_set_value(HILDON_BUTTON(button), _("tein_fi_not_in_use"));
+		}
+
 		hildon_button_set_alignment (HILDON_BUTTON (button), 0.0, 0.5, 1.0, 0.0);
 		hildon_button_set_title_alignment(HILDON_BUTTON(button), 0.0, 0.5);
 		hildon_button_set_value_alignment (HILDON_BUTTON (button), 0.0, 0.5);
