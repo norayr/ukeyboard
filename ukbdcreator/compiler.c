@@ -161,28 +161,28 @@ static void set_current(GConfClient *conf, gint val)
 		"/apps/osso/inputmethod/hildon-im-languages/current", val, NULL);
 }
 
-void test_layout(GConfClient *conf, gchar *fname, gchar *lang)
+gboolean test_layout(GConfClient *conf, gchar *fname, gchar *lang)
 {
 	gchar *cmd;
 	int res;
 
 	if (saved_lang)
 		restore_layout(conf, FALSE);
-	cmd = g_strdup_printf("sudo /usr/libexec/ukeyboard-set -s %s %s", fname, lang);
+	cmd = g_strdup_printf("/usr/libexec/ukeyboard-set -s %s %s", fname, lang);
 	res = system(cmd);
 	g_free(cmd);
 	if (!WIFEXITED(res)) {
 		disp_error("Cannot execute helper script");
-		return;
+		return FALSE;
 	}
 	res = WEXITSTATUS(res);
 	if (res == 2) {
 		disp_error("Redefining a system language is not possible.\nPlease use diffent language code.");
-		return;
+		return FALSE;
 	}
 	if (res) {
 		disp_error("Activating of the layout failed");
-		return;
+		return FALSE;
 	}
 	saved_lang = g_strdup(lang);
 	saved_layout = get_lang(conf);
@@ -196,9 +196,10 @@ void test_layout(GConfClient *conf, gchar *fname, gchar *lang)
 	}
 	act_layout = g_strdup(fname);
 	disp_info("Layout activated");
+	return TRUE;
 }
 
-void restore_layout(GConfClient *conf, gboolean warn)
+gboolean restore_layout(GConfClient *conf, gboolean warn)
 {
 	gchar *cmd;
 	int res;
@@ -206,19 +207,19 @@ void restore_layout(GConfClient *conf, gboolean warn)
 	if (!saved_lang) {
 		if (warn)
 			disp_info("No layout to restore");
-		return;
+		return FALSE;
 	}
-	cmd = g_strdup_printf("sudo /usr/libexec/ukeyboard-set -r %s", saved_lang);
+	cmd = g_strdup_printf("/usr/libexec/ukeyboard-set -r %s", saved_lang);
 	res = system(cmd);
 	g_free(cmd);
 	if (!WIFEXITED(res)) {
 		disp_error("Cannot execute helper script");
-		return;
+		return FALSE;
 	}
 	res = WEXITSTATUS(res);
 	if (res) {
 		disp_error("Restoring of original layout failed");
-		return;
+		return FALSE;
 	}
 	set_lang(conf, "en_GB");
 	set_lang(conf, saved_layout);
@@ -233,6 +234,7 @@ void restore_layout(GConfClient *conf, gboolean warn)
 		act_layout = NULL;
 	}
 	if (warn)
-		disp_info("Layout restored");
+		disp_info("Layout deactivated");
+	return TRUE;
 }
 

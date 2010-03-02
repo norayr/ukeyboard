@@ -23,7 +23,7 @@ void disp_info(gchar *msg);
 void disp_compile_error(int line, gchar *msg);
 
 gboolean compile_layout(gchar *buf, gchar **fname, gchar **lang);
-void test_layout(GConfClient *conf, gchar *fname, gchar *lang);
-void restore_layout(GConfClient *conf, gboolean warn);
+gboolean test_layout(GConfClient *conf, gchar *fname, gchar *lang);
+gboolean restore_layout(GConfClient *conf, gboolean warn);
 
 #endif
