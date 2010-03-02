@@ -127,4 +127,8 @@ void fill_dict(HildonTouchSelector *combo, GList *langs, gchar *deflang)
 
 	if (!deflang || !*deflang)
 		hildon_touch_selector_set_active(combo, 0, i);
+
+	/* check if something is really selected, if not select last item */
+	if (hildon_touch_selector_get_active(combo, 0) < 0)
+		hildon_touch_selector_set_active(combo, 0, i);
 }
