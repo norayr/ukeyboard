@@ -158,6 +158,19 @@ lowercase {
 	margin 0 0 0 0
 	default_size 3
 	row {
+	key ១ alpha
+	key ២ alpha
+	key ៣ alpha
+	key ៤ alpha
+	key ៥ alpha
+	key ៦ alpha
+	key ៧ alpha
+	key ៨ alpha
+	key ៩ alpha
+	key ០ alpha
+	key ្ alpha
+	}
+	row {
 	key ឆ alpha
 	key ឹ alpha
 	key េ alpha
@@ -181,7 +194,7 @@ lowercase {
 	key ក alpha
 	key ល alpha
 	key ៈ alpha
-	key ៀ alpha
+	key ឿ alpha
 	}
 	row {
 	key ឋ alpha
@@ -194,19 +207,6 @@ lowercase {
 	key អ alpha
 	key ។ alpha
 	key ឮ alpha
-	key ្ alpha
-	}
-	row {
-	key ១ alpha
-	key ២ alpha
-	key ៣ alpha
-	key ៤ alpha
-	key ៥ alpha
-	key ៦ alpha
-	key ៧ alpha
-	key ៨ alpha
-	key ៩ alpha
-	key ០ alpha
 	white
 	}
 }
@@ -214,6 +214,19 @@ uppercase {
 	name "គឃ"
 	margin 0 0 0 0
 	default_size 3
+	row {
+	key ៗ alpha
+	key ័ alpha
+	key ៌ alpha
+	key ៍ alpha
+	key ៏ alpha
+	key ៎ alpha
+	key ៛ alpha
+	key ៊ alpha
+	key ់ alpha
+	key ៉ alpha
+	key ្ alpha
+	}
 	row {
 	key ឈ alpha
 	key ឺ alpha
@@ -238,7 +251,7 @@ uppercase {
 	key គ alpha
 	key ឡ alpha
 	key ឯ alpha
-	key ឫ alpha
+	key ៀ alpha
 	}
 	row {
 	key ឍ alpha
@@ -249,21 +262,8 @@ uppercase {
 	key ណ alpha
 	key ំ alpha
 	key អ alpha
-	key ៕ alpha
+	key ឫ alpha
 	key ឧ alpha
-	key ្ alpha
-	}
-	row {
-	key ៗ alpha
-	key ័ alpha
-	key ៌ alpha
-	key ៍ alpha
-	key ៏ alpha
-	key ៎ alpha
-	key ៛ alpha
-	key ៊ alpha
-	key ់ alpha
-	key ៉ alpha
 	white
 	}
 }
@@ -307,8 +307,8 @@ special {
 	key ? special
 	key $ special
 	key £ special
-	key < special
-	key > special
+	key € special
+	key ¥ special
 	}
 }
 special {
@@ -318,9 +318,9 @@ special {
 	row {
 	key # special tele
 	key % special
-	key ¤ special
-	key € special
-	key ¥ special
+	key ឰ alpha
+	key < special
+	key > special
 	key ^ alpha special dead
 	key | special
 	key [ special
@@ -329,24 +329,24 @@ special {
 	key } special
 	}
 	row {
-	key ¡ special
-	key ¿ special
-	key § special
+	key ឦ special
+	key ឪ alpha
+	key ឱ alpha
 	key * special tele
-	key ¨ alpha special dead
-	key ° special
-	key · special
+	key ឲ alpha
+	key ៕ alpha
+	key ៝ alpha
 	key ± special
 	key ½ special
 	key « special
 	key » special
 	}
 	row {
-	key ¢ special
-	key ß alpha
-	key ñ alpha
-	key ´ alpha special dead
-	key ` alpha special dead
+	key ឭ alpha
+	key ឳ alpha
+	key ឩ alpha
+	key § special
+	key _ special
 	key “ special
 	key ” special
 	key ‘ special
