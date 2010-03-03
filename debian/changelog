@@ -1,3 +1,13 @@
+ukeyboard (2.2-4) unstable; urgency=low
+
+  * Another of Khmer on-screen keyboard layout by Sopheak Hean.
+  * Fixed crash of control panel applet spotter in Bug 9324: template.def makes
+    hildon-input-method crash 
+  * Optimization of ukbdcreator UI.
+  * Added Slovenian QWERTY and QWERTZ on-screen keyobard layouts by Andrej Pisl.
+
+ -- Roman Moravcik <roman.moravcik@gmail.com>  Wed,  3 Mar 2010 17:15:53 +0100
+
 ukeyboard (2.2-3) unstable; urgency=low
 
   * Automatically select first/restore keyboard layout after activation/deactivation
