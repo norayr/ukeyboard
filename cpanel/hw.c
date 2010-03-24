@@ -241,6 +241,14 @@ static GtkWidget *start(GConfClient *client, GtkWidget *win, void **data)
 	hildon_button_set_title_alignment(HILDON_BUTTON(button), 0.0, 0.5);
 	hildon_button_set_value_alignment (HILDON_BUTTON (button), 0.0, 0.5);
 
+	/* WORKAROUND: if int_kb_model is set to nokiarx44 on rx-51 device,
+	   then set omodel to nokiarx51. Without this workaround, no hardwere
+	   keyboard was automatically selected after first run */
+	if (omodel && !strcmp(omodel, "nokiarx44")) {
+		g_free (omodel);
+		omodel = g_strdup("nokiarx51");
+	}
+
 	for (item = d->layouts, i = 0; item; item = g_list_next(item), i++) {
 		lay = item->data;
 		hildon_touch_selector_append_text(d->combo, lay->name);
