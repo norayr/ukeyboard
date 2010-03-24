@@ -1,4 +1,4 @@
-vkb format for OS2007/OS2008
+vkb format for OS2007/OS2008/Maemo5
 
 - released into public domain (Permission is granted, free of charge, to any
   person obtaining a copy of this file, to deal with the file without
@@ -139,3 +139,5 @@ bytes	description
 1	present only if the previous field contains 0x80 flag:
 	more key flags (bitfield?)
 	bits:	2 (0x04)	draw tab face over the key
+		3 (0x08)	draw backspace face over the key
+		4 (0x10)	draw capslock face over the key

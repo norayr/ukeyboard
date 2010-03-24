@@ -318,7 +318,8 @@ After the "slide" keyword, a new section ({...}) has to be started,
 containing a "key" keyword followed by a character, followed by a "key"
 keyword, etc. A slide key can contain an arbitrary number of keys.
 
-After the "white" keyword, there is (of course) no character specified.
+After the "white", "backspace", "capslock" keywords, there is (of course)
+no character specified.
 
 (*) That's not exactly true. You can specify a bunch of characters, as long
     as they don't contain a whitespace. It should work as expected, i.e.
