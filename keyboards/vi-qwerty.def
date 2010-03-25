@@ -285,8 +285,6 @@ special {
 	backspace
 	}
 }
-
-
 special {
 	name "*§¿"
 	margin 0 0 0 0
