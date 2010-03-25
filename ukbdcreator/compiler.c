@@ -168,7 +168,10 @@ gboolean test_layout(GConfClient *conf, gchar *fname, gchar *lang)
 
 	if (saved_lang)
 		restore_layout(conf, FALSE);
-	cmd = g_strdup_printf("sudo /usr/libexec/ukeyboard-set -s %s %s", fname, lang);
+	if (inside_scratchbox)
+		cmd = g_strdup_printf("fakeroot /usr/libexec/ukeyboard-set -s %s %s", fname, lang);
+	else
+		cmd = g_strdup_printf("sudo /usr/libexec/ukeyboard-set -s %s %s", fname, lang);
 	res = system(cmd);
 	g_free(cmd);
 	if (!WIFEXITED(res)) {
@@ -209,7 +212,10 @@ gboolean restore_layout(GConfClient *conf, gboolean warn)
 			disp_info("No layout to restore");
 		return FALSE;
 	}
-	cmd = g_strdup_printf("sudo /usr/libexec/ukeyboard-set -r %s", saved_lang);
+	if (inside_scratchbox)
+		cmd = g_strdup_printf("fakeroot /usr/libexec/ukeyboard-set -r %s", saved_lang);
+	else
+		cmd = g_strdup_printf("sudo /usr/libexec/ukeyboard-set -r %s", saved_lang);
 	res = system(cmd);
 	g_free(cmd);
 	if (!WIFEXITED(res)) {

@@ -18,6 +18,8 @@
 #ifndef _UKBDCREATOR_H
 #define _UKBDCREATOR_H
 
+extern gboolean inside_scratchbox;
+
 void disp_error(gchar *msg);
 void disp_info(gchar *msg);
 void disp_compile_error(int line, gchar *msg);

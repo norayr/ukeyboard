@@ -18,6 +18,7 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <unistd.h>
 #include <glib.h>
 #include <gtk/gtk.h>
 #include <libosso.h>
@@ -39,6 +40,7 @@ static init_func inits[] = { prefs_hw_init, prefs_onscreen_init, prefs_lang_init
 static struct prefs prefs[PLUGINS];
 
 gboolean internal_kbd;
+gboolean inside_scratchbox;
 
 #define IM_CONF_DIR	"/apps/osso/inputmethod"
 
@@ -128,6 +130,11 @@ osso_return_t execute(osso_context_t *osso, gpointer data, gboolean user_activat
 	conf = init_conf();
 	if (!conf)
 		return OSSO_ERROR;
+
+	if (access("/targets/links/scratchbox.config", F_OK) == 0)
+		inside_scratchbox = TRUE;
+	else
+		inside_scratchbox = FALSE;
 
 	for (i = 0; i < PLUGINS; i++) {
 		inits[i](prefs + i);

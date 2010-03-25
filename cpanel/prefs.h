@@ -31,6 +31,7 @@ struct prefs {
 typedef void (*init_func)(struct prefs *);
 
 extern gboolean internal_kbd;
+extern gboolean inside_scratchbox;
 
 gboolean get_bool(GConfClient *client, char *key);
 void set_bool(GConfClient *client, char *key, gboolean val);

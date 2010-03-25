@@ -28,6 +28,8 @@
 #include "version.h"
 #include "ukbdcreator.h"
 
+gboolean inside_scratchbox;
+
 static osso_context_t *osso_context;
 static HildonWindow *window_main;
 static GtkClipboard *clipboard;
@@ -485,6 +487,11 @@ int main(int argc, char **argv)
 	conf = gconf_client_get_default();
 	gconf_client_add_dir(conf, "/apps/osso/inputmethod/hildon-im-languages",
 		GCONF_CLIENT_PRELOAD_NONE, NULL);
+
+	if (access("/targets/links/scratchbox.config", F_OK) == 0)
+		inside_scratchbox = TRUE;
+	else
+		inside_scratchbox = FALSE;
 
 	window_main = HILDON_WINDOW(hildon_window_new());
 	hildon_program_add_window(program, window_main);

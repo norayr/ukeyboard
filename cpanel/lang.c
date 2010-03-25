@@ -446,7 +446,11 @@ static void action(GConfClient *client, void *data)
 		lang = g_list_nth_data(d->langs, res);
 		if (lang) {
 			if (lang->ext) {
-				tmp = g_strdup_printf("sudo /usr/libexec/ukeyboard-set %s %s", lang->fname, lang->code);
+				if (inside_scratchbox)
+					tmp = g_strdup_printf("fakeroot /usr/libexec/ukeyboard-set %s %s", lang->fname, lang->code);
+				else
+					tmp = g_strdup_printf("sudo /usr/libexec/ukeyboard-set %s %s", lang->fname, lang->code);
+
 				if (system(tmp))
 					hildon_banner_show_information(d->win, "gtk-dialog-warning",
 						"Setting failed");
