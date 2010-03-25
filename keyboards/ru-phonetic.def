@@ -193,7 +193,7 @@ lowercase {
 	key н alpha
 	key м alpha
 	key ю alpha
-	slide special size 3 { key . key , key - key ! key ? key & key ; key : key _ key @ }
+	key ч alpha
 	backspace
 	}
 }
@@ -237,7 +237,7 @@ uppercase {
 	key Н alpha
 	key М alpha
 	key Ю alpha
-	slide special size 3 { key . key , key - key ! key ? key & key ; key : key _ key @ }
+	key Ч alpha
 	backspace
 	}
 }
