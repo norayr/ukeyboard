@@ -11,7 +11,6 @@ size	1	{ width 50 height 35 textpos 26 left 0 top 0 }
 size	2	{ width 55 height 35 textpos 26 left 0 top 0 }
 size	3	{ width 72 height 55 textpos 41 left 0 top 0 }
 size	4	{ width 143 height 55 textpos 41 left 0 top 0 }
-size	5	{ width 24 height 35 textpos 26 left 0 top 0 }
 }
 
 kbd_normal {
@@ -20,7 +19,7 @@ lowercase {
 	default_size 0
 	row {
 	key љ alpha size 2
-	key њ alpha tele
+	key њ alpha
 	key е alpha hexa
 	key р alpha
 	key т alpha
@@ -42,8 +41,8 @@ lowercase {
 	key к alpha
 	key л alpha
 	key ч alpha
-	key ќ alpha 
-	key ш alpha 
+	key ќ alpha
+	key ш alpha
 	}
 	row {
 	key з alpha size 2
@@ -53,10 +52,10 @@ lowercase {
 	key б alpha hexa
 	key н alpha
 	key м alpha
-	key , special tele
-	key . special tele
-	key / special tele
-	key ж alpha tele size 1
+	key , special
+	key . special
+	key / special
+	key ж alpha size 1
 	}
 }
 lowercase_num {
@@ -78,9 +77,9 @@ lowercase_num {
 	key 9 num hexa tele
 	}
 	row {
-	key - num special tele
+	key ё alpha
 	key 0 num hexa tele
-	key = special
+	key - num special
 	}
 }
 uppercase {
@@ -88,7 +87,7 @@ uppercase {
 	default_size 0
 	row {
 	key Љ alpha size 2
-	key Њ alpha tele
+	key Њ alpha
 	key Е alpha hexa
 	key Р alpha
 	key Т alpha
@@ -110,8 +109,8 @@ uppercase {
 	key К alpha
 	key Л alpha
 	key Ч alpha
-	key Ќ alpha 
-	key Ш alpha 
+	key Ќ alpha
+	key Ш alpha
 	}
 	row {
 	key З alpha size 2
@@ -131,23 +130,23 @@ uppercase_num {
 	margin 0 0 0 9
 	default_size 0
 	row {
-	key ' special
-	key ? special tele
-	key $ special
-	}
-	row {
-	key % special
-	key < special
-	key > special
-	}
-	row {
 	key ! special
-	key ( special tele
-	key ) special tele
+	key " special
+	key ? special
 	}
 	row {
-	key _ special
 	key * special tele
+	key % special
+	key & special
+	}
+	row {
+	key \ special
+	key ( special
+	key ) special
+	}
+	row {
+	key Ё alpha
+	key = special
 	key + special tele
 	}
 }
@@ -155,7 +154,7 @@ uppercase_num {
 
 kbd_thumb {
 lowercase {
-	name "abc"
+	name "абв"
 	margin 0 0 0 0
 	default_size 3
 	row {
@@ -185,6 +184,7 @@ lowercase {
 	key ќ alpha
 	}
 	row {
+	capslock
 	key з alpha
 	key џ alpha
 	key ц alpha hexa
@@ -192,13 +192,13 @@ lowercase {
 	key б alpha hexa
 	key н alpha
 	key м alpha
+	key ѓ alpha
 	key ж alpha
-	slide special { key ѓ key . key , key ? key ! key ( key ) }
-	white size 4
+	backspace
 	}
 }
 uppercase {
-	name "ABC"
+	name "АБВ"
 	margin 0 0 0 0
 	default_size 3
 	row {
@@ -224,10 +224,11 @@ uppercase {
 	key Ј alpha
 	key К alpha
 	key Л alpha
-	key Ч alpha 
-	key Ќ alpha 
+	key Ч alpha
+	key Ќ alpha
 	}
 	row {
+	capslock
 	key З alpha
 	key Џ alpha
 	key Ц alpha hexa
@@ -235,53 +236,53 @@ uppercase {
 	key Б alpha hexa
 	key Н alpha
 	key М alpha
+	key Ѓ alpha
 	key Ж alpha
-	slide special { key Ѓ key . key , key ? key ! key ( key ) }
-	white size 4
+	backspace
 	}
 }
 special {
-	name "1!+"
+	name "1#+"
 	margin 0 0 0 0
 	default_size 3
 	row {
 	key 1 num hexa tele
 	key 2 num hexa tele
 	key 3 num hexa tele
-	key " special
-	key + special
-	key - special
-	key = special
-	key _ special
-	key & special
-	key @ special
-	key ~ special
-	}
-	row {
 	key 4 num hexa tele
 	key 5 num hexa tele
 	key 6 num hexa tele
-	key ' special
-	key : special
-	key ; special
-	key ! special
-	key ( special
-	key ) special
-	key / special
-	key \ special
-	}
-	row {
 	key 7 num hexa tele
 	key 8 num hexa tele
 	key 9 num hexa tele
 	key 0 num hexa tele
-	key . special
+	key = special
+	}
+	row {
+	key + special tele
+	key - special num
+	key _ special
+	key # special tele
+	key * special tele
+	key % special
+	key € special
+	key £ special
+	key $ special
+	key ¥ special
+	key ¤ special
+	}
+	row {
+	capslock
 	key , special
-	key ? special
-	key „ special
-	key “ special
-	key < special
-	key > special
+	key . special
+	key @ special
+	key / special
+	key \ special
+	key ~ alpha special dead
+	key ^ alpha special dead
+	key ( special
+	key ) special
+	backspace
 	}
 }
 special {
@@ -289,43 +290,43 @@ special {
 	margin 0 0 0 0
 	default_size 3
 	row {
-	key # special
-	key % special
-	key € special
-	key £ special
-	key $ special
-	key ^ special
+	key ´ alpha special dead
+	key ` alpha special dead
+	key ¨ alpha special dead
+	key ^ alpha special dead
+	key ~ alpha special dead
+	key ' special
+	key " special
+	key “ special
+	key ” special
+	key ° special
+	key & special
+	}
+	row {
+	key ± special
+	key § special
+	key ½ special
+	key ¹ special
+	key ² special
+	key ³ special
+	key < special
+	key > special
+	key « special
+	key » special
 	key | special
+	}
+	row {
+	capslock
+	key ; special
+	key : special
 	key [ special
 	key ] special
 	key { special
 	key } special
-	}
-	row {
+	key ç alpha
 	key ¡ special
 	key ¿ special
-	key § special
-	key * special
-	key · special
-	key • special
-	key ° special
-	key ± special
-	key ½ special
-	key « special
-	key » special
-	}
-	row {
-	key ѐ alpha
-	key ѝ alpha
-	key ä alpha
-	key ö alpha
-	key Ѐ alpha
-	key Ѝ alpha
-	key Ä alpha
-	key Ö alpha
-	key ß alpha
-	key ™ special
-	key © special
+	backspace
 	}
 }
 }
