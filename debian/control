@@ -24,7 +24,7 @@ Package: ukeyboard
 Architecture: any
 Depends: ${shlibs:Depends}, thai-ttf, ttf-bpg-georgian-fonts, ttf-khmeros, hildon-im-fkb (>= 3.9.61-1)
 Description: Additional on-screen keyboard layouts
- This package provides additional Arabic, Belorussian, Bulgarian
+ This package provides additional Arabic, Belarusian, Bulgarian
  (BDS & Phonetic), Croatian (QWERTY & QWERTZ), Czech (QWERTY),
  English (Dvorak), Esperanto (QWERTY), Georgian, Hebrew (Basic & Phonetic),
  Hungarian (QWERTZ), Khmer, Macedonian, Persian, Russian (Phonetic),
