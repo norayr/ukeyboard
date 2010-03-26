@@ -1,3 +1,17 @@
+ukeyboard (2.3-2) unstable; urgency=low
+
+  * Reorganized numbers and symbols tabs, removed space key and added capslock
+    and backspace keys in Arabic, Belorusian, Bulgarian, Croatian, Dvorak,
+    Esperanto, Georgian, Hebrew, Hungarian, Khmer, Macedonian, Persian, Slovak,
+    Slovenian, Thai, Turkish and Vietnamese on-screen keyboard layouts.
+  * Added Hungarian QWERTY on-screen keyboard layout based on QWERTZ layout.
+  * Added missing '@' symbol to Belorusian, Bulgarian and Russian on-screen
+    keyboards layouts.
+  * Swapped left and right parentesis, brackets, ... in Hebrew on-screen
+    keyboard layouts.
+
+ -- Roman Moravcik <roman.moravcik@gmail.com>  Fri, 26 Mar 2010 14:50:53 +0100
+
 ukeyboard (2.3-1) unstable; urgency=low
 
   * Added missing character Che in Russian Phonetic on-screen keyboard layout.
