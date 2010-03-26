@@ -274,7 +274,7 @@ special {
 	key ٩ num tele
 	key ٠ num tele
 	key = special
-	key ? special
+	key ؟ special
 	}
 	row {
 	key + special tele
@@ -335,12 +335,13 @@ special {
 	key » special
 	key « special
 	key | special
-	key ™ special
+	key ? special
 	}
 	row {
 	capslock
 	key ; special
 	key : special
+	key . special
 	key ] special
 	key [ special
 	key } special
@@ -348,7 +349,6 @@ special {
 	key ç alpha
 	key ¡ special
 	key ¿ special
-	key © special
 	backspace
 	}
 }
