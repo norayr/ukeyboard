@@ -197,6 +197,7 @@ lowercase {
 	key ឿ alpha
 	}
 	row {
+	capslock
 	key ឋ alpha
 	key ខ alpha
 	key ច alpha
@@ -207,7 +208,6 @@ lowercase {
 	key អ alpha
 	key ។ alpha
 	key ឮ alpha
-	white
 	}
 }
 uppercase {
@@ -254,6 +254,7 @@ uppercase {
 	key ៀ alpha
 	}
 	row {
+	capslock
 	key ឍ alpha
 	key ឃ alpha
 	key ជ alpha
@@ -264,51 +265,50 @@ uppercase {
 	key អ alpha
 	key ឫ alpha
 	key ឧ alpha
-	white
 	}
 }
 special {
-	name "1!+"
+	name "១#+"
 	margin 0 0 0 0
 	default_size 3
 	row {
-	key 1 num hexa tele
-	key 2 num hexa tele
-	key 3 num hexa tele
-	key " special
-	key + special tele
-	key - special
-	key _ special
+	key ១ num hexa tele
+	key ២ num hexa tele
+	key ៣ num hexa tele
+	key ៤ num hexa tele
+	key ៥ num hexa tele
+	key ៦ num hexa tele
+	key ៧ num hexa tele
+	key ៨ num hexa tele
+	key ៩ num hexa tele
+	key ០ num hexa tele
 	key = special
-	key & special
-	key @ special
-	key ~ alpha special dead
 	}
 	row {
-	key 4 num hexa tele
-	key 5 num hexa tele
-	key 6 num hexa tele
-	key ' special
-	key : special
-	key ; special
-	key ! special
+	key + special tele
+	key - special num
+	key * special tele
+	key / special
+	key % special
 	key ( special
 	key ) special
-	key / special
-	key \ special
+	key ? special
+	key ; special
+	key : special
+	key " special
 	}
 	row {
-	key 7 num hexa tele
-	key 8 num hexa tele
-	key 9 num hexa tele
-	key 0 num hexa tele
-	key . special
+	capslock
+	key ឰ alpha
+	key ឦ alpha
+	key ឪ alpha
+	key ឱ alpha
+	key ឲ alpha
+	key ៕ alpha
+	key ! special
 	key , special
-	key ? special
-	key $ special
-	key £ special
-	key € special
-	key ¥ special
+	key . special
+	backspace
 	}
 }
 special {
@@ -316,43 +316,43 @@ special {
 	margin 0 0 0 0
 	default_size 3
 	row {
+	key $ special
+	key € special
+	key £ special
+	key ¥ special
+	key ៛ special
+	key § special
 	key # special tele
-	key % special
-	key ឰ alpha
+	key & special
+	key © special
+	key ™ special
+	key \ special
+	}
+	row {
+	key ^ special
+	key _ special
+	key | special
 	key < special
 	key > special
-	key ^ alpha special dead
-	key | special
-	key [ special
-	key ] special
 	key { special
 	key } special
-	}
-	row {
-	key ឦ special
-	key ឪ alpha
-	key ឱ alpha
-	key * special tele
-	key ឲ alpha
-	key ៕ alpha
-	key ៝ alpha
-	key ± special
-	key ½ special
+	key ~ alpha special dead
 	key « special
 	key » special
+	key ' special
 	}
 	row {
+	capslock
+	key ៝ alpha
 	key ឭ alpha
 	key ឳ alpha
 	key ឩ alpha
-	key § special
-	key _ special
-	key “ special
-	key ” special
-	key ‘ special
-	key ’ special
-	key ™ special
-	key © special
+	key ' special
+	key ° special
+	key @ special
+	key [ special
+	key ] special
+	backspace
 	}
 }
 }
