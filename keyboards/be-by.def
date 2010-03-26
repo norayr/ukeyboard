@@ -323,7 +323,7 @@ special {
 	key Ї alpha
 	key Є alpha
 	key Ъ alpha
-	key ` special
+	key @ special
 	key [ special
 	key ] special
 	backspace
