@@ -283,8 +283,8 @@ special {
 	key \ special
 	key ~ alpha special dead
 	key ^ alpha special dead
-	key ( special
 	key ) special
+	key ( special
 	backspace
 	}
 }
@@ -312,20 +312,20 @@ special {
 	key ¹ special
 	key ² special
 	key ³ special
-	key < special
 	key > special
-	key « special
+	key < special
 	key » special
+	key « special
 	key | special
 	}
 	row {
 	capslock
 	key ; special
 	key : special
-	key [ special
 	key ] special
-	key { special
+	key [ special
 	key } special
+	key { special
 	key ç alpha
 	key ¡ special
 	key ¿ special
