@@ -209,7 +209,7 @@ lowercase {
 	key ท alpha
 	key ม alpha
 	key ใ alpha
-	key ฝ alpha
+	backspace
 	}
 }
 uppercase {
@@ -257,16 +257,16 @@ uppercase {
 	}
 	row {
 	capslock
-	key ( special
-	key ) special
+	key ? special
 	key ฉ alpha
 	key ฮ alpha
 	key ฺ special
 	key ์ special
-	key ? special
 	key ฒ alpha
 	key ฬ alpha
 	key ฦ alpha
+	key ฝ alpha
+	backspace
 	}
 }
 special {
@@ -274,16 +274,16 @@ special {
 	margin 0 0 0 0
 	default_size 3
 	row {
-	key ๑ num hexa tele
-	key ๒ num hexa tele
-	key ๓ num hexa tele
-	key ๔ num hexa tele
-	key ๕ num hexa tele
-	key ๖ num hexa tele
-	key ๗ num hexa tele
-	key ๘ num hexa tele
-	key ๙ num hexa tele
-	key ๐ num hexa tele
+	key 1 num hexa tele
+	key 2 num hexa tele
+	key 3 num hexa tele
+	key 4 num hexa tele
+	key 5 num hexa tele
+	key 6 num hexa tele
+	key 7 num hexa tele
+	key 8 num hexa tele
+	key 9 num hexa tele
+	key 0 num hexa tele
 	key = special
 	}
 	row {
