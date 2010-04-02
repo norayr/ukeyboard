@@ -1,3 +1,11 @@
+ukeyboard (2.3-3) unstable; urgency=low
+
+  * Optimizations of Thai on-screen keyboard layout for FW PR1.2 by Super One.
+  * Added German QWERTY and Neo2 on-screen keyboard layouts requested
+    by Johannes Ruthmair.
+
+ -- Roman Moravcik <roman.moravcik@gmail.com>  Fri,  2 Apr 2010 11:30:18 +0200
+
 ukeyboard (2.3-2) unstable; urgency=low
 
   * Reorganized numbers and symbols tabs, removed space key and added capslock
