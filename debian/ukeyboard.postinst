@@ -16,7 +16,7 @@ fi
 update-sudoers
 
 # temporary disable keyboard layouts that are provided also with ukeyboard
-layouts="cs_CZ ru_RU"
+layouts="cs_CZ de_DE ru_RU"
 for i in $layouts; do
 	if [ -f /usr/share/keyboards/$i.vkb ]; then
 		if [ ! -h /usr/share/keyboards/$i.vkb ]; then

@@ -23,15 +23,17 @@ XB-Maemo-Icon-26:
 Package: ukeyboard
 Architecture: any
 Depends: ${shlibs:Depends}, thai-ttf, ttf-bpg-georgian-fonts, ttf-khmeros, hildon-im-fkb (>= 3.9.61-1)
+XB-Maemo-Upgrade-Description: This version of ukeyboard require FW/SDK PR1.2 and it's not compatible with older releases of FW/SDK.
 Description: Additional on-screen keyboard layouts
  This package provides additional Arabic, Belarusian, Bulgarian
  (BDS & Phonetic), Croatian (QWERTY & QWERTZ), Czech (QWERTY),
- English (Dvorak), Esperanto (QWERTY), Georgian, Hebrew (Basic & Phonetic),
- Hungarian (QWERTY & QWERTZ), Khmer, Macedonian, Persian, Russian (Phonetic),
- Slovak (QWERTY & QWERTZ), Slovenian (QWERTY & QWERTZ), Thai, Turkish
- and Vietnamese on-screen keyboard layouts and Arabic, Bulgarian (Phonetic),
- Czech (QWERTY), Dvorak, Greek, Georgian, Hebrew (Phonetic), Macedonian,
- Persian, Russian (Phonetic) and Slovak (QWERTY & QWERTZ) hardware keyboard
+ English (Dvorak), Esperanto (QWERTY), German (QWERTY & Neo2) Georgian,
+ Hebrew (Basic & Phonetic), Hungarian (QWERTY & QWERTZ), Khmer,
+ Macedonian, Persian, Russian (Phonetic), Slovak (QWERTY & QWERTZ),
+ Slovenian (QWERTY & QWERTZ), Thai, Turkish and Vietnamese on-screen
+ keyboard layouts and Arabic, Bulgarian (Phonetic), Czech (QWERTY),
+ Dvorak, Greek, Georgian, Hebrew (Phonetic), Macedonian, Persian,
+ Russian (Phonetic) and Slovak (QWERTY & QWERTZ) hardware keyboard
  layouts.
 
 Package: ukbdcreator

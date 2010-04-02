@@ -90,10 +90,11 @@ GList *get_dicts(GList *langs)
 	for (item = langs, i = 0; item; item = g_list_next(item)) {
 		lang = item->data;
 
-		/* WORKAROUND: czech and russian dictionary must be listed,
+		/* WORKAROUND: czech, german and russian dictionary must be listed,
 		   because they are officially supported */
 		if (lang->ext) {
 			if ((strcmp(lang->fname, "cz-qwertz")) &&
+			    (strcmp(lang->fname, "de-qwertz")) &&
 			    (strcmp(lang->fname, "ru-windows")))
 				continue;
 		}

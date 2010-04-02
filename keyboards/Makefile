@@ -4,6 +4,7 @@ layouts = \
 	bg-bds.vkb \
 	bg-phonetic.vkb \
 	cz-qwerty.vkb cz-qwertz.vkb\
+	de-neo2.vkb de-qwerty.vkb de-qwertz.vkb\
 	en-dvorak.vkb \
 	eo-qwerty.vkb \
 	fa-isiri9147.vkb \
