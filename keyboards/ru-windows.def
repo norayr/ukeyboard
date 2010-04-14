@@ -184,7 +184,7 @@ lowercase {
 	key э alpha
 	}
 	row {
-	capslock
+	shift
 	key я alpha
 	key ч alpha
 	key с alpha
@@ -228,7 +228,7 @@ uppercase {
 	key Э alpha
 	}
 	row {
-	capslock
+	shift
 	key Я alpha
 	key Ч alpha
 	key С alpha
@@ -272,7 +272,7 @@ special {
 	key " special
 	}
 	row {
-	capslock
+	shift
 	key ё alpha
 	key ґ alpha
 	key і alpha
@@ -316,7 +316,7 @@ special {
 	key ' special
 	}
 	row {
-	capslock
+	shift
 	key Ё alpha
 	key Ґ alpha
 	key І alpha

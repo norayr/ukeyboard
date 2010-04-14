@@ -184,7 +184,7 @@ lowercase {
 	key y alpha
 	}
 	row {
-	capslock
+	shift
 	key ü alpha
 	key ö alpha
 	key ä alpha
@@ -228,7 +228,7 @@ uppercase {
 	key Y alpha
 	}
 	row {
-	capslock
+	shift
 	key Ü alpha
 	key Ö alpha
 	key Ä alpha
@@ -272,7 +272,7 @@ special {
 	key ¤ special
 	}
 	row {
-	capslock
+	shift
 	key , special
 	key . special
 	key @ special
@@ -316,7 +316,7 @@ special {
 	key ! alpha
 	}
 	row {
-	capslock
+	shift
 	key ; special
 	key : special
 	key [ special

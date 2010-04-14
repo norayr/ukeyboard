@@ -199,7 +199,7 @@ lowercase {
 	key ง alpha
 	}
 	row {
-	capslock
+	shift
 	key ผ alpha
 	key ป alpha
 	key แ alpha
@@ -256,7 +256,7 @@ uppercase {
 	key . special
 	}
 	row {
-	capslock
+	shift
 	key ? special
 	key ฉ alpha
 	key ฮ alpha
@@ -270,7 +270,7 @@ uppercase {
 	}
 }
 special {
-	name "๑#+"
+	name "1#+"
 	margin 0 0 0 0
 	default_size 3
 	row {
@@ -300,7 +300,7 @@ special {
 	key " special
 	}
 	row {
-	capslock
+	shift
 	key ฃ alpha
 	key ฅ alpha
 	key “ special
@@ -344,7 +344,7 @@ special {
 	key ' special
 	}
 	row {
-	capslock
+	shift
 	key ½ special
 	key ¹ special
 	key ² special

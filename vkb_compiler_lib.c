@@ -40,7 +40,7 @@ static char keywords[][32] = {
 	"lowercase", "lowercase_num", "uppercase", "uppercase_num",
 	"special_lowercase", "special_uppercase",
 	"special", "margin", "default_size", "row", "key", "slide",
-	"white", "tab", "backspace", "capslock", "alpha", "num", "hexa", "tele", "dead"
+	"white", "tab", "backspace", "shift", "alpha", "num", "hexa", "tele", "dead"
 };
 enum keywords_const {
 	TOK_HEADER, TOK_NAME, TOK_LANG, TOK_WC, TOK_SIZE, TOK_WIDTH, TOK_HEIGHT,
@@ -48,7 +48,7 @@ enum keywords_const {
 	TOK_LOWERCASE, TOK_LOWERCASE_NUM, TOK_UPPERCASE, TOK_UPPERCASE_NUM,
 	TOK_SPEC_LOWERCASE, TOK_SPEC_UPPERCASE,
 	TOK_SPECIAL, TOK_MARGIN, TOK_DEFAULT_SIZE, TOK_ROW, TOK_KEY, TOK_SLIDE,
-	TOK_WHITE, TOK_TAB, TOK_BACKSPACE, TOK_CAPSLOCK, TOK_ALPHA, TOK_NUM, TOK_HEXA, TOK_TELE, TOK_DEAD
+	TOK_WHITE, TOK_TAB, TOK_BACKSPACE, TOK_SHIFT, TOK_ALPHA, TOK_NUM, TOK_HEXA, TOK_TELE, TOK_DEAD
 };
 
 enum tok_type {
@@ -273,7 +273,7 @@ struct key {
 
 #define KEY_TAB		(0x0400 | KEY_EXTEND)
 #define KEY_BACKSPACE	(0x0800 | KEY_EXTEND)
-#define KEY_CAPSLOCK	(0x1000 | KEY_EXTEND)
+#define KEY_SHIFT	(0x1000 | KEY_EXTEND)
 
 struct row {
 	int keys_cnt;
@@ -608,9 +608,9 @@ static void parse_key(struct parser *parser, struct row *row, int type)
 	} else if (type == TOK_BACKSPACE) {
 		set_str(&key->u.name, "");
 		key->flags |= KEY_BACKSPACE;
-	} else if (type == TOK_CAPSLOCK) {
+	} else if (type == TOK_SHIFT) {
 		set_str(&key->u.name, "");
-		key->flags |= KEY_CAPSLOCK;
+		key->flags |= KEY_SHIFT;
 	}
 	while (1) {
 		get_tok(parser);
@@ -635,7 +635,7 @@ static void parse_key(struct parser *parser, struct row *row, int type)
 			   is_keyword(parser, TOK_WHITE) ||
 			   is_keyword(parser, TOK_TAB) ||
 			   is_keyword(parser, TOK_BACKSPACE) ||
-			   is_keyword(parser, TOK_CAPSLOCK) ||
+			   is_keyword(parser, TOK_SHIFT) ||
 			   is_keyword(parser, TOK_SLIDE) ||
 			   is_end(parser)) {
 			push_tok(parser);
@@ -671,8 +671,8 @@ static void parse_row(struct parser *parser, struct layout *lay)
 			parse_key(parser, row, TOK_TAB);
 		else if (is_keyword(parser, TOK_BACKSPACE))
 			parse_key(parser, row, TOK_BACKSPACE);
-		else if (is_keyword(parser, TOK_CAPSLOCK))
-			parse_key(parser, row, TOK_CAPSLOCK);
+		else if (is_keyword(parser, TOK_SHIFT))
+			parse_key(parser, row, TOK_SHIFT);
 		else if (is_keyword(parser, TOK_SLIDE))
 			parse_key(parser, row, TOK_SLIDE);
 		else if (is_end(parser))

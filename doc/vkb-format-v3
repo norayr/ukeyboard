@@ -140,4 +140,4 @@ bytes	description
 	more key flags (bitfield?)
 	bits:	2 (0x04)	draw tab face over the key
 		3 (0x08)	draw backspace face over the key
-		4 (0x10)	draw capslock face over the key
+		4 (0x10)	draw shift face over the key

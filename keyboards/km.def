@@ -197,7 +197,7 @@ lowercase {
 	key ឿ alpha
 	}
 	row {
-	capslock
+	shift
 	key ឋ alpha
 	key ខ alpha
 	key ច alpha
@@ -254,7 +254,7 @@ uppercase {
 	key ៀ alpha
 	}
 	row {
-	capslock
+	shift
 	key ឍ alpha
 	key ឃ alpha
 	key ជ alpha
@@ -268,20 +268,20 @@ uppercase {
 	}
 }
 special {
-	name "១#+"
+	name "1#+"
 	margin 0 0 0 0
 	default_size 3
 	row {
-	key ១ num hexa tele
-	key ២ num hexa tele
-	key ៣ num hexa tele
-	key ៤ num hexa tele
-	key ៥ num hexa tele
-	key ៦ num hexa tele
-	key ៧ num hexa tele
-	key ៨ num hexa tele
-	key ៩ num hexa tele
-	key ០ num hexa tele
+	key 1 num hexa tele
+	key 2 num hexa tele
+	key 3 num hexa tele
+	key 4 num hexa tele
+	key 5 num hexa tele
+	key 6 num hexa tele
+	key 7 num hexa tele
+	key 8 num hexa tele
+	key 9 num hexa tele
+	key 0 num hexa tele
 	key = special
 	}
 	row {
@@ -298,7 +298,7 @@ special {
 	key " special
 	}
 	row {
-	capslock
+	shift
 	key ឰ alpha
 	key ឦ alpha
 	key ឪ alpha
@@ -342,7 +342,7 @@ special {
 	key ' special
 	}
 	row {
-	capslock
+	shift
 	key ៝ alpha
 	key ឭ alpha
 	key ឳ alpha

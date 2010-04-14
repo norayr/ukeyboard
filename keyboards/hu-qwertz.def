@@ -191,7 +191,7 @@ lowercase {
 	key ˝ alpha special dead
 	}
 	row {
-	capslock
+	shift
 	key y alpha
 	key x alpha
 	key c alpha hexa
@@ -235,7 +235,7 @@ uppercase {
 	key ˝ alpha special dead
 	}
 	row {
-	capslock
+	shift
 	key Y alpha
 	key X alpha
 	key C alpha hexa
@@ -279,7 +279,7 @@ special {
 	key ¤ special
 	}
 	row {
-	capslock
+	shift
 	key , special
 	key . special
 	key @ special
@@ -323,7 +323,7 @@ special {
 	key | special
 	}
 	row {
-	capslock
+	shift
 	key ; special
 	key : special
 	key [ special

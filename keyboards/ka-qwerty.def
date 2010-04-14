@@ -180,7 +180,7 @@ lowercase {
         key ყ alpha
 	}
 	row {
-	capslock
+	shift
 	key შ alpha
 	key ჩ alpha
 	key ც alpha
@@ -227,7 +227,7 @@ uppercase {
 	key ® special
 	}
 	row {
-	capslock
+	shift
 	key ჱ alpha dead
 	key ჲ alpha dead
 	key ჳ alpha dead
@@ -274,7 +274,7 @@ special {
 	key ¤ special
 	}
 	row {
-	capslock
+	shift
 	key , special
 	key . special
 	key @ special
@@ -321,7 +321,7 @@ special {
 	key © special
 	}
 	row {
-	capslock
+	shift
 	key ; special
 	key : special
 	key • special
