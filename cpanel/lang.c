@@ -35,7 +35,7 @@
 #define GETTEXT_PACKAGE "osso-applet-textinput"
 #include <glib/gi18n-lib.h>
 
-char *ignore_autocapitalisation[] = {"ar_AR", "fa_IR", "he_IL", "ka_GE", "km_KH", "th_TH", NULL };
+char *ignore_autocapitalisation[] = {"ar_AR", "fa_IR", "he_IL", "ka_GE", "km_KH", "pa_IN", "th_TH", NULL };
 
 struct langlink {
 	gchar *src;
