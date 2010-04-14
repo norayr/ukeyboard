@@ -1,0 +1,359 @@
+# title: PA Jhelum layout
+# author: A S Alam <aalam@users.sf.net>
+# license: GPLv2
+
+header {
+name	"ਜੇਹਲਮ (ਪੰਜਾਬੀ)"
+lang	"pa_IN"
+wc	"pa_IN"
+
+size	0	{ width 35 height 35 textpos 26 left 0 top 0 }
+size	1	{ width 50 height 35 textpos 26 left 0 top 0 }
+size	2	{ width 55 height 35 textpos 26 left 0 top 0 }
+size	3	{ width 72 height 55 textpos 41 left 0 top 0 }
+size	4	{ width 143 height 55 textpos 41 left 0 top 0 }
+}
+
+kbd_normal {
+lowercase {
+	margin 0 0 0 0
+	default_size 0
+	row {
+	key ੌ special size 2
+	key ੈ special
+	key ਾ special
+	key ੀ alpha
+	key ੂ special
+	key ਰ special
+	key ਦ special
+	key ਗ alpha
+	key ਤ alpha
+	key ਤ alpha
+	key ਪ alpha size 1
+	}
+	row {
+	key ੋ alpha
+	key ੇ alpha
+	key ੍ alpha
+	key ਿ alpha
+	key ੁ special
+	key ਹ special
+	key ਜ special
+	key ਕ special
+	key ਲ alpha
+	key ਲ alpha
+	key ਸ alpha
+	key ' alpha
+	}
+	row {
+	key ੱ alpha size 2
+	key ਂ alpha
+	key ਚ special
+	key ਵ alpha
+	key ਬ special
+	key ਨ special
+	key ਮ alpha
+	key , alpha
+	key . special
+	key / alpha
+	key @ special size 1
+	}
+}
+lowercase_num {
+	margin 0 0 0 9
+	default_size 0
+	row {
+	key । special
+	key / special
+	key - special
+	}
+	row {
+	key ਸ alpha
+	key ਆ alpha
+	key ਅ special
+	}
+	row {
+	key ੰ special
+	key ੱ alpha
+	key ੍ alpha
+	}
+	row {
+	key ਪ alpha
+	key ਰ alpha
+	key ਹ alpha
+	}
+}
+uppercase {
+	margin 0 0 0 0
+	default_size 0
+	row {
+	key + special size 2
+	key ਆ special
+	key ਇ alpha
+	key ਈ alpha
+	key ਉ alpha
+	key ਊ special
+	key ਏ special
+	key ਐ alpha
+	key ਓ special
+	key ਔ alpha
+	key ਅ alpha size 1
+	}
+	row {
+	key ਕ alpha
+	key ਖ alpha
+	key ਗ alpha
+	key ਘ special
+	key ਙ alpha
+	key ਚ special
+	key ਛ special
+	key ਜ alpha
+	key ਝ alpha
+	key ਞ alpha
+	key ਤ special
+	key ' special
+	}
+	row {
+	key ( special size 2
+	key ) special
+	key ਼ alpha
+	key ੰ alpha
+	key ਛ special
+	key ਯ special
+	key ਭ special
+	key ਣ alpha
+	key ਠ alpha
+	key , alpha
+	key , special size 1
+	}
+}
+uppercase_num {
+	margin 0 0 0 9
+	default_size 0
+	row {
+	key ੧ num
+	key ੨ num
+	key ੩ num
+	}
+	row {
+	key ੪ num
+	key ੫ num
+	key ੬ num
+	}
+	row {
+	key ੭ num
+	key ੮ num
+	key ੯ num
+	}
+	row {
+	key ੁ special
+	key ੂ num
+	key ਿ special
+	}
+}
+}
+
+kbd_thumb {
+lowercase {
+	name "ਹੋਰ"
+	margin 0 0 0 0
+	default_size 3
+	row {
+	key ੧ num tele
+	key ੨ num tele
+	key ੩ num tele
+	key ੪ num tele
+	key ੫ num tele
+	key ੬ num tele
+	key ੭ num tele
+	key ੮ num tele
+	key ੯ num tele
+	key ੦ num tele
+	key । special
+	}
+	row {
+	key ਆ alpha
+	key ਇ alpha
+	key ਈ alpha
+	key ਉ alpha
+	key ਊ alpha
+	key ਏ alpha
+	key ਐ alpha
+	key ਓ alpha
+	key ਔ alpha
+	key ੱ special
+	key ੰ special
+	}
+	row {
+	key ਸ਼ alpha
+	key ਖ਼ alpha
+	key ਗ਼ alpha
+	key ਜ਼ alpha
+	key ਫ਼ alpha
+	key ਲ਼ alpha
+	key ੳ alpha
+	key ੲ alpha
+	key ਙ alpha
+	key ਞ alpha
+	key ੍ਰ alpha
+	}
+	row {
+	shift
+	key ੑ special
+	key ੵ special
+	key ੴ alpha
+	key । special
+	key ॥ special
+	key ਨੂੰ alpha
+	key ਸ੍ਰੀ alpha
+	key ਸਿੰ alpha
+	key ਕੌ alpha
+	backspace
+	}
+}
+uppercase {
+	name "ਪੈਂਤੀ"
+	margin 0 0 0 0
+	default_size 3
+	row {
+	key ਅ alpha
+	key ਾ special
+	key ਿ special
+	key ੀ special
+	key ੁ special
+	key ੂ special
+	key ੇ special
+	key ੈ special
+	key ੋ special
+	key ੌ special
+	key ੍ special
+	}
+	row {
+	key ਕ alpha
+	key ਖ alpha
+	key ਗ alpha
+	key ਘ alpha
+	key ੱ special
+	key ਚ special
+	key ਛ alpha
+	key ਜ alpha
+	key ਝ alpha
+	key ੰ special
+	key ਂ special
+	}
+	row {
+	key ਟ alpha
+	key ਠ alpha
+	key ਡ alpha
+	key ਢ alpha
+	key ਣ alpha
+	key ਤ special
+	key ਧ special
+	key ਦ alpha
+	key ਥ alpha
+	key ਨ alpha
+	key ੜ alpha
+	}
+	row {
+	shift
+	key ਪ alpha
+	key ਫ alpha
+	key ਬ alpha
+	key ਭ alpha
+	key ਮ alpha
+	key ਯ alpha
+	key ਰ alpha
+	key ਲ alpha
+	key ਵ alpha
+	backspace
+	}
+}
+special {
+	name "1#+"
+	margin 0 0 0 0
+	default_size 3
+	row {
+	key 1 num hexa tele
+	key 2 num hexa tele
+	key 3 num hexa tele
+	key 4 num hexa tele
+	key 5 num hexa tele
+	key 6 num hexa tele
+	key 7 num hexa tele
+	key 8 num hexa tele
+	key 9 num hexa tele
+	key 0 num hexa tele
+	key = special
+	}
+	row {
+	key + special tele
+	key - special num
+	key * special tele
+	key / special
+	key % special
+	key ( special
+	key ) special
+	key ? special
+	key ; special
+	key : special
+	key " special
+	}
+	row {
+	shift
+	key ☬ special
+	key ੴ special
+	key “ special
+	key ” special
+	key ‘ special
+	key ’ special
+	key ! special
+	key , special
+	key . special
+	backspace
+	}
+}
+special {
+	name "*§¿"
+	margin 0 0 0 0
+	default_size 3
+	row {
+	key $ special
+	key € special
+	key £ special
+	key ¥ special
+	key ¢ special
+	key § special
+	key # special tele
+	key & special
+	key © special
+	key ™ special
+	key \ special
+	}
+	row {
+	key ^ special
+	key _ special
+	key | special
+	key < special
+	key > special
+	key { special
+	key } special
+	key ~ alpha special dead
+	key « special
+	key » special
+	key ' special
+	}
+	row {
+	shift
+	key ½ special
+	key ¹ special
+	key ² special
+	key ³ special
+	key · special
+	key ° special
+	key @ special
+	key [ special
+	key ] special
+	backspace
+	}
+}
+}

@@ -14,6 +14,7 @@ layouts = \
 	ka-qwerty.vkb \
 	km.vkb \
 	mk.vkb \
+	pa-jhelum.vkb \
 	ru-phonetic.vkb ru-windows.vkb \
 	sk-qwerty.vkb sk-qwertz.vkb \
 	sl-qwerty.vkb sl-qwertz.vkb \
