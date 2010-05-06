@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=Ukeyboard Monitor
+Comment=Ukeyboard Monitor
+Type=default
+X-Path=libukeyboard-monitor.so
