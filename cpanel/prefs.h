@@ -21,6 +21,8 @@
 
 #define _HL(str) dgettext("hildon-libs",str)
 
+#define IM_CONF_DIR "/apps/osso/inputmethod"
+
 struct prefs {
 	GtkWidget *(*start)(GConfClient *, GtkWidget *, void **);
 	void (*action)(GConfClient *, void *);

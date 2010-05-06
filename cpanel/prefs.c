@@ -42,8 +42,6 @@ static struct prefs prefs[PLUGINS];
 gboolean internal_kbd;
 gboolean inside_scratchbox;
 
-#define IM_CONF_DIR	"/apps/osso/inputmethod"
-
 gboolean get_bool(GConfClient *client, char *key)
 {
 	char *tmp = g_strjoin("/", IM_CONF_DIR, key, NULL);
