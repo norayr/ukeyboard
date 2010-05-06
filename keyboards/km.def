@@ -207,7 +207,7 @@ lowercase {
 	key ម alpha
 	key អ alpha
 	key ។ alpha
-	key ឮ alpha
+	backspace
 	}
 }
 uppercase {
@@ -264,7 +264,7 @@ uppercase {
 	key ំ alpha
 	key អ alpha
 	key ឫ alpha
-	key ឧ alpha
+	backspace
 	}
 }
 special {
@@ -319,13 +319,13 @@ special {
 	key $ special
 	key € special
 	key £ special
-	key ¥ special
 	key ៛ special
 	key § special
 	key # special tele
 	key & special
 	key © special
 	key ™ special
+	key ° special
 	key \ special
 	}
 	row {
@@ -347,8 +347,8 @@ special {
 	key ឭ alpha
 	key ឳ alpha
 	key ឩ alpha
-	key ' special
-	key ° special
+	key ឮ alpha
+	key ឧ alpha
 	key @ special
 	key [ special
 	key ] special
