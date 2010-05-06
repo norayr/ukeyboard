@@ -62,15 +62,15 @@ static layouts layout_names[] = {
     {"ru",		"Русский"},
     {"sk",		"Slovenčina"},
     {"sk_qwerty",	"Slovenčina - QWERTY"},
-    {"aren",		"Arabic, English"},
+    {"aren",		"Arabic"},
     {"dv",		"Dvorak"},
     {"gr",		"Ελληνικά"},
     {"bg_phonetic",	"Български - Phonetic"},
-    {"faen",		"Persian, English"},
+    {"faen",		"Persian"},
     {"mk",		"Македонски"},
     {"ru_phonetic",	"Русский - Phonetic"},
     {"he_phonetic",	"עברית - Phonetic"},
-    {"ge",		"Georgian - Latin"},
+    {"ge",		"Georgian"},
     {"lv",		"Latviešu"},
     {NULL,		NULL}
 };
