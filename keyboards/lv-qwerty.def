@@ -1,0 +1,332 @@
+# title: Latvian QWERTY layout using dead keys
+# author: Ēriks Jansons <tasmaniand@gmail.com>
+
+header {
+name	"Latviešu (Latvija)"
+lang	"lv_LV"
+wc	"lv_LV"
+
+size	0	{ width 35 height 35 textpos 26 left 0 top 0 }
+size	1	{ width 50 height 35 textpos 26 left 0 top 0 }
+size	2	{ width 55 height 35 textpos 26 left 0 top 0 }
+size	3	{ width 72 height 55 textpos 41 left 0 top 0 }
+size	4	{ width 143 height 55 textpos 41 left 0 top 0 }
+}
+
+kbd_normal {
+lowercase {
+	margin 0 0 0 0
+	default_size 0
+	row {
+	key q alpha size 2
+	key w alpha
+	key e alpha hexa
+	key r alpha
+	key t alpha
+	key y alpha
+	key u alpha
+	key i alpha
+	key o alpha
+	key p alpha tele
+	key ¯ alpha dead size 1
+	}
+	row {
+	key a alpha hexa
+	key s alpha
+	key d alpha hexa
+	key f alpha hexa
+	key g alpha
+	key h alpha
+	key j alpha
+	key k alpha
+	key l alpha
+	key ; special
+	key ' special
+	key ¸ alpha dead
+	}
+	row {
+	key z alpha size 2
+	key x alpha
+	key c alpha hexa
+	key v alpha
+	key b alpha hexa
+	key n alpha
+	key m alpha
+	key , special
+	key . special
+	key / special
+	key ˇ alpha dead size 1
+	}
+}
+lowercase_num {
+	margin 0 0 0 9
+	default_size 0
+	row {
+	key 1 num hexa tele
+	key 2 num hexa tele
+	key 3 num hexa tele
+	}
+	row {
+	key 4 num hexa tele
+	key 5 num hexa tele
+	key 6 num hexa tele
+	}
+	row {
+	key 7 num hexa tele
+	key 8 num hexa tele
+	key 9 num hexa tele
+	}
+	row {
+	key + special tele
+	key 0 num hexa tele
+	key = special
+	}
+}
+uppercase {
+	margin 0 0 0 0
+	default_size 0
+	row {
+	key Q alpha size 2
+	key W alpha
+	key E alpha hexa
+	key R alpha
+	key T alpha
+	key Y alpha
+	key U alpha
+	key I alpha
+	key O alpha
+	key P alpha tele
+	key ¯ alpha dead size 1
+	}
+	row {
+	key A alpha hexa
+	key S alpha
+	key D alpha hexa
+	key F alpha hexa
+	key G alpha
+	key H alpha
+	key J alpha
+	key K alpha
+	key L alpha
+	key : special
+	key " special 
+	key ¸ alpha dead
+	}
+	row {
+	key Z alpha size 2
+	key X alpha
+	key C alpha hexa
+	key V alpha
+	key B alpha hexa
+	key N alpha
+	key M alpha
+	key < special
+	key > special
+	key \ special
+	key ˇ alpha dead size 1
+	}
+}
+uppercase_num {
+	margin 0 0 0 9
+	default_size 0
+	row {
+	key # special tele
+	key @ special
+	key ¥ special
+	}
+	row {
+	key ! special
+	key ? special
+	key % special
+	}
+	row {
+	key & special
+	key ( special
+	key ) special
+	}
+	row {
+	key ~ special
+	key * special tele
+	key - num special
+	}
+}
+}
+
+kbd_thumb {
+lowercase {
+	name "abc"
+	margin 0 0 0 0
+	default_size 3
+	row {
+	key q alpha
+	key w alpha
+	key e alpha hexa
+	key r alpha
+	key t alpha
+	key y alpha
+	key u alpha
+	key i alpha
+	key o alpha
+	key p alpha tele
+	key ¯ alpha dead
+	}
+	row {
+	key a alpha hexa
+	key s alpha
+	key d alpha hexa
+	key f alpha hexa
+	key g alpha
+	key h alpha
+	key j alpha
+	key k alpha
+	key l alpha
+	key ¸ alpha dead
+	key ˇ alpha dead
+	}
+	row {
+	shift
+	key z alpha
+	key x alpha
+	key c alpha hexa
+	key v alpha
+	key b alpha hexa
+	key n alpha
+	key m alpha
+	key , special
+	key . special
+	backspace
+	}
+}
+uppercase {
+	name "ABC"
+	margin 0 0 0 0
+	default_size 3
+	row {
+	key Q alpha
+	key W alpha
+	key E alpha hexa
+	key R alpha
+	key T alpha
+	key Y alpha
+	key U alpha
+	key I alpha
+	key O alpha
+	key P alpha tele
+	key ¯ alpha dead
+	}
+	row {
+	key A alpha hexa
+	key S alpha
+	key D alpha hexa
+	key F alpha hexa
+	key G alpha
+	key H alpha
+	key J alpha
+	key K alpha
+	key L alpha
+	key ¸ alpha dead
+	key ˇ alpha dead
+	}
+	row {
+	shift
+	key Z alpha
+	key X alpha
+	key C alpha hexa
+	key V alpha
+	key B alpha hexa
+	key N alpha
+	key M alpha
+	key ; special
+	key : special
+	backspace
+	}
+}
+special {
+	name "1#+"
+	margin 0 0 0 0
+	default_size 3
+	row {
+	key 1 num hexa tele
+	key 2 num hexa tele
+	key 3 num hexa tele
+	key 4 num hexa tele
+	key 5 num hexa tele
+	key 6 num hexa tele
+	key 7 num hexa tele
+	key 8 num hexa tele
+	key 9 num hexa tele
+	key 0 num hexa tele
+	key = special
+	}
+	row {
+	key + special tele
+	key - special num
+	key _ special
+	key # special tele
+	key * special tele
+	key % special
+	key € special
+	key £ special
+	key $ special
+	key ¥ special
+	key ¤ special
+	}
+	row {
+	shift
+	key , special
+	key . special
+	key @ special
+	key / special
+	key \ special
+	key ~ alpha special dead
+	key ^ alpha special dead
+	key ( special
+	key ) special
+	backspace
+	}
+}
+special {
+	name "*§¿"
+	margin 0 0 0 0
+	default_size 3
+	row {
+	key ´ alpha special dead
+	key ` alpha special dead
+	key ¨ alpha special dead
+	key ^ alpha special dead
+	key ~ alpha special dead
+	key ' special
+	key " special
+	key “ special
+	key ” special
+	key ° special
+	key & special
+	}
+	row {
+	key ± special
+	key § special
+	key ½ special
+	key ¹ special
+	key ² special
+	key ³ special
+	key < special
+	key > special
+	key « special
+	key » special
+	key | special
+	}
+	row {
+	shift
+	key ; special
+	key : special
+	key [ special
+	key ] special
+	key { special
+	key } special
+	key ç alpha
+	key ! special
+	key ? special
+	backspace
+	}
+}
+}

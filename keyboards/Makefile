@@ -13,6 +13,7 @@ layouts = \
 	hu-qwerty.vkb hu-qwertz.vkb\
 	ka-qwerty.vkb \
 	km.vkb \
+	lv-qwerty.vkb \
 	mk.vkb \
 	pa-jhelum.vkb \
 	ru-phonetic.vkb ru-windows.vkb \

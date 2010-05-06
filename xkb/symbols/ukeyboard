@@ -530,3 +530,52 @@ xkb_symbols "ge" {
    key <AB06> { symbols[Group2] = [ 0x010010dc,		N,		quotedbl,	quotedbl	] };
    key <AB07> { symbols[Group2] = [ 0x010010db,		M,		apostrophe,	apostrophe	] };
 };
+
+// author: Eriks Jansons
+partial alphanumeric_keys
+xkb_symbols "lv" {
+    include "nokia_vndr/rx-51(english_base)"
+    include "nokia_vndr/rx-51(arrows_4btns)"
+
+    name[Group1] = "U.S. English";
+    name[Group2] = "Latvian";
+
+    key <SPCE>	{ type[Group1] = "PC_FN_LEVEL2_BREAK", [ space, at, ISO_Prev_Group, at ] };
+
+    key.type[Group2] = "FOUR_LEVEL_SEMIALPHABETIC";
+
+    // 1. row
+    key <AD01>  { symbols[Group2] = [   q,                      Q,                      1,                      1                       ] };
+    key <AD02>  { symbols[Group2] = [   w,                      W,                      2,                      2                       ] };
+    key <AD03>  { symbols[Group2] = [   emacron,                Emacron,                3,                      3                       ] };
+    key <AD04>  { symbols[Group2] = [   rcedilla,               Rcedilla,               4,                      4                       ] };
+    key <AD05>  { symbols[Group2] = [   t,                      T,                      5,                      5                       ] };
+    key <AD06>  { symbols[Group2] = [   y,                      Y,                      6,                      6                       ] };
+    key <AD07>  { symbols[Group2] = [   umacron,                Umacron,                7,                      7                       ] };
+    key <AD08>  { symbols[Group2] = [   imacron,                Imacron,                8,                      8                       ] };
+    key <AD09>  { symbols[Group2] = [   omacron,                Omacron,                9,                      9                       ] };
+    key <AD10>  { symbols[Group2] = [   p,                      P,                      0,                      0                       ] };
+    key <AB08>  { symbols[Group1] = [   ISO_Group_Latch,        semicolon,              equal,                  equal], 
+                  symbols[Group2] = [   comma,                  semicolon,              equal,                  equal                   ] };
+
+    // 2. row
+    key <AC01>  { symbols[Group2] = [   amacron,                Amacron,                asterisk,               asterisk                ] };
+    key <AC02>  { symbols[Group2] = [   scaron,                 Scaron,                 plus,                   plus                    ] };
+    key <AC03>  { symbols[Group2] = [   d,                      D,                      numbersign,             numbersign              ] };
+    key <AC04>  { symbols[Group2] = [   f,                      F,                      minus,                  minus                   ] };
+    key <AC05>  { symbols[Group2] = [   gcedilla,               Gcedilla,               underscore,             underscore              ] };
+    key <AC06>  { symbols[Group2] = [   h,                      H,                      parenleft,              parenleft               ] };
+    key <AC07>  { symbols[Group2] = [   j,                      J,                      parenright,             parenright              ] };
+    key <AC08>  { symbols[Group2] = [   kcedilla,               Kcedilla,               ampersand,              ampersand               ] };
+    key <AC09>  { symbols[Group2] = [   lcedilla,               Lcedilla,               exclam,                 exclam                  ] };
+    key <AB09>  { symbols[Group2] = [   period,                 colon,                  question,               question                ] };
+
+    // 3. row
+    key <AB01>  { symbols[Group2] = [   zcaron,                 Zcaron,                 sterling,               sterling                ] };
+    key <AB02>  { symbols[Group2] = [   x,                      X,                      dollar,                 dollar                  ] };
+    key <AB03>  { symbols[Group2] = [   ccaron,                 Ccaron,                 EuroSign,               EuroSign                ] };
+    key <AB04>  { symbols[Group2] = [   v,                      V,                      slash,                  slash                   ] };
+    key <AB05>  { symbols[Group2] = [   b,                      B,                      backslash,              backslash               ] };
+    key <AB06>  { symbols[Group2] = [   ncedilla,               Ncedilla,               quotedbl,               quotedbl                ] };
+    key <AB07>  { symbols[Group2] = [   m,                      M,                      apostrophe,             apostrophe              ] };
+};

@@ -8,6 +8,7 @@ layouts = \
 	  gr.vkb \
 	  he_phonetic.vkb \
 	  mk.vkb \
+	  lv.vkb \
 	  ru_phonetic.vkb \
 	  sk.vkb sk_qwerty.vkb
 
