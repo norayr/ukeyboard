@@ -50,7 +50,7 @@ lowercase {
 	key ت alpha
 	key ن alpha
 	key م alpha
-	key ك alpha
+	key ک alpha
 	key گ alpha
 	key \ special
 	}
@@ -192,7 +192,7 @@ lowercase {
 	key ت alpha
 	key ن alpha
 	key م alpha
-	key ك alpha
+	key ک alpha
 	key گ alpha
 	key \ special
 	}
@@ -249,7 +249,7 @@ uppercase {
 	key ٓ special dead
 	key ژ alpha
 	key ٰ special dead
-	key ‌ذ alpha
+	key ‌ alpha
 	key ٔ special dead
 	key ء special dead
 	key > special
@@ -263,16 +263,16 @@ special {
 	margin 0 0 0 0
 	default_size 2
 	row {
-	key ١ num tele
-	key ٢ num tele
-	key ٣ num tele
-	key ٤ num tele
-	key ٥ num tele
-	key ٦ num tele
-	key ٧ num tele
-	key ٨ num tele
-	key ٩ num tele
-	key ٠ num tele
+	key ۱ num tele
+	key ۲ num tele
+	key ۳ num tele
+	key ۴ num tele
+	key ۵ num tele
+	key ۶ num tele
+	key ۷ num tele
+	key ۸ num tele
+	key ۹ num tele
+	key ۰ num tele
 	key = special
 	key ؟ special
 	}
