@@ -10,7 +10,8 @@ layouts = \
 	fa-isiri9147.vkb \
 	he-phonetic.vkb he-qwerty.vkb \
 	hr-qwerty.vkb hr-qwertz.vkb \
-	hu-qwerty.vkb hu-qwertz.vkb\
+	hu-qwerty.vkb hu-qwertz.vkb \
+	is-qwerty.vkb \
 	ka-qwerty.vkb \
 	km.vkb \
 	lv-qwerty.vkb \
