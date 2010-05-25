@@ -1,3 +1,11 @@
+ukeyboard (2.3-5) unstable; urgency=low
+
+  * Arabic numbers and Arabic Kaf replaced by Persian numbers and Persian Kaf
+    in Persian on-screen keyboard layout. Thanks to Saman Saadi.
+  * Added Icelandic on-screen keyboard layout requested by Callie Rasmussen.
+
+ -- Roman Moravcik <roman.moravcik@gmail.com>  Tue, 25 May 2010 10:33:12 +0200
+
 ukeyboard (2.3-4) unstable; urgency=low
 
   * Renamed "capslock" keyword to "shift" keyword in all on-screen keyboard
