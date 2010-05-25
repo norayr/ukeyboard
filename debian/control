@@ -22,8 +22,7 @@ XB-Maemo-Icon-26:
 
 Package: ukeyboard
 Architecture: any
-Depends: ${shlibs:Depends}, thai-ttf, ttf-bpg-georgian-fonts, ttf-khmeros, hildon-im-fkb (>= 3.9.61-1)
-XB-Maemo-Upgrade-Description: This version of ukeyboard require FW/SDK PR1.2 and it's not compatible with older releases of FW/SDK.
+Depends: ${shlibs:Depends}, thai-ttf, ttf-bpg-georgian-fonts, ttf-khmeros
 Description: Additional on-screen keyboard layouts
  This package provides additional Arabic, Belarusian, Bulgarian
  (BDS & Phonetic), Croatian (QWERTY & QWERTZ), Czech (QWERTY),
@@ -39,7 +38,7 @@ Description: Additional on-screen keyboard layouts
 Package: ukbdcreator
 Architecture: any
 Section: user/utilities
-Depends: ${shlibs:Depends}, ukeyboard (>= 2.0)
+Depends: ${shlibs:Depends}, ukeyboard (>= 2.3)
 Description: Ukeyboard Creator
  Simple IDE for creating and testing on-screen keyboard layouts.
  .
