@@ -1,3 +1,10 @@
+ukeyboard (2.3-6) unstable; urgency=low
+
+  * Removed dependency to hildon-im-fkb (>= 3.9.61-1).
+  * Increased dependency of ukbdcreator to ukeyboard (>= 2.3).
+
+ -- Roman Moravcik <roman.moravcik@gmail.com>  Tue, 25 May 2010 10:38:18 +0200
+
 ukeyboard (2.3-5) unstable; urgency=low
 
   * Arabic numbers and Arabic Kaf replaced by Persian numbers and Persian Kaf
