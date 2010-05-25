@@ -324,8 +324,8 @@ special {
 	key { special
 	key } special
 	key ç alpha
-	key ¡ special
-	key ¿ special
+	key ! special
+	key ? special
 	backspace
 	}
 }
