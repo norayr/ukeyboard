@@ -1,3 +1,11 @@
+ukeyboard (2.3-7) unstable; urgency=low
+
+  * Added missing Latvian layout in package description.
+  * Removed strict dependency to thai-ttf package, because PR1.2 already
+    include Thai font support by default.
+
+ -- Roman Moravcik <roman.moravcik@gmail.com>  Wed, 26 May 2010 10:08:55 +0200
+
 ukeyboard (2.3-6) unstable; urgency=low
 
   * Removed dependency to hildon-im-fkb (>= 3.9.61-1).
