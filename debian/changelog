@@ -1,3 +1,17 @@
+ukeyboard (2.4-1) unstable; urgency=low
+
+  * Added dependency to ttf-punjabi-font required by Punjabi on-screen keyboard
+    layout.
+  * Added Serbian (Cyrillic and Latin) on-screen keyboard layout by Dejan Ostojic.
+  * Added missing '?' and '!' symbols to Slovak, Vietnamese, Turkish, Hebrew,
+    Macedonian on-screen keyboard layouts (Bug 10343: Question and exclamation
+    marks are nowhere to be found in the Hebrew keyboard layout in Ukeyboard 2.3-7).
+  * Added Hebrew HW keyboard layout based Hebrew keymap from "Hebrew N900"
+    wiki page (http://wiki.maemo.org/Hebrew_N900).
+  * English numbers added back to Arabic on-screen keyboard layout.
+
+ -- Roman Moravcik <roman.moravcik@gmail.com>  Tue,  1 Jun 2010 15:59:09 +0200
+
 ukeyboard (2.3-7) unstable; urgency=low
 
   * Added missing Latvian layout in package description.
