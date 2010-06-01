@@ -278,8 +278,8 @@ special {
 	key @ special
 	key / special
 	key \ special
-	key ~ alpha special dead
-	key ^ alpha special dead
+	key ? special
+	key ! special
 	key ( special
 	key ) special
 	backspace
