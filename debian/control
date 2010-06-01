@@ -22,7 +22,7 @@ XB-Maemo-Icon-26:
 
 Package: ukeyboard
 Architecture: any
-Depends: ${shlibs:Depends}, ttf-bpg-georgian-fonts, ttf-khmeros
+Depends: ${shlibs:Depends}, ttf-bpg-georgian-fonts, ttf-khmeros, ttf-punjabi-fonts
 Suggests: thai-ttf
 Description: Additional on-screen keyboard layouts
  This package provides additional Arabic, Belarusian, Bulgarian (BDS & Phonetic),
