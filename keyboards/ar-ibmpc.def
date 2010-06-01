@@ -281,7 +281,7 @@ special {
 	key $ special
 	key ¥ special
 	key ¢ special
-	key ¤ special
+	key ? special
 	}
 	row {
 	shift
@@ -303,16 +303,16 @@ special {
 	margin 0 0 0 0
 	default_size 2
 	row {
-	key ´ alpha special dead
-	key ` alpha special dead
-	key ¨ alpha special dead
-	key ^ alpha special dead
-	key ~ alpha special dead
-	key ' special
-	key " special
-	key „ special
-	key “ special
-	key ” special
+	key 1 num tele
+	key 2 num tele
+	key 3 num tele
+	key 4 num tele
+	key 5 num tele
+	key 6 num tele
+	key 7 num tele
+	key 8 num tele
+	key 9 num tele
+	key 0 num tele
 	key ° special
 	key & special
 	}
@@ -320,15 +320,15 @@ special {
 	key ± special
 	key § special
 	key ½ special
-	key ¹ special
-	key ² special
-	key ³ special
+	key ' special
+	key " special
+	key „ special
+	key “ special
+	key ” special
 	key > special
 	key < special
 	key » special
 	key « special
-	key | special
-	key ? special
 	}
 	row {
 	shift
@@ -339,9 +339,9 @@ special {
 	key [ special
 	key } special
 	key { special
-	key ç alpha
 	key ¡ special
 	key ¿ special
+	key | special
 	backspace
 	}
 }
