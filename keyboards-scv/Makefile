@@ -6,7 +6,7 @@ layouts = \
 	  faen.vkb \
 	  ge.vkb \
 	  gr.vkb \
-	  he_phonetic.vkb \
+	  he.vkb he_phonetic.vkb \
 	  mk.vkb \
 	  lv.vkb \
 	  ru_phonetic.vkb \
