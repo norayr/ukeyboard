@@ -230,8 +230,10 @@ static void file_save(void)
 		file_save_as();
 		return;
 	}
-	if (write_file(filename))
+	if (write_file(filename)) {
 		is_modified = FALSE;
+		update_app_title();
+	}
 }
 
 static gboolean file_ask_save(void)
