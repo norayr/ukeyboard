@@ -20,7 +20,7 @@ layouts = \
 	ru-phonetic.vkb ru-windows.vkb \
 	sk-qwerty.vkb sk-qwertz.vkb \
 	sl-qwerty.vkb sl-qwertz.vkb \
-	sr.vkb sr-latin-qwertz.vkb \
+	sr-cyrillic.vkb sr-latin-qwertz.vkb \
 	th-kedmanee.vkb \
 	tr-qwerty.vkb \
 	vi-qwerty.vkb
