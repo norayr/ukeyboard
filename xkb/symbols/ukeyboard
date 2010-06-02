@@ -504,7 +504,7 @@ xkb_symbols "he" {
     key <AD05>	{ symbols[Group2] = [	hebrew_aleph,		hebrew_aleph,		5,			5			] };
     key <AD06>	{ symbols[Group2] = [	hebrew_tet,		hebrew_tet,		6,			6			] };
     key <AD07>	{ symbols[Group2] = [	hebrew_waw,		hebrew_waw,		7,			7			] };
-    key <AD08>	{ symbols[Group2] = [	hebrew_finalnum,	hebrew_finalnum,	8,			8			] };
+    key <AD08>	{ symbols[Group2] = [	hebrew_finalnun,	hebrew_finalnun,	8,			8			] };
     key <AD09>	{ symbols[Group2] = [	hebrew_finalmem,	hebrew_finalmem,	9,			9			] };
     key <AD10>	{ symbols[Group2] = [	hebrew_pe,		hebrew_pe,		0,			0			] };
     key <AB08>	{ symbols[Group2] = [	comma,			semicolon,		equal,			equal			] };
