@@ -498,7 +498,7 @@ xkb_symbols "he" {
 
     // 1. row
     key <AD01>	{ symbols[Group2] = [	hebrew_taw,		hebrew_taw,		1,			1			] };
-    key <AD02>	{ symbols[Group2] = [	hebrew_finalzade,	hebrew_finalzase,	2,			2			] };
+    key <AD02>	{ symbols[Group2] = [	hebrew_finalzade,	hebrew_finalzade,	2,			2			] };
     key <AD03>	{ symbols[Group2] = [	hebrew_qoph,		hebrew_qoph,		3,			3			] };
     key <AD04>	{ symbols[Group2] = [	hebrew_resh,		hebrew_resh,		4,			4			] };
     key <AD05>	{ symbols[Group2] = [	hebrew_aleph,		hebrew_aleph,		5,			5			] };
