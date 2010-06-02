@@ -8,7 +8,7 @@ wc	"tr_TR"
 
 size	0	{ width 35 height 35 textpos 26 left 0 top 0 }
 size	1	{ width 50 height 35 textpos 26 left 0 top 0 }
-size	2	{ width 55 height 35 textpos 26 left 0 top 0 }
+size	2	{ width 66 height 55 textpos 41 left 0 top 0 }
 size	3	{ width 72 height 55 textpos 41 left 0 top 0 }
 size	4	{ width 143 height 55 textpos 41 left 0 top 0 }
 }
@@ -158,7 +158,7 @@ kbd_thumb {
 lowercase {
 	name "abc"
 	margin 0 0 0 0
-	default_size 3
+	default_size 2
 	row {
 	key q alpha
 	key w alpha tele
@@ -171,6 +171,7 @@ lowercase {
 	key o alpha
 	key p alpha tele
 	key ğ alpha
+	key ü alpha
 	}
 	row {
 	key a alpha hexa
@@ -184,6 +185,7 @@ lowercase {
 	key l alpha
 	key ş alpha
 	key i alpha
+	key ? special
 	}
 	row {
 	shift
@@ -194,15 +196,16 @@ lowercase {
 	key b alpha hexa
 	key n alpha
 	key m alpha
+	key ö alpha
 	key ç alpha
-	key ¨ alpha special dead
+	key . special
 	backspace
 	}
 }
 uppercase {
 	name "ABC"
 	margin 0 0 0 0
-	default_size 3
+	default_size 2
 	row {
 	key Q alpha
 	key W alpha tele
@@ -215,6 +218,7 @@ uppercase {
 	key O alpha
 	key P alpha tele
 	key Ğ alpha
+	key Ü alpha
 	}
 	row {
 	key A alpha hexa
@@ -228,6 +232,7 @@ uppercase {
 	key L alpha
 	key Ş alpha
 	key İ alpha
+	key ! special
 	}
 	row {
 	shift
@@ -238,8 +243,9 @@ uppercase {
 	key B alpha hexa
 	key N alpha
 	key M alpha
+	key Ö alpha
 	key Ç alpha
-	key ¨ alpha special dead
+	key , special
 	backspace
 	}
 }
@@ -280,8 +286,8 @@ special {
 	key @ special
 	key / special
 	key \ special
-	key ? special
-	key ! special
+	key ~ alpha special dead
+	key ^ alpha special dead
 	key ( special
 	key ) special
 	backspace
