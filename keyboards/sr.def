@@ -1,10 +1,10 @@
-# title: Serbian Cirillic layout
+# title: Serbian Cyrillic layout
 # author: Дејан Остојић <deos@yahoo.com>
 
 header {
-name	"Српска ћирилица (Србија)"
-lang	"sr_SR"
-wc	"sr_SR"
+name	"Srpski (Serbia) - Cyrillic"
+lang	"sr_RS"
+wc	"sr_RS"
 
 size	0	{ width 35 height 35 textpos 26 left 0 top 0 }
 size	1	{ width 50 height 35 textpos 26 left 0 top 0 }

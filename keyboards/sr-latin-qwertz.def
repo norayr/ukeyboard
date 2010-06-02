@@ -2,9 +2,9 @@
 # author: Dejan Ostojic <deos@yahoo.com>
 
 header {
-name	"Srpskа latinica (Srbija)"
-lang	"sr_SR"
-wc	"sr_HR"
+name	"Srpski (Serbia) - Latin"
+lang	"sr_RS"
+wc	"sr_RS"
 
 size	0	{ width 35 height 35 textpos 26 left 0 top 0 }
 size	1	{ width 50 height 35 textpos 26 left 0 top 0 }
