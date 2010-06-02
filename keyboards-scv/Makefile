@@ -10,7 +10,8 @@ layouts = \
 	  mk.vkb \
 	  lv.vkb \
 	  ru_phonetic.vkb \
-	  sk.vkb sk_qwerty.vkb
+	  sk.vkb sk_qwerty.vkb \
+	  sr_cyrillic.vkb
 
 all: $(layouts)
 
