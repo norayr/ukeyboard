@@ -1,13 +1,5 @@
-- turkish keyboard
-  [Bug 10455] Missing letters on Turkish layout
-
 - khmer layout - 3 row layout
 
-- vietnamese keyboard - missing vovles
-
 - serbian keyboard - fix cyrrilic layout
-
-- hebrew hw keyboard
-  [Bug 9931] hebrew keyboard keys are missing and duplicated
 
 - panjabi keyboard - try to decrease font somehow - needs tweaking of font package

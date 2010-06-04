@@ -1,3 +1,18 @@
+ukeyboard (2.4-2) unstable; urgency=low
+
+  * Ukbdcreator window title was not updated after layout was successfully saved.
+  * Fixed language code of Serbian on-sreen keyboards layouts.
+  * Fixed typo in Hebrew HW keyboard layout (hebrew_finalzase->hebrew_finalzade,
+    hebrew_finalnum->hebrew_finalnun) (Bug 9931: hebrew keyboard keys are missing
+    and duplicated).
+  * Added Serbian Cyrillic HW keyboard layout by Aleksandar Urosevic.
+  * Characters 'ü' and 'ö' added back to the Turkish on-screen keyboard
+    layout (Bug 10455: Missing letters on Turkish layout).
+  * Added 4th row to Vietnamese on-screen keyboard as it was in older
+    versions of ukeyboard.
+
+ -- Roman Moravcik <roman.moravcik@gmail.com>  Tue,  1 Jun 2010 15:59:09 +0200
+
 ukeyboard (2.4-1) unstable; urgency=low
 
   * Added dependency to ttf-punjabi-font required by Punjabi on-screen keyboard
