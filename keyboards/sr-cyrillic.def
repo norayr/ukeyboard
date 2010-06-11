@@ -10,7 +10,7 @@ size	0	{ width 35 height 35 textpos 26 left 0 top 0 }
 size	1	{ width 50 height 35 textpos 26 left 0 top 0 }
 size	2	{ width 55 height 35 textpos 26 left 0 top 0 }
 size	3	{ width 72 height 55 textpos 41 left 0 top 0 }
-size	4	{ width 143 height 55 textpos 41 left 0 top 0 }
+size	4	{ width 66 height 55 textpos 41 left 0 top 0 }
 }
 
 kbd_normal {
@@ -156,19 +156,20 @@ kbd_thumb {
 lowercase {
 	name "абв"
 	margin 0 0 0 0
-	default_size 3
+	default_size 4
 	row {
 	key љ alpha
 	key њ alpha tele
 	key е alpha hexa
 	key р alpha
 	key т alpha
-	key ѕ alpha
+	key з alpha
 	key у alpha
 	key и alpha
 	key о alpha
 	key п alpha tele
 	key ш alpha
+	key ђ alpha
 	}
 	row {
 	key а alpha hexa
@@ -182,37 +183,40 @@ lowercase {
 	key л alpha
 	key ч alpha
 	key ћ alpha
+	key ? special
 	}
 	row {
 	shift
-	key з alpha
+	key ѕ alpha
 	key џ alpha
 	key ц alpha hexa
 	key в alpha
 	key б alpha hexa
 	key н alpha
 	key м alpha
-	key ђ alpha
 	key ж alpha
+	key , special
+	key . special
 	backspace
 	}
 }
 uppercase {
 	name "АБВ"
 	margin 0 0 0 0
-	default_size 3
+	default_size 4
 	row {
 	key Љ alpha
 	key Њ alpha tele
 	key Е alpha hexa
 	key Р alpha
 	key Т alpha
-	key Ѕ alpha
+	key З alpha
 	key У alpha
 	key И alpha
 	key О alpha
 	key П alpha tele
 	key Ш alpha
+	key Ђ alpha
 	}
 	row {
 	key А alpha hexa
@@ -226,18 +230,20 @@ uppercase {
 	key Л alpha
 	key Ч alpha
 	key Ћ alpha
+	key ! special
 	}
 	row {
 	shift
-	key З alpha
+	key Ѕ alpha
 	key Џ alpha
 	key Ц alpha hexa
 	key В alpha
 	key Б alpha hexa
 	key Н alpha
 	key М alpha
-	key Ђ alpha
 	key Ж alpha
+	key ; special
+	key : special
 	backspace
 	}
 }
@@ -278,8 +284,8 @@ special {
 	key @ special
 	key / special
 	key \ special
-	key ? special
-	key ! special
+	key ~ alpha special dead
+	key ^ alpha special dead
 	key ( special
 	key ) special
 	backspace
