@@ -28,7 +28,7 @@
 #include "prefs.h"
 #include "hw.h"
 
-#define GETTEXT_PACKAGE "osso-applet-textinput"
+#define GETTEXT_PACKAGE "ukeyboard"
 #include <glib/gi18n-lib.h>
 
 struct layout {
@@ -238,7 +238,7 @@ static GtkWidget *start(GConfClient *client, GtkWidget *win, void **data)
 	d->combo = HILDON_TOUCH_SELECTOR(hildon_touch_selector_new_text());
 
 	button = hildon_picker_button_new(HILDON_SIZE_FINGER_HEIGHT, HILDON_BUTTON_ARRANGEMENT_VERTICAL);
-	hildon_button_set_title(HILDON_BUTTON(button), _("tein_fi_keyboard_layout"));
+	hildon_button_set_title(HILDON_BUTTON(button), _TI("tein_fi_keyboard_layout"));
 	hildon_picker_button_set_selector(HILDON_PICKER_BUTTON (button), d->combo);
 	hildon_button_set_alignment (HILDON_BUTTON (button), 0.0, 0.5, 1.0, 0.0);
 	hildon_button_set_title_alignment(HILDON_BUTTON(button), 0.0, 0.5);

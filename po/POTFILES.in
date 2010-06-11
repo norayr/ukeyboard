@@ -1,0 +1,4 @@
+# List of source files containing translatable strings.
+
+cpanel/hw.c
+cpanel/ukeyboard-postinst.c

@@ -34,12 +34,14 @@ install:	ukeyboard-prefs keyboards-scv
 	install -d $(DESTDIR)/usr/share/X11/xkb/types
 	install -m 0644 xkb/types/ukeyboard $(DESTDIR)/usr/share/X11/xkb/types/
 	$(MAKE) -C ukbdcreator DESTDIR=$(DESTDIR) install
+	$(MAKE) -C po DESTDIR=$(DESTDIR) install
 
 clean:
 	$(MAKE) -C cpanel clean
 	$(MAKE) -C keyboards clean
 	$(MAKE) -C keyboards-scv clean
 	$(MAKE) -C ukbdcreator clean
+	$(MAKE) -C po clean
 	rm -f vkb_compiler *.o core
 	rm -rf build
 

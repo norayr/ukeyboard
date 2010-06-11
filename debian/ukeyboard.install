@@ -6,5 +6,6 @@ usr/libexec/ukeyboard-set
 usr/share/X11/xkb/symbols/nokia_vndr/ukeyboard
 usr/share/X11/xkb/types/ukeyboard
 usr/share/applications/hildon-control-panel/ukeyboard-prefs.desktop
+usr/share/locale/*
 usr/share/scv_layouts/*.vkb
 usr/share/ukeyboard/*.vkb

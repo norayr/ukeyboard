@@ -21,12 +21,15 @@
 #include <gtk/gtk.h>
 #include <hildon/hildon.h>
 
+#define GETTEXT_PACKAGE "ukeyboard"
+#include <glib/gi18n-lib.h>
+
 int main(int argc, char **argv) {
     GtkWidget *dialog, *label;
 
     hildon_gtk_init (&argc, &argv);
 
-    dialog = gtk_dialog_new_with_buttons ("Installation of Ukeyboard finished",
+    dialog = gtk_dialog_new_with_buttons (_("Installation of Ukeyboard finished"),
                                            NULL,
                                            GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
                                            GTK_STOCK_OK,
@@ -35,13 +38,13 @@ int main(int argc, char **argv) {
                                            GTK_RESPONSE_REJECT,
                                            NULL);
 
-    label = gtk_label_new ( 
-"Now you can change your keyboard layout settings\n"
+    label = gtk_label_new (
+_("Now you can change your keyboard layout settings\n"
 "via 'Settings: Text Input'.\n"
 "\n"
 "Note:\n"
 "To switch input language of some hardware keyboard\n"
-"layouts press Ctrl and Space keys simultaneously.");
+"layouts press Ctrl and Space keys simultaneously."));
 
     gtk_container_add (GTK_CONTAINER (GTK_DIALOG(dialog)->vbox), label);
     gtk_widget_show_all (GTK_WIDGET (dialog));

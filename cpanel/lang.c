@@ -32,7 +32,7 @@
 #include "lang.h"
 #include "langset.h"
 
-#define GETTEXT_PACKAGE "osso-applet-textinput"
+#define GETTEXT_PACKAGE "ukeyboard"
 #include <glib/gi18n-lib.h>
 
 char *ignore_autocapitalisation[] = {"ar_AR", "fa_IR", "he_IL", "ka_GE", "km_KH", "pa_IN", "th_TH", NULL };
@@ -268,7 +268,7 @@ static void fill_langsel(HildonTouchSelector *combo, GList *langs, struct lang *
 			hildon_touch_selector_set_active(combo, 0, i);
 	}
 	if (empty) {
-		hildon_touch_selector_append_text(combo, _("tein_fi_not_in_use"));
+		hildon_touch_selector_append_text(combo, _TI("tein_fi_not_in_use"));
 		if (!deflang)
 			hildon_touch_selector_set_active(combo, 0, i);
 	}
@@ -336,15 +336,15 @@ static GtkWidget *start(GConfClient *client, GtkWidget *win, void **data)
 	vbox = gtk_vbox_new(FALSE, 0);
 
 	d->word_compl = HILDON_CHECK_BUTTON(hildon_check_button_new(HILDON_SIZE_FINGER_HEIGHT));
-	gtk_button_set_label (GTK_BUTTON (d->word_compl), _("tein_fi_settings_word_completion"));
+	gtk_button_set_label (GTK_BUTTON (d->word_compl), _TI("tein_fi_settings_word_completion"));
 	gtk_box_pack_start(GTK_BOX(vbox), GTK_WIDGET(d->word_compl), TRUE, TRUE, 0);
 
 	d->auto_cap = HILDON_CHECK_BUTTON(hildon_check_button_new(HILDON_SIZE_FINGER_HEIGHT));
-	gtk_button_set_label (GTK_BUTTON (d->auto_cap), _("tein_fi_settings_auto_capitalization"));
+	gtk_button_set_label (GTK_BUTTON (d->auto_cap), _TI("tein_fi_settings_auto_capitalization"));
 	gtk_box_pack_start(GTK_BOX(vbox), GTK_WIDGET(d->auto_cap), TRUE, TRUE, 0);
 
 	d->sp_after = HILDON_CHECK_BUTTON(hildon_check_button_new(HILDON_SIZE_FINGER_HEIGHT));
-	gtk_button_set_label (GTK_BUTTON (d->sp_after), _("tein_fi_settings_space_after_word"));
+	gtk_button_set_label (GTK_BUTTON (d->sp_after), _TI("tein_fi_settings_space_after_word"));
 	gtk_box_pack_start(GTK_BOX(vbox), GTK_WIDGET(d->sp_after), TRUE, TRUE, 0);
 
 	table = gtk_table_new(2, 2, TRUE);
@@ -361,14 +361,14 @@ static GtkWidget *start(GConfClient *client, GtkWidget *win, void **data)
 
 		button = hildon_picker_button_new(HILDON_SIZE_FINGER_HEIGHT, HILDON_BUTTON_ARRANGEMENT_VERTICAL);
 		hildon_picker_button_set_selector(HILDON_PICKER_BUTTON (button), d->langsel[i]);
-		hildon_button_set_title(HILDON_BUTTON(button), i == 0 ? _("tein_fi_primary_language") : _("tein_fi_secondary_language"));
+		hildon_button_set_title(HILDON_BUTTON(button), i == 0 ? _TI("tein_fi_primary_language") : _TI("tein_fi_secondary_language"));
 
 		/* if nothing was selected, try set selector button value text */
 		if (hildon_touch_selector_get_active(d->langsel[i], 0) < 0) {
 			if (check_ukbd_layout(code, d->langlinks))
 				hildon_button_set_value(HILDON_BUTTON(button), "UKeyboard Creator Layout");
 			else
-				hildon_button_set_value(HILDON_BUTTON(button), _("tein_fi_not_in_use"));
+				hildon_button_set_value(HILDON_BUTTON(button), _TI("tein_fi_not_in_use"));
 		}
 
 		hildon_button_set_alignment (HILDON_BUTTON (button), 0.0, 0.5, 1.0, 0.0);
@@ -388,7 +388,7 @@ static GtkWidget *start(GConfClient *client, GtkWidget *win, void **data)
 			g_free(tmp);
 
 		button = hildon_picker_button_new(HILDON_SIZE_FINGER_HEIGHT, HILDON_BUTTON_ARRANGEMENT_VERTICAL);
-		hildon_button_set_title(HILDON_BUTTON(button), _("tein_fi_settings_dictionary"));
+		hildon_button_set_title(HILDON_BUTTON(button), _TI("tein_fi_settings_dictionary"));
 		hildon_picker_button_set_selector(HILDON_PICKER_BUTTON (button), d->dictsel[i]);
 		hildon_button_set_alignment (HILDON_BUTTON (button), 0.0, 0.5, 1.0, 0.0);
 		hildon_button_set_title_alignment(HILDON_BUTTON(button), 0.0, 0.5);
@@ -417,7 +417,7 @@ static GtkWidget *start(GConfClient *client, GtkWidget *win, void **data)
 
 	d->dual = HILDON_CHECK_BUTTON(hildon_check_button_new(HILDON_SIZE_FINGER_HEIGHT));
 	hildon_check_button_set_active(d->dual, get_bool(client, "dual-dictionary"));
-	gtk_button_set_label (GTK_BUTTON (d->dual), _("tein_fi_dual_dictionary_use"));
+	gtk_button_set_label (GTK_BUTTON (d->dual), _TI("tein_fi_dual_dictionary_use"));
 	gtk_box_pack_start(GTK_BOX(vbox), GTK_WIDGET(d->dual), TRUE, TRUE, 0);
 
 	gtk_widget_show_all(vbox);

@@ -20,6 +20,7 @@
 #define _PREFS_H
 
 #define _HL(str) dgettext("hildon-libs",str)
+#define _TI(str) dgettext("osso-applet-textinput",str)
 
 #define IM_CONF_DIR "/apps/osso/inputmethod"
 

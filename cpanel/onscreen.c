@@ -30,7 +30,7 @@
 #include "prefs.h"
 #include "onscreen.h"
 
-#define GETTEXT_PACKAGE "osso-applet-textinput"
+#define GETTEXT_PACKAGE "ukeyboard"
 #include <glib/gi18n-lib.h>
 
 struct data {
@@ -49,7 +49,7 @@ static GtkWidget *start(GConfClient *client, GtkWidget *win, void **data)
 
 	d->use_finger = HILDON_CHECK_BUTTON(hildon_check_button_new(HILDON_SIZE_FINGER_HEIGHT));
 	hildon_check_button_set_active(d->use_finger, get_bool(client, "use_finger_kb"));
-	gtk_button_set_label (GTK_BUTTON (d->use_finger), _("tein_fi_use_virtual_keyboard"));
+	gtk_button_set_label (GTK_BUTTON (d->use_finger), _TI("tein_fi_use_virtual_keyboard"));
 	gtk_box_pack_start(GTK_BOX(vbox), GTK_WIDGET(d->use_finger), TRUE, TRUE, 0);
 
 	*data = d;

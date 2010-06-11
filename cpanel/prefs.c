@@ -32,7 +32,7 @@
 #include "lang.h"
 #include "about.h"
 
-#define GETTEXT_PACKAGE "osso-applet-textinput"
+#define GETTEXT_PACKAGE "ukeyboard"
 #include <glib/gi18n-lib.h>
 
 static init_func inits[] = { prefs_hw_init, prefs_onscreen_init, prefs_lang_init, prefs_about_init };
@@ -145,7 +145,7 @@ osso_return_t execute(osso_context_t *osso, gpointer data, gboolean user_activat
 	}
 	gtk_window_set_transient_for(GTK_WINDOW(dialog), GTK_WINDOW(data));
 
-	title = g_strdup_printf("%s (ukeyboard)", _("tein_ti_text_input_title"));
+	title = g_strdup_printf("%s (ukeyboard)", _TI("tein_ti_text_input_title"));
 	gtk_window_set_title(GTK_WINDOW(dialog), title);
 	g_free(title);
 

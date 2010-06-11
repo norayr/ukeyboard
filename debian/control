@@ -2,7 +2,7 @@ Source: ukeyboard
 Section: user/system
 Priority: optional
 Maintainer: Roman Moravcik <roman.moravcik@gmail.com>
-Build-Depends: debhelper (>= 4.0.0), libosso-dev, libosso-gnomevfs2-dev, libhildonfm2-dev, hildon-control-panel-dev
+Build-Depends: debhelper (>= 4.0.0), gettext, libosso-dev, libosso-gnomevfs2-dev, libhildonfm2-dev, hildon-control-panel-dev
 Standards-Version: 3.6.1
 Homepage: http://www.upir.cz/maemo/keyboards/
 Vcs-Browser: http://repo.or.cz/w/ukeyboard.git
@@ -22,7 +22,7 @@ XB-Maemo-Icon-26:
 
 Package: ukeyboard
 Architecture: any
-Depends: ${shlibs:Depends}, ttf-bpg-georgian-fonts, ttf-khmeros, ttf-punjabi-fonts
+Depends: ${shlibs:Depends}, ttf-bpg-georgian-fonts, ttf-khmeros, ttf-punjabi-fonts, hildon-libs-l10n-mr0 | hildon-libs-l10n-mr, osso-applet-textinput-l10n-mr0 | osso-applet-textinput-l10n-mr
 Suggests: thai-ttf
 Description: Additional on-screen keyboard layouts
  This package provides additional Arabic, Belorussian, Bulgarian (BDS & Phonetic),

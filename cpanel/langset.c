@@ -29,7 +29,7 @@
 #include "lang.h"
 #include "langset.h"
 
-#define GETTEXT_PACKAGE "osso-applet-textinput"
+#define GETTEXT_PACKAGE "ukeyboard"
 #include <glib/gi18n-lib.h>
 
 #define L_CONF_DIR	"/apps/osso/inputmethod/hildon-im-languages"
@@ -124,7 +124,7 @@ void fill_dict(HildonTouchSelector *combo, GList *langs, gchar *deflang)
 		i++;
 	}
 
-	hildon_touch_selector_append_text(combo, _("tein_fi_word_completion_language_empty"));
+	hildon_touch_selector_append_text(combo, _TI("tein_fi_word_completion_language_empty"));
 
 	if (!deflang || !*deflang)
 		hildon_touch_selector_set_active(combo, 0, i);
