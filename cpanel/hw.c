@@ -40,6 +40,7 @@ struct layout {
 struct data {
 	GList *layouts;
 	HildonTouchSelector *combo;
+	HildonCheckButton *key_rep;
 };
 
 typedef struct {
@@ -218,7 +219,7 @@ static GtkWidget *start(GConfClient *client, GtkWidget *win, void **data)
 	struct layout *lay;
 	unsigned i;
 
-	GtkWidget *button;
+	GtkWidget *vbox, *button;
 
 	(void)win;
 
@@ -235,6 +236,8 @@ static GtkWidget *start(GConfClient *client, GtkWidget *win, void **data)
 	d->layouts = get_layouts("/usr/share/X11/xkb/symbols/nokia_vndr/ukeyboard", "ukeyboard", d->layouts);
 	d->layouts = g_list_sort(d->layouts, layouts_compare_func);
 
+	vbox = gtk_vbox_new(FALSE, 0);
+
 	d->combo = HILDON_TOUCH_SELECTOR(hildon_touch_selector_new_text());
 
 	button = hildon_picker_button_new(HILDON_SIZE_FINGER_HEIGHT, HILDON_BUTTON_ARRANGEMENT_VERTICAL);
@@ -243,6 +246,12 @@ static GtkWidget *start(GConfClient *client, GtkWidget *win, void **data)
 	hildon_button_set_alignment (HILDON_BUTTON (button), 0.0, 0.5, 1.0, 0.0);
 	hildon_button_set_title_alignment(HILDON_BUTTON(button), 0.0, 0.5);
 	hildon_button_set_value_alignment (HILDON_BUTTON (button), 0.0, 0.5);
+	gtk_box_pack_start(GTK_BOX(vbox), GTK_WIDGET(button), TRUE, TRUE, 0);
+
+	d->key_rep = HILDON_CHECK_BUTTON(hildon_check_button_new(HILDON_SIZE_FINGER_HEIGHT));
+	gtk_button_set_label (GTK_BUTTON (d->key_rep), _("Longpress key repetition"));
+	gtk_box_pack_start(GTK_BOX(vbox), GTK_WIDGET(d->key_rep), TRUE, TRUE, 0);
+	hildon_check_button_set_active(d->key_rep, get_bool(client, "ext_kb_repeat_enabled"));
 
 	/* WORKAROUND: if int_kb_model is set to nokiarx44 on rx-51 device,
 	   then set omodel to nokiarx51. Without this workaround, no hardwere
@@ -264,9 +273,9 @@ static GtkWidget *start(GConfClient *client, GtkWidget *win, void **data)
 
 	*data = d;
 
-	gtk_widget_show(button);
+	gtk_widget_show_all(vbox);
 
-	return button;
+	return vbox;
 }
 
 static void action(GConfClient *client, void *data)
@@ -283,6 +292,7 @@ static void action(GConfClient *client, void *data)
 		if (lay) {
 			set_str(client, "int_kb_model", lay->model);
 			set_str(client, "int_kb_layout", lay->layout);
+			set_bool(client, "ext_kb_repeat_enabled", hildon_check_button_get_active(d->key_rep));
 		}
 	}
 }
