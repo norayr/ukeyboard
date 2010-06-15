@@ -1,3 +1,15 @@
+ukeyboard (2.4-3) unstable; urgency=low
+
+  * Added Catalan on-sceen keyboard layout by Toni Hermoso Pulido.
+  * Optimization of Serbian Cyrillic on-screen keyboard layout.
+  * Added gettext support to ukeyboard.
+  * Added unfinished Slovak translation.
+  * Added Catalan translation.
+  * Added a new option to control panel applet to allow hardware keys
+    repetition.
+
+ -- Roman Moravcik <roman.moravcik@gmail.com>  Tue, 15 Jun 2010 17:09:21 +0200
+
 ukeyboard (2.4-2) unstable; urgency=low
 
   * Ukbdcreator window title was not updated after layout was successfully saved.
