@@ -1,4 +1,4 @@
-linguas = sk
+linguas = ca sk
 
 all: po
 

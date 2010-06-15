@@ -1,0 +1,42 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Toni Hermoso Pulido <toniher@softcatala.cat>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-06-15 13:27+0200\n"
+"PO-Revision-Date: 2010-06-15 14:50+0200\n"
+"Last-Translator: Toni Hermoso Pulido <toniher@softcatala.cat>\n"
+"Language-Team: Softcatalà\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.6.1\n"
+
+#: ../cpanel/hw.c:252
+msgid "Longpress key repetition"
+msgstr "Repetició de tecles de pressió llarga"
+
+#: ../cpanel/ukeyboard-postinst.c:32
+msgid "Installation of Ukeyboard finished"
+msgstr "La instal·lació de l'Ukeyboard ha acabat"
+
+#: ../cpanel/ukeyboard-postinst.c:42
+msgid ""
+"Now you can change your keyboard layout settings\n"
+"via 'Settings: Text Input'.\n"
+"\n"
+"Note:\n"
+"To switch input language of some hardware keyboard\n"
+"layouts press Ctrl and Space keys simultaneously."
+msgstr ""
+"Ara ja podeu canviar la disposició del vostre teclat\n"
+"des de 'Paràmetres: Entrada de text'.\n"
+"\n"
+"Nota:\n"
+"Per canviar la llengua d'entrada d'algunes disposicions de teclats\n"
+"físics premeu les tecles Control i Espai simultàniament."
