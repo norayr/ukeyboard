@@ -3,6 +3,7 @@ layouts = \
 	be-by.vkb \
 	bg-bds.vkb \
 	bg-phonetic.vkb \
+	ca.vkb \
 	cz-qwerty.vkb cz-qwertz.vkb\
 	de-neo2.vkb de-qwerty.vkb de-qwertz.vkb\
 	en-dvorak.vkb \
