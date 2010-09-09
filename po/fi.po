@@ -1,0 +1,41 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Marko Vertainen <marko.vertainen@iki.fi>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: ukeyboard\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-06-11 14:21+0200\n"
+"PO-Revision-Date: 2010-08-24 11:18+0200\n"
+"Last-Translator: Marko Vertainen <marko.vertainen@iki.fi>\n"
+"Language-Team: fi_FI <>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../cpanel/hw.c:252
+msgid "Longpress key repetition"
+msgstr "Pitkän painnalluksen toisto"
+
+#: ../cpanel/ukeyboard-postinst.c:29
+msgid "Installation of Ukeyboard finished"
+msgstr "Ukeyboardin asennus valmis"
+
+#: ../cpanel/ukeyboard-postinst.c:39
+msgid ""
+"Now you can change your keyboard layout settings\n"
+"via 'Settings: Text Input'.\n"
+"\n"
+"Note:\n"
+"To switch input language of some hardware keyboard\n"
+"layouts press Ctrl and Space keys simultaneously."
+msgstr ""
+"Nyt voit vaihtaa näppäimistön asettelun valitsemalla\n"
+"'Asetukset': Tekstinsyöttö'.\n"
+"\n"
+"Huomioi:\n"
+"Vaihtaaksesi kiinteän näppäimistön asettelun\n"
+"paina Ctrl ja Välilyönti -näppäimiä yhtäaikaisesti."
+
