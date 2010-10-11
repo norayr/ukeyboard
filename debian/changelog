@@ -1,3 +1,14 @@
+ukeyboard (2.4-4) unstable; urgency=low
+
+  * Added Armenian keyboard layouts by Norayr Chilingarian.
+  * Added Georgian QWERTY on-screen keyboard layout requested by LexoNokiaN.
+  * Added Ukrainian on-screen keyboard and HW keyboard layouts by Tatrick.
+  * Added missing ":" symbol to Hebrew phonetic HW keyboard layout
+    (Thanks to Zeev Pekar).
+  * Added Finnish translation by Marko Vertainen.
+
+ -- Roman Moravcik <roman.moravcik@gmail.com>  Mon, 11 Oct 2010 09:41:25 +0200
+
 ukeyboard (2.4-3) unstable; urgency=low
 
   * Added Catalan on-sceen keyboard layout by Toni Hermoso Pulido.
