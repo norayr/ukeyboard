@@ -11,7 +11,8 @@ layouts = \
 	  lv.vkb \
 	  ru_phonetic.vkb \
 	  sk.vkb sk_qwerty.vkb \
-	  sr_cyrillic.vkb
+	  sr_cyrillic.vkb \
+	  ua.vkb
 
 all: $(layouts)
 

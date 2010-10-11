@@ -75,6 +75,8 @@ static layouts layout_names[] = {
     {"ge",		"Georgian"},
     {"lv",		"Latviešu"},
     {"sr_cyrillic",	"Srpski - Cyrillic"},
+    {"ua",		"Український"},
+    {"ua_phonetic",	"Український - Phonetic"},
     {NULL,		NULL}
 };
 

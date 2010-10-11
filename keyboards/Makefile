@@ -24,6 +24,7 @@ layouts = \
 	sr-cyrillic.vkb sr-latin-qwertz.vkb \
 	th-kedmanee.vkb \
 	tr-qwerty.vkb \
+	uk-phonetic.vkb uk-windows.vkb \
 	vi-qwerty.vkb
 
 all: $(layouts)

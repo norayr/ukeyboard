@@ -679,3 +679,170 @@ xkb_symbols "sr_cyrillic" {
     key <DOWN>	{ symbols[Group2] = [	Serbian_tshe,		Serbian_TSHE,		Down,			Down			] };
     key <RGHT>	{ symbols[Group2] = [	Cyrillic_zhe,		Cyrillic_ZHE,		Right,			Right			] };
 };
+
+// author: Roman Moravcik
+// author: Tarick
+partial alphanumeric_keys
+xkb_symbols "ua_phonetic" {
+    include "nokia_vndr/rx-51(english_base)"
+    include "nokia_vndr/rx-51(arrows_2btns)"
+
+    name[Group1] = "Ukrainian - Phonetic";
+    name[Group2] = "U.S. English";
+
+    key <SPCE>	{ type[Group1] = "PC_FN_LEVEL2_BREAK", [ space, at, ISO_Prev_Group, at ] };
+
+    key.type[Group2] = "FOUR_LEVEL_SEMIALPHABETIC";
+
+    // 1. row
+    key <AD01>	{ symbols[Group1] = [	Cyrillic_ya,		Cyrillic_YA,		1,			1			] };
+    key <AD02>	{ symbols[Group1] = [	Cyrillic_ve,		Cyrillic_VE,		2,			2			] };
+    key <AD03>	{ symbols[Group1] = [	Cyrillic_ie,		Cyrillic_IE,		3,			3			] };
+    key <AD04>	{ symbols[Group1] = [	Cyrillic_er,		Cyrillic_ER,		4,			4			] };
+    key <AD05>	{ symbols[Group1] = [	Cyrillic_te,		Cyrillic_TE,		5,			5			] };
+    key <AD06>	{ symbols[Group1] = [	Cyrillic_i,		Cyrillic_I,		6,			6			] };
+    key <AD07>	{ symbols[Group1] = [	Cyrillic_u,		Cyrillic_U,		7,			7			] };
+    key <AD08>	{ symbols[Group1] = [	Ukrainian_i,		Ukrainian_I,		8,			8			] };
+    key <AD09>	{ symbols[Group1] = [	Cyrillic_o,		Cyrillic_O,		9,			9			] };
+    key <AD10>	{ symbols[Group1] = [	Cyrillic_pe,		Cyrillic_PE,		0,			0			] };
+    key <AB08>  { symbols[Group1] = [	Cyrillic_sha,		Cyrillic_SHA,		Cyrillic_shcha,		Cyrillic_SHCHA		] };
+
+    key <AD01>	{ symbols[Group2] = [	q,			Q,			1,			1			] };
+    key <AD02>	{ symbols[Group2] = [	w,			W,			2,			2			] };
+    key <AD03>	{ symbols[Group2] = [	e,			E,			3,			3			] };
+    key <AD04>	{ symbols[Group2] = [	r,			R,			4,			4			] };
+    key <AD05>	{ symbols[Group2] = [	t,			T,			5,			5			] };
+    key <AD06>	{ symbols[Group2] = [	y,			Y,			6,			6			] };
+    key <AD07>	{ symbols[Group2] = [	u,			U,			7,			7			] };
+    key <AD08>	{ symbols[Group2] = [	i,			I,			8,			8			] };
+    key <AD09>	{ symbols[Group2] = [	o,			O,			9,			9			] };
+    key <AD10>	{ symbols[Group2] = [	p,			P,			0,			0			] };
+    key <AB08>  { symbols[Group2] = [	Cyrillic_sha,		Cyrillic_SHA,		Cyrillic_shcha,		Cyrillic_SHCHA		] };
+
+    // 2. row
+    key <AC01>	{ symbols[Group1] = [	Cyrillic_a,		Cyrillic_A,		asterisk,		asterisk		] };
+    key <AC02>	{ symbols[Group1] = [	Cyrillic_es,		Cyrillic_ES,		plus,			plus			] };
+    key <AC03>	{ symbols[Group1] = [	Cyrillic_de,		Cyrillic_DE,		numbersign,		numbersign		] };
+    key <AC04>	{ symbols[Group1] = [	Cyrillic_ef,		Cyrillic_EF,		minus,			minus			] };
+    key <AC05>	{ symbols[Group1] = [	Cyrillic_ghe,		Cyrillic_GHE,		underscore,		underscore		] };
+    key <AC06>	{ symbols[Group1] = [	Cyrillic_ha,		Cyrillic_HA,		exclam,			exclam			] };
+    key <AC07>	{ symbols[Group1] = [	Cyrillic_shorti,	Cyrillic_SHORTI,	question,		question		] };
+    key <AC08>	{ symbols[Group1] = [	Cyrillic_ka,		Cyrillic_KA,		semicolon,		semicolon		] };
+    key <AC09>	{ symbols[Group1] = [	Cyrillic_el,		Cyrillic_EL,		colon,			colon			] };
+    key <AB09>	{ symbols[Group1] = [	Cyrillic_yu,		Cyrillic_YU,		comma,			comma			] };
+    key <UP>	{ symbols[Group1] = [	Ukrainin_ie,		Ukrainian_IE,		period,			period			] };
+
+    key <AC01>	{ symbols[Group2] = [	a,			A,			asterisk,		asterisk		] };
+    key <AC02>	{ symbols[Group2] = [	s,			S,			plus,			plus			] };
+    key <AC03>	{ symbols[Group2] = [	d,			D,			numbersign,		numbersign		] };
+    key <AC04>	{ symbols[Group2] = [	f,			F,			minus,			minus			] };
+    key <AC05>	{ symbols[Group2] = [	g,			G,			underscore,		underscore		] };
+    key <AC06>	{ symbols[Group2] = [	h,			H,			exclam,			exclam			] };
+    key <AC07>	{ symbols[Group2] = [	j,			J,			question,		question		] };
+    key <AC08>	{ symbols[Group2] = [	k,			K,			semicolon,		semicolon		] };
+    key <AC09>	{ symbols[Group2] = [	l,			L,			colon,			colon			] };
+    key <AB09>	{ symbols[Group2] = [	comma,			comma,			comma,			comma			] };
+    key <UP>	{ symbols[Group2] = [	period,			period,			period,			period			] };
+
+    // 3. row
+    key <AB01>	{ symbols[Group1] = [	Cyrillic_ze,		Cyrillic_ZE,		dollar,			dollar			] };
+    key <AB02>	{ symbols[Group1] = [	Cyrillic_softsign,	Cyrillic_SOFTSIGN,	EuroSign,		EuroSign		] };
+    key <AB03>	{ symbols[Group1] = [	Cyrillic_tse,		Cyrillic_TSE,		slash,			slash			] };
+    key <AB04>	{ symbols[Group1] = [	Cyrillic_zhe,		Cyrillic_ZHE,		parenleft,		parenleft		] };
+    key <AB05>	{ symbols[Group1] = [	Cyrillic_be,		Cyrillic_BE,		parenright,		parenright		] };
+    key <AB06>	{ symbols[Group1] = [	Cyrillic_en,		Cyrillic_EN,		quotedbl,		quotedbl		] };
+    key <AB07>	{ symbols[Group1] = [	Cyrillic_em,		Cyrillic_EM,		apostrophe,		apostrophe		] };
+    key <LEFT>	{ symbols[Group1] = [	Cyrillic_che,		Cyrillic_CHE,		Ukrainian_yi,		Ukrainian_YI		] };
+
+    key <AB01>	{ symbols[Group2] = [	z,			Z,			dollar,			dollar			] };
+    key <AB02>	{ symbols[Group2] = [	x,			X,			EuroSign,		EuroSign		] };
+    key <AB03>	{ symbols[Group2] = [	c,			C,			slash,			slash			] };
+    key <AB04>	{ symbols[Group2] = [	v,			V,			parenleft,		parenleft		] };
+    key <AB05>	{ symbols[Group2] = [	b,			B,			parenright,		parenright		] };
+    key <AB06>	{ symbols[Group2] = [	n,			N,			quotedbl,		quotedbl		] };
+    key <AB07>	{ symbols[Group2] = [	m,			M,			apostrophe,		apostrophe		] };
+    key <LEFT>	{ symbols[Group2] = [	Cyrillic_che,		Cyrillic_CHE,		Ukrainian_yi,		Ukrainian_YI		] };
+};
+
+// author: Roman Moravcik
+// author: Tarick
+partial alphanumeric_keys
+xkb_symbols "ua" {
+    include "nokia_vndr/rx-51(english_base)"
+    include "nokia_vndr/rx-51(arrows_2btns)"
+
+    name[Group1] = "Ukrainian";
+    name[Group2] = "U.S. English";
+
+    key <SPCE>	{ type[Group1] = "PC_FN_LEVEL2_BREAK", [ space, at, ISO_Prev_Group, at ] };
+    key.type[Group2] = "FOUR_LEVEL_SEMIALPHABETIC";
+
+     // 1. row
+    key <AD01>	{ symbols[Group1] = [	Cyrillic_shorti,	Cyrillic_SHORTI,	1,			1			] };
+    key <AD02>	{ symbols[Group1] = [	Cyrillic_tse,		Cyrillic_TSE,		2,			2			] };
+    key <AD03>	{ symbols[Group1] = [	Cyrillic_u,		Cyrillic_U,		3,			3			] };
+    key <AD04>	{ symbols[Group1] = [	Cyrillic_ka,		Cyrillic_KA,		4,			4			] };
+    key <AD05>	{ symbols[Group1] = [	Cyrillic_ie,		Cyrillic_IE,		5,			5			] };
+    key <AD06>	{ symbols[Group1] = [	Cyrillic_en,		Cyrillic_EN,		6,			6			] };
+    key <AD07>	{ symbols[Group1] = [	Cyrillic_ghe,		Cyrillic_GHE,		7,			7			] };
+    key <AD08>	{ symbols[Group1] = [	Cyrillic_sha,		Cyrillic_SHA,		8,			8			] };
+    key <AD09>	{ symbols[Group1] = [	Cyrillic_shcha,		Cyrillic_SHCHA,		9,			9			] };
+    key <AD10>	{ symbols[Group1] = [	Cyrillic_ze,		Cyrillic_ZE,		0,			0			] };
+    key <AB08>	{ symbols[Group1] = [	Cyrillic_ha,		Cyrillic_HA,		Ukrainian_yi,		Ukrainian_YI		] };
+
+    key <AD01>	{ symbols[Group2] = [	q,			Q,			1,			1			] };
+    key <AD02>	{ symbols[Group2] = [	w,			W,			2,			2			] };
+    key <AD03>	{ symbols[Group2] = [	e,			E,			3,			3			] };
+    key <AD04>	{ symbols[Group2] = [	r,			R,			4,			4			] };
+    key <AD05>	{ symbols[Group2] = [	t,			T,			5,			5			] };
+    key <AD06>	{ symbols[Group2] = [	y,			Y,			6,			6			] };
+    key <AD07>	{ symbols[Group2] = [	u,			U,			7,			7			] };
+    key <AD08>	{ symbols[Group2] = [	i,			I,			8,			8			] };
+    key <AD09>	{ symbols[Group2] = [	o,			O,			9,			9			] };
+    key <AD10>	{ symbols[Group2] = [	p,			P,			0,			0			] };
+    key <AB08>	{ symbols[Group2] = [	Cyrillic_ha,		Cyrillic_HA,		Ukrainian_yi,		Ukrainian_YI		] };
+
+    // 2. row
+    key <AC01>	{ symbols[Group1] = [	Cyrillic_ef,		Cyrillic_EF,		asterisk,		asterisk		] };
+    key <AC02>	{ symbols[Group1] = [	Ukrainian_i,		Ukrainian_I,		plus,			plus			] };
+    key <AC03>	{ symbols[Group1] = [	Cyrillic_ve,		Cyrillic_VE,		numbersign,		numbersign		] };
+    key <AC04>	{ symbols[Group1] = [	Cyrillic_a,		Cyrillic_A,		minus,			minus			] };
+    key <AC05>	{ symbols[Group1] = [	Cyrillic_pe,		Cyrillic_PE,		underscore,		underscore		] };
+    key <AC06>	{ symbols[Group1] = [	Cyrillic_er,		Cyrillic_ER,		exclam,			exclam			] };
+    key <AC07>	{ symbols[Group1] = [	Cyrillic_o,		Cyrillic_O,		question,		question		] };
+    key <AC08>	{ symbols[Group1] = [	Cyrillic_el,		Cyrillic_EL,		semicolon,		semicolon		] };
+    key <AC09>	{ symbols[Group1] = [	Cyrillic_de,		Cyrillic_DE,		colon,			colon			] };
+    key <AB09>	{ symbols[Group1] = [	Cyrillic_zhe,		Cyrillic_ZHE,		comma,			comma			] };
+    key <UP>	{ symbols[Group1] = [	Ukrainian_ie,		Ukrainian_IE,		period,			period			] };
+
+    key <AC01>	{ symbols[Group2] = [	a,			A,			asterisk,		asterisk		] };
+    key <AC02>	{ symbols[Group2] = [	s,			S,			plus,			plus			] };
+    key <AC03>	{ symbols[Group2] = [	d,			D,			numbersign,		numbersign		] };
+    key <AC04>	{ symbols[Group2] = [	f,			F,			minus,			minus			] };
+    key <AC05>	{ symbols[Group2] = [	g,			G,			underscore,		underscore		] };
+    key <AC06>	{ symbols[Group2] = [	h,			H,			exclam,			exclam			] };
+    key <AC07>	{ symbols[Group2] = [	j,			J,			question,		question		] };
+    key <AC08>	{ symbols[Group2] = [	k,			K,			semicolon,		semicolon		] };
+    key <AC09>	{ symbols[Group2] = [	l,			L,			colon,			colon			] };
+    key <AB09>	{ symbols[Group2] = [	comma,			comma,			comma,			comma			] };
+    key <UP>	{ symbols[Group2] = [	period,			period,			period,			period			] };
+
+    // 3. row
+    key <AB01>	{ symbols[Group1] = [	Cyrillic_ya,		Cyrillic_YA,		dollar,			dollar			] };
+    key <AB02>	{ symbols[Group1] = [	Cyrillic_che,		Cyrillic_CHE,		EuroSign,		EuroSign		] };
+    key <AB03>	{ symbols[Group1] = [	Cyrillic_es,		Cyrillic_ES,		slash,			slash			] };
+    key <AB04>	{ symbols[Group1] = [	Cyrillic_em,		Cyrillic_EM,		parenleft,		parenleft		] };
+    key <AB05>	{ symbols[Group1] = [	Cyrillic_i,		Cyrillic_I,		parenright,		parenright		] };
+    key <AB06>	{ symbols[Group1] = [	Cyrillic_te,		Cyrillic_TE,		quotedbl,		quotedbl		] };
+    key <AB07>	{ symbols[Group1] = [	Cyrillic_softsign,	Cyrillic_SOFTSIGN,	apostrophe,		apostrophe		] };
+    key <LEFT>	{ symbols[Group1] = [	Cyrillic_be,		Cyrillic_BE,		Cyrillic_yu,		Cyrillic_YU		] };
+
+    key <AB01>	{ symbols[Group2] = [	z,			Z,			dollar,			dollar			] };
+    key <AB02>	{ symbols[Group2] = [	x,			X,			EuroSign,		EuroSign		] };
+    key <AB03>	{ symbols[Group2] = [	c,			C,			slash,			slash			] };
+    key <AB04>	{ symbols[Group2] = [	v,			V,			parenleft,		parenleft		] };
+    key <AB05>	{ symbols[Group2] = [	b,			B,			parenright,		parenright		] };
+    key <AB06>	{ symbols[Group2] = [	n,			N,			quotedbl,		quotedbl		] };
+    key <AB07>	{ symbols[Group2] = [	m,			M,			apostrophe,		apostrophe		] };
+    key <LEFT>	{ symbols[Group2] = [	Cyrillic_be,		Cyrillic_BE,		Cyrillic_yu,		Cyrillic_YU		] };
+};
