@@ -471,7 +471,7 @@ xkb_symbols "he_phonetic" {
     key <AC07>	{ symbols[Group2] = [	hebrew_yod,		hebrew_yod,		parenright,		parenright		] };
     key <AC08>	{ symbols[Group2] = [	hebrew_kaph,		hebrew_finalkaph,	ampersand,		ampersand		] };
     key <AC09>	{ symbols[Group2] = [	hebrew_lamed,		hebrew_lamed,		exclam,			exclam			] };
-    key <AB09>	{ symbols[Group2] = [	period,			comma,			question,		question		] };
+    key <AB09>	{ symbols[Group2] = [	period,			colon,			question,		question		] };
 
     // 3. row
     key <AB01>	{ symbols[Group2] = [	hebrew_zain,		hebrew_zain,		sterling,       	sterling		] };
