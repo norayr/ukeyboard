@@ -27,13 +27,14 @@ Suggests: thai-ttf
 Description: Additional on-screen keyboard layouts
  This package provides additional Arabic, Belorussian, Bulgarian (BDS & Phonetic),
  Catalan, Croatian (QWERTY & QWERTZ), Czech (QWERTY), English (Dvorak), Esperanto
- (QWERTY), German (QWERTY & Neo2) Georgian, Hebrew (Basic & Phonetic), Hungarian
- (QWERTY & QWERTZ), Icelandic, Khmer, Latvian, Macedonian, Persian, Punjabi, Russian
- (Phonetic), Serbian (Cyrillic & Latin), Slovak (QWERTY & QWERTZ), Slovenian
- (QWERTY & QWERTZ), Thai, Turkish and Vietnamese on-screen keyboard layouts and
- Arabic, Bulgarian (Phonetic), Czech (QWERTY), Dvorak, Greek, Georgian, Hebrew
- (Basic & Phonetic), Latvian, Macedonian, Persian, Russian (Phonetic) and Slovak
- (QWERTY & QWERTZ) hardware keyboard layouts.
+ (QWERTY), German (QWERTY & Neo2), Georgian (QWERTY), Hebrew (Basic & Phonetic),
+ Hungarian (QWERTY & QWERTZ), Icelandic, Khmer, Latvian, Macedonian, Persian, Punjabi,
+ Russian (Phonetic), Serbian (Cyrillic & Latin), Slovak (QWERTY & QWERTZ), Slovenian
+ (QWERTY & QWERTZ), Thai, Turkish and Vietnamese, Ukrainian (Basic & Phonetic)
+ on-screen keyboard layouts and Arabic, Bulgarian (Phonetic), Czech (QWERTY), Dvorak,
+ Greek, Georgian, Hebrew (Basic & Phonetic), Latvian, Macedonian, Persian, Russian
+ (Phonetic) and Slovak (QWERTY & QWERTZ), Ukrainian (Basic & Phonetic) hardware
+ keyboard layouts.
 
 Package: ukbdcreator
 Architecture: any
