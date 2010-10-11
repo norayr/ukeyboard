@@ -181,7 +181,7 @@ lowercase {
 	key պ alpha
 	key խ alpha
 	key ծ alpha
-        key ﬓ alpha
+#	key ﬓ alpha
 	}
 	row {
 	key ա alpha
@@ -193,12 +193,13 @@ lowercase {
 	key յ alpha
 	key կ alpha
 	key լ alpha
-        key ։  alpha
+	key ։ alpha
 	key ՛ alpha
 	key ՝ alpha
-        key ﬖ alpha
+#	key ﬖ alpha
 	}
 	row {
+	shift
 	key զ alpha
 	key ղ alpha
 	key ց alpha
@@ -206,12 +207,11 @@ lowercase {
 	key բ alpha
 	key ն alpha
 	key մ alpha
-	key , alpha
-	key . alpha
 	key ՞  alpha
-        key ՜  alpha
-        key ﬔ alpha
-        key ﬕ alpha
+	key ՜  alpha
+#	key ﬔ alpha
+#	key ﬕ alpha
+	backspace
 	}
 }
 uppercase {
@@ -242,11 +242,12 @@ uppercase {
 	key Յ alpha
 	key Կ alpha
 	key Լ alpha
-        key ;  alpha
+	key ; alpha
 	key ՚ alpha
 	key ՙ alpha
 	}
 	row {
+	shift
 	key Զ alpha
 	key Ղ alpha
 	key Ց alpha
@@ -254,11 +255,103 @@ uppercase {
 	key Բ alpha
 	key Ն alpha
 	key Մ alpha
-	key « alpha
-	key » alpha
-	key ՞  alpha
-        key ՟  alpha
+	key ՞ alpha
+	key ՟ alpha
+	backspace
 	}
 }
-
+special {
+	name "1#+"
+	margin 0 0 0 0
+	default_size 2
+	row {
+	key 1 num tele
+	key 2 num tele
+	key 3 num tele
+	key 4 num tele
+	key 5 num tele
+	key 6 num tele
+	key 7 num tele
+	key 8 num tele
+	key 9 num tele
+	key 0 num tele
+	key = special
+	key ? special
+	}
+	row {
+	key + special tele
+	key - special num
+	key _ special
+	key # special tele
+	key * special tele
+	key % special
+	key € special
+	key £ special
+	key $ special
+	key ¥ special
+	key ¢ special
+	key ¤ special
+	}
+	row {
+	shift
+	key , special
+	key . special
+	key @ special
+	key / special
+	key \ special
+	key ~ alpha special dead
+	key ^ alpha special dead
+	key ( special
+	key ) special
+	key ! special
+	backspace
+	}
+}
+special {
+	name "*§¿"
+	margin 0 0 0 0
+	default_size 2
+	row {
+	key ´ alpha special dead
+	key ` alpha special dead
+	key ¨ alpha special dead
+	key ^ alpha special dead
+	key ~ alpha special dead
+	key ' special
+	key " special
+	key „ special
+	key “ special
+	key ” special
+	key ° special
+	key & special
+	}
+	row {
+	key ± special
+	key § special
+	key ½ special
+	key ¹ special
+	key ² special
+	key ³ special
+	key < special
+	key > special
+	key « special
+	key » special
+	key | special
+	key © special
+	}
+	row {
+	shift
+	key ; special
+	key : special
+	key • special
+	key [ special
+	key ] special
+	key { special
+	key } special
+	key ç alpha
+	key ¡ special
+	key ¿ special
+	backspace
+	}
+}
 }
