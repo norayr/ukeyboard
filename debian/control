@@ -22,19 +22,19 @@ XB-Maemo-Icon-26:
 
 Package: ukeyboard
 Architecture: any
-Depends: ${shlibs:Depends}, ttf-bpg-georgian-fonts, ttf-khmeros, ttf-punjabi-fonts, hildon-libs-l10n-mr0 | hildon-libs-l10n-mr, osso-applet-textinput-l10n-mr0 | osso-applet-textinput-l10n-mr
+Depends: ${shlibs:Depends}, ttf-bpg-georgian-fonts, ttf-khmeros, ttf-punjabi-fonts, ttf-armenian, hildon-libs-l10n-mr0 | hildon-libs-l10n-mr, osso-applet-textinput-l10n-mr0 | osso-applet-textinput-l10n-mr
 Suggests: thai-ttf
 Description: Additional on-screen keyboard layouts
- This package provides additional Arabic, Belorussian, Bulgarian (BDS & Phonetic),
- Catalan, Croatian (QWERTY & QWERTZ), Czech (QWERTY), English (Dvorak), Esperanto
- (QWERTY), German (QWERTY & Neo2), Georgian (QWERTY), Hebrew (Basic & Phonetic),
- Hungarian (QWERTY & QWERTZ), Icelandic, Khmer, Latvian, Macedonian, Persian, Punjabi,
- Russian (Phonetic), Serbian (Cyrillic & Latin), Slovak (QWERTY & QWERTZ), Slovenian
- (QWERTY & QWERTZ), Thai, Turkish and Vietnamese, Ukrainian (Basic & Phonetic)
- on-screen keyboard layouts and Arabic, Bulgarian (Phonetic), Czech (QWERTY), Dvorak,
- Greek, Georgian, Hebrew (Basic & Phonetic), Latvian, Macedonian, Persian, Russian
- (Phonetic) and Slovak (QWERTY & QWERTZ), Ukrainian (Basic & Phonetic) hardware
- keyboard layouts.
+ This package provides additional Arabic, Armenian (Phonetic & Typewriter), Belorussian,
+ Bulgarian (BDS & Phonetic), Catalan, Croatian (QWERTY & QWERTZ), Czech (QWERTY),
+ English (Dvorak), Esperanto (QWERTY), German (QWERTY & Neo2), Georgian (QWERTY),
+ Hebrew (Basic & Phonetic), Hungarian (QWERTY & QWERTZ), Icelandic, Khmer, Latvian,
+ Macedonian, Persian, Punjabi, Russian (Phonetic), Serbian (Cyrillic & Latin),
+ Slovak (QWERTY & QWERTZ), Slovenian (QWERTY & QWERTZ), Thai, Turkish and Vietnamese,
+ Ukrainian (Basic & Phonetic) on-screen keyboard layouts and Arabic, Bulgarian (Phonetic),
+ Czech (QWERTY), Dvorak, Greek, Georgian, Hebrew (Basic & Phonetic), Latvian, Macedonian,
+ Persian, Russian (Phonetic) and Slovak (QWERTY & QWERTZ), Ukrainian (Basic & Phonetic)
+ hardware keyboard layouts.
 
 Package: ukbdcreator
 Architecture: any

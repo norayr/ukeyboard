@@ -1,0 +1,240 @@
+# title: Armenian typewriter layout
+# author: Norayr Chilingaryan <norayr@arnet.am>
+
+header {
+name	"Հայերեն (Armenia) - Typewriter"
+lang	"hy_AM"
+wc	"hy_AM"
+
+size	0	{ width 35 height 35 textpos 26 left 0 top 0 }
+size	1	{ width 35 height 35 textpos 26 left 0 top 0 }
+size	2	{ width 66 height 55 textpos 41 left 0 top 0 }
+size	3	{ width 131 height 55 textpos 41 left 0 top 0 }
+#size	4	{ width 143 height 55 textpos 41 left 0 top 0 }
+}
+
+kbd_normal {
+lowercase {
+	margin 0 0 0 0
+	default_size 1
+	row {
+	key ճ alpha
+	key փ alpha
+	key բ alpha
+	key ս alpha
+	key մ alpha
+	key ո alpha
+	key ւ alpha
+	key կ alpha
+	key ը alpha
+	key թ alpha
+	key ծ alpha
+	key ց alpha
+        key » alpha
+	}
+	row {
+	key ջ alpha
+	key վ alpha
+	key գ alpha
+	key ֆ alpha
+	key ե alpha
+	key ա alpha
+	key ն alpha
+	key ի alpha
+	key տ alpha
+        key հ  alpha
+	key պ alpha
+	key ր alpha
+        key ﬓ alpha
+	}
+	row {
+	key ժ alpha
+	key դ alpha
+	key չ alpha
+	key յ alpha
+	key զ alpha
+	key լ alpha
+	key ք alpha
+	key խ alpha
+	key շ alpha
+	key ռ  alpha
+        key ﬔ alpha
+        key ﬕ alpha
+        key ﬖ alpha
+	}
+}
+
+lowercase_num {
+	margin 0 0 0 9
+	default_size 0
+	row {
+	key ՝ alpha
+	key ֆ alpha
+	key ձ alpha
+	}
+	row {
+	key ֊ alpha
+	key , alpha
+	key ։ alpha
+	}
+	row {
+	key ՞ alpha
+	key և alpha
+	key ՛ alpha
+	}
+	row {
+        key օ alpha
+	key է alpha
+	key ղ alpha
+	}
+}
+
+
+uppercase {
+	margin 0 0 0 0
+	default_size 1
+	row {
+	key Ճ alpha
+	key Փ alpha
+	key Բ alpha
+	key Ս alpha
+	key Մ alpha
+	key Ո alpha
+	key Ւ alpha
+	key Կ alpha
+	key Ը alpha
+	key Թ alpha
+	key Ծ alpha
+	key Ց alpha
+        key « alpha
+	}
+	row {
+	key Ջ alpha
+	key Վ alpha
+	key Գ alpha
+	key Ֆ alpha
+	key Ե alpha
+	key Ա alpha
+	key Ն alpha
+	key Ի alpha
+	key Տ alpha
+        key Հ  alpha
+	key Պ alpha
+	key Ր alpha
+
+	}
+	row {
+	key Ժ alpha
+	key Դ alpha
+	key Չ alpha
+	key Յ alpha
+	key Զ alpha
+	key Լ alpha
+	key Ք alpha
+	key Խ alpha
+	key Շ alpha
+	key Ռ  alpha
+        key (   alpha
+        key ) alpha
+        key ֊ alpha
+	}
+}
+
+uppercase_num {
+	margin 0 0 0 9
+	default_size 0
+	row {
+	key ՜ alpha
+	key Ֆ alpha
+	key Ձ alpha
+	}
+	row {
+	key ՟ alpha
+	key ․ alpha
+	key ; alpha
+	}
+	row {
+	key ՙ alpha
+	key և alpha
+	key ՚ alpha
+	}
+	row {
+        key Օ alpha
+	key Է alpha
+	key Ղ alpha
+	}
+}
+}
+kbd_thumb {
+lowercase {
+	name "աբգ"
+	margin 0 0 0 0
+	default_size 2
+	row {
+	key ճ alpha
+	key փ alpha
+	key բ alpha
+	key ս alpha
+	key մ alpha
+	key ո alpha
+	key ւ alpha
+	key կ alpha
+	key ը alpha
+	key թ alpha
+	key ծ alpha
+	key ց alpha
+        key » alpha
+	}
+	row {
+	key ջ alpha
+	key վ alpha
+	key գ alpha
+	key ֆ alpha
+	key ե alpha
+	key ա alpha
+	key ն alpha
+	key ի alpha
+	key տ alpha
+        key հ  alpha
+	key պ alpha
+	key ր alpha
+	}
+	row {
+	key ժ alpha
+	key դ alpha
+	key չ alpha
+	key յ alpha
+	key զ alpha
+	key լ alpha
+	key ք alpha
+	key խ alpha
+	key շ alpha
+	key ռ  alpha
+	}
+}
+uppercase {
+	name "ԱԲԳ"
+	margin 0 0 0 0
+	default_size 2
+	row {
+	key ՜ alpha
+	key Ֆ alpha
+	key Ձ alpha
+	}
+	row {
+	key ՟ alpha
+	key ․ alpha
+	key ; alpha
+	}
+	row {
+	key ՙ alpha
+	key և alpha
+	key ՚ alpha
+	}
+	row {
+        key Օ alpha
+	key Է alpha
+	key Ղ alpha
+	}
+}
+}
