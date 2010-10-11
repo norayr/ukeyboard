@@ -12,7 +12,6 @@ layouts = \
 	he-phonetic.vkb he-qwerty.vkb \
 	hr-qwerty.vkb hr-qwertz.vkb \
 	hu-qwerty.vkb hu-qwertz.vkb \
-	hy-phonetic.vkb hy-typewriter.vkb \
 	is-qwerty.vkb \
 	ka-qwerty.vkb ka.vkb \
 	km.vkb \
