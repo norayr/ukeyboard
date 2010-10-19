@@ -169,6 +169,20 @@ lowercase {
 	margin 0 0 0 0
 	default_size 2
 	row {
+	key է alpha
+	key թ alpha
+	key փ alpha
+	key ձ alpha
+	key ջ alpha
+	key ւ alpha
+	key և alpha
+	key ռ alpha
+	key չ alpha
+	key ճ alpha
+	key ժ alpha
+	key շ alpha
+	}
+	row {
 	key ք alpha
 	key ո alpha
 	key ե alpha
@@ -181,7 +195,6 @@ lowercase {
 	key պ alpha
 	key խ alpha
 	key ծ alpha
-#	key ﬓ alpha
 	}
 	row {
 	key ա alpha
@@ -193,10 +206,9 @@ lowercase {
 	key յ alpha
 	key կ alpha
 	key լ alpha
-	key ։ alpha
-	key ՛ alpha
-	key ՝ alpha
-#	key ﬖ alpha
+	key ; special
+	key ՛ special
+	key ? special
 	}
 	row {
 	shift
@@ -207,10 +219,9 @@ lowercase {
 	key բ alpha
 	key ն alpha
 	key մ alpha
-	key ՞  alpha
-	key ՜  alpha
-#	key ﬔ alpha
-#	key ﬕ alpha
+	key , special
+	key . special
+	key / special
 	backspace
 	}
 }
@@ -218,6 +229,20 @@ uppercase {
 	name "ԱԲԳ"
 	margin 0 0 0 0
 	default_size 2
+	row {
+	key Է alpha
+	key Թ alpha
+	key Փ alpha
+	key Ձ alpha
+	key Ջ alpha
+	key Ւ alpha
+	key և alpha
+	key Ռ alpha
+	key Չ alpha
+	key Ճ alpha
+	key Ժ alpha
+	key Շ alpha
+	}
 	row {
 	key Ք alpha
 	key Ո alpha
@@ -242,9 +267,9 @@ uppercase {
 	key Յ alpha
 	key Կ alpha
 	key Լ alpha
-	key ; alpha
-	key ՚ alpha
-	key ՙ alpha
+	key ։ special
+	key " special
+	key ֊ special
 	}
 	row {
 	shift
@@ -255,8 +280,9 @@ uppercase {
 	key Բ alpha
 	key Ն alpha
 	key Մ alpha
-	key ՞ alpha
-	key ՟ alpha
+	key ՝ special
+	key ՜ special
+	key ՞ special
 	backspace
 	}
 }

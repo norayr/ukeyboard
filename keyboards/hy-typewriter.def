@@ -2,7 +2,7 @@
 # author: Norayr Chilingaryan <norayr@arnet.am>
 
 header {
-name	"Հայերեն (Armenia) - Typewriter"
+name	"Հայերեն (Armenia)"
 lang	"hy_AM"
 wc	"hy_AM"
 
@@ -170,6 +170,20 @@ lowercase {
 	margin 0 0 0 0
 	default_size 2
 	row {
+	key ֆ alpha
+	key ձ alpha
+	key – special
+	key , special
+	key ։ special
+	key ՞ special
+	key . special
+	key ՛ special
+	key ՝ special
+	key օ alpha
+	key է alpha
+	key ղ alpha
+	}
+	row {
 	key ճ alpha
 	key փ alpha
 	key բ alpha
@@ -195,7 +209,7 @@ lowercase {
 	key հ alpha
 	key պ alpha
 	key ր alpha
-	key ֆ alpha
+	key ? special
 	}
 	row {
 	shift
@@ -216,6 +230,20 @@ uppercase {
 	name "ԱԲԳ"
 	margin 0 0 0 0
 	default_size 2
+	row {
+	key Ֆ alpha
+	key Ձ alpha
+	key — special
+	key $ special
+	key … special
+	key % special
+	key և alpha
+	key ʼ special
+	key ՜ special
+	key Օ alpha
+	key Է alpha
+	key Ղ alpha
+	}
 	row {
 	key Ճ alpha
 	key Փ alpha
@@ -242,7 +270,7 @@ uppercase {
 	key Հ alpha
 	key Պ alpha
 	key Ր alpha
-	key Ֆ alpha
+	key ֊ special
 	}
 	row {
 	shift
@@ -258,18 +286,6 @@ uppercase {
 	key Ռ alpha
 	backspace
 	}
-#	key ՜ alpha
-#	key Ֆ alpha
-#	key Ձ alpha
-#	key ՟ alpha
-#	key ․ alpha
-#	key ; alpha
-#	key ՙ alpha
-#	key և alpha
-#	key ՚ alpha
-#	key Օ alpha
-#	key Է alpha
-#	key Ղ alpha
 }
 special {
 	name "1#+"
