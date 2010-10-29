@@ -1,3 +1,10 @@
+ukeyboard (2.4-5) unstable; urgency=low
+
+  * Added Dzongkha on-screen keyboard layout by Boaz Shmueli.
+  * Fixed Slovak translation of ukeyboard post installation dialog.
+
+ -- Roman Moravcik <roman.moravcik@gmail.com>  Fri, 29 Oct 2010 11:16:29 +0200
+
 ukeyboard (2.4-4) unstable; urgency=low
 
   * Added Armenian keyboard layouts by Norayr Chilingarian.
