@@ -1,0 +1,331 @@
+# title: Uyghur keyboard layout
+# author: Ekrem Tomur <ekrem.tomur@gmail.com>
+ 
+header {
+name	"Uyghur"
+lang	"ug_CN"
+wc	"ug_CN"
+
+size	0	{ width 35 height 35 textpos 26 left 0 top 0 }
+size	1	{ width 50 height 35 textpos 26 left 0 top 0 }
+size	2	{ width 66 height 55 textpos 41 left 0 top 0 }
+size	3	{ width 72 height 55 textpos 41 left 0 top 0 }
+}
+
+kbd_normal {
+lowercase {
+	margin 0 0 0 0
+	default_size 2
+	row {
+	key چ alpha
+	key ۋ alpha
+	key ې alpha
+	key ر alpha
+	key ت alpha
+	key ي alpha
+	key ۇ alpha
+	key ڭ alpha
+	key و alpha
+	key پ alpha
+	key ] special
+	key [ special
+	}
+	row {
+	key ھ alpha
+	key س alpha size 3
+	key د alpha
+	key ا alpha
+	key ە alpha
+	key ى alpha
+	key ق alpha
+	key ك alpha
+	key ل alpha
+	key ؛ special
+	key ' special
+	key \ special
+	}
+	row {
+	shift
+	key ز alpha
+	key ش alpha size 3
+	key غ alpha
+	key ۈ alpha
+	key ب alpha
+	key ن alpha
+	key م alpha
+	key ، special
+	key . special
+	key ئ alpha
+	backspace
+	}
+}
+lowercase_num {
+	margin 0 0 0 9
+	default_size 0
+	row {
+	key 1 num hexa tele
+	key 2 num hexa tele
+	key 3 num hexa tele
+	}
+	row {
+	key 4 num hexa tele
+	key 5 num hexa tele
+	key 6 num hexa tele
+	}
+	row {
+	key 7 num hexa tele
+	key 8 num hexa tele
+	key 9 num hexa tele
+	}
+	row {
+	key 0 num hexa tele
+	key - special
+	key = special
+	}
+}
+uppercase {
+	margin 0 0 0 0
+	default_size 2
+	row {
+	key ! special
+	key @ special
+	key # special tele
+	key $ special
+	key % special
+	key ^ special
+	key & special
+	key * special
+	key ) special tele
+	key ( special tele
+	key — special
+	key + special tele
+	}
+	row {
+	key ژ alpha
+	key ف alpha
+	key گ alpha
+	key خ alpha
+	key ج alpha
+	key ۆ alpha
+	key ﻻ alpha
+	key : special
+	key " special
+	key » special
+	key « special
+	key | special
+	}
+	row {
+	shift
+	key - special
+	key = special
+	key › special
+	key ‹ special
+	key ؟ special
+	backspace
+	}
+}
+uppercase_num {
+	margin 0 0 0 9
+	default_size 0
+	row {
+	key ! special
+	key @ special
+	key # special tele
+	}
+	row {
+	key $ special
+	key % special
+	key ^ special
+	}
+	row {
+	key & special
+	key * special
+	key ) special tele
+	}
+	row {
+	key ( special tele
+	key — special
+	key + special tele
+	}
+}
+}
+
+kbd_thumb {
+lowercase {
+	name "normal"
+	margin 0 0 0 0
+	default_size 2
+	row {
+	key چ alpha
+	key ۋ alpha
+	key ې alpha
+	key ر alpha
+	key ت alpha
+	key ي alpha
+	key ۇ alpha
+	key ڭ alpha
+	key و alpha
+	key پ alpha
+	key ] special
+	key [ special
+	}
+	row {
+	key ھ alpha
+	key س alpha size 3
+	key د alpha
+	key ا alpha
+	key ە alpha
+	key ى alpha
+	key ق alpha
+	key ك alpha
+	key ل alpha
+	key ؛ special
+	key ' special
+	key \ special
+	}
+	row {
+	shift
+	key ز alpha
+	key ش alpha size 3
+	key غ alpha
+	key ۈ alpha
+	key ب alpha
+	key ن alpha
+	key م alpha
+	key ، special
+	key . special
+	key ئ alpha
+	backspace
+	}
+}
+uppercase {
+	name "shift"
+	margin 0 0 0 0
+	default_size 2
+	row {
+	key ! special
+	key @ special
+	key # special tele
+	key $ special
+	key % special
+	key ^ special
+	key & special
+	key * special
+	key ) special tele
+	key ( special tele
+	key — special
+	key + special tele
+	}
+	row {
+	key ژ alpha
+	key ف alpha
+	key گ alpha
+	key خ alpha
+	key ج alpha
+	key ۆ alpha
+	key ﻻ alpha
+	key : special
+	key " special
+	key » special
+	key « special
+	key | special
+	}
+	row {
+	shift
+	key - special
+	key = special
+	key › special
+	key ‹ special
+	key ؟ special
+	backspace
+	}
+}
+special {
+	name "1#+"
+	margin 0 0 0 0
+	default_size 2
+	row {
+	key 1 num hexa tele
+	key 2 num hexa tele
+	key 3 num hexa tele
+	key 4 num hexa tele
+	key 5 num hexa tele
+	key 6 num hexa tele
+	key 7 num hexa tele
+	key 8 num hexa tele
+	key 9 num hexa tele
+	key 0 num hexa tele
+	key = special
+	}
+	row {
+	key + special tele
+	key - special num
+	key _ special
+	key # special tele
+	key * special tele
+	key % special
+	key € special
+	key £ special
+	key $ special
+	key ¥ special
+	key ¤ special
+	}
+	row {
+	shift
+	key , special
+	key . special
+	key @ special
+	key / special
+	key \ special
+	key ~ alpha special dead
+	key ^ alpha special dead
+	key ( special
+	key ) special
+	backspace
+	}
+}
+special {
+	name "*§¿"
+	margin 0 0 0 0
+	default_size 2
+	row {
+	key ´ alpha special dead
+	key ` alpha special dead
+	key ¨ alpha special dead
+	key ^ alpha special dead
+	key ~ alpha special dead
+	key ' special
+	key " special
+	key “ special
+	key ” special
+	key ° special
+	key & special
+	}
+	row {
+	key ± special
+	key § special
+	key ½ special
+	key ¹ special
+	key ² special
+	key ³ special
+	key < special
+	key > special
+	key « special
+	key » special
+	key | special
+	}
+	row {
+	shift
+	key ; special
+	key : special
+	key [ special
+	key ] special
+	key { special
+	key } special
+	key ç alpha
+	key ¡ special
+	key ¿ special
+	backspace
+	}
+}
+}
