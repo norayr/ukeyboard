@@ -20,6 +20,7 @@ layouts = \
 	lv-qwerty.vkb \
 	mk.vkb \
 	pa-jhelum.vkb \
+	ro.vkb \
 	ru-phonetic.vkb ru-windows.vkb \
 	sk-qwerty.vkb sk-qwertz.vkb \
 	sl-qwerty.vkb sl-qwertz.vkb \

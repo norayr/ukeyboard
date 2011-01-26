@@ -9,6 +9,7 @@ layouts = \
 	  he.vkb he_phonetic.vkb \
 	  mk.vkb \
 	  lv.vkb \
+	  ro.vkb \
 	  ru_phonetic.vkb \
 	  sk.vkb sk_qwerty.vkb \
 	  sr_cyrillic.vkb \

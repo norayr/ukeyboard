@@ -846,3 +846,19 @@ xkb_symbols "ua" {
     key <AB07>	{ symbols[Group2] = [	Cyrillic_softsign,	Cyrillic_SOFTSIGN,	apostrophe,		apostrophe		] };
     key <LEFT>	{ symbols[Group2] = [	Cyrillic_be,		Cyrillic_BE,		Cyrillic_yu,		Cyrillic_YU		] };
 };
+
+// author: Mihai C.
+// created on 2010-10-31
+partial alphanumeric_keys
+xkb_symbols "ro" {
+    include "nokia_vndr/rx-51(english_base)"
+
+    name[Group1] = "Romanian";
+
+    key <UP>    { type[Group1] = "PC_FN_LEVEL2", symbols[Group1] = [ Up, abreve ] };
+    key <LEFT>  { type[Group1] = "PC_FN_LEVEL2", symbols[Group1] = [ Left, 0x1000219 ] };
+    key <DOWN>  { type[Group1] = "PC_FN_LEVEL2", symbols[Group1] = [ Down, 0x100021b ] };
+    key <RGHT>  { type[Group1] = "PC_FN_LEVEL2", symbols[Group1] = [ Right, acircumflex ] };
+
+    key <AB01>	{ [	z,		Z,		icircumflex,	Icircumflex] };
+};
