@@ -4,7 +4,7 @@
 # Based on German QWERTY layout by Roman Moravcik <roman.moravcik@gmail.com>
 
 header {
-name	"Română"
+name	"Română (Romania)"
 lang	"ro_RO"
 wc	"ro_RO"
 
