@@ -95,6 +95,7 @@ GList *get_dicts(GList *langs)
 		if (lang->ext) {
 			if ((strcmp(lang->fname, "cz-qwertz")) &&
 			    (strcmp(lang->fname, "de-qwertz")) &&
+			    (strcmp(lang->fname, "es-qwerty")) &&
 			    (strcmp(lang->fname, "ru-windows")))
 				continue;
 		}

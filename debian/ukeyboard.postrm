@@ -20,7 +20,7 @@ case "$1" in
 esac
 
 # rename all *.vkb.removed files back to *.vkb
-layouts="cs_CZ de_DE ru_RU"
+layouts="cs_CZ de_DE es_ES ru_RU"
 for i in $layouts; do
 	if [ -f /usr/share/keyboards/$i.vkb.removed ]; then
 		if [ ! -h /usr/share/keyboards/$i.vkb ]; then
