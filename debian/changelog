@@ -1,3 +1,17 @@
+ukeyboard (2.5-1) unstable; urgency=low
+
+  * Added Nepali on-screen keyboard layout requested by Krishna Shrestha.
+  * Added Spanish Dvorak on-screen keyboard layout requested
+    by Joaquin Alberto Rincon-Ramirez.
+  * Added Italian translation by Emanuele Cassioli.
+  * Added Uyghur on-screen by Ekrem Tomur (Bug 11779: Uyghur keyboard layout
+    for ukeyboard).
+  * Added Romanian on-screen and HW keyboard layouts by Mihai Capotă
+    (Bug 11507: Support for Romanian keyboards).
+  * Fixed bug 11535: Ctrl not working in X-terminal when Ukrainian is selected.
+
+ -- Roman Moravcik <roman.moravcik@gmail.com>  Wed, 26 Jan 2011 15:01:20 +0100
+
 ukeyboard (2.4-5) unstable; urgency=low
 
   * Added Dzongkha on-screen keyboard layout by Boaz Shmueli.
