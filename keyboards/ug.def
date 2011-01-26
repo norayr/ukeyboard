@@ -2,14 +2,14 @@
 # author: Ekrem Tomur <ekrem.tomur@gmail.com>
  
 header {
-name	"Uyghur"
+name	"Uyghur (China)"
 lang	"ug_CN"
 wc	"ug_CN"
 
 size	0	{ width 35 height 35 textpos 26 left 0 top 0 }
-size	1	{ width 50 height 35 textpos 26 left 0 top 0 }
+size	1	{ width 35 height 35 textpos 26 left 0 top 0 }
 size	2	{ width 66 height 55 textpos 41 left 0 top 0 }
-size	3	{ width 72 height 55 textpos 41 left 0 top 0 }
+size	3	{ width 131 height 55 textpos 41 left 0 top 0 }
 }
 
 kbd_normal {
@@ -171,7 +171,7 @@ lowercase {
 	}
 	row {
 	key ھ alpha
-	key س alpha size 3
+	key س alpha
 	key د alpha
 	key ا alpha
 	key ە alpha
@@ -186,7 +186,7 @@ lowercase {
 	row {
 	shift
 	key ز alpha
-	key ش alpha size 3
+	key ش alpha
 	key غ alpha
 	key ۈ alpha
 	key ب alpha
@@ -237,6 +237,11 @@ uppercase {
 	key › special
 	key ‹ special
 	key ؟ special
+	key ~ special
+	key _ special
+	key / special
+	key } special
+	key { special
 	backspace
 	}
 }
