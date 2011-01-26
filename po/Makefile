@@ -1,4 +1,4 @@
-linguas = ca fi sk
+linguas = ca fi it sk
 
 all: po
 
