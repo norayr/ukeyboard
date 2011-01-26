@@ -7,9 +7,10 @@ lang	"ug_CN"
 wc	"ug_CN"
 
 size	0	{ width 35 height 35 textpos 26 left 0 top 0 }
-size	1	{ width 35 height 35 textpos 26 left 0 top 0 }
+size	1	{ width 50 height 35 textpos 26 left 0 top 0 }
 size	2	{ width 66 height 55 textpos 41 left 0 top 0 }
-size	3	{ width 131 height 55 textpos 41 left 0 top 0 }
+size	3	{ width 72 height 55 textpos 41 left 0 top 0 }
+size	4	{ width 143 height 55 textpos 41 left 0 top 0 }
 }
 
 kbd_normal {
@@ -248,7 +249,7 @@ uppercase {
 special {
 	name "1#+"
 	margin 0 0 0 0
-	default_size 2
+	default_size 3
 	row {
 	key 1 num hexa tele
 	key 2 num hexa tele
@@ -292,7 +293,7 @@ special {
 special {
 	name "*§¿"
 	margin 0 0 0 0
-	default_size 2
+	default_size 3
 	row {
 	key ´ alpha special dead
 	key ` alpha special dead
