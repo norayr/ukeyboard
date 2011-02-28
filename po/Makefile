@@ -1,4 +1,4 @@
-linguas = ca fi it sk
+linguas = ca fi it sk uk_UA
 
 all: po
 

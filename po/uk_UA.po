@@ -1,0 +1,40 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Roman Moravčík <roman.moravcik@gmail.com>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: Ukeyboard\n"
+"Report-Msgid-Bugs-To: https://bugs.maemo.org/enter_bug.cgi?product=Ukeyboard\n"
+"POT-Creation-Date: 2010-06-11 14:21+0200\n"
+"PO-Revision-Date: 2011-02-24 11:36+0000\n"
+"Last-Translator: egghead <egghead@fedoraproject.org>\n"
+"Language-Team: Ukrainian (Ukraine) <None>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: uk_UA\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+#: ../cpanel/hw.c:252
+msgid "Longpress key repetition"
+msgstr "Повторення при утримуванні клавіш"
+
+#: ../cpanel/ukeyboard-postinst.c:29
+msgid "Installation of Ukeyboard finished"
+msgstr "Встановлення Ukeyboard завершено"
+
+#: ../cpanel/ukeyboard-postinst.c:39
+msgid ""
+"Now you can change your keyboard layout settings\n"
+"via 'Settings: Text Input'.\n"
+"\n"
+"Note:\n"
+"To switch input language of some hardware keyboard\n"
+"layouts press Ctrl and Space keys simultaneously."
+msgstr ""
+"Тепер ви можете змінити налаштування розкладки клавіатури у меню 'Налаштування: введення тексту'.\n"
+"\n"
+"Примітка:\n"
+"Для перемикання мови вводу у деяких апаратних розкладках клавіатури натисніть одночасно клавіші Ctrl і Прогалина."
