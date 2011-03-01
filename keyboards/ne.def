@@ -181,15 +181,15 @@ lowercase {
 	key ज alpha
 	key क alpha
 	key ल alpha
-	key ऽ alpha
+	key ; special
+	key ' special
 	key ॐ alpha
-	key ॰ special
 	}
 	row {
 	shift
 	key ष alpha
 	key ड alpha
-	key छ alpha
+	key च alpha
 	key व alpha
 	key ब alpha
 	key न alpha
@@ -227,25 +227,24 @@ uppercase {
 	key अ alpha
 	key झ alpha
 	key ख alpha
-	key ळ alpha
-	key ़ special
+	key ॥ special
+	key : special
+	key " special
 	key ः special
-	key ॒ special
 	}
 	row {
 	shift
 	key ऋ alpha
 	key ढ alpha
-	key च alpha
+	key छ alpha
 	key ँ special
 	key भ alpha
 	key ण alpha
 	key ं special
 	key ङ alpha
-	key ॥ special
+	key . special
 	key ? special
 	backspace
-#	॰
 	}
 }
 special {
@@ -275,13 +274,13 @@ special {
 	key € special
 	key £ special
 	key $ special
-	key ¥ special
-	key ¤ special
+	key ळ alpha
+	key ऽ alpha
 	}
 	row {
 	shift
-	key , special
-	key . special
+	key ़ special
+	key ॒ special
 	key @ special
 	key / special
 	key \ special
@@ -306,7 +305,7 @@ special {
 	key " special
 	key “ special
 	key ” special
-	key ° special
+	key ॰ special
 	key & special
 	}
 	row {
