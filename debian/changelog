@@ -1,3 +1,11 @@
+ukeyboard (2.5-2) unstable; urgency=low
+
+  * Added Ukrainian translation by Yevhen Amelin.
+  * Optimalizations of Nepali layout by Joseph sth.
+  * Added Thai Kedmanee HW keyboard layout by Thanawit Lertruengpanya.
+
+ -- Roman Moravcik <roman.moravcik@gmail.com>  Tue,  1 Mar 2011 13:18:39 +0100
+
 ukeyboard (2.5-1) unstable; urgency=low
 
   * Added Nepali on-screen keyboard layout requested by Krishna Shrestha.
