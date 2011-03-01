@@ -78,6 +78,7 @@ static layouts layout_names[] = {
     {"ua",		"Український"},
     {"ua_phonetic",	"Український - Phonetic"},
     {"ro",		"Română"},
+    {"th",		"ภาษาไทย - Kedmanee"},
     {NULL,		NULL}
 };
 

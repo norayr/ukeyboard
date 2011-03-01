@@ -862,3 +862,51 @@ xkb_symbols "ro" {
 
     key <AB01>	{ [	z,		Z,		icircumflex,	Icircumflex] };
 };
+
+// author: Thanawit Lertruengpanya
+partial alphanumeric_keys
+xkb_symbols "th" {
+    include "nokia_vndr/rx-51(english_base)"
+    include "nokia_vndr/rx-51(arrows_4btns)"
+
+    name[Group1] = "U.S. English";
+    name[Group2] = "Thai Kedmanee";
+
+    key <SPCE>	{ type[Group1] = "PC_FN_LEVEL2_BREAK", [ space, at, ISO_Prev_Group, at ] };
+
+    key.type[Group2] = "FOUR_LEVEL_SEMIALPHABETIC";
+
+    // 1. row
+    key <AD01>	{ symbols[Group2] = [	Thai_maiyamok,		Thai_leksun,		Thai_lakkhangyao,	plus			] };
+    key <AD02>	{ symbols[Group2] = [	Thai_saraaimaimalai,	quotedbl,		slash,			Thai_leknung		] };
+    key <AD03>	{ symbols[Group2] = [	Thai_saraam,		Thai_dochada,		minus,			Thai_leksong		] };
+    key <AD04>	{ symbols[Group2] = [	Thai_phophan,		Thai_thonangmontho,	Thai_phosamphao,	Thai_leksam		] };
+    key <AD05>	{ symbols[Group2] = [	Thai_saraa,		Thai_thothong,		Thai_thothung,		Thai_leksi		] };
+    key <AD06>	{ symbols[Group2] = [	Thai_maihanakat,	Thai_nikhahit,		Thai_sarau,		Thai_sarauu		] };
+    key <AD07>	{ symbols[Group2] = [	Thai_saraii,		Thai_maitri,		Thai_saraue,		Thai_baht		] };
+    key <AD08>	{ symbols[Group2] = [	Thai_rorua,		Thai_nonen,		Thai_khokhwai,		Thai_lekha		] };
+    key <AD09>	{ symbols[Group2] = [	Thai_nonu,		Thai_paiyannoi,		Thai_totao,		Thai_lekhok		] };
+    key <AD10>	{ symbols[Group2] = [	Thai_yoyak,		Thai_yoying,		Thai_chochan,		Thai_lekchet		] };
+    key <AB08>	{ symbols[Group2] = [	Thai_bobaimai,		Thai_thothan,		Thai_khokhai,		Thai_lekpaet		] };
+
+    // 2. row
+    key <AC01>	{ symbols[Group2] = [	Thai_fofan,		Thai_ru,		Thai_chochang,		Thai_lekkao		] };
+    key <AC02>	{ symbols[Group2] = [	Thai_hohip,		Thai_khorakhang,	plus,			plus			] };
+    key <AC03>	{ symbols[Group2] = [	Thai_kokai,		Thai_topatak,		numbersign,		numbersign		] };
+    key <AC04>	{ symbols[Group2] = [	Thai_dodek,		Thai_sarao,		minus,			minus			] };
+    key <AC05>	{ symbols[Group2] = [	Thai_sarae,		Thai_chochoe,		underscore,		underscore		] };
+    key <AC06>	{ symbols[Group2] = [	Thai_maitho,		Thai_maitaikhu,		Thai_ngongu,		period			] };
+    key <AC07>	{ symbols[Group2] = [	Thai_maiek,		Thai_maichattawa,	Thai_loling,		comma			] };
+    key <AC08>	{ symbols[Group2] = [	Thai_saraaa,		Thai_sorusi,		ampersand,		ampersand		] };
+    key <AC09>	{ symbols[Group2] = [	Thai_sosua,		Thai_sosala,		exclam,			exclam			] };
+    key <AB09>	{ symbols[Group2] = [	Thai_wowaen,		Thai_soso,		question,		question		] };
+
+    // 3. row
+    key <AB01>	{ symbols[Group2] = [	Thai_phophung,		parenleft,		Thai_moma,		Thai_thophuthao		] };
+    key <AB02>	{ symbols[Group2] = [	Thai_popla,		parenright,		Thai_saraaimaimuan,	Thai_lochula		] };
+    key <AB03>	{ symbols[Group2] = [	Thai_saraae,		Thai_choching,		Thai_fofa,		Thai_lu			] };
+    key <AB04>	{ symbols[Group2] = [	Thai_oang,		Thai_honokhuk,		slash,			slash			] };
+    key <AB05>	{ symbols[Group2] = [	Thai_sarai,		Thai_phinthu,		backslash,		backslash		] };
+    key <AB06>	{ symbols[Group2] = [	Thai_sarauee,		Thai_thanthakhat,	Thai_khokhuat,		Thai_khokhon		] };
+    key <AB07>	{ symbols[Group2] = [	Thai_thothahan,		question,		apostrophe,		apostrophe		] };
+};

@@ -33,8 +33,8 @@ Description: Additional on-screen keyboard layouts
  Slovak (QWERTY & QWERTZ), Slovenian (QWERTY & QWERTZ), Spanish (Dvorak), Thai, Turkish,
  Ukrainian (Basic & Phonetic), Uyghur and Vietnamese on-screen keyboard layouts and Arabic,
  Bulgarian (Phonetic), Czech (QWERTY), Dvorak, Greek, Georgian, Hebrew (Basic & Phonetic),
- Latvian, Macedonian, Persian, Romanian, Russian (Phonetic) and Slovak (QWERTY & QWERTZ),
- Ukrainian (Basic & Phonetic) hardware keyboard layouts.
+ Latvian, Macedonian, Persian, Romanian, Russian (Phonetic), Slovak (QWERTY & QWERTZ),
+ Ukrainian (Basic & Phonetic) and Thai hardware keyboard layouts.
 
 Package: ukbdcreator
 Architecture: any

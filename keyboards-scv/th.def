@@ -1,0 +1,95 @@
+# Thai scv keyboard layout
+# Created by Roman Moravčík <roman.moravcik@gmail.com>
+
+header {
+name	"ภาษาไทย"
+lang	"ภาษาไทย"
+wc	""
+
+size	0	{ width 110 height 72 textpos 41 left 0 top 0 }
+}
+
+kbd_special {
+lowercase {
+	name ""
+	margin 0 0 0 0
+	default_size 0
+	row {
+	key < special
+	key > special
+	key [ special
+	key ] special
+	key { special
+	key } special
+	key | special
+	}
+	row {
+	tab
+	key ¥ special
+	key § special
+	key © special
+	key ® special
+	key % special
+	key ‰ special
+	}
+	row {
+	key ` alpha special dead
+	key ´ alpha special dead
+	key ^ alpha special dead
+	key ~ alpha special dead
+	key ¨ alpha special dead
+	key ° alpha special dead
+	key ˇ alpha special dead
+	}
+	row {
+	key ç special
+	key ñ special
+	key ¡ special
+	key ¿ special
+	key ½ special
+	key ² special
+	key ³ special
+	}
+}
+uppercase {
+	name ""
+	margin 0 0 0 0
+	default_size 0
+	row {
+	key < special
+	key > special
+	key [ special
+	key ] special
+	key { special
+	key } special
+	key | special
+	}
+	row {
+	tab
+	key ¥ special
+	key § special
+	key © special
+	key ® special
+	key % special
+	key ‰ special
+	}
+	row {
+	key ` alpha special dead
+	key ´ alpha special dead
+	key ^ alpha special dead
+	key ~ alpha special dead
+	key ¨ alpha special dead
+	key ° alpha special dead
+	key ˇ alpha special dead
+	}
+	row {
+	key Ç special
+	key Ñ special
+	key ¡ special
+	key ¿ special
+	key ½ special
+	key ² special
+	key ³ special
+	}
+}
+}
