@@ -208,7 +208,7 @@ lowercase {
 	key լ alpha
 	key ; special
 	key ՛ special
-	key ? special
+	key ՞ special
 	}
 	row {
 	shift

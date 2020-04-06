@@ -209,7 +209,7 @@ lowercase {
 	key հ alpha
 	key պ alpha
 	key ր alpha
-	key ? special
+	key ՞ special
 	}
 	row {
 	shift
